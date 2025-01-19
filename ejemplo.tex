@@ -1,0 +1,1460 @@
+\documentclass{comunicaciones}
+
+\usepackage[utopia,sfscaled]{mathdesign}
+\usepackage[scaled]{helvet}
+
+\usepackage[utf8]{inputenc} %Por favor guardar los archivos en unicode
+\usepackage[T1]{fontenc}
+
+
+\usepackage{microtype}
+\usepackage[spanish,mexico,es-noindentfirst]{babel}
+
+\usepackage[paperwidth=170mm,paperheight=230 mm,total={125mm,170mm},top=29mm,left=23mm,includeheadfoot]{geometry}
+
+\usepackage{lastpage}
+\newcounter{FirstPage}
+\newcommand{\Primera}[1]{\setcounter{FirstPage}{#1}}
+
+\usepackage{mathtools}
+
+\usepackage{enumerate}
+\usepackage{float}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\abstractname}{Resumen}
+\renewcommand{\keywordsname}{Palabras Claves}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\refname}{Bibliografía}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{macros.tex} %Cargar en este archivo los paquetes que requiera el autor (graphicx, tikz, ...), 
+% definir comandos (\DeclareMathOperator{command}{definition}, ... ), etc.
+
+\issueinfo{52}{Comunicaciones}{}{2023} 
+\Primera{5} % La página de inicio del artículo 
+
+\pagespan{\theFirstPage}{\pageref{LastPage}}
+\PII{\ } %Tipo de artículo, e.g., Artículo de Investigación; Exposición; etc.
+
+\begin{document}
+
+\author[Zaldívar L. A., Monter J. C.]{Luis Ángel Zaldívar Corichi y Juan Carlos Monter Cortés}
+
+\address{Centro Universitario de Ciencias Exactas e Ingenieria,
+Universidad de Guadalajara,
+Blvd Gral. Marcelino García Barragán 1421, Olimpica, 44430 Guadalajara, Jalisco}
+\email{\lowercase{\texttt{luis.zaldivar@academicos.udg.mx}}}
+
+\address{Centro Universitario de Ciencias Exactas e Ingenieria,
+Universidad de Guadalajara,
+Blvd Gral. Marcelino García Barragán 1421, Olimpica, 44430 Guadalajara, Jalisco}
+\email{\lowercase{\texttt{juan.monter2902@alumnos.udg.mx}}}
+
+% Tantas direcciones como autores.
+
+\title[Separación en FRM]{Axiomas de separación en la categoría de marcos}
+
+\begin{abstract} 
+Una de las ramas mas importantes en la matemática es la topología, esta como bien sabemos estudia el concepto de espacio, y capta de manera muy general los primeros espacios que se nos presentan en la vida matemática, los espacios métricos y a su vez se observa que estos espacios son casos particulares de los llamados espacios Hausdorff, es aquí donde entran en juego los axiomas de separación. En épocas más modernas (por así decirlo), se han manufacturado otras nociones de "espacio" una de estas es la noción de locale (marco, álgebra de Heyting completa), este curso pretende introducir los conceptos básicos de la topología sin-puntos y de hecho ver como los axiomas de separación juegan un papel importante pero un poco más caótico en estos ''espacios".
+\vskip .3cm
+
+\noindent {\sc Abstract.}  One of the most important branches in mathematics is topology, as we well know, it studies the concept of space, and captures in a very general way the first spaces that are presented to us in mathematical life, metric spaces, and at the same time it is observed that These spaces are particular cases of the so-called Hausdorff spaces, this is where the separation axioms come into play. In more modern times (so to speak), other notions of "space" have been manufactured, one of these is the notion of locale (frame, complete Heyting algebra), this course aims to introduce the basic concepts of pointless topology and in fact see how the separation axioms play an important but slightly more chaotic role in these "spaces".
+\end{abstract}
+
+\subjclass[2000]{82B44}
+
+\keywords{Cristales de spin. Medida de Gibbs.}
+
+\maketitle
+
+\section*{Introducción}\label{Introduccion}
+
+\noindent 
+En la topología clásica existen las nociones de axiomas de separación. Estas son herramientas que permite dotar a los espacios de una cantidad suficiente de conjuntos abiertos (elementos de la topología). Los axiomas más elementales que existen hacen uso de los puntos, y estos a su vez terminan siendo considerados como los elementos de los conjuntos abiertos. Cuando trabajamos en la categoría de marcos, podemos considerar a los conjuntos abiertos como el elemento más básico del espacio y de esta manera podemos empezar a hablar de la ``topología sin puntos''. En estas notas abordamos la variante de los axiomas de separación vistos desde la perspectiva de la teoría de marcos. \\
+
+Para hacerlo, en la primer sección, introducimos todos los conceptos necesarios para el desarrollo de la teoría de marcos. Partiendo del concepto de retícula y llegando a los aspectos categóricos que existen entre los marcos y los espacios topológicos. De igual manera, recopilamos la información básica sobre los axiomas clásicos de separación. Por último, mencionamos algunas propiedades de separación adicionales y la relación que existe entre todas estas.\\
+
+La sección número dos la utilizamos para mostrar como trabaja la topología sin puntos para ``traducir'' los axiomas clásicos de separación y obtener nuevas variantes, pero ahora libres de puntos, es decir, versiones de los axiomas enunciados únicamente para elementos de la retícula $\mathcal{O}S$. En seguida, damos la versión general de estas propiedades, pero para un marco arbitrario.\\
+
+La Sección 3 aborda dos propiedades de separación adicionales. Estas aparecieron en la literatura como versiones libres de puntos y permitió presentar caracterizaciones que con el paso del tiempo, complementarían los diferentes axiomas tipo Hausdorff.\\
+
+En la última sección presentamos los axiomas tipo Hausdorff que existen en la literatura y mencionamos la motivación que tuvieron los diferentes autores para enunciarlos. Procuramos mencionar cual es el uso de cada uno de estos en la práctica y la relación que existe entre ellos. De manera adicional, agregamos unos diagramas que permiten ilustrar la relación de los axiomas tipo Hausdorff y todas las propiedades abordadas a lo largo de las notas.\\  
+
+La información aquí presentada es una recapitulación principalmente de \cite{J.P.2}. Ahí se abordan a detalle las diferentes nociones de separación. Para consultar los detalles sobre teoría de marcos, sugerimos consultar \cite{P.T.}, \cite{J.P.} o \cite{A.Z.}. 
+
+\tableofcontents
+
+\section{Preliminares}\label{Preliminares}
+
+\subsection{Teoría de marcos}
+Para el desarrollo de toda esta teoría, primero necesitamos introducir aquellos conceptos centrales sobre los cuales trabajaremos. El concepto fundamental es el de marco. Recordemos que éste parte de la definición de retícula.
+
+\begin{dfn}\label{Reticula}
+    Una \emph{retícula} es un conjunto con dos operaciones binarias (supremo o ``$\vee$'' e ínfimo o ``$\wedge$'') y dos elementos distinguidos ($0$ y $1$) tal que $\vee$ (respectivamente $\wedge$) es asociativa, conmutativa, idempotente y tienen a $0$ (respectivamente 1) como elementos neutros.
+    \end{dfn} 
+    
+    \begin{dfn}\label{Reticuladistributiva}
+    Consideremos una retícula $(S, \leq, \vee, \wedge, 0, 1)$. Si esta  cumple las siguientes leyes distributivas
+    \[
+    a\wedge (b\vee c)=(a\wedge b)\vee (a\wedge c)\quad\mbox{ y }\quad a\vee (b\wedge c)=(a\vee b)\wedge (a\vee c)
+    \]
+    para todo $a, b, c\in S$. Entonces decimos $S$ es una \emph{retícula distributiva}.
+    \end{dfn}
+    
+    \begin{dfn}\label{Semiretículacompleta}
+    Decimos que una $\vee-$semiretícula es \emph{completa} si para cualquier subconjunto $A$ (no solo finito) existe $\bigvee A$. 
+    \end{dfn}
+    
+    \begin{dfn}\label{frm}
+    Un \emph{marco} es una retícula completa $(S, \leq, \wedge, \bigvee, 0, 1)$ que cumple la siguiente ley distributiva 
+    \begin{equation}\label{LDM}
+    x\wedge\bigvee Y=\bigvee\{x\wedge y\mid y\in Y\}
+    \end{equation}
+    para cualesquiera $x\in S$ y $Y\subseteq S$.
+    \end{dfn}
+    
+    A (\ref{LDM}) se le conoce como \emph{ley distributiva para marcos} \emph{(\textbf{LDM})}.
+
+    \begin{ej}\label{ejem1}
+    Para todo espacio topológico $S$ se tienen dos familias de subconjuntos: los subconjuntos abiertos, que denotamos por $\mathcal{O}S$ y sus subconjuntos cerrados, denotados por $\mathcal{C}S$. De esta forma para cualquier $(S,\mathcal{O}S)$, $\mathcal{O}S$ tiene la estructura  de retícula completa $$(\mathcal{O}S, \subseteq, \cap,\bigcup, S,\emptyset).$$
+    Además la familia de subconjuntos abiertos cumple la LDM. Es decir, $\mathcal{O}S$ es un marco, que de manera conveniente, llamaremos \emph{marco de abiertos}.\\
+    
+    Consideremos $U\subseteq S$, denotamos por
+    
+    \[
+    U',\qquad U^-,\qquad U^\circ,
+    \]
+    como el complemento, la cerradura y el interior de $U$ en $S$, respectivamente.\\ 
+    
+    Como mencionamos en el ejemplo, $\mathcal{O}S$ es un marco, en la literatura a $\mathcal{O}S$ también se le conoce como el marco de abiertos de $S$ o como la retícula de conjuntos abiertos. Al ser $\mathcal{O}S$ una retícula, en ocasiones también se le denota por $\Omega(S)$.\\
+    
+    Calcular ínfimos arbitrarios se puede realizar de la siguiente forma 
+    \[
+    \bigwedge U=\left(\bigcap U\right)^\circ.
+    \]
+    \end{ej}
+
+    \begin{dfn}\label{morf}
+        Sean $A$ y $B$ dos marcos arbitrarios. Un \emph{morfismo de marcos} es una función $f\colon A\rightarrow B$ tal que para cualesquiera $a,b\in A$ y $X\subseteq A$ se cumple lo siguiente:
+        \begin{itemize}
+        \item $a\leq b$, $f(a)\leq f(b)$.
+        \item $f(0_A)=0_B$ y $f(1_A)=1_B$.
+        \item $f(a\wedge b)= f(a)\wedge f(b)$.
+        \item $f(\bigvee X)=\bigvee f(X)$.
+        \end{itemize}
+        \end{dfn}
+
+Para culminar este apartado sobre teoría de marcos, definiremos una operación conocida como implicación y unas funciones que se conocen como núcleos. Ambas serán de utilidad más adelante. 
+
+\begin{dfn}\label{Implicacion}
+Sea $A$ una retícula completa, una \emph{implicación} es una operación sobre $A$ $$(\cdot \succ \cdot):A\times A\to A$$ de tal forma que $$x\leq (b\succ a)\Leftrightarrow b\wedge x\leq a$$
+para cualesquiera $a,b,x\in A$.
+\end{dfn}
+
+La implicación es una operación definida sobre retículas, de hecho esta operación es denotada en ocasiones por ``$\rightarrow$''. En particular, en un marco $A$ se calcula de la siguiente forma $$(b\succ a)=\bigvee\{c\in A|b\wedge c\leq a\}.$$
+
+Además, la implicación nos permite calcular la negación de cualquier elemento $a\in A$ como $\neg a=(a\succ 0).$
+
+\begin{dfn}\label{Operadores}
+Sea $A$ un marco y $a, b\in A$. Decimos que $j\colon A\to A$ es un \emph{núcleo} si:
+
+\begin{enumerate}
+\item $a\leq j(a)$, (el operador infla).
+\item Si $a\leq b\Rightarrow j(a)\leq j(b)$, (el operador es monótono).
+\item $j^2=j$, (el operador es idempotente).\\
+\item $j(a)\wedge j(b)=j(a\wedge b)$, (el operador preserva ínfimos).
+\end{enumerate}
+\end{dfn}
+Podemos considerar a $NA$ como el conjunto de todos los núcleos sobre $A$.
+
+\begin{ej}\label{ua,va,wa}
+Si $A\in \Frm$ para cualquier $a\in A$ definimos las funciones
+\begin{itemize}
+\item $u_a\colon A\to A, \, u_a(x)=a\vee x, \mbox{    }\forall x\in A$ \emph{(núcleo cerrado)}
+\item $v_a\colon A\to A, \, v_a(x)=(a\succ x), \mbox{    }\forall x\in A$ \emph{(núcleo abierto)}
+\item $w_a\colon A\to A, \, w_a(x)=((x\succ a)\succ a), \mbox{    }\forall x\in A$ \emph{(núcleo regular)}
+\end{itemize}
+Los tres operadores definidos resultan ser núcleos.
+\end{ej}
+
+Los núcleos del Ejemplo \ref{ua,va,wa} reciben esos nombres debido a que, en la teoría de locales, los núcleos están en correspondencia biyectiva con los sublocales. Omitiendo detalles, esbozamos como es esta correspondencia.\\ 
+
+Por medio de un núcleo arbitrario, podemos definir un sublocal, el cual resulta ser el conjunto de puntos fijos del núcleo en consideración, denotado por $A_j$ para $j\in NA$. También, a través de un sublocal $S$, podemos definir un núcleo, el cual se denota por $j_S$. 
+
+\begin{obs}\label{ca y oa}
+    Para $a\in A$ tenemos las siguientes correspondencias con los núcleos $u_a$ y $v_a$
+
+    \[
+    u_a\leftrightarrow A_{u_a}=c(a)=[a,1]\qquad \mbox{ y }\qquad v_a\leftrightarrow A_{v_a}=o(a)=[0,a)
+    \]
+    donde $c(a)$ y $o(a)$ se les conocen como los sublocales cerrados y abiertos, respectivamente.
+\end{obs}
+        
+\subsection{Aspectos categóricos}
+        Utilizando las Definiciones \ref{frm} y \ref{morf} podemos demostrar que la composición de morfismos de marcos es también un morfismo de marcos. Además, el morfismo identidad ($\id$) actúa como elemento neutro en la composición. Como consecuencia tenemos una categoría, la cual denotaremos por $\Frm$ y es conocida como la \emph{categoría de marcos}.
+        
+        \begin{dfn}\label{adjder}
+        Sea $f:A\to B$ una función monótona. El \emph{adjunto derecho de $f$} es una función monótona $f_*:B\to A$ tal que $f(a)\leq b\Leftrightarrow a\leq f_*(b)$ para cualesquiera $a\in A$ y $b\in B$. Denotamos a $f$ como $f^*$ y escribimos \emph{$f^*\dashv f_*$}
+        \end{dfn}
+        
+        La relación que existe entre los morfismos de marcos y el adjunto de un morfismo se enuncia en el siguiente resultado.
+        
+        \begin{prop}\label{Adjuntoder}
+        Todo morfismo de marcos tiene adjunto derecho
+        \end{prop}
+        
+        Podemos construir la categoría opuesta a $\Frm$, esta recibe el nombre de \emph{categoría de locales}. Por la Proposición \ref{Adjuntoder} tenemos que para cualesquiera $A, B\in \Frm$, si
+        \[
+        f\colon A\rightarrow B \Longrightarrow f_*\colon B\rightarrow A
+        \]
+        donde $f$ es un morfismo de marcos y $f_*$ es su adjunto derecho. Notemos que $f_*$ invierte el dominio y codominio de $f$. Por lo tanto, podemos considerar un morfismo de locales como 
+        \[
+        f\colon B\rightarrow A 
+        \]
+        tales que $f$ preserva los ínfimos y sus adjuntos izquierdos ($f^*$), son un morfismo de marcos. Así, invirtiendo la composición de los morfismos de marcos obtenemos la categoría $\Loc=\Frm^{\op}$.\\
+        
+        Existe una adjunción entre $\Frm$ y $\Top$ (la categoría de espacios topológicos), como se muestra en el siguiente diagrama
+        \[\begin{tikzcd}
+	{\Top} \\
+	{} & {} & {} \\
+	{\Frm^{\op}}
+	\arrow["{\pt}"{name=0, swap}, from=3-1, to=1-1, shift right=5]
+	\arrow["{\mathcal{O}}"{name=1, swap}, from=1-1, to=3-1, shift right=5]
+	\arrow["\dashv"{rotate=0}, from=1, to=0, phantom]
+\end{tikzcd}\]
+
+
+        donde $\pt$ se le conoce como el funtor de puntos y $\mathcal{O}$ como el funtor de abiertos.\\
+        
+Como vimos al inicio de esta sección, uno de los primeros ejemplos de un marco son los abiertos de un espacio topológico. De esta manera, si $S$ es un espacio arbitrario, podemos asignarle el marco $\mathcal{O}S$. Ahora, si consideramos cualesquiera dos espacios topológicos $S$, $T$ y una función continua $f\colon S\to T$, entonces la asignación
+\[
+\mathcal{O}(f)=f^{-1}\colon \mathcal{O}T\to \mathcal{O}S,
+\]
+por propiedades de la preimagen, resulta ser un morfismo de marcos. Lo anterior nos menciona la forma en que se construye el funtor $\mathcal{O}(\_)\colon \Top\to \Frm^{\op}$, asignando a cada espacio su marco de abiertos y, a cada función continua la respectiva función preimagen, pero restringida a los correspondientes marcos de abiertos.\\
+
+La construcción del funtor $\pt(\_)$ es un poco más compleja y para ello se necesita más información. Para empezar, necesitamos definir los que serán los puntos en un marco. 
+
+\begin{dfn}
+    Sea $A$ un marco. Un \emph{caracter} de $A$ es un morfismo de marcos $h\colon A\to \mathbf{2}$, donde $\mathbf{2}$ es el marco de dos elementos.
+\end{dfn}
+
+Existe una correspondencia biyectiva entre caracteres de un marco y otros dos dispositivos: elementos $\wedge-$irreducibles y filtros completamente primos. Estos últimos no serán utilizados en estas notas.
+
+\begin{dfn}\label{infirre}
+    Sea $A$ un marco. Un elemento $p\in A$ es $\wedge-$irreducible si $p\neq 1$ y si $x\wedge y\leq p$, entonces $x\leq p$ o $y\leq p$ se cumple para cada $x, y \in A$.
+\end{dfn}
+
+La siguiente definición es la que nos permite convertir un marco en un espacio.
+
+\begin{dfn}
+    Sea $A$ un marco. El \emph{espacio de puntos} de $A$ es la colección de todos los elementos $\wedge-$irreducibles de $A$. Denotamos a estos por $\pt A$.
+\end{dfn}
+
+Notemos que para que $\pt A$ sea un espacio, este necesita una topología.
+
+\begin{dfn}
+    Sea $A$ un maco con espacio de puntos $S=\pt A$, vistos como elementos $\wedge-$irreducibles. Definimos 
+
+    \[
+    U_A(a)=\{p\in S\mid a\nleq p\}
+    \]
+    para cada elemento $A\in A$. 
+\end{dfn}
+
+Si es claro el marco bajo el cual se esta trabajando, eliminamos el subindice $A$ y solo escribimos $U(a)$.\\
+
+Se puede demostrar que las intersecciones finitas y las uniones arbitrarias de conjuntos de esta forma, también tienen la misma estructura, es decir,
+
+\[
+U(a)\cap U(b)=U(a\wedge b)\qquad\mbox{ y }\qquad\bigcup\{U(a)\mid a\in X\}=U\left(\bigvee X\right)
+\]
+se cumplen para todo $a, b\in A$ y $X\subseteq A$. Con lo mencionado antes tenemos el siguiente lema.
+
+\begin{lem}\label{ReflexionEspacial}
+    Sea $A$ un marco con espacio de puntos $S=\pt A$. La colección de conjuntos $\{U(a)\mid a\in A\}$ forman una topología en $S$ y 
+
+    \begin{equation}\label{MorfismoRE}
+            U_a(\_)\colon A\to \mathcal{O}S
+    \end{equation}
+    es un morfismo suprayectivo de marcos.
+\end{lem}
+La asignación presentada en \ref{MorfismoRE} es conocida como la \emph{reflexión espacial}. Ahora necesitamos construir una función continua que relacione a cualesquiera espacio de puntos. Para ello tenemos el siguiente resultado.
+
+\begin{lem}
+    Sean $A,B\in\mathbf{Frm}$ y $f\colon A\to B$ un morfismo de marcos. La función $\pt(f):\pt A\to \pt B$ definida por 
+    \[
+    f_*\colon \pt B\to \pt A,
+    \]
+    donde $f_*$ es el adjunto derecho de $f$, es una función continua.
+    \end{lem}
+
+Por lo tanto, obtenemos el funtor $\pt\colon \Frm^{\op}\to \Top$. Obviamente, existen bastante detalles que podrían ser agregados en estas notas para comprender por completo el fenómeno de la adjunción entre estas dos categorías. Nuestro objetivo no es enfocarnos en ellos. De esta manera sugerimos consultar \cite{A.Z.} para revisar más a fondo lo explicado antes. 
+
+\subsection{Axiomas clásicos de separación (sensibles a puntos)}\label{Axiomas clasicos}
+Los axiomas de separación nos proporcionan condiciones bajo las cuales, en un espacio $S$, podemos separar puntos diferentes por medio de elementos en $\mathcal{O}S$ y, en el caso de los axiomas $T_3$ y $T_4$, podemos separar también conjuntos cerrados.\\
+
+Comencemos con el axioma \textbf{$T_0$}, este es el primer axioma de separación y el más general. Para un espacio $S$ decimos que este es $T_0$ si:
+
+\begin{description}
+\item[$(\mathbf{T_0})$] $\forall x, y\in S, x\neq y,\; \exists\; U\in \Omega (S) \mbox{ tal que } x\notin U \ni y \mbox{ ó } y\notin U \ni x.$
+\end{description}
+
+Equivalentemente, el espacio $S$ es $T_0$ si y solo si $\forall x,y\in S$, si $\overline{\{x\}}=\overline{\{y\}}\Rightarrow x=y$.\\
+
+Para los espacios $T_1$ tenemos la siguiente suposición. 
+
+\begin{description}
+\item[$(\mathbf{T_1})$] $\forall x, y\in S, x\neq y,\; \exists\; U\in \Omega (S) \mbox{ tal que } y\notin U \ni x$.
+\end{description}
+
+También podemos decir que el espacio $S$ es $T_1$ si y solo si los conjuntos formados por un punto son cerrados, es decir, $\forall x\in S$, $\{x\}=\overline{\{x\}}$.\\
+
+Ahora enunciaremos el axioma de separación $T_2$ (o de Hausdorff). Este axioma es de los más usados en topología clásica. Lamentablemente, como veremos más adelante, existe más de una variante libre de puntos de este axioma. Diremos que un espacio es Hausdorff, o $T_2$, si
+
+\begin{description}
+\item[$(\mathbf{T_2})$] $\forall x, y\in S, x\neq y,\; \exists\; U, V\in \Omega (S) \mbox{ tal que } x\in U, y\in V \mbox{ y } U\cap V=\emptyset$.
+\end{description}
+Como se menciona en la Introducción, la última sección de estas notas está enfocada en presentar las diferentes traducciones de este axioma y cuales son las razones por las que existen varias.\\
+
+
+Para enunciar el siguiente axioma de separación necesitamos del concepto de espacio regular. Decimos que un espacio \emph{regular} si
+
+\begin{description}
+\item[$(\mbox{\textbf{reg}})$] $\forall x\in S, A\subseteq S \mbox{ cerrado tal que }x\notin A,\; \exists\; U, V\in \Omega (S) \mbox{ tales que }$
+\[
+x\in U,\quad A\subseteq V, \quad U\cap V=\emptyset.
+\]
+\end{description}
+
+\begin{prop}
+    Si un espacio regular es $T_0$, este es $T_2$ y por lo tanto $T_1$.
+\end{prop}
+
+Si consideramos la regularidad junto con $T_1$ obtenemos el axioma $T_3$, es decir, 
+
+\[
+T_3=(\mbox{\textbf{reg}}) + T_1.
+\]
+
+La siguiente noción que enunciaremos es la de completamente regular. Un espacio es \emph{completamente regular} si
+
+\begin{description}
+\item[$(\mbox{\textbf{creg}})$] $\forall x\in S, A\subseteq S \mbox{ cerrado tal que }x\notin A,\; \exists\; f\colon S\to \mathbb{I}  \mbox{ tal que }$
+\[
+f(x)=0,\quad f[A]=1
+\]
+\end{description}
+donde $\mathbb{I}$ es el intervalo cerrado $[0,1]\subseteq \mathbb{R}$.\\
+
+Si un espacio es completamente regular, entonces este también es regular. Además, si a un espacio completamente regular le pedimos que sea $T_1$, entonces obtenemos el axioma de separación $T_{3\frac{1}{2}}$, es decir,
+
+\[
+T_{3\frac{1}{2}}=(\mbox{\textbf{reg}}) + T_1.
+\]
+
+Para terminar con los axiomas clásicos de separación necesitamos definir la normalidad. Decimos que un espacio $S$ es \emph{normal} si 
+
+\begin{description}
+\item[$(\mbox{\textbf{norm}})$] $\forall\; A, B\subseteq S \mbox{ cerrados tales que } A\cap B=\emptyset,\; \exists\; U, V\in \Omega (S) \mbox{ tales que }$
+\[
+A\subseteq U,\quad B\subseteq V, \quad U\cap V=\emptyset.
+\]
+\end{description}
+
+Así, obtenemos el axioma de separación $T_4$ dado por
+
+\[
+T_4=(\mbox{\textbf{norm}}) + T_1.
+\]
+
+De esta manera tenemos la siguiente sucesión de axiomas
+
+\[
+T_4\Rightarrow  T_{3\frac{1}{2}} \Rightarrow T_3 \Rightarrow T_2 \Rightarrow T_1 \Rightarrow T_0
+\]
+
+Ya con estas nociones, lo que sigue es obtener su significado en el lenguaje del marco abiertos, es decir, modificaremos aquello que sea necesario para que todas estas condiciones dadas para puntos o conjuntos cerrados queden en términos de conjuntos abiertos, pero esa es tarea para siguiente sección.
+
+\subsection{Algunas propiedades adicionales}
+Podemos definir propiedades que se ubiquen entre $T_0$ y $T_1$ y también entre $T_1$ y $T_2$. A los espacios que las cumplen, en la literatura, se les conoce como $R_0$ y $R_1$. 
+
+\[
+(\mathbf{R_0})\qquad \forall x, y\in S, x\in \overline{\{y\}} \Leftrightarrow y\in \overline{\{x\}}.
+\]
+
+En otras palabras, $x\in \overline{\{y\}}$ implica que $\overline{\{x\}}=\overline{\{y\}}$. A los espacios que cumplen con esta propiedad también se les conoce como simétricos.\\
+
+Ahora definimos a los espacios $R_1$.
+
+\[
+(\mathbf{R_1})\qquad \forall x, y\in S, \mbox{ si } \overline{\{x\}}\neq \overline{\{y\}} \Rightarrow \overline{\{x\}}\subseteq U \mbox{ y } \overline{\{y\}}\subseteq V.
+\]
+para algunos abiertos disjuntos $U$ y $V$.\\
+
+El siguientes resultado relaciona a los espacios $R_0$ y $R_1$ con los que son $T_1$ y $T_2$ respectivamente.
+
+\begin{prop}\label{R0 y R1}
+    Bajo $T_0$, $R_0 \Leftrightarrow T_1$. Bajo $T_1$, $R_1 \Leftrightarrow T_2$.
+\end{prop}
+
+\begin{proof}
+Consideremos un espacio $S$
+    \begin{enumerate}[i)]
+        \item Supongamos que $S$ cumple $R_0$. Consideremos $x\in \overline{\{y\}}$, por $R_0$ se cumple que $\overline{\{x\}}=\overline{\{y\}}$ y por $T_0$ $x=y$. Por otro lado, si $S$ cumple $T_1$ y consideramos $x\in \overline{\{y\}}$, por $T_1$ tenemos que $\overline{\{x\}}=\{x\}$ y $\overline{\{y\}}=\{y\}$. De esta manera $x=y$ y así $y\in \overline{\{x\}}$.
+        \item Supongamos que $R_1$ se cumple. Sean $x\neq y$. Por $T_1$ $\overline{\{x\}}=\{x\}\neq \{y\}=\overline{\{y\}}$ y por $R_1$ existen $U, V\in\mathcal{O}S$ tales que $x\in U$ y $y\in V$. Por otro lado, supongamos que se cumple $T_2$, entonces para $x\neq y \;\exists\; U, V$ abiertos disjuntos tales que $x\in U$ y $y\in V$. Al cumplirse $T_1$  $\overline{\{x\}}=\{x\}$ y $\overline{\{y\}}=\{y\}$, de aquí que $\overline{\{x\}}=\{x\}\subseteq U$ y $\overline{\{y\}}=\{y\}\subseteq V$.
+    \end{enumerate}
+\end{proof}
+
+De esta manera, denotando la regularidad y le regularidad completa por $R_2$ y $R_3$, respectivamente, tenemos la siguiente relación.
+
+    \[\begin{tikzcd}
+	{T_4} & {T_{3\frac{1}{2}}} & {T_3} & {T_2} & {T_1} & {T_0} \\
+	& {(\mathbf{norm})} & {R_3} & {R_2} & {R_1} & {R_0}
+	\arrow[Rightarrow, from=1-2, to=1-3]
+	\arrow[Rightarrow, from=1-3, to=1-4]
+	\arrow[Rightarrow, from=1-4, to=1-5]
+	\arrow[Rightarrow, from=1-5, to=1-6]
+	\arrow[Rightarrow, from=1-1, to=1-2]
+	\arrow[Rightarrow, from=1-1, to=2-2]
+	\arrow[Rightarrow, from=1-2, to=2-3]
+	\arrow[Rightarrow, from=1-3, to=2-4]
+	\arrow[Rightarrow, from=1-4, to=2-5]
+	\arrow[Rightarrow, from=1-5, to=2-6]
+	\arrow[Rightarrow, from=2-3, to=2-4]
+	\arrow[Rightarrow, from=2-4, to=2-5]
+	\arrow[Rightarrow, from=2-5, to=2-6]
+\end{tikzcd}\]
+
+\subsection{El axioma $T_D$}
+De manera similar a $R_0$, la siguiente propiedad es más fuerte que $T_0$, pero más débil que $T_1$.
+
+\begin{description}
+\item[$(\mathbf{T_D})$] $\forall x\in S,\; \exists\; U\in \mathcal{O}S \mbox{ tal que } x\notin U \mbox{ y } U\setminus\{x\} \in \mathcal{O}S$.
+\end{description}
+
+Podemos ver que $T_1$ implica $T_D$ y que $T_D$ implica $T_0$.
+
+\begin{prop}
+    Un espacio $S$ satisface $T_D$ si y solo si para cada $x\in S$
+    \[
+    (S\setminus \overline{\{x\}}\cup \{x\}\in \mathcal{O}S.
+    \]
+\end{prop}
+
+\begin{proof}
+\begin{description}
+    \item[$\Rightarrow )$] Consideremos un espacio $S$ que satisface $T_D$ y sea $U\in \mathcal{O}S$ como el que aparece en $(\mathbf{T_D})$. Para $x\neq y$ el conjunto $V=(S\setminus \overline{\{x\}})\cup \{x\}$ es una vecindad de $y$ y una vecindad para $x$, pues si $x\in U$, entonces $U\setminus \overline{\{x\}}=U\setminus \{x\}$ y por lo tanto $x\in U\subseteq V$. De aquí que $V$ es abierto.
+    \item[$\Leftarrow )$] Si $V=(S\setminus \overline{\{x\}})\cup \{x\}$ es abierto tenemos que si $x\in V$, entonces 
+    \[
+    V\setminus \{x\}=(S\setminus \overline{\{x\}})\cup \{x\}\setminus\{x\}=S\setminus \overline{\{x\}}
+    \]
+    y $S\setminus \overline{\{x\}}\in \mathcal{O}S$. Por lo tanto  $V\setminus \{x\}$ es abierto, es decir, $S$ es $T_D$.
+\end{description}
+\end{proof}
+
+Una de las aplicaciones de la propiedad $T_D$ la podemos encontrar en la topología sin puntos. Recordemos que los subespacios están bien representados por su marco de congruencias. Con esto en mente, podemos enunciar el siguiente resultado.
+
+\begin{thm}
+    Sean $X$ y $Y$ subespacios distintos de $S$. $E_X\neq E_Y$ si y solo si $S$ es un espacio $T_D$.
+\end{thm}
+
+\begin{proof}
+    \begin{description}
+        \item[$\Rightarrow )$] Consideremos $X\neq Y$ tales que $E_X\neq E_Y$, en particular, 
+        \[
+        E_{S\setminus \{x\}}\neq E_S.
+        \]
+        Por lo tanto existe un abierto $U\nsubseteq V$ tal que 
+        \[
+        U\cap (S\setminus \{x\})=U\setminus\{x\}=V\cap (S\setminus \{x\})=V\setminus\{x\}.
+        \]
+        Lo cual solo es posible precisamente si $x\in U$ y $V=U\setminus \{x\}$, es decir, $S$ es $T_D$.
+        \item[$\Leftarrow )$] Sean $S$ un espacio $T_D$ y $a\in X\setminus Y$. Consideremos los abiertos $U\ni a$ y $V=U\setminus\{a\}$. Entonces $U\cap X\neq V\cap X$ mientras $U\cap Y=V\cap Y$. Así $E_X\neq E_Y$. 
+    \end{description}
+\end{proof}
+
+\subsection{Sobriedad}
+A lo largo de estas notas encontramos distintas propiedades de separación. Cada una de estas utilizadas o presentadas para diferentes situaciones. La mayoría de ellas comparables entre si. La que presentamos ahora es la \emph{sobriedad}.\\
+
+En la Definición \ref{infirre} mencionamos que un elemento $p\in A$ es $\wedge-$irreducible si $p\neq 1$ y si $a\wedge b\leq p$, entonces $a\leq p$ o $b\leq p$. En ocasiones, la noción anterior es presentada en la literatura como ser primo.\\
+
+En la Subsección \ref{T1s} vimos que para un espacio $S$ y $x\in S$, entonces $S\setminus \overline{\{x\}}$ es un elemento $\wedge-$irreducible en $\mathcal{O}S$.
+
+\begin{dfn}
+    Un espacio se dice que es \emph{sobrio} (en la formulación de Grothendieck y Dieudonné), si este es $T_0$ y si todos los elementos $\wedge-$irreducibles son de la forma $S\setminus \overline{\{x\}}$.
+\end{dfn}
+
+Notemos que bajo el supuesto de que todos los espacio con los que trabajaremos son $T_0$, la asignación $x\mapsto S\setminus \overline{\{x\}}$ es inyectiva. De esta manera, los elementos $\wedge-$irreducibles en los espacios sobrios están determinados de manera única.
+
+\begin{prop}
+    Cada espacio $T_2$ es sobrio, pero la sobriedad es incomparable con $T_1$.
+\end{prop}
+
+\begin{proof}
+    \begin{enumerate}[i)]
+        \item Sean $S$ un espacio $T_2$ y $P\in \mathcal{O}S$ un elemento $\wedge-$irreducible. Supongamos que existe $x, y\notin P$, con $x\neq y$. Por $T_2$, elegimos $U, V\in\mathcal{O}S$ tales que $x\in U$, $y\in V$ y $U\cap V=\emptyset$. De aquí que
+        \[
+        P=(P\cup U)\cap (P\cup V)=P\cup (U\cap V)=P\cup \emptyset.
+        \]
+        Notemos que ni $P\cup U$ o $P\cup V$ es $P$. Por lo tanto $P=S\setminus \{x\}$, es decir, $S$ es sobrio.
+        \item Consideremos $S$ un espacio infinito dotado de la topología cofinita, es decir, 
+        \[
+        U\in\mathcal{O}S\Leftrightarrow U=\emptyset\; \mbox{ o }\;S\setminus U \mbox{ es finito}.
+        \]
+        Este espacio es $T_1$, pero no es sobrio, pues $\emptyset$ es un elemento $\wedge-$irreducible y $\emptyset\neq S\setminus \overline{\{x\}}$ para todo $x\in S$.
+        \item Sea $S$ el espacio de Sierpinski, es decir,
+        \[
+        S=(S=\{0,1\},\mathcal{O}S=\{\emptyset,\{1\},\{0,1\}).
+        \]
+        Los elementos $\wedge-$irreducibles son $\emptyset=S\setminus\overline{\{1\}}$ y $\{1\}=S\setminus \overline{\{0\}}$, por lo tanto $S$ es sobrio, pero no es $T_1$.
+    \end{enumerate}
+\end{proof}
+
+Si tenemos un espacio $S$ que no es sobrio, entonces podemos ``\emph{sobrificarlo}'' por medio de elementos en $\mathcal{O}S$. A este proceso se le conoce como la construcción de la reflexión sobria. 
+\begin{cor}\label{Modsobria}
+    Un espacio sobrio $S$ puede ser reconstruido a partir de los elementos de $\mathcal{O}S$.  
+\end{cor}
+
+Por el Corolario \ref{Modsobria}, para un espacio $S$ arbitrario que es $T_0$ podemos construir un espacio $\tilde{S}$ dado por 
+
+\[
+\tilde{S}=(\{F\mid F \mbox{ es un filtro completamente primo en }\mathcal{O}S\}, \{\tilde{U}\mid U\in \mathcal{O}S\}),
+\]
+donde $\tilde{U}=\{F\mid U\in F\}$.\\
+
+Como nuestros filtros son no triviales, tenemos $\tilde{\empty}=\emptyset$ y $\tilde{S}=S$. Además,
+\[
+\tilde{U} \cap \tilde{V}=\{F\mid U\in F, V\in F\}=\{F\mid U\cap V\in F\}=\widetilde{U\cap V}
+\]
+\[\widetilde{\bigcup_{i\in J}U_i}=\{F\mid \bigcup_{i\in J}U_i\in F\}=\{F\mid \exists i\in J, U_i\in F\}=\bigcup_{i\in J} \widetilde{U_i}
+\]
+es decir, la modificación sobria es una topología. Finalmente, denotando 
+\[
+F(x)=\{U\mid x\in U\},
+\]
+de esta manera si $U\nsubseteq V$ existe $x\in U\setminus V$ y por lo tanto $F(x)\in \tilde{U}\setminus \tilde{V}$. De está manera obtenemos 
+
+\begin{obs}\label{Asobria}
+La asignación $U\mapsto \tilde{U}$ establece un isomorfismo entre $\mathcal{O}S$ y $\mathcal{O}\tilde{S}$.
+\end{obs}
+
+Con todo lo anterior, podemos concluir que la modificación sobria se comporta de manera agradable. Resta verificar que efectivamente hacer esta construcción nos devuelve un espacio sobrio.
+
+\begin{prop}
+    El espacio $\tilde{S}$ es sobrio.
+\end{prop}
+
+Para terminar esta sección, recordemos que los funtores $\mathcal{O}$ y $\pt$ forman una adjunción. Los resultados anteriores proporcionan la información de cuando entre estos dos existe una equivalencia. Si nos restringimos a espacios sobrios y marcos espaciales tenemos 
+\[\begin{tikzcd}
+	\Top & \sob \\
+	\Frm & {\Frm_{sp}}
+	\arrow["{\mathcal{O}}"', shift right=2, from=1-1, to=2-1]
+	\arrow["\pt"', shift right=2, from=2-1, to=1-1]
+	\arrow["{(\tilde{\_})}", from=1-1, to=1-2]
+	\arrow["sp"', from=2-1, to=2-2]
+	\arrow["\cong", shift right=2, from=1-2, to=2-2]
+	\arrow[shift right=2, from=2-2, to=1-2]
+\end{tikzcd}\]
+
+
+\section{``Traducciones'' de los axiomas de separación (libres de puntos)}
+Cuando hacemos mención a ``traducción'' nos referimos a trasladar cada una de las distintas nociones dadas en el lenguaje sensible a puntos a lo que significan cada una de estas en el lenguaje de retículas de abiertos. Recordemos que en $\mathcal{O}S$, los objetos con los que trabajamos son los conjuntos abiertos. De esta manera, nuestro objetivo es trasladar los axiomas de separación en términos de los elementos en $\mathcal{O}S$.\\
+
+De manera similar a como fueron enunciados en la sección anterior, presentaremos los axiomas de separación en orden ascendente según la ``fuerza'' de estos. Comenzaremos con $T_0$ y terminaremos con la noción de normalidad. Para diferenciar de estos axiomas de su variante sensible a puntos, colocaremos una ``s'' como subíndice para hacer referencia que esa versión es libre de puntos. Aclaramos que en esta parte no se hará mención a la traducción de ser $T_2$. Esta recibirá un tratamiento especial más adelante.
+
+\subsection{$T_0$ sin puntos}
+
+Primero, recordemos que la propiedad de separación $T_0$ nos menciona que si tenemos cualesquiera dos puntos de un espacio, estos pueden ser separados por un conjunto abierto de tal manera que un punto este en el abierto y el otro no. En el lenguaje de retículas, esta noción no aporta mucha información. Si $T_0$ no se cumple, entonces para $x, y\in S$ distintos se tiene que para todo abierto $U\in \mathcal{O}S$, $x\in U$ si y solo si $y\in U$.\\
+
+De esta manera, en el lenguaje de retículas de abiertos, estos dos puntos son indistinguibles. Por lo tanto, para evitar esta situación, supondremos que el axioma $T_0$ se cumple para los distintos espacios con los que trabajaremos. Además, bajo este supuesto, no se buscará una equivalencia para esta noción.
+
+\subsection{$T_1$ sin puntos}\label{T1s}
+
+Sabemos que en un espacio $T_1$, para todo $x\in S$, $\overline{\{x\}}=\{x\}$, es decir, los conjuntos de un punto son cerrados, en consecuencia todos los conjuntos finitos son cerrados. Luego, si $\{x\}$ es cerrado, entonces $S\setminus \{x\}$ es abierto. Además, se puede verificar que este es un elemento máximo en $\mathcal{O}S$. También, los elementos de la forma $S\setminus \overline{\{x\}}$ son $\wedge-$irreducibles. Por lo tanto, lo anterior sería un esbozo de la prueba del siguiente resultado.
+\begin{prop}\label{T1s} 
+Decimos que un espacio $S$ es $T_1$ si y solo si se cumple lo siguiente:
+\begin{description}
+\item[$(\mathbf{T_{1_S}})$] todo elemento $\wedge-$irreducible es máximo.
+\end{description}
+\end{prop}
+
+Observemos que la Proposición \ref{T1s} no esta escrita como tal en el lenguaje de la retícula de abiertos (no está escrita para cualquier elemento arbitrario de $\mathcal{O}S$). Esto podría motivarnos a pensar que la traducción no termina siendo una versión satisfactoria, pero por el momento la utilizaremos como un ejemplo que permita mostrar como las caracterizaciones espaciales pueden determinar una nueva caracterización para elementos de $\mathcal{O}S$.
+\subsection{Regularidad sin puntos}
+
+Para obtener la noción sin puntos de la regularidad necesitamos dar antes una definición.
+
+\begin{dfn}\label{Bdebajo}
+    Para $U, V\in \mathcal{O}S$ decimos que $V$ está \emph{bastante por debajo} de $U$, y lo denotamos por $V\prec U$, si $\overline{V}\subseteq U$.
+\end{dfn}
+
+Notemos que la definición anterior no está aun en el lenguaje de retículas de abiertos, pero hay una manera de arreglarla, pues en $\mathcal{O}S$ existen los pseudocomplementos, es decir, para todo $U\in \mathcal{O}S$ existe un mayor elemento $V\in \mathcal{O}S$ tal que $U\cap V=\emptyset$. De esta manera, para $V^*=S\setminus \overline{V}$, tenemos
+
+\[
+V\prec U \Leftrightarrow \overline{V}\subseteq U\Leftrightarrow U\cup V^*=S.
+\]
+
+Así, la noción de regularidad sin puntos está dada por lo siguiente.
+
+\begin{prop}\label{Regs}
+    Decimos que un espacio $S$ es regular si y solo si se cumple lo siguiente:
+\begin{description}
+\item[$(\mathbf{reg_S})$] Para todo  $U\in \mathcal{O}S$, $U=\bigcup\{V\mid V\prec U\}$.
+\end{description}
+\end{prop}
+
+\begin{proof}
+    \begin{description}
+        \item[$\Rightarrow )$] Supongamos que $S$ es regular y sea $U\in \mathcal{O}S$. Para $x\in U$ consideramos $A=S\setminus U$ y por la regularidad tenemos que existe $V_x, W\in \mathcal{O}S $ tales que $x\in V_x$, $A\subseteq W$ y $V_x\cap W=\emptyset$. Como $A\subseteq W$, entonces $W\cup U=S$, de aquí que $x\in V_x\succ U$. Por lo tanto 
+        \[
+        U=\bigcup\{V_x\mid x\in S\}\subseteq \bigcup\{V\mid V\succ U\}\subseteq U
+        \]
+        \item[$\Leftarrow )$] Supongamos que $U=\bigcup\{V\mid V\succ U\}$ y ses $x\notin A$ donde $A\in \mathcal{C}S$. De aquí que $x\in U=S\setminus A$ y por lo tanto $x\in V$ para algún $V\succ U$. De aquí que, para $W=S\setminus \overline{V}$, $A\subseteq W$ y $V\cap W=\emptyset$, es decir, se cumple la regularidad. 
+    \end{description}
+\end{proof}
+
+Equivalentemente a lo que hicimos en la sección anterior 
+\[
+T_{3_S}=(\mathbf{reg_S})+T_{1_S}.
+\]
+
+\subsection{Completamente regular sin puntos}
+
+Recordemos que si $S$ es un espacio completamente regular, entonces $S$ es regular. Con esto en mente podríamos esperar que la traducción de completamente regular tenga relación con la noción bastante por debajo. La manera más natural de realizarlo sería interpolando $\prec$, es decir, si para $U, V$ abiertos tales que $V\prec U$, existe $W$ abierto para el cual $V\prec W \prec U$, pero eso no es del todo cierto.\\
+
+Para reparar esto, consideremos el conjunto $D$ de los racionales diádicos en el intervalo unitario cerrado $\mathbb{I}\subseteq \mathbb{R}$, es decir,
+
+\[
+D=\{\frac{k}{2^n}\mid n\in \mathbb{N}, k=0, 1, \dots , 2^n\}.
+\]
+
+
+\begin{dfn}\label{Cdebajo}
+    Para $U,V\in \mathcal{O}S$, decimos que $V$ está \emph{completamente por debajo} de $U$, denotado por $V\prec\prec U$, si existen abiertos $U_d$, con $d\in D$, tales que 
+
+    \[
+    U_0=V, \qquad U_1=U, \qquad U_d\prec U_e,
+    \]
+    es decir, $\overline{U_d}\subseteq U_e$ para $d<e$.
+\end{dfn}
+
+Notemos lo siguiente:
+
+\begin{itemize}
+    \item Si $V'\subseteq V\prec \prec U\subseteq U'$, entonces $V'\prec \prec U'$.
+    \item La relación $\prec\prec$ es interpolativa.
+    \item Si $W$ interpola $\prec\prec$, entonces $W$ interpola $\prec$.
+\end{itemize}
+
+Recordemos que la noción de completamente regular realiza la separación entre un punto $x\in S$ y un subconjunto cerrado $A\subseteq S$ a través de una función continua. La función definida en el siguiente resultado es la que nos va a funcionar para nuestra proxima traducción. 
+\begin{prop}\label{Fcontinua}
+    Para un espacio topológico $S$ consideremos $U_d\in \mathcal{O}S$, con $d\in D$, tal que $U_0=V$, $U_1=U$ y $U_d\succ U_e$, para $d<e$. Definimos 
+    \[
+    \Phi(x)=\inf\{d\mid x\in U_d\}.
+    \]
+    Entonces $\Phi$ es continua.
+\end{prop}
+
+Así, usando la Definición \ref{Cdebajo} y la Proposición \ref{Fcontinua}, tenemos 
+
+\begin{prop}\label{Crs}
+    Decimos que un espacio topológico $S$ es completamente regular si y solo si se cumple lo siguiente:
+\begin{description}
+\item[$(\mathbf{creg_S})$] para todo $U\in \mathcal{O}S, U=\bigcup\{V\mid V\prec \prec U\}$.
+\end{description}
+\end{prop}
+
+\begin{proof}
+    \begin{description}
+        \item[$\Rightarrow )$] Sea $S$ completamente regular. Consideremos $U\in\mathcal{O}S$ y $x\in U$. Entonces $x\in S\setminus U$ y por lo tanto existe una función continua $f\colon S\to \mathbb{I}$ tal que $f(x)=0$ y $f(y)=1$ para $y\notin U$. Para $d\in D$ consideramos
+        \[
+        U_d=f^{-1}([0, \frac{1+d}{2}))\;\mbox{ y } \;B_d=f^{-1}([0,\frac{1+d}{2}]),
+        \]
+        de aquí que $U_d\in \mathcal{O}S$ y $B_d\in \mathcal{C}S$ y para $d<e$, $B_d\subseteq U_e$. Así $B_d=\overline{U_d}\subseteq U_e$, es decir, $U_d\succ U_e$. Y por la Definición \ref{Cdebajo} tenemos que para $U(x)=U_0\succ\succ U_1$. Como $x\in U(x)$ y $U_1\subseteq U$, por la interpolatividad de $\succ\succ$, tenemos que $x\in U(x)\succ\succ U$. Por lo tanto
+        \[
+        U=\bigcup \{U(x)\mid x\in S\}\subseteq \bigcup \{V\mid V\succ\succ U\}\subseteq U
+        \]
+        \item[$\Leftarrow )$] Supongamos que $U=\bigcup\{V\mid V\succ\succ U\}$ se cumple y consideremos $A\in\mathcal{C}S$ tal que $x\notin A$. Para $U=S\setminus A$, entonces $x\in U$ y por  hipótesis tenemos $V\succ\succ U$ tal que $x\in V$. Si tomamos un sistema $(U_d)_{d\in D}$ como testigo para $V=U_0\succ \succ U_1=U$ y la función continua definida en la Proposición \ref{Fcontinua} vemos que $\Phi(x)=0$, pues $x\in U_d$, para $d\in D$, en particular para $U_0$ y $0$ es el menor de los $d$. Para $y\in A$, 
+        \[
+        \Phi(y)=\inf\{d\mid y\in U_d\},
+        \]
+        pero $y\in A$, es decir, $y\notin U_d$ para $d\in D$, entonces $d\mid y\in U_d\}=\emptyset$, de aquí que $\Phi(y)=1$ y se cumple la definición de completamente regular.
+    \end{description}
+\end{proof}
+Por lo tanto 
+\[
+T_{3\frac{1}{2}_S}=(\mathbf{creg_S})+T_{1_S}.
+\]
+
+\subsection{Normalidad sin puntos}
+
+La normalidad es una noción que está enunciada sin el uso de puntos. De esta manera su traducción al lenguaje de retículas de conjuntos abiertos es más sencilla. En la normalidad separamos cualesquiera dos conjuntos cerrados distintos por medio de dos abiertos disjuntos.\\
+
+Para un espacio $S$, consideremos $A, B \in \mathcal{C}S$, entonces $X=S\setminus A$ y $Y=S\setminus B$ están en $\mathcal{O}S$. Además, $A\subseteq U$ y $B\subseteq V$, para abiertos $U$ y $V$, si y solo si $X\cup U= Y\cup V=S$. Lo anterior nos proporciona la versión sin puntos de la normalidad.
+\begin{prop}
+    Decimos que que un espacio topológico $S$ es normal si y solo si se cumple lo siguiente:
+\begin{description}
+\item[$(\mathbf{norm_S})$] Para $X, Y\in \mathcal{O}S$, con $X\cup Y=S$ existen $U, V\in \mathcal{O}S$ tales que
+\end{description}
+\[
+X\cup U=S, \qquad Y\cup V=S,\qquad U\cap V=\emptyset.
+\]
+\end{prop}
+Por lo tanto 
+\[
+T_{4_S}=(\mathbf{norm_S})+T_{1_S}.
+\]
+
+\subsection{Axiomas de separación en la categoría $\mathbf{Frm}$}
+Sabemos que si $S$ es un espacio topológico, $\mathcal{O}S$ es un marco. Todo lo que hemos hecho en esta sección es dar la equivalencia de las propiedades de separación en términos de elementos en $\mathcal{O}S$, es decir, para un marco particular. En este punto debemos preguntarnos lo siguiente, ¿qué pasa para un marco $A$ arbitrario?\\
+
+Para responder la pregunta anterior lo único que necesitamos hacer es trasladar las nociones presentadas considerando elementos arbitrarios en un marco $A$ en lugar de conjuntos abiertos en $\mathcal{O}S$. La siguiente es la equivalencia de bastante por debajo en la teoría de marcos.
+
+\[
+a\prec b \equiv_{dm} \exists \; c\in A \mbox{ tal que } a\wedge c=0 \mbox{ y } b\vee c=1
+\]
+donde $a, b\in A$.\\
+
+Con esto en mente, podemos dar la respectiva equivalencia para que un marco sea regular y completamente regular.  Usaremos $m$ como subíndice para indicar que las nociones están dadas en el lenguaje de marcos.
+
+\begin{description}
+\item[$(\mathbf{reg_m})$] $\forall\, a\in A, a=\bigvee\{x\in A\mid x\prec a\}$.
+\item[$(\mathbf{creg_m})$] $\forall\, a\in A, a=\bigvee\{x\in A\mid x\prec \prec a\}$.
+\end{description}
+
+Ahora damos la noción de normalidad para marcos.
+
+\begin{description}
+\item[$(\mathbf{norm_m})$] $\forall\, a, b\in A, \mbox{ tales que } a\vee b=1, \exists\, u, v\in A\mbox{ tales que }$
+\[
+ a\vee u=b\vee v=1 \mbox{ y } u\wedge v=0
+\]
+\end{description}
+
+\section{Las nociones de subajustado y ajustado}
+
+Estas nociones aparecieron en la literatura como propiedades bajas de separación, ideales para ser tratadas en el contexto sin puntos, subajustado fue la primera en ser enunciada. En 1938, Wallman la presento con el nombre de propiedad disyuntiva (ver \cite{H.W.}). Años más tarde se formula su noción dual, conocida como propiedad conjuntiva y es la manera en la que actualmente se trabaja con la propiedad de que un espacio sea subajustado. Con la intención de resolver algunos defectos categóricos que presentaba esta noción, se introduce la propiedad de espacio ajustado. Como veremos más adelante, esta última implica subajustado.\\
+
+De manera similar a como presentamos los axiomas de separación, daremos dos versiones diferentes (pero equivalentes entre si), de subajustado y ajustado. A estas las llamaremos nociones de primer orden y segundo orden, según la forma en la que sean enunciada. 
+
+\subsection{Subajustado}
+
+Para comenzar a hablar de esta noción consideremos un espacio $S$ y $\mathcal{C}S$ su retícula de conjuntos cerrados. Wallman presenta la propiedad disyuntiva como
+\[
+\mbox{Si }A\neq B, \exists\; C\subseteq S \mbox{ tal que }A\cap C\neq \emptyset=S\cap C
+\]
+donde $A, B, C\in \mathcal{C}S$.\\
+
+Notemos que para efectos de la teoría que nos interesa desarrollar, necesitamos la noción dual, que como mencionamos al principio de esta sección, fue presentada como propiedad conjuntiva, actualmente subajustado. 
+
+\begin{dfn}\label{saju}
+Diremos que un espacio $S$ es \emph{subajustado} si
+
+\begin{description}
+    \item[$(\mathbf{saju})$] para $A\nsubseteq B$ $\exists\; C\subseteq S$ tal que $A\cup C=S\neq B\cup C$, donde $A, B, C\in \mathcal{O}S$.
+\end{description}
+\end{dfn}
+A la forma en la que está enunciada esta noción la denominaremos como \emph{de primer orden}. De manera similar a como trabajamos con los axiomas de separación, debemos notar que la definición anterior está dada únicamente para el marco $\mathcal{O}S$. Podemos obtener una definición más general si sustituimos $\mathcal{O}S$ por un marco arbitrario $L$ y los conjuntos abiertos $A, B, C$ por elementos en el marco $a, b, c$. Por último, debemos sustituir las operaciones \emph{unión} (\emph{intersección}), por \emph{supremo} (\emph{ínfimo}), respectivamente.
+
+\begin{thm}\label{Saju1}
+    Un espacio es subajustado, es decir $\mathcal{O}S$ satisface $(\mathbf{saju})$, si y solo si para cada $x\in S$ y cada abierto $U\in \mathcal{O}S$ existe $y\in S$ tal que $y\in \overline{\{x\}}$ con $\overline{\{y\}}\subseteq U$.
+\end{thm}
+
+\begin{proof}
+    \begin{description}
+        \item[$\Rightarrow )$] Supongamos que el espacio $S$ es subajustado y sea $U\ni x$ un abierto. Como $U\nsubseteq U\setminus \overline{\{x\}}$, por $(\mathbf{saju})$, existe $W\in \mathcal{O}S$ tal que 
+        \begin{equation}\label{Csaju1}
+            U\cup W=S \quad\mbox{ y }\quad(U\setminus\overline{\{x\}})\cup W\neq S.
+        \end{equation}
+        Tomando $y\notin (U\setminus\overline{\{x\}})\cup W$. Entonces 
+        \begin{equation}\label{Csaju2}
+            y\notin U\setminus\overline{\{x\}}, \quad y\notin W, \quad y\in \overline{\{x\}}.
+        \end{equation}
+        Sea $z\notin U$ para algún $z\in \overline{\{y\}}$, por \ref{Csaju1}, $z\in W$. Al ser $W$ abierto, $y\in W$, lo cual contradice \ref{Csaju2}. Por lo tanto se debe cumplir que $\overline{\{y\}}\subseteq U$.
+        \item[$\Leftarrow )$] Consideremos $U\nsubseteq V$.  Sean $x\in U\setminus V$ y $y\in S$ tal que $y\in \overline{\{x\}}$ con $\overline{\{y\}}\subseteq U$. Entonces para $W=S\setminus \overline{\{y\}}$ se cumple que $W\cup U=S$ y $y\notin W\cup V$, pues si $y\in V$, entonces $x\in V$, lo cual no ocurre. Por lo tanto $W\cup V\neq S$, es decir $S$ es subajustado.
+    \end{description}
+\end{proof}
+
+Subajustado resulta ser más débil que la propiedad $T_1$. Por ejemplo, si consideramos el espacio $\omega +1=\{0, 1, 2, \dots \}\cup \{\omega\}$ donde $U\in \mathcal{O}\omega +1$ si $\omega\in U$ o $U=\emptyset$, este es un espacio que cumple $(\mathbf{saju})$, pero no es $T_1$.
+
+\begin{prop}
+    $T_D$ y $(\mathbf{saju})$ coinciden con $T_1$.
+\end{prop}
+
+\begin{proof}
+    Sabemos que $T_1$ implica subajustado y $T_D$. Ahora consideremos un espacio $S$ que es $T_D$ y subajustado. Por $T_D$ elegimos un abierto $U\ni x$ tal que $U\setminus \{x\}$ es abierto. Al ser subajustado tenemos que existe $W\in \mathcal{O}S$ tal que 
+    \[
+    W\cup U=S\neq W\cup (U\setminus \{x\}).
+    \]
+    Entonces $W\cup (U\setminus\{x\}=(W\cup U)\cap (W\cup S\setminus\{x\}=S\setminus\{x\}$ el cual es un conjunto abierto. Por lo tanto $\{x\}$ es cerrado, es decir, $S$ es $T_1$.
+\end{proof}
+
+\begin{cor}
+    $T_D$ y $(\mathbf{saju})$ son incomparables.
+\end{cor}
+
+Notemos que la normalidad más $T_0$ no implican completamente regular (y en consecuencia no implican regularidad), para solucionar esto lo que hicimos en la Sección \ref{Preliminares} fue pedir que los espacios fueran $T_1$. Con la noción de subajustado podemos pedir menos que esto.
+
+\begin{prop}
+    Un espacio subajustado y normal es regular.
+\end{prop}
+
+\begin{proof}
+    Sea $S$ un espacio normal y subajustado y supongamos que no se cumple 
+    \[
+    U\neq \bigcup\{V\in \mathcal{O}S\mid V\succ U\}.
+    \]
+    Por $(\mathbf{saju})$ existe $W\in\mathcal{O}S$ tal que 
+    \[
+    W\cup U=S\quad\mbox{ y }\quad W\cup \bigcup\{V\in \mathcal{O}S\mid V\succ U\}\neq S.
+    \]
+    Por la normalidad existen $U_1, U_2\in \mathcal{O}S$ tales que 
+    \[
+    U\cup U_1=W\cup U_2=S\quad\mbox{ y }\quad U_1\cap U_2=\emptyset.
+    \]
+    De aquí que $\overline{U_2}\subseteq U$ lo cual implica que $U_2\succ U$. \\
+    
+    \noindent
+    Así $U_2\subseteq\bigcup\{V\in \mathcal{O}S\mid V\succ U\}$. Luego $W\cup\bigcup\{V\in \mathcal{O}S\mid V\succ U\}=S$ lo cual es una contradicción. Por lo tanto $U=\bigcup\{V\in \mathcal{O}S\mid V\succ U\}$.
+    \end{proof}
+    
+El resultado anterior es válido para la normalidad y la regularidad sin puntos.\\
+
+Para establecer ($\textbf{saju}$) consideramos un elemento $b\neq 0$. Si quitamos esta restricción obtenemos la noción de \emph{débilmente subajustado}.
+
+\begin{description}
+    \item[$(\textbf{dsaju})$] para $a\neq 0$ $\exists\, c\neq 1$ tal que $a\vee c=1$.
+\end{description}
+
+Para un espacio $S$, el marco $\mathcal{O}S$ es débilmente subajustado si y solo si cada conjunto abierto no vacío contiene un conjunto cerrado no vacío, en otras palabras,
+
+\[
+\forall\, U\in \mathcal{O}S, \mbox{ con } U\neq \emptyset, \exists\, x\in U \mbox{ tal que } \overline{\{x\}}\subseteq U.
+\]
+Como su nombre nos lo sugiere, débilmente subajustado es más débil que subajustado.
+
+\begin{ej}
+    Consideremos $S=\mathbb{N}\cup \{\omega_1, \omega_2\}$ dotado de la topología 
+    \[
+    \{A\mid A\subseteq \mathbb{N}\}\cup \{A\cup \{\omega_1\}\mid A\subseteq \mathbb{N}\}\cup \{A\cup \{\omega_1,\omega_2\}\mid A\subseteq \mathbb{N}\}\cup \{\emptyset\}
+    \]
+    con $\mathbb{N}\setminus A$ finito. Notemos que $\overline{\{n\}}=\{n\}$ para todo $n\in \mathbb{N}$, $\overline{\{\omega_1\}}=\{\omega_1, \omega_2\}$ y $\overline{\{\omega_2\}}=\{\omega_2\}$. $\mathcal{O}S$ es débilmente subajustado (ya que cada abierto no vacío contiene un conjunto cerrado $\{n\}$ para $n\in \mathbb{N}$), pero no es subajustado pues no satisface la condición del Teorema \ref{Saju1}. Si consideramos $U=\mathbb{N}\cup \{\omega_1\}in \mathcal{O}S$ y $x=\omega_1\in U$ tenemos $\overline{\{x\}}=\{\omega_1,\omega_2\}$, pero 
+    \[
+    \overline{\{\omega_1\}}, \overline{\{\omega_1\}}\nsubseteq U.
+    \]
+\end{ej}
+
+Existe mucha información sobre la relación que existe entre $(\mathbf{saju})$ y $(\mathbf{dsaju})$. Nuestro objetivo no es abordar todo esto. Para quien este interesado en consultar más detalle, consultar \cite{J.P.2}. Por el momento solo nos concentraremos en algunos detalles y caracterizaciones entre subajustado y ajustado.
+
+\subsection{Ajustado}
+
+Es el momento de analizar esta noción que fue dada por Isbell para solucionar los defectos categóricos que presentaba subajustado (ver \cite{Ib.}). Comenzaremos abordando nuevas caracterizaciones de marcos subajustados para después trasladarlas a los marcos ajustados.\\
+
+A partir de este momento, comenzaremos a trabajar con cuestiones locálicas, por ende, comenzaremos a usar términos como ``sublocal'', ``sublocal abierto'' y ``sublocal cerrado'' ($o(\_)$ y $c(\_)$, respectivamente), los anteriores fueron introducidos en \ref{ca y oa}. Para ver información sobre sublocales y su correspondencia con los núcleos, sugerimos consultar \cite{J.M.} o \cite{A.Z.}.  
+
+\begin{prop}\label{Cerradosaju}
+    Sea $L$ subajustado. Entonces para cada sublocal $S\neq L$ existe un sublocal cerrado no vacío $c(a)$ tal que $c(a)\cap S=\mathbf{0}$, donde $\mathbf{0}$ es el sublocal correspondiente al elemento $1$.
+\end{prop}
+
+\begin{proof}
+    Por contrapositiva, consideremos $S\subseteq L$ disjunto de todo sublocal cerrado no vacío, es decir, 
+    \[c(a)\cap S=\mathbf{0}\]
+    donde $\mathbf{0}=\{1\}$ es el sublocal correspondiente al elemento $1$ y $c(a)\neq \mathbf{0}$. Sea $j_s$ el núcleo asociado a $S$, es decir,
+    \[
+    j_S(x)=\bigwedge\{s\in S\mid x\leq s\}.
+    \]
+    Notemos que si $j_S(a)=1$, entonces $a=1$. Consideremos $x\in L$ arbitrario y sea $c\vee j_S(x)=1$. Sabemos que $j_S(c\vee x)\leq c\vee j_S(x)=1$. De aquí que $c\vee x=1$. Por $(\mathbf{saju})$, $c\vee x=1=c\vee j_S(x)$, entonces $j_S(x)\leq x$ y por lo tanto $j_S(x)=x$, es decir $x\in S$ y $L\subseteq S$. Por lo tanto $S=L$. 
+\end{proof}
+
+El siguiente resultado ejemplifica la cuestión que mencionamos al principio de esta sección en donde mencionamos que las nociones las distinguiremos como de primer orden y segundo orden.
+
+\begin{thm}\label{Saju2orden}
+    Las siguientes afirmaciones sobre un marco $L$ son equivalentes.
+    \begin{enumerate}
+        \item $L$ es subajustado.
+        \item El único sublocal de $L$ que es disjunto de un sublocal cerrado no vacío es el mismo $L$.
+        \item Cada sublocal abierto en $L$ es supremo de sublocales cerrados.
+    \end{enumerate}
+\end{thm}
+
+\begin{proof}
+    \begin{description}
+        \item[$1)\Rightarrow 2)$] Es la prueba del Teorema \ref{Cerradosaju}.
+        \item[$2)\Rightarrow 3)$] Consideremos un sublocal abierto $o(a)$ y sea 
+        \[
+        S=\bigvee\{c(b)\mid c(b)\subseteq o(a)\}.
+        \]
+        Sea $c(x)$ un sublocal cerrado disjunto de $c(a)\vee S$. De aquí que 
+        \[
+        c(x\vee a)=[x\vee a, 1]=[x, 1]\cap [a, 1]=c(x)\cap c(a)
+        \]
+        Notemos que por la forma en que consideramos a $c(x)$ tenemos que $c(x)\vee c(a)=\mathbf{0}$. Así $c(x)\subseteq o(a)$ y $c(x)\subseteq S$. Además. $c(x)\cap S=\mathbf{0}$, entonces $c(x)=\mathbf{0}$. Luego, por hipótesis, al ser $c(a)\vee S$ un sublocal cerrado y disjunto de un sublocal cerrado no vacío tenemos que $c(a)\vee S=L$. De aquí que $o(a)\subseteq S$ y $S\subseteq o(a)$. Por lo tanto $S=o(a)$.
+        \item[$3)\Rightarrow 1)$] \emph{\textbf{Afirmación:}} 
+        \begin{equation}\label{c(a)yo(b)}
+            c(a)\subseteq o(b)\Leftrightarrow a\vee b=1
+        \end{equation}
+        \emph{\textbf{Prueba de la afirmación:}} Supongamos que $c(a)\subseteq o(b)$. Notemos que 
+        \[
+        c(a\vee b)=c(a)\cap c(b)\subseteq o(a)\cap c(b)=\mathbf{0},
+        \]
+        es decir, $a\vee b=1$.\\
+
+        \noindent
+        Recíprocamente, supongamos $a\vee b=1$. Notemos que $c(a\vee b)=0$ y $c(a\vee b)=c(a)\cap c(b)=0$. Por lo tanto $c(a)\subseteq o(b)$.\\
+
+        Ahora, si $a\nleq b$, entonces $o(a)\nsubseteq o(b)$ y así existe $x\in L$ tal que $c(x)\subseteq o(a)$ y $c(x)\nsubseteq o(b), es decir, x\vee a=1$ y $x\vee b\neq 1$. Por lo tanto $L$ es subajustado
+    \end{description}
+\end{proof}
+
+La equivalencia $1)\Leftrightarrow 3)$ es lo que denominaremos como noción de \emph{segundo orden}. Para abreviarla únicamente nos referiremos a ella como \textbf{abierto como supremo}. Esta fue la forma en la que Isbell enuncio subajustado, para la noción de ajustado tenemos 
+\[
+\mbox{cada sublocal cerrado es ínfimo de sublocales abiertos}
+\]
+y de la misma manera que lo hicimos para subajustado, nos referiremos a ella como \textbf{cerrado como ínfimo}. Esta será nuestra noción de segundo orden para ajustado. La noción de primer orden vienen enunciada en el siguiente teorema.
+
+\begin{thm}\label{Teorema 4.4.1}
+    Cada sublocal cerrado en $L$ es ínfimo de abiertos si y solo si 
+    \begin{description}
+        \item[$(\mathbf{aju})$] $\forall a, b\in L,\, a\nleq b,\, \exists\, c\in L\mbox{ tal que }a\vee c=1 \mbox{ y }c\succ b\neq b$.
+    \end{description}
+\end{thm}
+
+\begin{proof}
+    Supongamos que $c(a)=\bigcap\{o(x)\mid x\in L\}$, por \ref{c(a)yo(b)}, es equivalente a 
+    \[
+    c(a)\subseteq\bigcap\{o(x)\mid x\in L\}\quad \mbox{ y }\quad c(a)\supseteq\bigcap\{o(x)\mid x\in L\},
+    \] 
+    que por \ref{c(a)yo(b)} es equivalente a
+    \[
+    c(a)\subseteq\bigcap\{o(x)\mid x\vee a=1\}\quad \mbox{ y }\quad c(a)\supseteq\bigcap\{o(x)\mid x\vee a=1\},
+    \]
+    es decir, si $b\in \bigcap\{o(x)\mid x\vee a=1\}$, entonces $b\in c(a)$. Todo lo anterior equivale a las afirmaciones
+    \[
+    a\vee x=1\quad \mbox{ y }\quad(x\prec b)=b\quad \Rightarrow \quad a\leq b
+    \]
+    donde $(x\succ b)=b$ se cumple por la correspondencia del sublocal abierto con el núcleo $v_x(b)$. Así, considerando la negación de la implicación anterior obtenemos $(\mathbf{aju})$.
+\end{proof}
+
+Veamos ahora que ajustado implica subajustado, para probar esto haremos uso de las nociones de primer orden. Supongamos que $L$ es ajustado, entonces considerando el $c$ de la fórmula tenemos que si $c\vee b=1$, entonces 
+\[
+b=(1\succ b)=((c\vee b)\succ b)=(c\succ b)\wedge(b\succ b)=(c\succ b),
+\]
+es decir, $b=(c\succ b)$, lo cual es equivalente a que si $b\neq (c\succ b)$, entonces $c\vee b\neq 1$ y recuperamos la fórmula de primer orden de $(\mathbf{saju})$.\\
+
+Las afirmaciones abierto como supremo y cerrado como ínfimos podrían parecer duales entre si, pero como vimos antes, ajustado es más fuerte. De hecho, como veremos más adelante, ajustado es equivalente a una afirmación más fuerte sobre sublocales arbitrarios.
+
+\begin{ej}\label{Saju no aju}
+La topología cofinita proporciona el ejemplo de un espacio que es subajustado, pero no es ajustado. Para verificar lo anterior basta calcular la implicación para cualesquiera dos subconjuntos $U, V\in S$, donde $S$ tiene la topología cofinita. Notemos que para este caso, $S$ es $T_1$ y en consecuencia, $S$ es subajustado. Con la información anterior y realizando los cálculos de la implicación podemos concluir que $S$ no cumple con la fórmula de primer orden de $(\mathbf{aju})$.
+\end{ej}
+
+Observemos que las nociones de segundo orden están enunciadas para los sublocales de un local, al trasladarlas a los subespacios abiertos y cerrados de un espacio son diferentes a las de ajustado y subajustado.
+
+\begin{prop}
+Las siguientes afirmaciones sobre un espacio $S$ son equivalentes.
+\begin{enumerate}
+    \item Cada subconjunto abierto $U\subseteq S$ es la unión de subconjuntos cerrados.
+    \item Cada subconjunto cerrado $A\subseteq S$ es la intersección de subconjuntos abiertos.
+    \item $S$ es un espacio simétrico.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+    \begin{description}
+        \item[$1)\Leftrightarrow 2)$] Sean $U$ abierto y $A=U'$ cerrado. Si $U=\bigcup A_i$, con $A_i$ cerrados
+        \[
+        A=U'=(\bigcup A_i)'=\bigcap A_i'
+        \]
+        donde $A_i$ son subconjuntos abiertos.
+        \item[$1)\Rightarrow 3)$] Si $x\notin \overline{\{y\}}$, entonces $x\in S\setminus \overline{\{y\}}$ y por $i)$ $\overline{\{x\}}\subseteq S\setminus \overline{\{y\}}$. Por lo tanto $\overline{\{x\}}\cap \overline{\{y\}}$ y $y\notin \overline{\{x\}}$. 
+        \item[$3)\Rightarrow 1)$] Sea $U$ abierto tal que $\overline{\{y\}}\subseteq U$, por la simetría $x\in \overline{\{y\}}$ si y solo si $y\in \overline{\{x\}}$. Ahora 
+        \[
+        U=\bigcup\{\overline{\{x\}}\mid x\in U\}
+        \]
+        y $\overline{\{x\}}$ es cerrado.
+    \end{description}
+\end{proof}
+
+\begin{prop}
+    Las siguientes afirmaciones sobre un espacio $S$ son equivalentes.
+    \begin{enumerate}
+        \item Cada subconjunto $M\subseteq S$ es la unión de subconjuntos cerrados.
+        \item Cada subconjunto $M\subseteq S$ es la intersección de subconjuntos abiertos.
+        \item $S$ es un espacio $T_1$.
+    \end{enumerate}
+\end{prop}
+
+\begin{proof}
+    \begin{description}
+        \item[$1)\Leftrightarrow 2)$] De manera similar a la proposición anterior, hacemos uso de las leyes de De Morgan. 
+        \item[$1)\Rightarrow 3)$] Consideremos $\{x\}\subseteq S$. Por hipótesis, $\{x\}$ es la unión de cerrados. Por lo tanto $\{x\}$ es cerrado.
+        \item[$3)\Rightarrow 1)$] Notemos que si $S$ es $T_1$, entonces $\{x\}$ es cerrado. Además 
+        \[
+        M=\bigcup\{\{x\}\mid x\in M\}. 
+        \]
+    \end{description}
+\end{proof}
+
+\subsection{Subajustado y ajustado en sublocales}\label{Sajuyaju en Sublocales}
+
+Es momento de ver como se comportan estas nociones para los sublocales de un local. En esta subsección enunciaremos los resultado necesarios para identificar bajo que circunstancias estas propiedades son hereditarias o no.\\
+
+Antes de comenzar, mostraremos primero una propiedad que cumple la implicación y el núcleo asociado a un sublocal. 
+
+\begin{prop}\label{nucleoimplicacion}
+    Si $s\in S$ entonces para el núcleo asociado $j_S$ y cualquier $a\in L$ se cumple que $a\succ s=j_S(a)\succ s$
+\end{prop}
+
+\begin{proof}
+    Por propiedades de la implicación, $a\leq j_S(a)$ si y solo si $(j_S(a)\succ s)\leq (a\succ s)$. Para la otra desigualdad, sabemos que $a\leq ((a\succ s)\succ s)$. Además, $s\leq ((a\succ s)\succ s)$ y por lo tanto  
+    \[
+    \begin{split}
+    j_S(a)\leq ((a\succ s)\succ s) & \Leftrightarrow (((a\succ s)\succ s)\succ s)\leq (j_S(a)\succ s)\\ & \Leftrightarrow (a\succ s)\leq (j_S(a)\succ s).
+    \end{split}
+    \]
+\end{proof}
+
+\begin{prop}\label{aju aju}
+    Cada sublocal de un marco ajustado es ajustado.
+\end{prop}
+
+\begin{proof}
+    Sea $L$ un marco ajustado y $S\subseteq L$ un sublocal. Si $a\nleq b$ en $S$, entonces $a\nleq b$ en $L$. Como $L$ existe $c\in L$ tal que $c\vee a=1$ y $(c\succ b)=b$. Consideremos $c'=j_S(c)$, entonces 
+    \[
+    c'\vee^S a\geq c'\vee a\geq c\vee a=1,
+    \]es decir, $c'\vee^S a=1$ y por la Proposición \ref{nucleoimplicacion} tenemos que $(c'\succ b)\neq b$. Por lo tanto $S$ es subajustado.
+\end{proof}
+
+\begin{thm}\label{aju saju}
+    Cada marco $L$ es ajustado si y solo si cada uno de sus sublocales es subajustado.
+\end{thm}
+
+\begin{proof}
+    \begin{description}
+        \item[$\Rightarrow )$] Si $L$ es ajustado, entonces por la Proposición \ref{aju aju} $S$ es ajustado lo cual implica que $S$ es subajustado. 
+        \item[$\Leftarrow )$] Por contradicción, supongamos que $S$ es subajustado y que $L$ no es ajustado. Entonces existen $a\nleq b$ tales que para cada $u\in L$ se cumple $a\vee u=1$ y $(u\succ b)=b$. Consideremos el conjunto 
+        \[
+        S=\{x\mid a\vee u=1\; \Rightarrow (u\succ x)=x\}
+        \]
+        \emph{\textbf{Afirmación:}} $S$ es un sublocal.\\
+
+        \noindent
+        \emph{\textbf{Prueba de la afirmación:}} 
+        \begin{enumerate}
+            \item $1\in S$, pues si $a\vee u=1$, entonces $(u\succ 1)=1$.
+            \item Si $x_i$ y $a\vee u=1$, entonces $(u\succ x_i)=x_i$ para todo $i$ y por lo tanto
+            \[
+            (u\succ \bigwedge x_i)=\bigwedge (u\succ x_i)=\bigwedge x_i,
+            \]
+            de modo que $\bigwedge x_i\in S$.
+            \item Consideremos $x\in S$, $y\in L$ y $a\vee u=1$. Luego
+            \[
+            (u\succ (y\succ x))=(y\succ (u\succ x))=(y\succ x),
+            \]
+            de aquí que $(y\succ x)\in S$. Por lo tanto $S$ es un sublocal.
+        \end{enumerate}
+        Así $S$ es subajustado. Notemos que $a, b\in S$, pues si $a\vee u=1$ entonces 
+        \[
+        a=((a\vee u)\succ a)=(a\succ a)\wedge (u\succ a)=(u\succ a).
+        \]
+        De está manera, como $a\nleq b$ existe $c\in S$ tal que $a\vee^S c=1\neq b\vee^S c$. Recordemos que, en general, el supremo en $S$ puede ser más grande que cuando se toma en $L$. Sin embargo, si $a\vee u=1$ entonces
+        \[
+        (u\succ (a\vee c))=\bigwedge \{x\in S\mid u\vee x=1, \; x\geq a\vee c\}=a\vee c,
+        \]
+        pues $u\vee a\vee c=1$. Por lo tanto $a\vee c\in S$ y éste coincide con $a\vee^S c$. De aquí que $a\vee^Sc=1=a\vee c$ y $1=(c\succ c)=c$ lo cual es una contradicción. Así $L$ es ajustado.
+    \end{description}
+\end{proof}
+
+\begin{cor}\label{saju no saju}
+    Subajustado no es una propiedad hereditaria. 
+\end{cor}
+
+El Ejemplo \ref{Saju no aju} nos proporciona un espacio subajustado que no es ajustado. Para este caso particular, si consideramos el espacio $S$ con la topología cofinita, el marco $\mathcal{O}S$ es subajustado. Además, $\mathcal{O}S$ tiene muchos sublocales que no son subajustados, usando las fórmulas para $U\succ V$, se puede comprobar que las $3-$cadenas $S_x=\{\emptyset, S\setminus \{x\}, S\}$, donde $x$ varia en $S$, no son subajustados. Por lo tanto $\mathcal{O}S$ es subajustado, pero $S_x$ no lo es. Sin embargo, subajustado se hereda en algunos casos importantes.\\
+
+La prueba del siguiente resultado usa el hecho de que para cualquier $a\in L$ se cumple que 
+\[
+o(a)\cap S=o_S(j_S(a))\quad\mbox{ y }\quad c(a)\cap S=c_S(j_S(a)).
+\]
+Por lo tanto, si $a\in S$ tenemos que $o_S(a)=o(a)\cap S$ y $c_S(a)=c(a)\cap S$.
+
+\begin{thm}\label{saju complementado}
+    Sea $S$ un sublocal complementado de un marco $L$ subajustado. Entonces $S$ es subajustado.
+\end{thm}
+
+\begin{proof}
+    Sea $o_S(a)$ un sublocal abierto en $S$, entonces $o_S(a)=o(a)\cap S$ con $o(a)$ abierto en $L$. Luego como $L$ es subajustado se cumple que 
+    \[
+    o(a)=\bigcup_{i\in \mathcal{J}} c(b_i),
+    \]
+    donde $c(b_i)$ son sublocales cerrados en $L$. Como $S$ es complementado, podemos distribuir supremos arbitrarios con intersecciones finitas, es decir, 
+    \[
+    o_S(a)=o(a)\cap S=\bigcup_{i\in \mathcal{J}}c(b_i)\cap S=\bigcup_{i\in \mathcal{J}}(c(b_i)\cap S)=\bigcup_{i\in \mathcal{J}}c_S(j_S(b_i)).
+    \]
+    Por lo tanto cada sublocal abierto en $S$ se puede ver como supremo de cerrados en $S$, es decir, $S$ es subajustado. 
+\end{proof}
+
+Para terminar esta sección mostramos un diagrama en el que se recopilan caracterizaciones para las nociones $\mathbf{(aju)}$, $\mathbf{(saju)}$ y $\mathbf{(dsaju)}$. Para consultar las pruebas de todas estas, consultar \cite{J.P.2}.
+
+\[
+\begin{array}{ccl}
+   \mbox{Ajustado}  & \Longleftrightarrow & \mbox{cada sublocal es débilmente subajustado}  \\
+    \Downarrow &  & \\
+   \mbox{Subajustado}  & \Longleftrightarrow & \mbox{cada sublocal cerrado es débilmente subajustado}  \\
+    \Downarrow &  & \\
+   \mbox{Débilmente subajustado}  & \Longleftrightarrow & \mbox{cada sublocal abierto es dédilmente subajustado}  
+\end{array}
+\]
+
+\section{Axiomas tipo Hausdorff}
+
+Para el análisis sin puntos de los axiomas de separación, la propiedad de que un espacio sea Hausdorff (o $T_2$), necesita ser tratada con mayor detalle. Esto debido a que no existe solo una manera de que esta propiedad sea abordada, dependiendo el enfoque o el objeto de estudio, puede ser utilizada una ``traducción'' u otra.\\
+
+En esta sección presentamos las distintas nociones sin puntos tipo Hausdorff que existen hasta el momento. Cabe mencionar que estas fueron enunciadas por diferentes matemáticos y algunas de ellas salieron a la luz casi al mismo tiempo. Cada una de las subsecciones posteriores serán dedicadas a presentarlas. Anexamos a las referencias bibliográficas los artículos originales donde estas se enunciaron. Sin embargo, de manera alternativa se puede consultar \cite{J.P.2}, donde su Capítulo 3 muestra gran parte de la información aquí contenida. También, aclaramos que los diferentes resultados que abordaremos serán presentados sin prueba, pero todos estos pueden encontrarse en las mismas referencias.\\
+
+La razón por la cual se trabaja con diferentes nociones de que un marco sea Hausdorff se debe al comportamiento de cada una de ellas. Algunas son propiedades \emph{conservativas} e incluso equivalentes entre si. En otras existe un buen comportamiento espacial. Dependiendo el uso que se les quiera dar podemos encontrar diferentes aplicaciones. Parte de nuestra análisis consiste en decidir (en caso de que se pueda), cual es la mejor de todas ellas y hacer uso de estas para caracterizar un fenómeno topológico que tiene relación con algo que se le conoce como ``espacio de parches''. Esto podría ser presentado para futuras notas.\\
+
+Antes de entrar en detalles, necesitamos una definición fundamental para las comparaciones entre los diferentes nociones que aquí serán presentadas.
+
+\begin{dfn}\label{Pconservativa}
+    Consideremos $A\in \mathbf{Frm}$. Para $S\in \mathbf{Top}$ decimos que una propiedad en marcos es \emph{conservativa} si la propiedad vista en el marco de abiertos coincide con la noción espacial.
+\end{dfn}
+ Un ejemplo de propiedad conservativa es la regularidad. Lo que probamos en la Proposición \ref{Regs} es precisamente el argumento de que una propiedad sea conservativa
+ \[
+ \mbox{Propiedad espacial en } S\Leftrightarrow \mbox{Propiedad}_S \mbox{ en }\mathcal{O}S
+ \]
+ donde $\mbox{Propiedad}_S$ hace referencia a propiedad sin puntos.
+
+\subsection{Marcos débilmente Hausdorff}
+
+Esta noción fue enunciada por Dowker y Papert Strauss (ver \cite{D.P.}). Esta viene motivada por el hecho de ver la propiedad de ser Hausdorff como algo más fuerte que ser $T_1$. En la sección anterior se probo que $\mathbf{(saju)}+T_D=T_1$, el axioma \emph{débilmente Hausdorff} (y que denotaremos por $\mathbf{dH}$), hace algo similar. Unas ligeras modificaciones de esta propiedad dan origen a cierta jerarquía, que al juntarlas con subajustado, resultan ser una equivalencia.\\
+
+\begin{description}
+    \item[$\mathbf{(dH)}$] Si $a\vee b=1$ y $a, b\neq 1$, entonces existen $u, v$ tales que $u\nleq a$, $v\nleq b$ y $u\wedge v=0$. 
+\end{description}
+
+La siguiente noción es ligeramente más fuerte que \textbf{(dH)}.
+
+\begin{description}
+    \item[$\mathbf{(dH')}$] Si $a\nleq b$ y $b\nleq a$, entonces existen $u, v$ tales que $u\nleq a$, $v\nleq b$ y $u\wedge v=0$. 
+\end{description}
+
+Esta última es la más fuerte de esta jerarquía
+
+\begin{description}
+    \item[$\mathbf{(dH'')}$] Si $a\nleq b$ y $b\nleq a$, entonces existe $u, v$ tales que $u\nleq a$, $v\nleq b$, $u\leq b$, $v\leq a$ y $u\wedge v=0$.  
+\end{description}
+
+De esta manera tenemos lo siguiente
+\[
+\mathbf{(dH'')}\Rightarrow \mathbf{(dH')}\Rightarrow \mathbf{(dH)}.
+\]
+Estas tres condiciones no son conservativas y sin \textbf{(saju)} no son suficientemente Hausdorff. Por ello, Dowker y Papert Strauss sugirieron como un axioma tipo Hausdorff conveniente la combinación \textbf{(dH)} + \textbf{(saju)}. De hecho, esta propiedad es conservativa. 
+
+\begin{prop}\label{Proposicion2.3.1}
+    Para un marco subajustado las condiciones $\mathbf{(dH)}$, $\mathbf{(dH')}$ y $\mathbf{(dH'')}$ son equivalentes.
+\end{prop}
+
+\subsection{Marcos Hausdorff}
+
+La noción que ahora veremos es presentada por Paseka y Smarda quienes observaron la propiedad de Hausdorff como una regularidad débil (ver \cite{P.S.}). Con esto en mente, ellos sugieren una modificación de la relación mostrada en la Definición \ref{Bdebajo} dada por ``$\prec$'' y reemplazándola por una un poco más débil, denotada por ``$\sqsubset$''. 
+
+\begin{dfn}\label{sqsubset}
+    Para un espacio topológico $S$ y cualesquiera $U, V\in \mathcal{O}S$ decimos que $U$ se relaciona con $V$ por medio de $\sqsubset$, denotado por $U\sqsubset V$, si y solo si 
+    \[
+    U\subseteq V\quad\mbox{ y }\quad \overline{U}\cup V\neq S.
+    \]
+\end{dfn}
+
+\begin{prop}\label{Proposicion3.2}
+    Un espacio $S$ que es $T_0$ es Hausdorff ($T_2$) si y solo si para todo $V\in \mathcal{O}S$, con $V\neq S$, tenemos que 
+    \[
+    V=\bigcup\{U\mid U\sqsubset V\}
+    \]
+    donde $U\in \mathcal{O}S$.
+\end{prop}
+
+Notemos que en la condición $\overline{U}\cup V\neq S$ se cumple si y solo si $S\setminus \overline{U}\nsubseteq V$. De esta manera, podemos reescribir la Definición \ref{sqsubset} como 
+\[
+U\sqsubset V\Leftrightarrow U\subseteq V\quad{ y }\quad U^*\nsubseteq V
+\]
+
+De esta manera, para un marco $L$ podemos escribir la siguiente noción sin puntos de $T_2$.
+\begin{description}
+    \item[$\mathbf{(T_{2_S}})$] Si para $a\in L$, con $a\neq 1$, entonces $a=\bigvee\{u\in L\mid u\sqsubset a\}$, 
+\end{description}
+donde $u\sqsubset a$ si y solo si $u\leq a$ y $u^*\nleq a$.\\
+
+Notemos que $\bigvee\{u\in L\mid u\sqsubset a\}\leq a$ de esta manera $T_{2_S}$ es equivalente a afirmar que si $1\neq a\nleq b$ entonces existe un $v\sqsubset a$ tal que $v\nleq b$. Sustituyendo $u$ por $v^*$ obtenemos la siguiente modificación.
+
+\begin{description}
+    \item[$\mathbf{(T_{2_S})}$] Si $1\neq a\nleq b$, entonces existen $u, v\in L$ tales que $u\nleq a$, $v\nleq b$, $v\leq a$ y $u\wedge v=0$. 
+\end{description}
+
+En 1987 Johnstone y Shu-Hao (ver \cite{J.S.}), enunciaron la siguiente noción tipo Hausdorff y observaron que es equivalente a $T_{2_S}$.
+
+\begin{description}
+    \item[$\mathbf{(S_2)}$] Si $1\neq a\nleq b$. entonces existen $u, v\in L$ tales que $u\nleq a$, $v\nleq b$ y $u\wedge v=0$. 
+\end{description}
+
+\begin{prop}\label{Proposicion3.3.1}
+    $\mathbf{(S_2)}$ y $\mathbf{(T_{2_S})}$ son equivalentes.
+\end{prop}
+
+De esta manera tenemos dos nociones que son equivalentes y que fueran motivadas por direcciones muy diferentes. Así, podemos convenir en considerar la noción de Johnstone y Shu-Hao como la conveniente para decir que un marco es Hausdorff.
+
+\begin{dfn}\label{MarcoHausdorff}
+    Decimos que un marco $L$ es un \emph{marco Hausdorff} si cumple la siguiente propiedad
+    \begin{description}
+        \item[$\mathbf{(H)}$] Para cualquier $1\neq a\nleq b\in L$ existen $u, v\in L$ tales que $u\nleq a$, $v\nleq b$ y $u\wedge v=0$. 
+    \end{description}
+\end{dfn}
+En otras palabras, tenemos que un marco es Hausdorff si
+\begin{description}
+    \item[$\mathbf{(H)}$]  Para cualquier $1\neq a\nleq b\in L$ existe $u\in L$ tales que $u\nleq a$ y $u^*\nleq b$. 
+\end{description}
+
+Se puede verificar que, efectivamente, pedir que un marco sea Hausdorff es algo más fuerte que débilmente Hausdorff.\\
+
+\begin{obs}\label{Observacion3.4.1}
+Los marcos Hausdorff tienen un buen comportamiento conservativo, es decir, $S$ es un espacio Hausdorff si y solo si $\mathcal{O}S$ es un marco Hausdorff. Además, esta propiedad se hereda para sublocales y productos.
+\end{obs}
+
+\begin{prop}\label{Heredar H}
+    \begin{enumerate}
+        \item Un sublocal de un local Hausdorff es Hausdorff.
+        \item Un producto de locales Hausdorff es Hausdorff
+    \end{enumerate}
+\end{prop}
+
+\subsection{Marcos Hausdorff basados}
+
+La motivación de la siguiente noción viene dada por la equivalente noción sin puntos de que un marco sea $T_1$. Recordemos que un marco cumple $T_{1_S}$ si todo elemento $\wedge-$irreducible (o elemento primo), es máximo. Veamos que algo similar pasa para lo que definiremos como marcos Hausdorff basados. Antes de hacer eso necesitamos un poco de información.
+
+\begin{dfn}\label{Semiprimo}
+    Para un marco $L$ decimos que un elemento $p\in L$ es semiprimo si $a\wedge b=0$ implica que $a\leq p$ o $b\leq p$.
+\end{dfn}
+
+Obviamente cada elemento $\wedge-$irreducible es semiprimo. 
+
+\begin{prop}\label{Proposicion4.1.1}
+    Un espacio $S$ que es $T_0$ es Hausdorff si y solo si todos los elementos semiprimos $P\in \mathcal{O}S$ son maximales.
+\end{prop}
+
+Este análisis fue hecho por Rosicky y Smarda (ver \cite{Ro.S.}). Ellos introducen la siguiente noción.
+
+\begin{dfn}
+    Decimos que un marco $L$ es \emph{Hausdorff basado} si cumple la siguiente propiedad
+    \begin{description}
+        \item[$\mathbf{(Hb)}$] cada elemento semiprimo en $L$ es máximo. 
+    \end{description}
+\end{dfn}
+
+De esta manera, como asumimos que se cumple $T_0$, por la Proposición \ref{Proposicion4.1.1}, $\mathbf{(Hb)}$ es conservativa.
+
+\begin{prop}\label{Proposición4.2}
+    Cada marco Hausdorff es Hausdorff basado.
+\end{prop}
+
+Los marcos Hausdorff basados tienen un buen comportamiento categórico, lamentablemente no hay mucha información sobre estos marcos en la literatura.\\
+
+Considerando la siguiente relajación de $\mathbf{(Hb)}$ podemos ver que $\mathbf{(H)}$ y $\mathbf{(T_{1_S})}$ tienen un comportamiento similar que sus variantes sensibles a puntos.
+
+\begin{dfn}\label{DHausdorffbasado}
+    Decimos que un marco $L$ es \emph{débilmente Hausdorff basado} si cumple la siguiente propiedad
+    \begin{description}
+        \item[$\mathbf{(dHb)}$] cada elemento semiprimo en $L$ es $\wedge-$irreducible. 
+    \end{description}
+\end{dfn}
+
+Por lo tanto, tenemos las siguientes implicaciones
+
+\[
+\mathbf{(H)}\Rightarrow \mathbf{(Hb)}\Rightarrow \mathbf{(dHb)}\Rightarrow \mathbf{(T_{1_S})}.
+\]
+
+\subsection{Marcos fuertemente Hausdorff}
+
+Los espacios $T_2$ cumplen lo siguiente: \emph{Un espacio $S$ es $T_2$ si y solo si la diagonal $\Delta=\{(x,x)\in S\times S\mid x\in S\}$ es un subconjunto cerrado en $S\times S$.}\\
+
+Con esto en mente, Isbell da su noción tipo Hausdorff sin puntos, enunciada para el producto binario de sublocales (ver \cite{Ib.}). La desventaja de la variante presentada por Isbell es que esta propiedad no es conservativa, pero esto es compensado por otros méritos.\\
+
+Para un local $L$ consideramos el coproducto binario $L\oplus L$. En particular, tomemos las inyecciones al coproducto
+\[
+\iota_1=(a\mapsto a\oplus 1)\colon L\to L\oplus L\quad \mbox{ y }\quad \iota_2=(b\mapsto 1\oplus b)\colon L\to L\oplus L.
+\]
+
+El morfismo codiagonal $\Delta^*$ que satisface $\Delta^*\iota_i=id$ está dado por
+
+\[
+\Delta^*(U)=\bigvee\{a\wedge b\mid a\oplus b\subseteq U\}=\bigvee\{a\wedge b\mid (a, b)\in U\}. 
+\]
+Consideremos la adjunción
+\[\begin{tikzcd}
+	{L\oplus L} && L
+	\arrow["{\Delta^*}", shift left=3, from=1-1, to=1-3]
+	\arrow["\Delta", shift left=3, from=1-3, to=1-1]
+\end{tikzcd}\]
+con $\Delta$ el morfismo diagonal locálico asociado. Además, 
+\[
+\Delta(a)=\{(x, y)\mid x\wedge y\leq a\}.
+\]
+Por lo tanto tenemos $U\subseteq \Delta(\Delta^*(U))$ y $\Delta^*\Delta=id$, donde el sublocal diagonal $\Delta[L]$ corresponde al subespacio diagonal clásico.
+
+\begin{dfn}\label{FuertementeHausdorff}
+    Decimos que un marco es \emph{fuertemente Hausdorff} si y solo si el sublocal diagonal $\Delta[L]$ es cerrado en $L\oplus L$.
+\end{dfn}
+
+La propiedad enunciada en la Definición \ref{FuertementeHausdorff} puede ser reescrita de la siguiente manera.
+
+\begin{description}
+    \item[$\mathbf{(fH)}$] $\Delta[L]=\uparrow d_L$, 
+\end{description}
+donde $d_L$ es el menor elemento de $\Delta[L]$, es decir,
+\[
+d_L=\Delta(0)=\{(x, y)\mid x\wedge y\leq 0\}=\downarrow\{(x, x^*)\mid x\in L\}.
+\]
+
+Existen diferentes caracterizaciones para los marcos fuertemente Hausdorff. Por el momento solo haremos mención a sus propiedades más importantes.
+
+\begin{prop}\label{Proposicion5.3.4}
+    Cada sublocal de un marco fuertemente Hausdorff es fuertemente Hausdorff.
+\end{prop}
+
+\begin{prop}\label{Proposicion6.1}
+    Un marco fuertemente Hausdorff es Hausdorff.
+\end{prop}
+
+\begin{prop}\label{Proposicion6.1.1}
+    Sean $S$ un espacio $T_0$ y $\mathcal{O}S$ un marco fuertemente Hausdorff. Entonces $S$ es Hausdorff.
+\end{prop}
+
+El marco $\mathcal{O}S$ de un espacio $S$ que es Hausdorff no necesariamente es fuertemente Hausdorff. Así, la propiedad $\mathbf{(fH)}$ no es conservativa. Lo anterior queda ilustrado en el siguiente diagrama.
+
+\[\begin{tikzcd}
+	{\mathbf{(fH)}} & {T_2} \\
+	& {\mathbf{(H)}}
+	\arrow["{\ref{Proposicion6.1.1}}", Rightarrow, from=1-1, to=1-2]
+	\arrow["{\ref{Proposicion6.1}}"', Rightarrow, from=1-1, to=2-2]
+	\arrow["{\ref{Observacion3.4.1}}", Leftrightarrow, from=1-2, to=2-2]
+\end{tikzcd}\]
+
+Podemos tratar de extender la propiedad de simetría (presentada también en la Sección \ref{Preliminares} como $R_0$), que por la Proposición \ref{R0 y R1}, bajo $T_0$ es equivalente a $T_1$. Para este caso, si $h_1$ y $h_2$ son dos morfismos de marcos, decimos que $h_1\leq h_2$ si $h_1(a)\leq h_2(a)$ para todo $a\in A$, donde $A$ es el dominio de los respectivos morfismos. De esta manera diremos que un espacio es $T_U$ si se cumple
+\[
+(\mathbf{T_U})\quad \forall\, h_1, h_2\colon A\to B, \mbox{ con } h_1,h_2\in \Frm, \mbox{ si } h_1\leq h_2, \mbox{ tenemos que }
+h_1=h_2
+\]
+Introducimos aquí este axioma de separación para poder presentar los siguientes diagramas.
+
+\[\begin{tikzcd}
+	&&& {\mathbf{(reg)}} \\
+	{\mathbf{(aju)}} &&& {\mathbf{(fH)}} &&& {\mathbf{(H)}+\mathbf{(saju)}} \\
+	{\mathbf{(saju)}} &&& {(T_U)} &&& {\mathbf{(H)}} \\
+	&&& {(T_1)}
+	\arrow[Rightarrow, from=1-4, to=2-1]
+	\arrow[Rightarrow, from=1-4, to=2-4]
+	\arrow[Rightarrow, from=1-4, to=2-7]
+	\arrow[squiggly, no head, from=2-1, to=2-4]
+	\arrow[Rightarrow, from=2-1, to=3-1]
+	\arrow[Rightarrow, from=2-1, to=3-4]
+	\arrow[squiggly, no head, from=2-1, to=3-7]
+	\arrow[squiggly, no head, from=2-4, to=2-7]
+	\arrow[Rightarrow, from=2-4, to=3-4]
+	\arrow[Rightarrow, from=2-4, to=3-7]
+	\arrow[Rightarrow, from=2-7, to=3-1]
+	\arrow[Rightarrow, from=2-7, to=3-7]
+	\arrow[squiggly, no head, from=3-1, to=2-4]
+	\arrow[squiggly, no head, from=3-1, to=3-4]
+	\arrow[squiggly, no head, from=3-1, to=4-4]
+	\arrow[squiggly, no head, from=3-4, to=2-7]
+	\arrow[squiggly, no head, from=3-4, to=3-7]
+	\arrow[Rightarrow, from=3-4, to=4-4]
+	\arrow[Rightarrow, from=3-7, to=4-4]
+\end{tikzcd}\]
+
+\[\begin{tikzcd}
+	&&&& {\mathbf{(saju)}} \\
+	{\mathbf{(reg)}} && {\mathbf{(aju)}} && {(T_1)} \\
+	&&&& {(T_u)}
+	\arrow[Rightarrow, from=2-1, to=2-3]
+	\arrow[Rightarrow, from=2-3, to=1-5]
+	\arrow[Rightarrow, from=2-3, to=2-5]
+	\arrow[Rightarrow, from=2-3, to=3-5]
+\end{tikzcd}\]
+
+\[\begin{tikzcd}
+	&&&& {\mathbf{(H)}} \\
+	{\mathbf{(reg)}} && {\mathbf{(fH)}} && {(T_U)} && {(T_1)}
+	\arrow[Rightarrow, from=2-1, to=2-3]
+	\arrow[Rightarrow, from=2-3, to=1-5]
+	\arrow[Rightarrow, from=2-3, to=2-5]
+	\arrow[Rightarrow, from=2-5, to=2-7]
+\end{tikzcd}\]
+
+\[\begin{tikzcd}
+	&&&& {\mathbf{(saju)}} \\
+	{\mathbf{(reg)}} && {\mathbf{(H)}+\mathbf{(saju)}} && {\mathbf{(H)}} && {(T_1)}
+	\arrow[Rightarrow, from=2-1, to=2-3]
+	\arrow[Rightarrow, from=2-3, to=1-5]
+	\arrow[Rightarrow, from=2-3, to=2-5]
+	\arrow[Rightarrow, from=2-5, to=2-7]
+\end{tikzcd}\]
+
+Con todo esto, podemos terminar estás notas con una serie de preguntas, que esperamos sean resultas en trabajos futuros.
+\begin{enumerate}
+    \item De todos los axiomas tipo Hausdorff aquí presentados, ¿podemos decir que uno de ellos es el mejor? De ser así, ¿qué es lo que lo hace el mejor?
+    \item ¿Qué relación existe entre los axiomas tipo Hausdorff en la teoría de marcos y las caracterizaciones que ya existen en la topología clásica?
+    \item ¿Se pueden encontrar ejemplos en la topología clásica (``ejemplos de carne y hueso''), donde se muestren las diferentes construcciones y propiedades que aquí mencionamos?
+\end{enumerate}
+
+\noindent 
+\begin{thebibliography}{99}
+  \bibitem{D.P.} C. H. Dowker; D. Strauss, \textit{Separation axioms for frames}, Topics in Topology, pp. 223–240. Proc. Colloq., Keszthely, 1972. Colloq. Math. Soc. Janos Bolyai, vol. 8, North-Holland, Amsterdam, 1974.
+
+  \bibitem{Ib.} J. R. Isbell, \textit{Atomless parts of spaces}, Math. Scand. 31 (1972) 5–32.
+
+  \bibitem{P.T.} P. T. Johnstone, \textit{Stone spaces}, Cambridge Studies in Advanced Mathematics, vol. 3, Cambridge University Press, Cambridge, 1982. MR 698074
+
+  \bibitem{J.S.} P. T. Johnstone; S.-H. Sun, \textit{Weak products and Hausdorff locales}, Categorical Algebra and its Applications, pp. 173–193. Lecture Notes in Mathematics, vol. 1348. Springer-Verlag, Berlin, 1988.
+
+  \bibitem{J.M.} J. Monter; A. Zaldívar, \textit{El enfoque locálico de las reflexiones booleanas: un análisis en la categoría de marcos} [tesis de maestría], 2022. Universidad de Guadalajara.
+
+  \bibitem{P.S.}J. Paseka; B. Šmarda, \textit{T2-frames and almost compact frames}, Czechoslovak Math. J. 42 (1992) 297–313.
+  
+  \bibitem{J.P.} J. Picado and A. Pultr, \textit{Frames and locales: Topology without points}, Frontiers in Mathematics, Springer Basel, 2012.
+  
+  \bibitem{J.P.2} J. Picado and A. Pultr, \textit{Separation in point-free topology}, Springer, 2021.
+  
+  \bibitem{Ro.S.} J. Rosický; B. Šmarda, \textit{T1-locales}, Math. Proc. Cambridge Philos. Soc. 98 (1985) 81–86.
+  
+  \bibitem{R.S.} RA. Sexton, \textit{A point free and point-sensitive analysis of the patch assembly}, The University of Manchester (United Kingdom), 2003.
+
+  \bibitem{R.S.3} RA. Sexton and H. Simmons, \textit{Point-sensitive and point-free patch constructions}, Journal of Pure and Applied Algebra \textbf{207} (2006), no. 2, 433-468.
+    
+  \bibitem{H.S.3} H. Simmons, \textit{The assembly of a frame}, University of Manchester (2006).
+
+  \bibitem{H.W.} H. Wallman, \textit{Lattices and topological spaces}, Ann. Math. 39 (1938) 112–126.
+  
+  \bibitem{A.Z.} A. Zaldívar, \textit{Introducción a la teoría de marcos} [notas curso], 2024. Universidad de Guadalajara.
+\end{thebibliography}
+
+\end{document}
+
+
+
+\end{document}
+
+\documentclass[10pt]{amsart}
+\setlength{\textwidth}{12cm}
+\setlength{\textheight}{17.5cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[latin1]{inputenc}
+\usepackage{latexsym}
+\usepackage{amsfonts}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+
+%  COMPILE EL TRABAJO DOS VECES PARA QUITAR ALGUNOS WARNINGS 

@@ -1,0 +1,190 @@
+\usepackage[mathscr]{eucal}
+\usepackage{enumerate}
+\usepackage{times}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{tikz-cd}\usetikzlibrary{decorations.pathmorphing}
+%\usepackage{amsmath,amssymb,latexsym,amscd}   
+\usetikzlibrary{babel}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=brown,linktocpage=true,pagebackref=true,hyperindex=true}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage[all,cmtip]{xy}
+\usepackage{fancyhdr}
+\usepackage{mathalfa}
+\usepackage{mathrsfs}
+\usepackage[sans]{dsfont}
+\usepackage{upgreek}
+
+\newcommand{\Frm}{\mathrm{Frm}}
+\newcommand{\Pos}{\mathrm{Pos}}
+\newcommand{\Dpos}{\mathrm{Dpos}}
+\newcommand{\cbd}{\mathrm{cbd}}
+\newcommand{\Cbd}{\mathrm{Cbd}}
+\newcommand{\CBD}{\mathrm{CBD}}
+\newcommand{\Obj}{\mathrm{Obj}}
+\newcommand{\Hom}{\mathrm{Hom}}
+\newcommand{\Loc}{\mathrm{Loc}}
+\newcommand{\CBA}{\mathrm{CBA}}
+\newcommand{\Ord}{\mathrm{Ord}}
+\newcommand{\Top}{\mathrm{Top}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\Id}{\mathrm{Id}}
+\newcommand{\ID}{\mathrm{ID}}
+\newcommand{\tp}{\mathrm{tp}}
+\newcommand{\Tp}{\mathrm{Tp}}
+\newcommand{\TP}{\mathrm{TP}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\pt}{\mathrm{pt}}
+\newcommand{\cl}{\mathrm{cl}}
+\newcommand{\inte}{\mathrm{int}}
+\newcommand{\ob}{\mathrm{ob}}
+\newcommand{\ins}{\mathrm{ins}}
+\newcommand{\coht}{\mathrm{coht}}
+\newcommand{\dep}{\mathrm{dp}}
+\newcommand{\sob}{\mathrm{sob}}
+\newcommand{\Sob}{\mathrm{Sob}}
+\newcommand{\Haus}{\mathrm{Haus}}
+\newcommand{\DLat}{\mathrm{DLat}}
+
+
+\theoremstyle{plain}
+
+\newtheorem*{thm*}{Teorema}
+\newtheorem{thm}{\protect\theoremname}[section]
+  \theoremstyle{remark}
+  \newtheorem{obs}[thm]{\protect\remarkname}
+  \theoremstyle{remark}
+  \newtheorem{ej}[thm]{\protect\examplename}
+    \theoremstyle{plain}
+  \newtheorem{subej}[thm]{\protect\subexamplename}
+  \theoremstyle{plain}
+  \newtheorem{cor}[thm]{\protect\corollaryname}
+  \theoremstyle{plain}
+  \newtheorem{lem}[thm]{\protect\lemmaname}
+  \theoremstyle{plain}
+  \newtheorem{prop}[thm]{\protect\propositionname}
+    \theoremstyle{definition}
+\newtheorem{dfn}[thm]{\protect\definitionname}
+\theoremstyle{plain}
+\newtheorem*{dfn*}{Definición}
+% \theoremstyle{definition}
+% \newtheorem{algorithm}[theorem]{Algoritmo}
+% \newtheorem{axiom}[theorem]{Suposición}
+% \newtheorem{case}[theorem]{Caso}
+% \newtheorem{claim}[theorem]{Ayuda}
+% \newtheorem{conclusion}[theorem]{Conclusión}
+% \newtheorem{condition}[theorem]{Condición}
+% \newtheorem{conjecture}[theorem]{Conjetura}
+
+% \newtheorem{criterion}[theorem]{Criterio}
+% \newtheorem{definition}[theorem]{Definición}
+% \newtheorem{example}[theorem]{Ejemplo}
+% \newtheorem{exercise}[theorem]{Ejercicio}
+
+% \newtheorem{notation}[theorem]{Notación}
+% \newtheorem{problem}[theorem]{Problema}
+
+% \newtheorem{remark}[theorem]{Observación}
+% \newtheorem{solution}[theorem]{Solución}
+% \newtheorem{summary}[theorem]{Summary}
+% \numberwithin{equation}{section}
+
+
+
+% \newcommand{\av}{\mbox{{\bf Av}}\,}
+% \newcommand{\be}{\mbox{{\bf E}}}
+% \newcommand{\gik}{g_{i,k}}
+% \newcommand{\gaik}{\gamma_{i,k}}
+% \newcommand{\sik}{\sigma_{i,k}}
+% \newcommand{\hz}{\hat Z}
+% \newcommand{\nut}{\nu_t}
+% \newcommand{\ou}{[0,1]}
+% \newcommand{\rud}{R_{1,2}}
+% \newcommand{\sii}{\sigma_i}
+% \newcommand{\siN}{\sigma_N}
+% \newcommand{\siu}{\sigma_{i_1}}
+% \newcommand{\sip}{\sigma_{i_p}}
+% \newcommand{\var}{\mbox{Var}}
+% \newcommand{\skm}{\sum_{k\le M}}
+% \newcommand{\sln}{\sum_{l\le n}}
+% \newcommand{\sli}{\sum_{i\le n}}
+% \newcommand{\slp}{\sum_{1\le l<l'\le n}}
+% \newcommand{\snn}{\sum_{i\le N}}
+% \newcommand{\ssn}{\Sigma_N}
+% %\newcommand{\1}{{\bf 1}}
+% \newcommand{\la}{\lambda}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%% calligraphic %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \newcommand{\ca}{{\cal A}}
+% \newcommand{\cb}{{\cal B}}
+% \newcommand{\cc}{{\cal C}}
+% \newcommand{\cd}{{\cal D}}
+% \newcommand{\ce}{{\cal E}}
+% \newcommand{\cf}{{\cal F}}
+% \newcommand{\cg}{{\cal G}}
+% \newcommand{\ch}{{\cal H}}
+% \newcommand{\cj}{{\cal J}}
+% \newcommand{\cl}{{\cal L}}
+% \newcommand{\cm}{{\cal M}}
+% \newcommand{\cn}{{\cal N}}
+% \newcommand{\co}{{\cal O}}
+% \newcommand{\cp}{{\cal P}}
+% \newcommand{\ccr}{{\cal R}}
+% \newcommand{\cs}{{\cal S}}
+% \newcommand{\ct}{{\cal T}}
+% \newcommand{\cu}{{\cal U}}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%% greek %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \newcommand{\al}{\alpha}
+% \newcommand{\ga}{\gamma}
+% \newcommand{\ep}{\varepsilon}
+\newcommand{\si}{\sigma}
+% \newcommand{\vp}{\varphi}
+
+% \newcommand{\laa}{\Lambda}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%% mathbb %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \newcommand{\D}{{\mathbb D}}
+\newcommand{\E}{{\mathbf E}}
+% \newcommand{\F}{{\mathbb F}}
+% \newcommand{\N}{{\mathbb N}}
+% \newcommand{\Q}{{\mathbb Q}}
+% \newcommand{\R}{{\mathbb R}}
+% \newcommand{\Z}{{\mathbb Z}}
+
+
+% \newcommand{\lla}{\left\langle}
+% \newcommand{\rra}{\right\rangle}
+% \newcommand{\lcl}{\left\{}
+% \newcommand{\rcl}{\right\}}
+% \newcommand{\lp}{\left(}
+% \newcommand{\rp}{\right)}
+% \newcommand{\lc}{\left[}
+% \newcommand{\rc}{\right]}
+% \newcommand{\lln}{\left|}
+% \newcommand{\rrn}{\right|}
+% \newcommand{\rat}{\right\rangle_t}
+% \newcommand{\ram}{\right\rangle_{t,-}}
+% \newcommand{\raz}{\right\rangle^{\circ}}
+
+\providecommand{\corollaryname}{Corolario}
+\providecommand{\examplename}{Ejemplo}
+\providecommand{\lemmaname}{Lema}
+\providecommand{\propositionname}{Proposition}
+\providecommand{\remarkname}{Observación}
+\providecommand{\theoremname}{Teorema}
+\providecommand{\subexamplename}{Subexample}
+\providecommand{\definitionname}{Definición}
+
+
+\def\tresp#1_#2^#3{\mathrel {\mathop{\kern 0pt#1}\limits_{#2}^{#3}}}
+
+\DeclareMathOperator{\senh}{senh\,}
