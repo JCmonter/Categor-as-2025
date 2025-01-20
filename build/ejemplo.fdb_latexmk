@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1737329099.08451 "c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/ejemplo.tex" "build/ejemplo.pdf" "ejemplo" 1737329111.22723 0
+["pdflatex"] 1737331512.15043 "c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/ejemplo.tex" "build/ejemplo.pdf" "ejemplo" 1737331535.8809 0
   "C:/Users/jcmon/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1732837320 618170 5c090dc8f89dc557a10347f49a9d287f ""
   "C:/Users/jcmon/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1721109186 688 37338d6ab346c2f1466b29e195316aa4 ""
   "C:/Users/jcmon/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs5.tfm" 1721109188 684 3a51bd4fd9600428d5264cf25f04bb9a ""
@@ -283,12 +283,12 @@
   "C:/Users/jcmon/AppData/Local/Programs/MiKTeX/tex/latex/was/upgreek.sty" 1665850770 5794 9054e31be15d93f1e6bd28cca2b6643f ""
   "C:/Users/jcmon/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "C:/Users/jcmon/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
-  "build/ejemplo.aux" 1737329108 7510 00a894be8bcee391c4900802e513dd2c "pdflatex"
-  "build/ejemplo.out" 1737329108 5120 9479901f2545dcddaea8b78be550d113 "pdflatex"
-  "build/ejemplo.toc" 1737329108 2419 60c60dcf6a00c712b947691f45ea766d "pdflatex"
-  "c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/ejemplo.tex" 1737328704 87501 0a314b6b9948a9878ae15fe86d3d3f2b ""
+  "build/ejemplo.aux" 1737331528 7510 310238640c39813db5c5bba7e45f6684 "pdflatex"
+  "build/ejemplo.out" 1737331529 5120 9479901f2545dcddaea8b78be550d113 "pdflatex"
+  "build/ejemplo.toc" 1737331529 2419 60c60dcf6a00c712b947691f45ea766d "pdflatex"
+  "c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/ejemplo.tex" 1737331293 87577 0a4d436465d5476523e39263ee44787d ""
   "comunicaciones.cls" 1737328703 62266 f7db17b6b7e71dfd8f5d62104e23d6bd ""
-  "ejemplo.tex" 1737328704 87501 0a314b6b9948a9878ae15fe86d3d3f2b ""
+  "ejemplo.tex" 1737331293 87577 0a4d436465d5476523e39263ee44787d ""
   "macros.tex" 1737328704 6226 a76214e53a951401cc299d261ba30e07 ""
   (generated)
   "build/ejemplo.aux"

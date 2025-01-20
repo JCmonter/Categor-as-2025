@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.22)  19 JAN 2025 17:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.22)  19 JAN 2025 18:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1159,6 +1159,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 83--84
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 [6{C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/ly1/texnansi.enc}]
 LaTeX Font Info:    Freeze math alphabet allocation in version normal.
@@ -1185,10 +1188,10 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input li
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 95.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 95.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 95.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 99.
 
 
 [7]
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 99.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 102.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 103.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 103.
@@ -1241,11 +1244,11 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input li
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 140.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 140.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 140.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 142.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 142.
 
 
 [8]
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 142.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 142.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 143.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 143.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 144.
@@ -3433,15 +3436,15 @@ Package rerunfilecheck Info: File `ejemplo.out' has not changed.
 (rerunfilecheck)             Checksum: 9479901F2545DCDDAEA8B78BE550D113;5120.
  ) 
 Here is how much of TeX's memory you used:
- 32797 strings out of 473904
- 600953 string characters out of 5726600
+ 32800 strings out of 473904
+ 600980 string characters out of 5726600
  1959908 words of memory out of 5000000
  54329 multiletter control sequences out of 15000+600000
- 660710 words of font info for 381 fonts, out of 8000000 for 9000
+ 660840 words of font info for 383 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  107i,16n,110p,3387b,989s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/mathdesign/mdput/md-utr7m.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/mathdesign/mdput/md-utr7t.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/mathdesign/mdput/md-utr7v.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/mathdesign/mdput/md-utr7y.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/mathdesign/mdput/md-utri7m.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/mathdesign/mdpgd/md-utrma.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/mathdesign/mdput/md-utrmb.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/utopia/putb8a.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/utopia/putr8a.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/utopia/putri8a.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on c:\Users\jcmon\Desktop\Apuntes\Categor-as-2025\build\ejemplo.pdf (36 pages, 341916 bytes).
+Output written on c:\Users\jcmon\Desktop\Apuntes\Categor-as-2025\build\ejemplo.pdf (36 pages, 342363 bytes).
 PDF statistics:
  570 PDF objects out of 1000 (max. 8388607)
  176 named destinations out of 1000 (max. 500000)
