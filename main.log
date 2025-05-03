@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.22)  2 MAY 2025 22:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.22)  2 MAY 2025 23:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1717,17 +1717,3163 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 555.
 
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 559.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:559: Undefined control sequence.
+<recently read> \cal 
+                     
+l.559 topológico $S$ forman un marco $\cal
+                                            OS$.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 559.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:561: Undefined control sequence.
+l.561 ... Sabemos que la asignación $S\mapsto\cal
+                                                   OS$ es
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 561.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:562: Undefined control sequence.
+<recently read> \cal 
+                     
+l.562 un funtor contravariante $\cal
+                                     O\colon\Top\to\Frm$.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 562.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 563.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 568.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:570: Undefined control sequence.
+<recently read> \adj 
+                     
+l.570     \adj
+              {L}{R}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 571.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 571.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 571.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 571.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 571.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 571.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 571.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 571.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 571.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:571: Undefined control sequence.
+\pgf@let@token .../.cd,every label,',name=L]{\cal 
+                                                  O}
+l.571   \end{tikzcd}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 571.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 571.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 571.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 571.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 571.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 571.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 571.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 571.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 571.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 571.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 571.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 571.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 572.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 575.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 576.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:578: LaTeX Error: Environment theorem undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.578 \begin{theorem}
+                     \label{tcero}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 579.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 580.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 580.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 581.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:583: LaTeX Error: \begin{document} ended by \end{theorem}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.583 \end{theorem}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 587.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 592.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 595.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 596.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:598: LaTeX Error: Environment exercise undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.598 \begin{exercise}
+                      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 600.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 600.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:602: LaTeX Error: \begin{document} ended by \end{exercise}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.602 \end{exercise}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 605.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 606.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 607.
+
+
+[18]
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 610.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 611.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 612.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 613.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 613.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 614.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:615: Undefined control sequence.
+l.615 marcos $\chi_s:\cal
+                          OS\to\cal O\{*\}\simeq 2$
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:615: Undefined control sequence.
+l.615 marcos $\chi_s:\cal OS\to\cal
+                                    O\{*\}\simeq 2$
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 615.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 616.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 621.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 621.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 621.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 621.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 621.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 621.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 622.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 622.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 622.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 623.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 623.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 624.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 625.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 625.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 626.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 629.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 630.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:632: Undefined control sequence.
+l.632     p = \Sup
+                  \{x\in A\mid \chi(x)=0\}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 633.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 634.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:636: Undefined control sequence.
+l.636     x\leq p \ssi
+                       \chi(x) = 0
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 637.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 638.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 638.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 639.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 640.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 643.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 644.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 644.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 644.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 645.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 645.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 645.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:647: LaTeX Error: Environment definition undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.647 \begin{definition}
+                        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 648.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 648.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 649.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 649.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 650.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 650.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 650.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 651.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 651.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 652.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 652.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:653: LaTeX Error: \begin{document} ended by \end{definition}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.653 \end{definition}
+                      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:656: LaTeX Error: Environment lemma undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.656 \begin{lemma}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 657.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 659.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 659.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 660.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 661.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:663: LaTeX Error: \begin{document} ended by \end{lemma}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.663 \end{lemma}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 666.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 666.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 666.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 666.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 666.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 666.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 666.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 666.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 666.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 666.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 666.
+
+
+[19]
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 667.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 668.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 669.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 669.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 669.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 669.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 669.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 669.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 669.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 669.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 669.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 669.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 669.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 669.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 669.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 670.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 670.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 670.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 670.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 670.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 670.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 670.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 670.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 670.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 670.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 670.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 674.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 674.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 674.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 674.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 674.
+
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:675: LaTeX Error: Environment lemma undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.675 \begin{lemma}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 676.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 676.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 678.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 679.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 680.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:681: Undefined control sequence.
+l.681       \item $U_A(\Sup
+                            X)=\bigcup \{U_A(x)|x\in X\}$, $\forall X\subset...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 681.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 681.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:683: LaTeX Error: \begin{document} ended by \end{lemma}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.683 \end{lemma}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 685.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 685.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 687.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 687.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 687.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 687.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 687.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 687.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 688.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 688.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 688.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 688.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 688.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 689.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 695.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 695.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 695.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 695.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 695.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 695.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 695.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 695.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 695.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 695.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 695.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 695.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 695.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 695.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 695.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 695.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 695.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 695.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 695.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 695.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 696.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 697.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 697.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 703.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 703.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 703.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 703.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 703.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 703.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 703.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 703.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 703.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 703.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 703.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 703.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 703.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 703.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 703.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 703.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 703.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 703.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 703.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 703.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 703.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 703.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 703.
+
+
+[20]
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 703.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 710.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 710.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 710.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 710.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 710.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 710.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 710.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 710.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 710.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 710.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 710.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 710.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 710.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 710.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 710.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 710.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 710.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 710.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 710.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 710.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 710.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 710.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:711: Undefined control sequence.
+l.711 Por lo tanto, $U_A(\Sup
+                              x)=\bigcup \{U_A(x)|x\in X\}$, $\forall X\subs...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 711.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 711.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 714.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 715.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 715.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 716.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 717.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:717: Undefined control sequence.
+<recently read> \cal 
+                     
+l.717 Dado que la topología de $\pt A$ es $\cal
+                                                 O\pt A=U_A(A)$,
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 717.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:718: Undefined control sequence.
+l.718 se sigue que $U_A:A\to\cal
+                                 O\pt A$\index[Simbolos]{$U_A$ reflexión es...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 718.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 718.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 718.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 721.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 721.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 722.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:724: LaTeX Error: Environment remark undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.724 \begin{remark}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:728: Undefined control sequence.
+l.728       Como $U_A:A\to\cal
+                               O\pt$ es suprayectivo, el marco $\cal O\pt A$
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 728.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:728: Undefined control sequence.
+<recently read> \cal 
+                     
+l.728 ...cal O\pt$ es suprayectivo, el marco $\cal
+                                                   O\pt A$
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 728.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 729.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 729.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 730.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 733.
+
+LaTeX Warning: Reference `lemma:cerraduras-y-conjuntosfijos' on page 21 undefined on input line 735.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 736.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 736.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:738: Undefined control sequence.
+l.738         S(a)=\Inf
+                        \{p\in \pt A|a\leq p\}\index[Simbolos]{$S$ núcleo d...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:738: Missing } inserted.
+<inserted text> 
+                }
+l.738 ... \{p\in \pt A|a\leq p\}\index[Simbolos]{$
+                                                  S$ núcleo de $U_A$}
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:738: Display math should end with $$.
+<to be read again> 
+                   S
+l.738 ...\{p\in \pt A|a\leq p\}\index[Simbolos]{$S
+                                                  $ núcleo de $U_A$}
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 738.
+
+LaTeX Warning: Command \' invalid in math mode on input line 738.
+
+Missing character: There is no � in font mdputr7t!
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 738.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:738: Missing $ inserted.
+<inserted text> 
+                $
+l.738 ...eq p\}\index[Simbolos]{$S$ núcleo de $U_
+                                                  A$}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 738.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:738: Extra }, or forgotten \endgroup.
+l.738 ...p\}\index[Simbolos]{$S$ núcleo de $U_A$}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:739: LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.739       .\]
+               
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:739: Missing $ inserted.
+<inserted text> 
+                $
+l.739       .\]
+               
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:739: Display math should end with $$.
+<to be read again> 
+                   \endgroup 
+l.739       .\]
+               
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 739.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 741.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 747.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 747.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 747.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 747.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 747.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 747.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 747.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 747.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 747.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 747.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 747.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 747.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 747.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 747.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 747.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 747.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 747.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 747.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 747.
+
+
+[21]
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 747.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 752.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 754.
+
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:756: LaTeX Error: \begin{document} ended by \end{remark}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.756 \end{remark}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 759.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:760: Undefined control sequence.
+l.760 la reflexión espacial $U_A:A\to\cal
+                                           O\pt A$
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 760.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:762: Undefined control sequence.
+l.762 \[U_\bullet:\id_{\Frm}\to\cal
+                                    O\pt(\_).\]
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 762.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 762.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 764.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 765.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 766.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 767.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 767.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 768.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 770.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 770.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 770.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 770.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 771.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 771.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 771.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 772.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 773.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 774.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 774.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 774.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 775.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 775.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 776.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 776.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 776.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 777.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 777.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 779.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 780.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 781.
+
+Overfull \hbox (3.66148pt too wide) in paragraph at lines 779--782
+[]\T1/ptm/m/fsc/10 (-20) En re-su-men, da-do un mor-fis-mo de mar-cos $\OML/mdput/m/it/10 f [] [] A \OMS/mdput/m/n/10 ! \OML/mdput/m/it/10 B$\T1/ptm/m/fsc/10 (-20) , ob-te-ne-mos una fun-ci�n $[]\OML/mdput/m/it/10 f [] [] []B \OMS/mdput/m/n/10 !
+ []
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:783: Undefined control sequence.
+l.783 Observemos que, para todo $p\in \cal
+                                           \pt B$, tenemos
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 783.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 789.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 789.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 789.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 789.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 789.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 789.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 789.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 789.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 789.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 789.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 789.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 789.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 789.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 789.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 789.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 789.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 789.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 789.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 789.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 789.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 790.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 791.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 791.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 792.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 793.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 794.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 795.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 796.
+
+
+[22]
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:800: Undefined control sequence.
+l.800     \cal
+               O(\pt f)(U_A(a)) = U_B(f(a))
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 801.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 802.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 806.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 806.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:807: Undefined control sequence.
+<recently read> \cal 
+                     
+l.807         \cal
+                   O\pt A \ar[r,"\cal O\pt f"'] & \cal O\pt B
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 807.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:807: Undefined control sequence.
+<recently read> \cal 
+                     
+l.807 ... \cal O\pt A \ar[r,"\cal O\pt f"'] & \cal
+                                                   O\pt B
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 808.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 808.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 808.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 808.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 808.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 808.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 808.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 808.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 808.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 808.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 808.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 808.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 808.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 808.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 808.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 808.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 808.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 808.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 808.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 808.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 808.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 808.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 808.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 808.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 808.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 808.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 808.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 808.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 808.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 808.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 808.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 808.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 808.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 808.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 808.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:808: Undefined control sequence.
+\pgf@let@token ...agrams/.cd,every label,',]{\cal 
+                                                  O\pt f}
+l.808     \end{tikzcd}
+                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 808.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 808.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 809.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 810.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:812: Undefined control sequence.
+l.812 natural $U_\bullet:\id_\Frm\to\cal
+                                         O\pt$.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 812.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 819.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:820: Undefined control sequence.
+l.820 $\pt\cal
+               OS$?
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 820.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 821.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 822.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:823: Undefined control sequence.
+l.823 $\chi_s:\cal
+                   O S \to 2$ como
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 823.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 824.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 824.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 824.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 824.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 827.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 827.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 827.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 827.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 827.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 827.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 828.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 828.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 828.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 829.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 829.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 830.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 830.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 831.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 831.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 832.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 832.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 832.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 832.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:833: Undefined control sequence.
+l.833   \Phi_S(s) = \Sup
+                        \{u\in\cal OS\mid \chi_s(u)=0\} \in \pt\cal O S
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:833: Undefined control sequence.
+l.833   \Phi_S(s) = \Sup\{u\in\cal
+                                   OS\mid \chi_s(u)=0\} \in \pt\cal O S
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:833: Undefined control sequence.
+l.833 ...u\in\cal OS\mid \chi_s(u)=0\} \in \pt\cal
+                                                   O S
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 834.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 834.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:835: Undefined control sequence.
+l.835 Esto nos da una función $\Phi_S:S\to\pt\cal
+                                                   OS$. \index[Simbolos]{$\P...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 835.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 835.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 837.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:837: Undefined control sequence.
+l.837 .... Notemos que, dados $s\in S$ y $u\in\cal
+                                                   OS$, tenemos
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 837.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:845: Undefined control sequence.
+l.845   \ol
+            s \subseteq u'
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:847: Undefined control sequence.
+l.847   u \subseteq {\ol
+                         s}'.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 848.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 850.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 850.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 850.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 850.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:853: Undefined control sequence.
+l.853   \Sup
+            \{u\in\cal OS\mid u\subseteq {\ol s}'\}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:853: Undefined control sequence.
+l.853   \Sup\{u\in\cal
+                       OS\mid u\subseteq {\ol s}'\}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:853: Undefined control sequence.
+l.853   \Sup\{u\in\cal OS\mid u\subseteq {\ol
+                                              s}'\}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:855: Undefined control sequence.
+l.855   {\ol
+             s}'
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:857: Undefined control sequence.
+l.857   \pt\cal
+                OS
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 858.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 858.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:859: Undefined control sequence.
+l.859 Ahora, recordemos que un abierto de $\pt\cal
+                                                   OS$ es de la forma
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 859.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:863: Undefined control sequence.
+<argument>  U_{\cal 
+                    OS}(u) &= \{p\in \pt \cal OS \mid u\not \subseteq p\} .
+l.863 .\end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 863.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:863: Undefined control sequence.
+<argument>  U_{\cal OS}(u) &= \{p\in \pt \cal 
+                                              OS \mid u\not \subseteq p\} .
+l.863 .\end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 863.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 863.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 863.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 863.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:863: Undefined control sequence.
+<argument>  U_{\cal 
+                    OS}(u) &= \{p\in \pt \cal OS \mid u\not \subseteq p\} .
+l.863 .\end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 863.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:863: Undefined control sequence.
+<argument>  U_{\cal OS}(u) &= \{p\in \pt \cal 
+                                              OS \mid u\not \subseteq p\} .
+l.863 .\end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 863.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 863.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:871: Undefined control sequence.
+<argument>  s\in (\Phi _S)^{-1}(U_{\cal 
+                                        OS}(u)) &\iff \Phi _S(s) \in U_{\cal...
+l.871 \end{align*}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 871.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:871: Undefined control sequence.
+<argument> ...S}(u)) &\iff \Phi _S(s) \in U_{\cal 
+                                                  OS}(u) \\ &\iff {\ol s}' \...
+l.871 \end{align*}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 871.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 871.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:871: Undefined control sequence.
+<argument> ...s) \in U_{\cal OS}(u) \\ &\iff {\ol 
+                                                  s}' \in U_{\cal OS}(u) \\ ...
+l.871 \end{align*}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:871: Undefined control sequence.
+<argument> ...S}(u) \\ &\iff {\ol s}' \in U_{\cal 
+                                                  OS}(u) \\ &\iff u \nsubset...
+l.871 \end{align*}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 871.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 871.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:871: Undefined control sequence.
+<argument> ...l OS}(u) \\ &\iff u \nsubseteq {\ol 
+                                                  s}' \\ &\iff s\in u. 
+l.871 \end{align*}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 871.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 871.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 871.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 871.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 871.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 871.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:871: Undefined control sequence.
+<argument>  s\in (\Phi _S)^{-1}(U_{\cal 
+                                        OS}(u)) &\iff \Phi _S(s) \in U_{\cal...
+l.871 \end{align*}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 871.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:871: Undefined control sequence.
+<argument> ...S}(u)) &\iff \Phi _S(s) \in U_{\cal 
+                                                  OS}(u) \\ &\iff {\ol s}' \...
+l.871 \end{align*}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 871.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 871.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:871: Undefined control sequence.
+<argument> ...s) \in U_{\cal OS}(u) \\ &\iff {\ol 
+                                                  s}' \in U_{\cal OS}(u) \\ ...
+l.871 \end{align*}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:871: Undefined control sequence.
+<argument> ...S}(u) \\ &\iff {\ol s}' \in U_{\cal 
+                                                  OS}(u) \\ &\iff u \nsubset...
+l.871 \end{align*}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 871.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 871.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:871: Undefined control sequence.
+<argument> ...l OS}(u) \\ &\iff u \nsubseteq {\ol 
+                                                  s}' \\ &\iff s\in u. 
+l.871 \end{align*}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 871.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 871.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 871.
+
+
+[23]
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 871.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:874: Undefined control sequence.
+l.874   (\Phi_S)^{-1}(U_{\cal
+                              OS}(u)) = u
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 875.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 876.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:876: Undefined control sequence.
+l.876 ...(\Phi_S)^{-1}$ manda abiertos de $\pt\cal
+                                                   OS$ en
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 876.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 877.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:877: Undefined control sequence.
+l.877 ... así que la función $\Phi_S:S\to\pt\cal
+                                                   OS$ es continua.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 877.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 878.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:879: Undefined control sequence.
+l.879 las funciones $\Phi_S:S\to\pt\cal
+                                        OS$ hacen conmutar el diagrama
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 879.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 882.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 882.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:883: Undefined control sequence.
+l.883         \pt\cal
+                      OS \ar[r,"\pt\cal O\psi"'] & \pt\cal OT
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 883.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:883: Undefined control sequence.
+l.883 ...\cal OS \ar[r,"\pt\cal O\psi"'] & \pt\cal
+                                                   OT
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 884.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 884.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 884.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 884.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 884.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 884.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 884.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 884.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 884.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 884.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 884.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 884.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 884.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 884.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 884.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 884.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 884.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 884.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 884.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 884.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 884.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 884.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 884.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 884.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 884.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 884.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 884.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 884.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 884.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 884.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 884.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 884.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 884.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 884.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 884.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:884: Undefined control sequence.
+\pgf@let@token ...ms/.cd,every label,',]{\pt \cal 
+                                                  O\psi }
+l.884     \end{tikzcd}
+                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 884.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 884.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 885.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:886: Undefined control sequence.
+l.886 En efecto, para todo $v\in\cal
+                                     OT$, tenemos
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 886.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:896: Undefined control sequence.
+<argument>  v\subseteq (\pt \cal 
+                                 O\psi )(\Phi _S(s)) &\iff v\subseteq (\cal ...
+l.896 \end{align*}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 896.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:896: Undefined control sequence.
+<argument> ...(\Phi _S(s)) &\iff v\subseteq (\cal 
+                                                  O\psi )_*(\Phi _S(s)) \\ &...
+l.896 \end{align*}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 896.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 896.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:896: Undefined control sequence.
+<argument> ...\psi )_*(\Phi _S(s)) \\ &\iff (\cal 
+                                                  O\psi )(v) \subseteq \Phi ...
+l.896 \end{align*}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 896.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 896.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:896: Undefined control sequence.
+<argument> ...\ &\iff \psi ^{-1}(v) \subseteq \ol 
+                                                  {s}' \\ &\iff s\nin \psi ^...
+l.896 \end{align*}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 896.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 896.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:896: Undefined control sequence.
+<argument> ...) \subseteq \ol {s}' \\ &\iff s\nin 
+                                                  \psi ^{-1}(v) \\ &\iff \ps...
+l.896 \end{align*}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 896.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 896.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:896: Undefined control sequence.
+<argument> ...\psi ^{-1}(v) \\ &\iff \psi (s)\nin 
+                                                  v \\ &\iff v\subseteq \ol ...
+l.896 \end{align*}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 896.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 896.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:896: Undefined control sequence.
+<argument> ...i (s)\nin v \\ &\iff v\subseteq \ol 
+                                                  {\psi (s)}' \\ &\iff v\sub...
+l.896 \end{align*}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 896.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 896.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 896.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 896.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 896.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 896.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:896: Undefined control sequence.
+<argument>  v\subseteq (\pt \cal 
+                                 O\psi )(\Phi _S(s)) &\iff v\subseteq (\cal ...
+l.896 \end{align*}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 896.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:896: Undefined control sequence.
+<argument> ...(\Phi _S(s)) &\iff v\subseteq (\cal 
+                                                  O\psi )_*(\Phi _S(s)) \\ &...
+l.896 \end{align*}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 896.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 896.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:896: Undefined control sequence.
+<argument> ...\psi )_*(\Phi _S(s)) \\ &\iff (\cal 
+                                                  O\psi )(v) \subseteq \Phi ...
+l.896 \end{align*}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 896.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 896.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:896: Undefined control sequence.
+<argument> ...\ &\iff \psi ^{-1}(v) \subseteq \ol 
+                                                  {s}' \\ &\iff s\nin \psi ^...
+l.896 \end{align*}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 896.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 896.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:896: Undefined control sequence.
+<argument> ...) \subseteq \ol {s}' \\ &\iff s\nin 
+                                                  \psi ^{-1}(v) \\ &\iff \ps...
+l.896 \end{align*}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 896.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 896.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:896: Undefined control sequence.
+<argument> ...\psi ^{-1}(v) \\ &\iff \psi (s)\nin 
+                                                  v \\ &\iff v\subseteq \ol ...
+l.896 \end{align*}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 896.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 896.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:896: Undefined control sequence.
+<argument> ...i (s)\nin v \\ &\iff v\subseteq \ol 
+                                                  {\psi (s)}' \\ &\iff v\sub...
+l.896 \end{align*}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 896.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 896.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 896.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 896.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:897: Undefined control sequence.
+l.897 por lo cual $(\pt\cal
+                            O\psi)(\Phi_S(s))=\Phi_T(\psi(s))$.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 897.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:900: Undefined control sequence.
+l.900     \Phi_\bullet=(\Phi_S:S\to\pt\cal
+                                           OS\mid S\in \Top)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 901.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:904: Undefined control sequence.
+l.904     \Phi_\bullet : \id_\Top\to\pt\cal
+                                            O
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 905.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 912.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 912.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 913.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 913.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 914.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 915.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:916: Undefined control sequence.
+<recently read> \cal 
+                     
+l.916 $\cal
+            O:\Top\to\Frm$ son las mitades de una adjunción contravariante
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 916.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 917.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 917.
+
+
+[24]
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 918.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 918.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 918.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 918.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:920: Undefined control sequence.
+l.920     \Frm(A,\cal
+                      OS) \simeq \Top(S,\pt A)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 921.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 921.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 922.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 922.
+
+LaTeX Warning: Reference `eqn:adj_frm_top' on page 25 undefined on input line 979.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:982: Undefined control sequence.
+l.982 $U_\bullet:\id_\Frm\to\cal
+                                 O\pt$ y
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 982.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:983: Undefined control sequence.
+l.983 $\Phi_\bullet:\id_\Top\to\pt\cal
+                                       O$
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 983.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 990.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:990: Undefined control sequence.
+<argument>  U_A:A&\to \cal 
+                           O\pt A \\ a &\mapsto U_A(a) = \{p\in \pt A \mid a...
+l.990 \end{align*}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 990.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 990.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 990.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 990.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:990: Undefined control sequence.
+<argument> ...nleq p\}, \\ \Phi _S:S&\to \pt \cal 
+                                                  O S \\ s &\mapsto \Phi _S(...
+l.990 \end{align*}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 990.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 990.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:990: Undefined control sequence.
+<argument> ...al O S \\ s &\mapsto \Phi _S(s)=\ol 
+                                                  {s}'. 
+l.990 \end{align*}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 990.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 990.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 990.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 990.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 990.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:990: Undefined control sequence.
+<argument>  U_A:A&\to \cal 
+                           O\pt A \\ a &\mapsto U_A(a) = \{p\in \pt A \mid a...
+l.990 \end{align*}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 990.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 990.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 990.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 990.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:990: Undefined control sequence.
+<argument> ...nleq p\}, \\ \Phi _S:S&\to \pt \cal 
+                                                  O S \\ s &\mapsto \Phi _S(...
+l.990 \end{align*}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 990.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 990.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:990: Undefined control sequence.
+<argument> ...al O S \\ s &\mapsto \Phi _S(s)=\ol 
+                                                  {s}'. 
+l.990 \end{align*}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 990.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 990.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:994: Undefined control sequence.
+<recently read> \cal 
+                     
+l.994         & \cal
+                     OS \ar[d,"U_{\cal OS}"] \ar[dl,"\id_{\cal OS}"']
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 995.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:996: Undefined control sequence.
+<recently read> \cal 
+                     
+l.996         \cal
+                   OS
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 997.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:997: Undefined control sequence.
+<recently read> \cal 
+                     
+l.997         & \cal
+                     O\pt\cal OS \ar[l,"\cal O\Phi_S"]
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:997: Undefined control sequence.
+l.997         & \cal O\pt\cal
+                              OS \ar[l,"\cal O\Phi_S"]
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 998.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 998.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 998.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 998.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 998.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 998.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 998.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 998.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:998: Undefined control sequence.
+\pgf@let@token ...grams/.cd,every label,]{U_{\cal 
+                                                  OS}}
+l.998     \end{tikzcd}
+                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 998.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 998.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 998.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 998.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 998.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 998.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 998.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 998.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 998.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:998: Undefined control sequence.
+\pgf@let@token .../.cd,every label,',]{\id _{\cal 
+                                                  OS}}
+l.998     \end{tikzcd}
+                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 998.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 998.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 998.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 998.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 998.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 998.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 998.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 998.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 998.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:998: Undefined control sequence.
+\pgf@let@token ...diagrams/.cd,every label,]{\cal 
+                                                  O\Phi _S}
+l.998     \end{tikzcd}
+                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 998.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 998.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1002.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1004.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1004: Undefined control sequence.
+l.1004         & \pt \cal
+                          O\pt A \ar[l,"\pt U_A"]
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1005.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1005.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1005.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1005.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1005.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1005.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1005.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1005.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1005.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1005.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1005.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1005.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1005.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1005.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1005.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1005.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1005.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1005.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1005.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1005.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1005.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1005.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1005.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1005.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1005.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1005.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1005.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1005.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1006.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1011.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1011: Undefined control sequence.
+<argument>  u\subseteq \Phi _S(s) &\ssi 
+                                        s\nin u, \\ x\in U_A(a) &\ssi a\nleq...
+l.1011 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1011: Undefined control sequence.
+<argument>  u\subseteq \Phi _S(s) &\ssi s\nin 
+                                              u, \\ x\in U_A(a) &\ssi a\nleq...
+l.1011 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1011.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1011.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1011: Undefined control sequence.
+<argument> ...&\ssi s\nin u, \\ x\in U_A(a) &\ssi 
+                                                  a\nleq x, 
+l.1011 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1011.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1011.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1011.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1011.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1011.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1011: Undefined control sequence.
+<argument>  u\subseteq \Phi _S(s) &\ssi 
+                                        s\nin u, \\ x\in U_A(a) &\ssi a\nleq...
+l.1011 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1011: Undefined control sequence.
+<argument>  u\subseteq \Phi _S(s) &\ssi s\nin 
+                                              u, \\ x\in U_A(a) &\ssi a\nleq...
+l.1011 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1011.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1011.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1011: Undefined control sequence.
+<argument> ...&\ssi s\nin u, \\ x\in U_A(a) &\ssi 
+                                                  a\nleq x, 
+l.1011 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1011.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1011.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1023: Undefined control sequence.
+<argument>  x\in (\cal 
+                       O\Phi _S)(U_{\cal OS}(u)) &\iff \Phi _S(x) \in U_{\ca...
+l.1023 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1023: Undefined control sequence.
+<argument>  x\in (\cal O\Phi _S)(U_{\cal 
+                                         OS}(u)) &\iff \Phi _S(x) \in U_{\ca...
+l.1023 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1023.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1023: Undefined control sequence.
+<argument> ...S}(u)) &\iff \Phi _S(x) \in U_{\cal 
+                                                  OS}(u) \\ &\iff u\nleq \Ph...
+l.1023 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1023.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1023.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1023.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1023.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1023.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1023.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1023.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1023.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1023: Undefined control sequence.
+<argument> ...leq \Phi _{\pt A}(x) \\ &\iff x\nin 
+                                                  U_A(a) \\ &\iff a\leq x. 
+l.1023 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1023.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1023.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1023.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1023.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1023.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1023.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1023: Undefined control sequence.
+<argument>  x\in (\cal 
+                       O\Phi _S)(U_{\cal OS}(u)) &\iff \Phi _S(x) \in U_{\ca...
+l.1023 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1023: Undefined control sequence.
+<argument>  x\in (\cal O\Phi _S)(U_{\cal 
+                                         OS}(u)) &\iff \Phi _S(x) \in U_{\ca...
+l.1023 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1023.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1023: Undefined control sequence.
+<argument> ...S}(u)) &\iff \Phi _S(x) \in U_{\cal 
+                                                  OS}(u) \\ &\iff u\nleq \Ph...
+l.1023 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1023.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1023.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1023.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1023.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1023.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1023.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1023.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1023.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1023: Undefined control sequence.
+<argument> ...leq \Phi _{\pt A}(x) \\ &\iff x\nin 
+                                                  U_A(a) \\ &\iff a\leq x. 
+l.1023 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1023.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1023.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1023.
+
+
+[25]
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1023.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1024: Undefined control sequence.
+l.1024 Es decir, $(\cal
+                        O\Phi_S)(U_{\cal OS}(u))=u$
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1024: Undefined control sequence.
+l.1024 Es decir, $(\cal O\Phi_S)(U_{\cal
+                                         OS}(u))=u$
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1024.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1025.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1034: Undefined control sequence.
+<argument>  \Frm (A,\cal 
+                         OS) &\to \Top (S,\pt A) \\ f &\mapsto \bar f = (\pt...
+l.1034 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 1034.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 1034.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1034.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1034.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1034: Undefined control sequence.
+<argument> ...f = (\pt f)\Phi _S, \\ \Frm (A,\cal 
+                                                  OS) &\leftarrow \Top (S,\p...
+l.1034 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 1034.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 1034.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1034: Undefined control sequence.
+<argument> ...&\leftarrow \Top (S,\pt A) \\ (\cal 
+                                                  O\phi )U_A = \bar \phi &\m...
+l.1034 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1034.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1034: Undefined control sequence.
+<argument> ...l O\phi )U_A = \bar \phi &\mapsfrom 
+                                                  \phi . 
+l.1034 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1034.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1034.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1034.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1034.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1034: Undefined control sequence.
+<argument>  \Frm (A,\cal 
+                         OS) &\to \Top (S,\pt A) \\ f &\mapsto \bar f = (\pt...
+l.1034 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 1034.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 1034.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1034.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1034.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1034: Undefined control sequence.
+<argument> ...f = (\pt f)\Phi _S, \\ \Frm (A,\cal 
+                                                  OS) &\leftarrow \Top (S,\p...
+l.1034 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 1034.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 1034.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1034: Undefined control sequence.
+<argument> ...&\leftarrow \Top (S,\pt A) \\ (\cal 
+                                                  O\phi )U_A = \bar \phi &\m...
+l.1034 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1034.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1034: Undefined control sequence.
+<argument> ...l O\phi )U_A = \bar \phi &\mapsfrom 
+                                                  \phi . 
+l.1034 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1034.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1034.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1037.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1037.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1041: Undefined control sequence.
+<recently read> \cal 
+                     
+l.1041         & \cal
+                      OS \ar[d,"U_{\cal OS}"] \ar[dl,"\id_{\cal OS}"']
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1042.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1043.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1044: Undefined control sequence.
+<recently read> \cal 
+                     
+l.1044         \cal
+                    OS
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1045.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1045: Undefined control sequence.
+<recently read> \cal 
+                     
+l.1045         & \cal
+                      O\pt\cal OS \ar[l,"\cal O\Phi_S"]
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1045: Undefined control sequence.
+l.1045         & \cal O\pt\cal
+                               OS \ar[l,"\cal O\Phi_S"]
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1046.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1046: Undefined control sequence.
+<recently read> \cal 
+                     
+l.1046         & \cal
+                      O\pt A \ar[l,"\cal O\pt f"]
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1047: Undefined control sequence.
+\pgf@let@token ...grams/.cd,every label,]{U_{\cal 
+                                                  OS}}
+l.1047     \end{tikzcd}
+                       
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1047: Undefined control sequence.
+\pgf@let@token .../.cd,every label,',]{\id _{\cal 
+                                                  OS}}
+l.1047     \end{tikzcd}
+                       
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1047: Undefined control sequence.
+\pgf@let@token ...diagrams/.cd,every label,]{\cal 
+                                                  O\Phi _S}
+l.1047     \end{tikzcd}
+                       
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1047: Undefined control sequence.
+\pgf@let@token ...diagrams/.cd,every label,]{\cal 
+                                                  O\pt f}
+l.1047     \end{tikzcd}
+                       
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1047.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1051.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1052.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1054.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1054: Undefined control sequence.
+l.1054         & \pt \cal
+                          O\pt A \ar[l,"\pt U_A"]
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1055.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1055: Undefined control sequence.
+l.1055         & \pt \cal
+                          OS \ar[l,"\pt\cal O\phi"]
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1056: Undefined control sequence.
+\pgf@let@token ...rams/.cd,every label,]{\pt \cal 
+                                                  O\phi }
+l.1056     \end{tikzcd}
+                       
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1056.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1057.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1062.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1062: Undefined control sequence.
+l.1062         &= \ol
+                     {(\pt f)\Phi_S} \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1062.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1062.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1063.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1063: Undefined control sequence.
+l.1063         &= \cal
+                       O((\pt f)\Phi_S)U_A \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1063.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1064.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1064: Undefined control sequence.
+l.1064         &= (\cal
+                        O\Phi_S)(\cal O\pt f)U_A \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1064: Undefined control sequence.
+l.1064         &= (\cal O\Phi_S)(\cal
+                                      O\pt f)U_A \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1064.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1065.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1066.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1070.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1070: Undefined control sequence.
+l.1070         &= \ol
+                     {(\cal O\phi)U_A} \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1070: Undefined control sequence.
+l.1070         &= \ol{(\cal
+                            O\phi)U_A} \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1070.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1070.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1071.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1071: Undefined control sequence.
+l.1071         &= \pt((\cal
+                            O\phi)U_A)\Phi_S \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1071.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1072.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1072: Undefined control sequence.
+l.1072         &= (\pt U_A)(\pt\cal
+                                    O\phi)\Phi_S \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1072.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1073.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1074.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1075.
+
+LaTeX Warning: Reference `eqn:adj_frm_top' on page 26 undefined on input line 1076.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1078: Undefined control sequence.
+l.1078 $\Frm(A,\cal
+                    OS)\ni f\leftrightarrow \phi\in \Top(S,\pt A)$, donde
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 1078.
+
+Overfull \hbox (8.20023pt too wide) in paragraph at lines 1075--1079
+\T1/ptm/m/fsc/10 (-20) Esto nos da la bi-yec-ci�n ([]). De ma-ne-ra ex-pl�-ci-ta, la bi-yec-ci�n es-t� da-da co-mo $[]\OT1/mdput/m/n/10 (\OML/mdput/m/it/10 A; OS\OT1/mdput/m/n/10 ) \OMS/mdput/m/n/10 3
+ []
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1080: Undefined control sequence.
+l.1080     s\in f(a) \ssi
+                          a\nleq \phi(s)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1081.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1082.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1082.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1091.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1091.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1091.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1091.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1091.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1091.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1091.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1091: Undefined control sequence.
+<argument> ...(s) \in U_A(a) \\ &\iff s \in (\cal 
+                                                  O\phi )(U_A(a)) = \bar \ph...
+l.1091 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1091.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1091.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1091.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1091.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1091.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1091.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1091.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1091.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1091.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1091.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1091.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1091: Undefined control sequence.
+<argument> ...(s) \in U_A(a) \\ &\iff s \in (\cal 
+                                                  O\phi )(U_A(a)) = \bar \ph...
+l.1091 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1091.
+
+
+[26]
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1091.
+
+
+LaTeX Warning: Reference `eqn:adj_frm_top' on page 27 undefined on input line 1092.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1093.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1093.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1094.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1097: Undefined control sequence.
+l.1097         \Frm(B,\cal
+                           OS) \ar[d,"{-}\circ g"'] \ar[r,"f\mapsto\bar f"']
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 1098.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 1100.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1101: Undefined control sequence.
+l.1101         \Frm(A,\cal
+                           OS) \ar[r,"h\mapsto\bar h"']
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 1102.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 1103.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1103.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1103.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1103.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1103.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1103.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1103.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1103.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1103.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1103.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1103.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1103.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1103.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1103.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1103.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1103.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1103.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1103.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1103.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1103.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1103.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1103.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1103.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1103.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1103.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1103.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1103.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1103.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1103.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1103.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1103.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1103.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1103.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1103.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1103.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1103.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1103.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1104.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1111: Undefined control sequence.
+<argument>  \ol 
+                {fg} &= \pt (fg)\Phi _S \\ &= (\pt g)(\pt f)\Phi _S \\ &= (\...
+l.1111 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1111.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1111.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1111.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1111.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1111.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1111.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1111.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1111.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1111.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1111: Undefined control sequence.
+<argument>  \ol 
+                {fg} &= \pt (fg)\Phi _S \\ &= (\pt g)(\pt f)\Phi _S \\ &= (\...
+l.1111 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1111.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1111.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1111.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1111.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1111.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1111.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1111.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1112.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1116: Undefined control sequence.
+l.1116         \Frm(A,\cal
+                           OT)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 1118.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 1120.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1121: Undefined control sequence.
+l.1121         \Frm(A,\cal
+                           OS)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 1122.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 1123.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1123.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1123.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1123.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1123.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1123.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1123.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1123.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1123: Undefined control sequence.
+\pgf@let@token ...agrams/.cd,every label,',]{\cal 
+                                                  O\psi \circ {-}}
+l.1123     \end{tikzcd}
+                       
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1123.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1123.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1123.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1123.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1123.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1123.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1123.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1123.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1123.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1123: Undefined control sequence.
+\pgf@let@token ...y label,',]{\bar \phi \mapsfrom 
+                                                  \phi }
+l.1123     \end{tikzcd}
+                       
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1123.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1123.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1123.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1123.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1123.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1123.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1123.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1123.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1123.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1123.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1123.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1123.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1123.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1123.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1123.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1123.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1123.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1123.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1123: Undefined control sequence.
+\pgf@let@token ...ry label,',]{\bar \xi \mapsfrom 
+                                                  \xi }
+l.1123     \end{tikzcd}
+                       
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1123.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1123.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1124.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1131: Undefined control sequence.
+<argument>  \ol 
+                {\phi \psi } &= \cal O(\phi \psi )U_A \\ &= (\cal O\psi )(\c...
+l.1131 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1131.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1131: Undefined control sequence.
+<argument>  \ol {\phi \psi } &= \cal 
+                                     O(\phi \psi )U_A \\ &= (\cal O\psi )(\c...
+l.1131 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1131.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1131.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1131: Undefined control sequence.
+<argument> ...= \cal O(\phi \psi )U_A \\ &= (\cal 
+                                                  O\psi )(\cal O\phi )U_A \\...
+l.1131 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1131: Undefined control sequence.
+<argument> ... \psi )U_A \\ &= (\cal O\psi )(\cal 
+                                                  O\phi )U_A \\ &= (\cal O\p...
+l.1131 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1131.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1131.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1131: Undefined control sequence.
+<argument> ...O\psi )(\cal O\phi )U_A \\ &= (\cal 
+                                                  O\psi )\bar \phi . 
+l.1131 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1131.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1131.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1131.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1131.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1131: Undefined control sequence.
+<argument>  \ol 
+                {\phi \psi } &= \cal O(\phi \psi )U_A \\ &= (\cal O\psi )(\c...
+l.1131 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1131.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1131: Undefined control sequence.
+<argument>  \ol {\phi \psi } &= \cal 
+                                     O(\phi \psi )U_A \\ &= (\cal O\psi )(\c...
+l.1131 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1131.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1131.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1131: Undefined control sequence.
+<argument> ...= \cal O(\phi \psi )U_A \\ &= (\cal 
+                                                  O\psi )(\cal O\phi )U_A \\...
+l.1131 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1131: Undefined control sequence.
+<argument> ... \psi )U_A \\ &= (\cal O\psi )(\cal 
+                                                  O\phi )U_A \\ &= (\cal O\p...
+l.1131 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1131.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1131.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1131: Undefined control sequence.
+<argument> ...O\psi )(\cal O\phi )U_A \\ &= (\cal 
+                                                  O\psi )\bar \phi . 
+l.1131 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1131.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1131.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1142: Undefined control sequence.
+<argument>  \Frm (A,\cal 
+                         OS) &\simeq \Top (S,\pt A) \\ f &\mapsto \bar f = (...
+l.1142 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 1142.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 1142.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1142.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1142.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1142: Undefined control sequence.
+<argument> ...to \bar f = (\pt f)\Phi _S \\ (\cal 
+                                                  O\phi )U_A = \bar \phi &\m...
+l.1142 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1142.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1142: Undefined control sequence.
+<argument> ...l O\phi )U_A = \bar \phi &\mapsfrom 
+                                                  \phi . 
+l.1142 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1142.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1142.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1142.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1142.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1142: Undefined control sequence.
+<argument>  \Frm (A,\cal 
+                         OS) &\simeq \Top (S,\pt A) \\ f &\mapsto \bar f = (...
+l.1142 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 1142.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 1142.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1142.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1142.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1142: Undefined control sequence.
+<argument> ...to \bar f = (\pt f)\Phi _S \\ (\cal 
+                                                  O\phi )U_A = \bar \phi &\m...
+l.1142 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1142.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1142: Undefined control sequence.
+<argument> ...l O\phi )U_A = \bar \phi &\mapsfrom 
+                                                  \phi . 
+l.1142 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1142.
+
+
+[27]
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1142.
+
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1144: Undefined control sequence.
+l.1144 dado un morfismo $f:A\to\cal
+                                    OS$, existe una única función continua
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1144.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1145.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1148.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1148: Undefined control sequence.
+<recently read> \cal 
+                     
+l.1148         A \ar[r,"f"] \ar[d,"U_A"'] & \cal
+                                                 OS \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1148.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1149: Undefined control sequence.
+<recently read> \cal 
+                     
+l.1149         \cal
+                    O\pt A \ar[ur,"\cal O\phi"']
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1150.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1150.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1150.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1150.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1150.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1150.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1150.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1150.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1150.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1150.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1150.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1150.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1150.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1150.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1150.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1150.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1150.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1150.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1150.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1150.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1150.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1150.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1150.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1150.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1150.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1150.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1150: Undefined control sequence.
+\pgf@let@token ...agrams/.cd,every label,',]{\cal 
+                                                  O\phi }
+l.1150     \end{tikzcd}
+                       
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1150.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1150.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1151.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1153.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1154: Undefined control sequence.
+l.1154 un único morfismo $f:A\to\cal
+                                      OS$ tal que el diagrama
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1154.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1157.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1157.
+c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex:1158: Undefined control sequence.
+l.1158         \pt\cal
+                       OS \ar[ur,"\pt f"']
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1159.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1159.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1159.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1159.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1159.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1159.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1159.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1159.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1159.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1159.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1159.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1159.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1159.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1159.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1159.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1159.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1159.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1159.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1159.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1159.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1159.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1159.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1159.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1159.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1159.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1159.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1159.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1159.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1160.
+
+
+[28]
 LaTeX Font Info:    Font shape `T1/pcr/m/n' will be
-(Font)              scaled to size 9.72894pt on input line 589.
+(Font)              scaled to size 9.72894pt on input line 1195.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `pcr' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
 
-[18]
-
-[19] 
+[29] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (main.aux
 LaTeX Info: Redefining \. on input line 8.
@@ -1754,23 +4900,23 @@ Package rerunfilecheck Warning: File `main.out' has changed.
 
 Package rerunfilecheck Info: Checksums for `main.out':
 (rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  DE0DCF9CCDA604C45E15990F7321A2DF;1293.
+(rerunfilecheck)             After:  7681672FB2C2FD6DCE9DFCE0D0D7A068;2424.
 
-Package lastpage Warning: Rerun to get the references right on input line 589.
+Package lastpage Warning: Rerun to get the references right on input line 1195.
 
  ) 
 Here is how much of TeX's memory you used:
- 33412 strings out of 473904
- 618622 string characters out of 5726600
+ 33945 strings out of 473904
+ 631085 string characters out of 5726600
  1969908 words of memory out of 5000000
- 55119 multiletter control sequences out of 15000+600000
- 646555 words of font info for 320 fonts, out of 8000000 for 9000
+ 55608 multiletter control sequences out of 15000+600000
+ 652244 words of font info for 337 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  107i,15n,110p,3384b,1211s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\jcmon\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/mathdesign/mdput/md-utr7t.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/mathdesign/mdput/md-utr7y.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/mathdesign/mdput/md-utri7m.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/mathdesign/mdpgd/md-utrma.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/utopia/putb8a.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/utopia/putr8a.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/utopia/putri8a.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/public/rsfs/rsfs10.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/public/rsfs/rsfs7.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (15 pages, 212083 bytes).
+ <C:\Users\jcmon\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/mathdesign/mdput/md-utr7m.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/mathdesign/mdput/md-utr7t.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/mathdesign/mdput/md-utr7v.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/mathdesign/mdput/md-utr7y.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/mathdesign/mdput/md-utri7m.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/mathdesign/mdpgd/md-utrma.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/mathdesign/mdput/md-utrmb.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/utopia/putb8a.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/utopia/putr8a.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/utopia/putri8a.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/public/rsfs/rsfs10.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/public/rsfs/rsfs7.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/jcmon/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (25 pages, 270321 bytes).
 PDF statistics:
- 247 PDF objects out of 1000 (max. 8388607)
- 91 named destinations out of 1000 (max. 500000)
- 40461 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 320 PDF objects out of 1000 (max. 8388607)
+ 113 named destinations out of 1000 (max. 500000)
+ 44557 words of extra memory for PDF output out of 51595 (max. 10000000)
 
