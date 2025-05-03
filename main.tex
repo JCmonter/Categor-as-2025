@@ -1,0 +1,609 @@
+\documentclass{comunicaciones}
+
+\usepackage[utopia,sfscaled]{mathdesign}
+\usepackage[scaled]{helvet}
+
+\usepackage[utf8]{inputenc} %Por favor guardar los archivos en unicode
+\usepackage[T1]{fontenc}
+
+
+\usepackage{microtype}
+\usepackage[spanish,mexico,es-noindentfirst]{babel}
+
+\usepackage[paperwidth=170mm,paperheight=230 mm,total={125mm,170mm},top=29mm,left=23mm,includeheadfoot]{geometry}
+
+\usepackage{lastpage}
+\newcounter{FirstPage}
+\newcommand{\Primera}[1]{\setcounter{FirstPage}{#1}}
+
+\usepackage{mathtools}
+
+\usepackage{enumerate}
+\usepackage{float}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\abstractname}{Resumen}
+\renewcommand{\keywordsname}{Palabras Claves}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\refname}{Bibliografía}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{macros.tex} %Cargar en este archivo los paquetes que requiera el autor (graphicx, tikz, ...), 
+% definir comandos (\DeclareMathOperator{command}{definition}, ... ), etc.
+
+\issueinfo{52}{Comunicaciones}{}{2023} 
+\Primera{5} % La página de inicio del artículo 
+
+\pagespan{\theFirstPage}{\pageref{LastPage}}
+\PII{\ } %Tipo de artículo, e.g., Artículo de Investigación; Exposición; etc.
+
+\begin{document}
+
+\author[Vázquez A., Monter J. C., Medina M., Zaldívar L. A.]{Alejandro Vázquez Aceves, Juan Carlos Monter Cortés, Muaricio Medina Barcena y Luis Ángel Zaldívar Corichi}
+
+\address{Centro Universitario de Ciencias Exactas e Ingenieria,
+Universidad de Guadalajara,
+Blvd Gral. Marcelino García Barragán 1421, Olimpica, 44430 Guadalajara, Jalisco}
+\email{\lowercase{\texttt{luis.zaldivar@academicos.udg.mx}}}
+
+\address{Centro Universitario de Ciencias Exactas e Ingenieria,
+Universidad de Guadalajara,
+Blvd Gral. Marcelino García Barragán 1421, Olimpica, 44430 Guadalajara, Jalisco}
+\email{\lowercase{\texttt{juan.monter2902@alumnos.udg.mx}}}
+
+% Tantas direcciones como autores.
+
+\title[Teoría de categorías]{Una introducción a la teoría de categorías}
+
+\begin{abstract} 
+PENDIENTE
+\vskip .3cm
+
+\noindent {\sc Abstract.}  PENDIENTE
+\end{abstract}
+
+\subjclass[2000]{82B44}
+
+\keywords{Cristales de spin. Medida de Gibbs.}
+
+\maketitle
+
+\section*{Introducción}\label{Introduccion}
+
+\noindent 
+PENDIENTE
+\tableofcontents
+
+
+\section{Conceptos básicos}\label{Conceptos basicos}
+
+\begin{dfn}[Categoría]\label{Definicion categoria}
+    Una \emph{categoría} $\mathcal{C}$ consiste de los siguientes datos:
+    \begin{enumerate}
+        \item Una colección de \emph{objetos}, que denotaremos por $\Obj(\mathcal{C})$.
+        \item Una colección de \emph{flechas} ó \emph{morfismos} entre objetos. Cada flecha $f$ tiene un objeto
+        de salida $\Dom(f)\in\Obj(\C)$\footnote{Aunque la colección de objetos 
+        no forme un conjunto, usamos la notación conjuntista de elemento, para decir
+        que el dominio de $f$ es uno de los objetos determinados en el punto 1},
+        que llamamos \emph{dominio de} $f$, y un objeto de llegada 
+        $\Cod(f)\in\Obj(\C)$, que llamamos \emph{codominio de} $f$. Toda la información
+        que carga una flecha se condensa en la notación $f:\Dom(f)\to\Cod(f)$\footnote{
+        Aunque la notación sugiere que $f$ es una función, en general no lo es. Además podemos
+        usar la notación de diagrama $A\xrightarrow{f}B$}. 
+        
+        A la colección de flechas de la categoría la denotaremos por $\Fle(\C)$. Y a la colección 
+        de flechas con dominio $A$ y codominio $B$ la denotaremos por $\C(A,B)$.
+        \item Una regla de composicion de flechas. Lo que significa que a cada par de flechas $f,g\in\Fle(\C)$, tales que $\Cod(f)=\Dom(g)$, 
+        le asigna una flecha $g\circ f:\Dom(f)\to \Cod(g)$, llamada composición de $g$ con $f$, y es tal que: 
+        
+        \begin{itemize}
+            \item Para cuales quiera objetos $A,B,C,D\in\Obj(\C)$, y flechas $f:A\to B,g:B\to C$ y $h:C\to D$, se tiene que:
+            $$h\circ(g\circ f) = (h\circ g)\circ f.$$
+            
+            \item Para todo objeto $A\in\Obj(\C)$, existe $\id_A\in\Hom_\C( A,A)$ tal que cualquier objeto $B\in\Obj(\C)$ y flechas $g\in\Hom_\C(A,B)$, $h\in\Hom_\C(B,A)$ satisfacen:
+            $$g\circ \id_A=g\text{ y }\id_A\circ h=h.$$
+        \end{itemize}
+    \end{enumerate}
+\end{dfn}
+
+Para simplificar la notación, cuando nos refiramos a un objeto o flecha de una categoría $\C$, escribiremos $A\in\C$ o $f\in\C$; 
+y en caso de que sea ambigua usaremos la notación $A\in\Obj(\C)$ o $f\in\Fle(\C)$. También al hablar de una flecha en una categoría, podríamos usar
+una notación de diagrama como sigue $$A\xrightarrow{f}B\in\C$$
+lo que significa que la flecha $f$ está en la categoría $\C$ y tiene dominio $A$ y codominio $B$. De forma similar, podemos denotar que todas
+las flechas de un diagrama estén en una categoría $\C$, y al mismo tiempo decir sus dominios y codominios como sea conveniente. Como por ejemplo
+$$\begin{tikzcd}
+    A\arrow{r}{f} & B\arrow{r}{g} & C
+\end{tikzcd}\in\C, 
+\begin{tikzcd}
+    A \arrow[d, "f"'] \arrow[r, "g"] & B \\
+    C                                &  
+\end{tikzcd}\in\C, 
+\begin{tikzcd}
+    A \arrow[r, "g"', shift right] \arrow[r, "f", shift left] & B
+\end{tikzcd}\in\C$$
+
+Hay que decir que las flechas en $\C(A,A)$ reciben el nombre
+de \emph{endomorfismos}, por lo que denotaremos a tal colección como $\End(A)$, y de haber alguna duda de la categoría en discusión, usaremos la 
+notación $\End_\C(A)$.
+
+Por último hay que mencionar que en un diagrama como el siguiente
+\[\begin{tikzcd}
+    A \arrow[d, "f"'] \arrow[r, "g"] & B \arrow[ld, "h"] \\
+    C                                &                  
+    \end{tikzcd}\]
+donde es posible componer la flecha $h$ con $g$ y tener una flecha con mismo dominio y codominio que $f$, es equivalente decir
+que $h\circ g=f$ a que el \emph{diagrama conmuta}. En general decir que un diagrama conmuta es equivalente a decir que cuales quiera dos
+\textquotedblleft caminos\textquotedblright que tengan mismos dominios y codominios, respectivamente, son iguales. De esta manera a través de un diagrama
+conmutativo, podemos expresar varias ecuaciones de composiciones de flechas. Por ejemplo, que el siguiente diagrama conmute
+\[\begin{tikzcd}
+    A \arrow[rd, "h"'] \arrow[r, "f"] & C \arrow[r, "g"]                  & D \\
+                                      & B \arrow[u, "d"] \arrow[ru, "e"'] &  
+\end{tikzcd}\]
+condensa varias ecuaciones, como $f=d\circ h$, $e=g\circ d$, $e\circ h=g\circ f$, y algunas otras redundantes.
+
+\begin{dfn}[Isomorfismo]
+    Sea $\C$ una categoría y una flecha $A\xrightarrow{f}B\in\C$. Decimos que $f$ es un \emph{isomorfismo} si existe una flecha 
+    $B\xrightarrow{g}A\in\C$ tal que $$g\circ f=\id_A \text{  y  } f\circ g=\id_B$$
+    
+    En este caso, decimos que $A$ y $B$ son objetos \emph{isomorfos} en $\C$ y denotamos $A\cong_\C B$.
+\end{dfn}
+
+En general si no hay ambigüedad de la categoría en la que dos objetos son isomorfos, entonces podemos omitir especificarla, y en la notación
+simplemente escribir $A\cong B$.
+Como curiosidad acerca de diagramas conmutativos, sería bueno hacer notar que una flecha $A\xrightarrow{f}B\in\C$ es un isomorfismo si y solo si
+existe una flecha $B\xrightarrow{g}A\in\C$ tal que el siguiente diagrama
+\[\begin{tikzcd}
+    A \arrow[rd, "f"'] \arrow[r, "\id_A"] & A \arrow[r, "f"]                      & B \\
+                                          & B \arrow[u, "g"] \arrow[ru, "\id_B"'] &  
+\end{tikzcd}\]
+conmuta.
+
+\begin{prop}
+    Sea $\C$ una categoría y $A\xrightarrow{f}B\in\C$ un isomorfismo, entonces existe una única flecha $B\xrightarrow{g}A\in\C$ tal que
+    $g\circ f=\id_A$ y $f\circ g=\id_B$.
+\end{prop}
+\begin{proof}
+    Supongamos que existen dos flechas $B \overset{g_1}{\underset{g_2}{\rightrightarrows}}A\in\C$ tales que los diagramas
+    $$\begin{tikzcd}
+        A \arrow[rd, "f"'] \arrow[r, "\id_A"] & A \arrow[r, "f"]                      & B \\
+                                              & B \arrow[u, "g_1"] \arrow[ru, "\id_B"'] &  
+    \end{tikzcd} \text{ y } \begin{tikzcd}
+        A \arrow[rd, "f"'] \arrow[r, "\id_A"] & A \arrow[r, "f"]                      & B \\
+                                              & B \arrow[u, "g_2"] \arrow[ru, "\id_B"'] &  
+    \end{tikzcd} $$
+    conmutan. Entonces
+    $$g_1=g_1\circ\id_B=g_1\circ(f\circ g_2)=(g_1\circ f)\circ g_2=\id_A\circ g_2=g_2.$$
+\end{proof}
+
+De lo anterior queda claro que el inverso de un isomorfismo $f$ es único, por lo que lo de notaremos como $f^{-1}$. 
+\begin{lem}\label{propiedades de isos}
+    \begin{enumerate} \text{\\}
+        \item Para todo objeto $A\in\C$, $\id_A$ es un isomorfismo.
+        \item Si $f\in\C$ es un isomorfismo, entonces $f^{-1}$ es un isomorfismo.
+        \item Si $A\xrightarrow{f}B\xrightarrow{g}C\in\C$ son isomorfismos, entonces $g\circ f$ es un isomorfismo.
+    \end{enumerate}
+\end{lem}
+\begin{proof}\text{\\}
+    \begin{enumerate}
+        \item Es consecuencia directa de que $\id_A\circ\id_A=\id_A$.
+        \item Por definición de isomorfismo, existe $B\xrightarrow{f^{-1}}A$ tal que $f\circ f^{-1}=\id_B$ y $f^{-1}\circ f=\id_A$.
+        \item Por definición de isomorfismo, existen $B\xrightarrow{f^{-1}}A$ y $C\xrightarrow{g^{-1}}B$ tales que $f\circ f^{-1}=\id_B$, $f^{-1}\circ f=\id_A$, $g\circ g^{-1}=\id_C$ y $g^{-1}\circ g=\id_B$. Entonces
+        $$(g\circ f)\circ(f^{-1}\circ g^{-1})=g\circ(f\circ f^{-1})\circ g^{-1}=g\circ\id_B\circ g^{-1}=g\circ g^{-1}=\id_C$$
+        y
+        $$(f^{-1}\circ g^{-1})\circ(g\circ f)=f^{-1}\circ(g^{-1}\circ g)\circ f=f^{-1}\circ\id_B\circ f=f^{-1}\circ f=\id_A.$$
+    \end{enumerate}
+\end{proof}
+
+Consideremos un objeto $A$ en una categoría arbitraria $\C$. Si la colección $\End(A)$ forma un conjunto, entonces tenemos un monoide equipando a este conjunto
+con la composición de flechas de $\C$. Cuando un endomorfismo es un isomorfismo, lo llamamos \emph{automorfismo} y por lo tanto podemos definir la subcolección
+$$\Aut(A):=\{f\in\End(A) \ |\ f \text{ es un isomorfismo}\}$$
+
+\begin{thm}
+    Sea $\C$ una categoría y $A\in\C$. Entonces $\Aut(A)$ es un grupo con la composición de flechas de $\C$.
+\end{thm}
+\begin{proof}
+    Es consecuencia directa del lema \ref{propiedades de isos}
+\end{proof}
+
+\begin{dfn}[Monomorfismos y epimorfismos]
+    Sea $\C$ una categoría y $A\xrightarrow{f}B\in\C$ una flecha. 
+    \begin{enumerate}
+        \item Decimos que $f$ es un \emph{monomorfismo} si para cualquier objeto $X$ y flechas $X\overset{\alpha}{\underset{\beta}{\rightrightarrows}}A$
+              tales que $f\circ\alpha=f\circ\beta$, entonces $\alpha=\beta$. 
+        \item Decimos que $f$ es un \emph{epimorfismo} si para cualquier objeto $Y$ y flechas $B\overset{\alpha}{\underset{\beta}{\rightrightarrows}}Y$
+              tales que $\alpha\circ f=\beta\circ f$, entonces $\alpha=\beta$.
+    \end{enumerate}
+\end{dfn}
+Hay que hacer énfasis en que básicamente una flecha es monomorfismo (epimorfismo) si es cancelable por la izquierda (derecha). Sin embargo esto no implica
+que exista una flecha tal que la composición (en alguna dirección) sea igual a la identidad, pero puede existir, y por eso introducimos la siguiente definición
+\begin{dfn}[Secciones y retractos]
+    Sea $\C$ una categoría y $A\xrightarrow{f}B\in\C$ una flecha. 
+    \begin{enumerate}
+        \item Decimos que $f$ es una \emph{sección} si existe $B\xrightarrow{g}A\in\C$ tal que $g\circ f=\id_A$. 
+        \item Decimos que $f$ es un \emph{retracto} si existe $B\xrightarrow{g}A\in\C$ tal que $f\circ g=\id_B$.
+    \end{enumerate}
+\end{dfn}
+
+Observemos que toda sección (retracto) es un monomorfismo (epimorfismo). Y notemos que, para un flecha en una categoría, aunque no es suficiente ser monomorfismo
+y epimorfismo para ser isomorfismo, si es suficiente que sea sección y retracto (Demostración como ejercicio para el lector).
+
+Ejemplos de categorías, en cada ejemplo decir que son Isos, monos, epis, secciones y retractos...
+
+Ahora queremos abordar dos conceptos importantes, el de \textquotedblleft propiedad universal\textquotedblright y el de \textquotedblleft dualidad\textquotedblright .
+Empezaremos por el concepto de \textquotedblleft dualidad\textquotedblright , ya que de cierta forma lo hemos mencionado anteriormente. Resulta que los conceptos de
+monomorfismo y epimorfismo son conceptos duales; así como el de sección y retracto. Para ver esto hay que notar que esencialmente la diferencia 
+entre los dos conceptos (monomorfismos y epimorfismos, ó, secciones y retractos, respectivamente) solo está en la dirección de las flechas. 
+Definamos lo que es la categorías dual de una categoría. 
+
+\begin{dfn}[Categoría opuesta o dual]
+    Sea $\C$ una categoría. Denotaremos como $\C^\op$ (o $\C^\ast$) a la categoría \emph{opuesta o dual} de $\C$, la cual está determinada de la siguiente manera:
+    \begin{itemize}
+        \item Los objetos de $\C^\op$ son los mismos que los de $\C$. $\Obj(\C^\op)=\Obj(\C)$.
+        \item Los morfismos de $\C^\op$ son \textquotedblleft casi\textquotedblright  los mismos que $\C$, en el sentido de que para cualesquiera
+        objetos $A,B\in\C^\op$ definimos $\C^\op(A,B):=\C(B,A)$. Se puede decir simplemente que cada flecha en $\C$ toma la \textquoteleft dirección opuesta\textquotedblright .
+        \item La regla de composición la definimos en base a la regla de composición de $\C$ de tal manera que dadas dos flechas $A\xrightarrow{f}B\xrightarrow{g}C\in\C^\op$ entonces:
+        $$g\circ_\op f:=f\circ g$$
+    \end{itemize}
+\end{dfn}
+
+Un buen ejercicio para el lector sería comprobar que la categoría dual definida anteriormente siempre satisface los axiomas de una categoría. Solo restaría
+comprobar que la regla de composición definida es asociativa y que cada objeto tiene su flecha identidad. 
+
+En general diremos que una propiedad $P$ es \emph{dual} a una propiedad $Q$ si es equivalente que se satisfaga $P$ en una categoría $\C$ a que se satisfaga $Q$
+en la respectiva categoría dual $\C^\op$. Por esta razón muchas definiciones vienen en pares, porque para cada propiedad está la propiedad dual, por ejemplo
+los monomorfismos y las secciones son duales a los epimorfismos y los retractos, respectivamente. Mostraremos la afirmación de que
+los monomorfismos son duales a los epimorfismos, y recomendamos probar de ejercicio la dualidad entre sección y retracto.
+
+\begin{prop}
+    Sea $\C$ una categoría. Una flecha $A\xrightarrow{f}B\in\C$ es un monomorfismo (epimorfismo) si y solo si $B\xrightarrow{f}A\in\C^\op$ es un epimorfismo (monomorfismo).
+\end{prop}
+\begin{proof}
+    Pendiente
+\end{proof}
+
+Una propiedad universal es...
+
+\begin{dfn}[Objeto inicial y final]
+    Sea $\C$ una categoría y $A\in\C$.
+    \begin{enumerate}
+        \item Decimos que $A$ es un \emph{objeto inicial} si para cualquier objeto $X$ existe exactamente una flecha $A\xrightarrow{!_X}X\in\C$. 
+        \item Decimos que $A$ es un \emph{objeto final} si para cualquier objeto $X$ existe exactamente una flecha $X\xrightarrow{!^X}A\in\C$.
+    \end{enumerate}
+\end{dfn}
+
+Ejemplos... En el ejemplo de grupos mencionar la definición de \emph{objeto cero}
+
+\begin{dfn}[Producto]
+    Sea $\C$ una categoría y sean $A,B\in\C$ dos objetos. El \emph{producto} de $A$ con $B$ es un diagrama \begin{tikzcd}
+        & P \arrow[ld, "\pi_A"'] \arrow[rd, "\pi_B"] &   \\
+      A &                                            & B
+      \end{tikzcd}$\in\C$ tal que para cualquier otro diagrama \begin{tikzcd}
+        & X \arrow[ld, "\alpha"'] \arrow[rd, "\beta"] &   \\
+        A &                                            & B
+        \end{tikzcd}$\in\C$ existe una única flecha $X\xrightarrow{(\alpha,\beta)}P\in\C$ tal que el siguiente diagrama conmuta:
+        \[\begin{tikzcd}
+            & P \arrow[ld, "\pi_A"'] \arrow[rd, "\pi_B"]                                         &   \\
+          A &                                                                                    & B \\
+            & X \arrow[lu, "\alpha"] \arrow[ru, "\beta"'] \arrow[uu, "{(\alpha,\beta)}", dashed] &  
+          \end{tikzcd}\]
+\end{dfn}
+
+\begin{dfn}
+    [Coproducto]
+    Sea $\C$ una categoría y sean $A,B\in\C$ dos objetos. El \emph{coproducto} de $A$ con $B$ es un diagrama \begin{tikzcd}
+                & C &                          \\
+        A \arrow[ru, "\iota_A"] &   & B \arrow[lu, "\iota_B"']
+        \end{tikzcd}$\in\C$ tal que para cualquier otro diagrama \begin{tikzcd}
+                & X  &   \\
+        A\arrow[ru, "\alpha"'] &    & B\arrow[lu, "\beta"]
+        \end{tikzcd}$\in\C$ existe una única flecha $C\xrightarrow{<\alpha,\beta>}X\in\C$ tal que el siguiente diagrama conmuta:
+        \[\begin{tikzcd}
+                    & C \arrow[dd, "{<\alpha,\beta>}", dashed] &                                              \\
+        A \arrow[rd, "\alpha"', no head] \arrow[ru, "\iota_A"] &                                          & B \arrow[ld, "\beta"] \arrow[lu, "\iota_B"'] \\
+                    & X                                        &                                             
+        \end{tikzcd}\]
+\end{dfn}
+
+Ejemplos... En ejemplo de espacios vectoriales hacer notar que un mismo objeto puede ser producto o coproducto dependiendo de los morfismos a los que esté asociado
+
+\begin{dfn}[(Co)Igualador]
+    Sea $\C$ una categoría y sean dos flechas $A\overset{f}{\underset{g}{\rightrightarrows}}B\in\C$.
+    \begin{enumerate}
+        \item El \emph{igualador} de $f$ y $g$ es un diagrama  \begin{tikzcd}
+            I \arrow[r, "{e_{f,g}}"] & A \arrow[r, "f", shift left] \arrow[r, "g"', shift right] & B
+            \end{tikzcd}$\in\C$ tal que $f\circ e_{f,g}=g\circ e_{f,g}$ y para cualquier otro diagrama \begin{tikzcd}
+                X \arrow[r, "h"] & A \arrow[r, "f", shift left] \arrow[r, "g"', shift right] & B
+                \end{tikzcd}$\in\C$ tal que $f\circ h=g\circ h$, existe una única flecha $X\xrightarrow{h_{f,g}}I\in\C$ tal que el siguiente diagrama conmuta:
+                \[\begin{tikzcd}
+                    X \arrow[d, "{h_{f,g}}"', dashed] \arrow[rd, "h"] &   \\
+                    I \arrow[r, "{e_{f,g}}"']                         & A
+                    \end{tikzcd}\]
+        \item El \emph{coigualador} de $f$ y $g$ es un diagrama \begin{tikzcd}
+            A \arrow[r, "f", shift left] \arrow[r, "g"', shift right] & B \arrow[r, "{c_{f,g}}"] & CoI
+            \end{tikzcd}$\in\C$ tal que $c_{f,g}\circ f=c_{f,g}\circ g$ y para cualquier otro diagrama \begin{tikzcd}
+                A \arrow[r, "f", shift left] \arrow[r, "g"', shift right] & B \arrow[r, "h"] & X
+                \end{tikzcd}$\in\C$ tal que $h\circ f=h\circ g$, existe una única flecha $CoI\xrightarrow{h^{f,g}}X\in\C$ tal que el siguiente diagrama conmuta:
+                \[\begin{tikzcd}
+                                    & X                                   \\
+                B \arrow[r, "{c_{f,g}}"'] \arrow[ru, "h"] & CoI \arrow[u, "{h^{f,g}}"', dashed]
+                \end{tikzcd}\]
+    \end{enumerate}
+\end{dfn}
+
+\begin{dfn}[(Co)Producto fibrado]
+    Sea $\C$ una categoría.
+    \begin{enumerate}
+        \item Sean dos flechas \begin{tikzcd}
+                    & A \arrow[d, "f"] \\
+        B \arrow[r, "g"'] & Z               
+        \end{tikzcd}$\in\C$. El \emph{producto fibrado} de $f$ y $g$ es un diagrama conmutativo \begin{tikzcd}
+            {P_{f,g}} \arrow[r, "\pi_f"] \arrow[d, "\pi_g"'] & A \arrow[d, "f"] \\
+            B \arrow[r, "g"']                                & Z               
+        \end{tikzcd}$\in\C$ tal que para cualquier otro diagrama conmutativo \begin{tikzcd}
+                X \arrow[r, "\alpha"] \arrow[d, "\beta"'] & A \arrow[d, "f"] \\
+                B \arrow[r, "g"']                         & Z               
+        \end{tikzcd}$\in\C$, existe una única flecha $X\xrightarrow{(\alpha,\beta)_Z}P_{f,g}\in\C$ tal que el siguiente diagrama conmuta:
+        \[\begin{tikzcd}
+            X \arrow[rrd, "\alpha", bend left] \arrow[rdd, "\beta"', bend right] \arrow[rd, "{(\alpha,\beta)_Z}", dashed] &                                                  &                  \\
+                                                                                                                            & {P_{f,g}} \arrow[r, "\pi_f"] \arrow[d, "\pi_g"'] & A \arrow[d, "f"] \\
+                                                                                                                            & B \arrow[r, "g"']                                & Z               
+        \end{tikzcd}\]
+        \item Sean dos flechas \begin{tikzcd}
+            & A                                \\
+          B & Z \arrow[u, "f"'] \arrow[l, "g"]
+          \end{tikzcd}$\in\C$. El \emph{coproducto fibrado} de $f$ y $g$ es un diagrama conmutativo \begin{tikzcd}
+            {C_{f,g}}              & A \arrow[l, "\iota_f"']          \\
+            B \arrow[u, "\iota_g"] & Z \arrow[u, "f"'] \arrow[l, "g"]
+            \end{tikzcd}$\in\C$ tal que para cualquier otro diagrama conmutativo  \begin{tikzcd}
+                X                    & A \arrow[l, "\alpha"']           \\
+                B \arrow[u, "\beta"] & Z \arrow[u, "f"'] \arrow[l, "g"]
+                \end{tikzcd}$\in\C$, existe una única flecha $C_{f,g}\xrightarrow{<\alpha,\beta>_Z}X\in\C$ tal que el siguiente diagrama conmuta:
+            \[\begin{tikzcd}
+                X &                                                        &                                                            \\
+                  & {C_{f,g}} \arrow[lu, "{<\alpha,\beta>_Z}"', dashed]    & A \arrow[l, "\iota_f"'] \arrow[llu, "\alpha"', bend right] \\
+                  & B \arrow[u, "\iota_g"] \arrow[luu, "\beta", bend left] & Z \arrow[u, "f"'] \arrow[l, "g"]                          
+            \end{tikzcd}\]
+                  
+    \end{enumerate}
+\end{dfn}
+
+Ejemplos de productos, igualadores y productos fibrados, dejar como ejercicio buscar la construcción dual de cada ejemplo dado.
+
+\begin{thm}
+    Sea $\C$ una categoría con productos e igualadores. Entonces $\C$ tiene productos fibrados. 
+\end{thm}
+\begin{proof}
+    PENDIENTE
+\end{proof}
+
+Ejercicio enunciar y demostrar el teorema dual.
+\section{Funtores}
+
+Ahora que entendemos que es una categoría. Usemos el mismo espíritu de la teoría de categorías para estudiar objetos, y pensar en las categorías como objetos matemáticos.
+Lo que queremos decir es que para estudiar categorías con ese mismo espíritu, sería necesario definir alguna noción de flechas entre categorías. 
+Eso es justamente un funtor.
+
+\begin{dfn}
+    Sean $\A$ y $\B$ dos categorías. Definimos un \emph{funtor} $F:\A\to\B$ como una regla de asignación entre $\A$ y $\B$, de tal forma que:
+    \begin{enumerate}
+        \item A cada objeto $X\in\A$ le corresponde un solo objeto $F(X)\in\B$.
+        \item A cada flecha $X\xrightarrow{f}Y\in\A$ le corresponde una sola flecha $F(X)\xrightarrow{F(f)}F(Y)\in\B$ tal que:
+        \begin{itemize}
+            \item $F(\id_X)=\id_{F(X)}$ para todo objeto $X\in\A$.
+            \item $F(g\circ f)=F(g)\circ F(f)$ para toda flecha $Y\xrightarrow{g}Z\in\A$.
+        \end{itemize}
+    \end{enumerate}
+\end{dfn}
+
+Consideremos dos categorías $\A$ y $\B$ y un funtor $F:\A^\op\to\B$. Notemos que la regla de asignación de $F$ también es una regla de asignación entre $\A$ y $\B$,
+pues a cada objeto $A\in\Obj(\A)=\Obj(\A^\op)$ le corresponde el objeto $F(A)\in\B$, y cada flecha $A\xrightarrow{f}B\in\A$ es una flecha $B\xrightarrow{f}A\in\A^\op$ que le corresponde
+la flecha $F(B)\xrightarrow{F(f)}F(A)\in\B$. De esta manera $F$ casi es un funtor de $A$ a $B$, con la única diferencia de que cambia la dirección de las flechas.
+En este sentido podemos decir que es otro tipo de funtor:
+
+\begin{dfn}[Funtor contravariante]
+    Sean $\A$ y $\B$ dos categorías. Definimos un \emph{funtor contravariante} $F:\A\to\B$ como una regla de asignación entre $\A$ y $\B$, de tal forma que:
+    \begin{enumerate}
+        \item A cada objeto $X\in\A$ le corresponde un solo objeto $F(X)\in\B$.
+        \item A cada flecha $X\xrightarrow{f}Y\in\A$ le corresponde una sola flecha $F(Y)\xrightarrow{F(f)}F(X)\in\B$ tal que:
+        \begin{itemize}
+            \item $F(\id_X)=\id_{F(X)}$ para todo objeto $X\in\A$.
+            \item $F(g\circ f)=F(f)\circ F(g)$ para toda flecha $Y\xrightarrow{g}Z\in\A$.
+        \end{itemize}
+    \end{enumerate}
+\end{dfn}
+
+Por lo comentado previo a la definición anterior, queda claro que es equivalente tener un funtor $F:\A^\op\to\B$ a tener un funtor contravariante $F:\A\to\B$.
+Dejamos como ejercicio al lector hacer la prueba de que también es equivalente tener un funtor $F:\A\to\B^\op$ a tener un funtor contravariante $F:\A\to\B$.
+
+Ejemplos de funtores... entre ellos la identidad. Funtores de olvido Dar definición de funotr fiel y pleno. Funtores "libres", Funtores Homs, Funtor de abiertos, Morfismos de copos, morfismos de grupos. 
+Y quiero dar un contra ejemplo que la conclusión es que sacar el centro de un grupo y verlo como un funtor de $\Grp$ a $\Ab$
+
+\begin{prop}
+    Sean dos funtores $\A\xrightarrow{F}\B\xrightarrow{G}\C$, entonces la regla de asignación $G\circ F:\A\to\C$ definida como 
+    $G\circ F(X\xrightarrow{f}Y)=G(F(X))\xrightarrow{G(F(f))}G(F(Y))$ para toda flecha $X\xrightarrow{f}Y\in\A$, es un funtor.
+\end{prop}
+\begin{proof}
+    PENDIENTE
+\end{proof}
+
+La proposición anterior nos dice como está definida la composición de funtores. Dejamos para el lector el ejercico de probar que para cualquier funtor $\A\xrightarrow{F}\B$, se tiene que $F\circ\id_\A=\id_\B\circ F$.
+Veamos ahora que la composición es asociativa.
+
+\begin{prop}
+    Sean tres funtores $\A\xrightarrow{F}\B\xrightarrow{G}\C\xrightarrow{H}\D$. Entonces $$H\circ(G\circ F)=(H\circ G)\circ F.$$
+\end{prop}
+\begin{proof}
+    PENDIENTE
+\end{proof}
+
+Hemos probado que los funtores y su regla de composición satisfacen de cierta forma lo que pedimos para las flechas de una categoría, por lo que es natural preguntarse
+¿Es posible hablar de la categoría de categorías?. No como tal, hay algunos detalles técnicos fundacionales por los que no es tán simple hablar de algo tan inmenso. Una manera de
+tratar con este problema está en el libro Abstract and Concrete Categories The Joy of Cats escrito por Jiˇr´ıAd´amek, Horst Herrlich y George E. Strecker, donde se define la 
+\emph{quasicategoría} $\CAT$ cuyos objetos son todas las categorías y las flechas son los funtores. No es nuestra intensión abordar este tema a fondo, 
+solo dar una fuente para que el lector pueda investigar un poco más a fondo el tema. Sin embargo queremos hacer notar que de igual forma podemos
+hablar de categorías que satisfacen propiedades universales (incial, final, productos, coproductos, etc...) e isomorfismos de categorías.
+
+\section{Transformaciones naturales}
+
+Al haber introducido este nuevo objeto de funtor, de nuevo es natural pensar si podemos tener flechas entre funtores. Y esto es posible siempre que los funtores
+compartan dominio y codominio.
+
+\begin{dfn}
+    Sean $\A,\B$ dos categorías y $\A\overset{F}{\underset{G}{\rightrightarrows}}\B$ dos funtores. Una \emph{transformación natural} de $F$ a $G$
+    es una colección de flechas $\alpha=\{F(A)\xrightarrow{\alpha_A}G(A) \ |\ A\in\Obj(\A)\}\subseteq\B$ tal que para cada flecha $A\xrightarrow{f}B\in\A$ el siguiente diagrama conmuta
+    \[\begin{tikzcd}
+        {F(A)} & {G(A)} \\
+        {F(B)} & {G(B)}
+        \arrow["{\alpha_A}", from=1-1, to=1-2]
+        \arrow["{F(f)}"', from=1-1, to=2-1]
+        \arrow["{G(f)}", from=1-2, to=2-2]
+        \arrow["{\alpha_B}"', from=2-1, to=2-2]
+    \end{tikzcd}\]
+
+    Cada flecha $\alpha_A$ se llama componente en $A$ de $\alpha$.
+\end{dfn}
+
+En general usaremos la notación $\alpha:F\Rightarrow G$ para referirnos a una transformación natural $\alpha$ de $F$ a $G$. Para la notación de diagrama tenemos, además
+de la natural $F\xRightarrow{\alpha}G$, una notación que deja ver también las categorías involucradas entre los funtores:
+\[\begin{tikzcd}
+	\A && \B
+	\arrow[""{name=0, anchor=center, inner sep=0}, "F", shift left=2, curve={height=-6pt}, from=1-1, to=1-3]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "G"', shift right=2, curve={height=6pt}, from=1-1, to=1-3]
+	\arrow["\alpha"', shorten <=3pt, shorten >=3pt, Rightarrow, from=0, to=1]
+\end{tikzcd}\]
+
+Ejemplos... 
+
+Veamos ahora que como es la composición de transformaciones naturales.
+
+\begin{prop}
+    Sean \begin{tikzcd}
+        \A && \B
+        \arrow[""{name=0, anchor=center, inner sep=0}, "F", shift left=2, curve={height=-12pt}, from=1-1, to=1-3]
+        \arrow[""{name=1, anchor=center, inner sep=0}, "H"', shift right=2, curve={height=12pt}, from=1-1, to=1-3]
+        \arrow[""{name=2, anchor=center, inner sep=0}, "G"{description}, from=1-1, to=1-3]
+        \arrow["\alpha"', shorten <=2pt, shorten >=2pt, Rightarrow, from=0, to=2]
+        \arrow["\beta"', shorten <=2pt, shorten >=2pt, Rightarrow, from=2, to=1]
+    \end{tikzcd} funtores y transformaciones naturales. Entonces la familia de morfismos $\beta\circ\alpha:=\{F(A)\xrightarrow{\beta_A\circ\alpha_A}H(A) \ |\ A\in\Obj(\A)\}\subseteq\B$
+    es una transformación natural de $F$ a $H$
+\end{prop}
+\begin{proof}
+    PENDIENTE
+\end{proof}
+
+Notemos que las componentes de una composción son exactamente la composición de las componentes. Dejamos al lector verificar que la composición
+es además asociativa ya que basta verificar que componente a componente lo es, y como cada componente es una flecha en una categoría, debe ser asociativa.
+Todo esto lo mencionamos para definir la categoría de funtores entre dos categorías $[\A,\B]$, donde los objetos son funtores de $\A$ a $\B$ y las flechas
+son transformaciones naturales. Más adelante, en la sección del lema de Yoneda, veremos detalles sobre la categoría de funtores $[\A,\Con]$ donde $\A$ es localmente pequeña.
+
+\section{Límites y colímites}
+
+\begin{dfn}[Diagrama]
+    Sean $\C,I$ dos categorías, con $I$ una categoría pequeña. Un \emph{diagrama en} $\C$ \emph{de forma} $I$ es simplemente un funtor $D:I\to\C$.   
+\end{dfn}
+
+\begin{dfn}
+    Sea $D:I\to\C$ un diagrama en $\C$. Un \emph{cono} de $D$ consta de un objeto $X\in\C$, al que llamamos \emph{vértice del cono}, junto a una familia
+    de flechas $\{X\xrightarrow{f_i}D(i) \ |\ i\in\Obj(I)\}\subseteq\C$ tales que para cada flecha $i\xrightarrow{u}j\in I$ el siguiente diagrama conmuta
+    \[\begin{tikzcd}
+        & X \\
+        {D(i)} && {D(j)}
+        \arrow["{f_i}"', from=1-2, to=2-1]
+        \arrow["{f_j}", from=1-2, to=2-3]
+        \arrow["{D(u)}"', from=2-1, to=2-3]
+    \end{tikzcd}\]
+\end{dfn}
+
+\begin{dfn}
+    Sea $D:I\to\C$ un diagrama en $\C$. Un \emph{límite} de $D$ es un cono $(L\xrightarrow{l_i}D(i))_{i\in I}$ tal que para cualquier otro cono $(X\xrightarrow{f_i}D(i))_{i\in I}$
+    existe una única flecha $X\xrightarrow{h}L\in\C$ tal que el siguiente diagrama conmuta
+    \[\begin{tikzcd}
+        X && L \\
+        & {D(i)}
+        \arrow["h", from=1-1, to=1-3]
+        \arrow["{f_i}"', from=1-1, to=2-2]
+        \arrow["{l_i}", from=1-3, to=2-2]
+    \end{tikzcd}\] para todo $i\in I$
+\end{dfn}
+
+Si el límite de un diagrama $D$ existe, normalmente denotamos al vértice de su cono límite con $\lm(D)$.
+
+Conceptos duales...
+
+Obervaciones entre las propiedades universales mencionadas antes y (co)límites...
+
+\begin{dfn}
+    Decimos que una categoría $\C$ es \emph{completa}, si para cada categoría pequeña $I$, todo diagrama $D:I\to\C$ tiene límite en $\C$
+\end{dfn}
+
+
+\begin{thm}
+    Sean $\A$ y $\C$ dos categorías. Si $\C$ es completa, entonces $[\A,\C]$ es completa
+\end{thm}
+\begin{proof}
+    PENDIENTE
+\end{proof}
+
+\section{Lema de Yoneda}
+
+Intrudcción sobre el lema de yoneda y enunción y demostración...
+
+\section{Adjunciones}
+
+
+\section{La adjunción entre $\Frm$ y $\Top$}
+
+
+\noindent 
+\begin{thebibliography}{99}
+  \bibitem{D.P.} C. H. Dowker; D. Strauss, \textit{Separation axioms for frames}, Topics in Topology, pp. 223–240. Proc. Colloq., Keszthely, 1972. Colloq. Math. Soc. Janos Bolyai, vol. 8, North-Holland, Amsterdam, 1974.
+
+  \bibitem{Ib.} J. R. Isbell, \textit{Atomless parts of spaces}, Math. Scand. 31 (1972) 5–32.
+
+  \bibitem{P.T.} P. T. Johnstone, \textit{Stone spaces}, Cambridge Studies in Advanced Mathematics, vol. 3, Cambridge University Press, Cambridge, 1982. MR 698074
+
+  \bibitem{J.S.} P. T. Johnstone; S.-H. Sun, \textit{Weak products and Hausdorff locales}, Categorical Algebra and its Applications, pp. 173–193. Lecture Notes in Mathematics, vol. 1348. Springer-Verlag, Berlin, 1988.
+
+  \bibitem{J.M.} J. Monter; A. Zaldívar, \textit{El enfoque locálico de las reflexiones booleanas: un análisis en la categoría de marcos} [tesis de maestría], 2022. Universidad de Guadalajara.
+
+  \bibitem{P.S.}J. Paseka; B. Šmarda, \textit{T2-frames and almost compact frames}, Czechoslovak Math. J. 42 (1992) 297–313.
+  
+  \bibitem{J.P.} J. Picado and A. Pultr, \textit{Frames and locales: Topology without points}, Frontiers in Mathematics, Springer Basel, 2012.
+  
+  \bibitem{J.P.2} J. Picado and A. Pultr, \textit{Separation in point-free topology}, Springer, 2021.
+  
+  \bibitem{Ro.S.} J. Rosický; B. Šmarda, \textit{T1-locales}, Math. Proc. Cambridge Philos. Soc. 98 (1985) 81–86.
+  
+  \bibitem{R.S.} RA. Sexton, \textit{A point free and point-sensitive analysis of the patch assembly}, The University of Manchester (United Kingdom), 2003.
+
+  \bibitem{R.S.3} RA. Sexton and H. Simmons, \textit{Point-sensitive and point-free patch constructions}, Journal of Pure and Applied Algebra \textbf{207} (2006), no. 2, 433-468.
+    
+  \bibitem{H.S.3} H. Simmons, \textit{The assembly of a frame}, University of Manchester (2006).
+
+  \bibitem{H.W.} H. Wallman, \textit{Lattices and topological spaces}, Ann. Math. 39 (1938) 112–126.
+  
+  \bibitem{A.Z.} A. Zaldívar, \textit{Introducción a la teoría de marcos} [notas curso], 2024. Universidad de Guadalajara.
+\end{thebibliography}
+
+\end{document}
+
+
+
+\end{document}
+
+\documentclass[10pt]{amsart}
+\setlength{\textwidth}{12cm}
+\setlength{\textheight}{17.5cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[latin1]{inputenc}
+\usepackage{latexsym}
+\usepackage{amsfonts}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+
+%  COMPILE EL TRABAJO DOS VECES PARA QUITAR ALGUNOS WARNINGS 

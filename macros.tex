@@ -17,18 +17,30 @@
 \usepackage[sans]{dsfont}
 \usepackage{upgreek}
 
-\newcommand{\Frm}{\mathrm{Frm}}
-\newcommand{\Pos}{\mathrm{Pos}}
-\newcommand{\Dpos}{\mathrm{Dpos}}
+
+\newcommand{\Frm}{\mathbf{Frm}}
+\newcommand{\Pos}{\mathbf{Pos}}
+\newcommand{\Dpos}{\mathbf{Dpos}}
 \newcommand{\cbd}{\mathrm{cbd}}
 \newcommand{\Cbd}{\mathrm{Cbd}}
 \newcommand{\CBD}{\mathrm{CBD}}
 \newcommand{\Obj}{\mathrm{Obj}}
+\newcommand{\Fle}{\mathrm{Fle}}
+\newcommand{\Dom}{\mathrm{Dom}}
+\newcommand{\Cod}{\mathrm{Cod}}
 \newcommand{\Hom}{\mathrm{Hom}}
-\newcommand{\Loc}{\mathrm{Loc}}
-\newcommand{\CBA}{\mathrm{CBA}}
-\newcommand{\Ord}{\mathrm{Ord}}
-\newcommand{\Top}{\mathrm{Top}}
+\newcommand{\End}{\mathrm{End}}
+\newcommand{\Aut}{\mathrm{Aut}}
+\newcommand{\Loc}{\mathbf{Loc}}
+\newcommand{\CBA}{\mathbf{CBA}}
+\newcommand{\Ord}{\mathbf{Ord}}
+\newcommand{\Top}{\mathbf{Top}}
+\newcommand{\Grp}{\mathbf{Grp}}
+\newcommand{\Con}{\mathbf{Con}}
+\newcommand{\Ab}{\mathbf{Ab}}
+\newcommand{\CAT}{\mathbf{CAT}}
+\newcommand{\cat}{\mathbf{cat}}
+\newcommand{\Cat}{\mathbf{Cat}}
 \newcommand{\id}{\mathrm{id}}
 \newcommand{\Id}{\mathrm{Id}}
 \newcommand{\ID}{\mathrm{ID}}
@@ -38,6 +50,8 @@
 \newcommand{\op}{\mathrm{op}}
 \newcommand{\pt}{\mathrm{pt}}
 \newcommand{\cl}{\mathrm{cl}}
+\newcommand{\lm}{\mathrm{Lim}}
+\newcommand{\clm}{\mathrm{Colim}}
 \newcommand{\inte}{\mathrm{int}}
 \newcommand{\ob}{\mathrm{ob}}
 \newcommand{\ins}{\mathrm{ins}}
@@ -47,6 +61,15 @@
 \newcommand{\Sob}{\mathrm{Sob}}
 \newcommand{\Haus}{\mathrm{Haus}}
 \newcommand{\DLat}{\mathrm{DLat}}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\N}{\mathbb N}
+\newcommand{\A}{\mathscr A}
+\newcommand{\B}{\mathscr B}
+\newcommand{\C}{\mathscr C}
+\newcommand{\D}{\mathscr D}
+
 
 
 \theoremstyle{plain}
@@ -65,9 +88,10 @@
   \newtheorem{lem}[thm]{\protect\lemmaname}
   \theoremstyle{plain}
   \newtheorem{prop}[thm]{\protect\propositionname}
-    \theoremstyle{definition}
+    \theoremstyle{remark}
+  \newtheorem*{prop*}{Proposición}
 \newtheorem{dfn}[thm]{\protect\definitionname}
-\theoremstyle{plain}
+\theoremstyle{remark}
 \newtheorem*{dfn*}{Definición}
 % \theoremstyle{definition}
 % \newtheorem{algorithm}[theorem]{Algoritmo}
@@ -178,7 +202,7 @@
 \providecommand{\corollaryname}{Corolario}
 \providecommand{\examplename}{Ejemplo}
 \providecommand{\lemmaname}{Lema}
-\providecommand{\propositionname}{Proposition}
+\providecommand{\propositionname}{Proposición}
 \providecommand{\remarkname}{Observación}
 \providecommand{\theoremname}{Teorema}
 \providecommand{\subexamplename}{Subexample}
