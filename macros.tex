@@ -17,6 +17,23 @@
 \usepackage[sans]{dsfont}
 \usepackage{upgreek}
 
+\fancyhead[LE,RO]{\bfseries\thepage}
+\fancyhead[LO]{\rightmark}
+\fancyhead[RE]{\bfseries\leftmark}
+\newcommand\Idl{\text{-}\mathrm{Idl}}
+\newcommand\adj[2]{{
+  \ar[from=#1, to=#2,"\dashv"marking,draw=none]
+}}
+\let\prs\prescript
+\newcommand\Inf{\bigwedge}
+\newcommand\Sup{\bigvee}
+\addto\extrasspanish{ \renewcommand{\inf}{\wedge} }
+\addto\extrasspanish{ \renewcommand{\sup}{\vee} }
+\let\phi\varphi
+\newcommand\ssi{\qquad\text{ si, y solo si }\qquad}
+\newcommand\ol[1]{\overline{#1}}
+\newcommand\nin{\not\in}
+\renewcommand\cal[1]{\mathcal{#1}}
 
 \newcommand{\Frm}{\mathbf{Frm}}
 \newcommand{\Pos}{\mathbf{Pos}}
@@ -92,6 +109,8 @@
   \newtheorem*{prop*}{Proposición}
 \newtheorem{dfn}[thm]{\protect\definitionname}
 \theoremstyle{remark}
+\newtheorem{ex}[thm]{\protect\exercisename}
+\theoremstyle{plain}
 \newtheorem*{dfn*}{Definición}
 % \theoremstyle{definition}
 % \newtheorem{algorithm}[theorem]{Algoritmo}
@@ -105,7 +124,7 @@
 % \newtheorem{criterion}[theorem]{Criterio}
 % \newtheorem{definition}[theorem]{Definición}
 % \newtheorem{example}[theorem]{Ejemplo}
-% \newtheorem{exercise}[theorem]{Ejercicio}
+%\newtheorem{exercise}[theorem]{Ejercicio}
 
 % \newtheorem{notation}[theorem]{Notación}
 % \newtheorem{problem}[theorem]{Problema}

@@ -575,12 +575,12 @@ Antes de continuar, vale la pena mencionar que todos nuestros espacios
 (de carne y hueso) serán al menos $T_{0}$. Recordemos que un espacio
 $T_0$ es un espacio donde cada par de puntos se pueden separar por al
 menos un abierto. Más aún:
-\begin{theorem}\label{tcero}
+\begin{thm}\label{tcero}
     La categoría $\Top_0$ de espacios topológicos
     $T_0$  es \emph{reflexiva} en $\Top$.
     Es decir, el funtor de inclusión $\Top_0\to\Top$
     tiene un adjunto izquierdo.
-\end{theorem}
+\end{thm}
 \begin{proof}
 Es un ejercicio sencillo.
 \end{proof}
@@ -593,13 +593,7 @@ $T_0$ es el siguiente. En cualquier espacio topológico, los puntos
 tienen un preorden (es decir, una relación reflexiva y transitiva)
 dado por
   \[q\sqsubseteq p\iff \overline{q}\subseteq \overline{p}\]
-  \index[Simbolos]{$\sqsubseteq$ orden de especialización}
   Este se llama preorden de especialización.
-\begin{exercise}
-  \label{exe:especializacion}
-  Un espacio $S$ es $T_0$ si, y solo si, su preorden de
-  especialización es antisimétrico y, por lo tanto, un orden parcial.
-\end{exercise}
 
 \section{El espacio de puntos}
 Dado un espacio con un punto $\{*\}$, el conjunto de
@@ -612,9 +606,7 @@ donde cada punto $s\in S$ está asociado a la función $*\mapsto
 s$.
 Así, si $2$ es el marco de dos elementos $2=\{0<1\}$,
 cada de estas funciones $s:\{*\}\to S$ induce un morfismo de
-marcos $\chi_s:\cal OS\to\cal O\{*\}\simeq 2$ 
-\index[Simbolos]{$\chi_s$ morfismo de marcos}
-dado como
+marcos $\chi_s:\cal OS\to\cal O\{*\}\simeq 2$ dado como
 \[
   \chi_s(u) =
   \begin{cases}
@@ -644,23 +636,22 @@ $x\inf y\leq p$, tenemos
 así que $\chi(x)=0$ o bien $\chi(x)=0$, pues $\chi$ toma valores
 en el marco $2$. es decir: $x\leq p$ o bien $y\leq p$.
 
-\begin{definition}
+\begin{dfn}
   Sea $A\in \Frm$. Un punto o elemento $\inf$-irreducible 
   de A es un elemento $p\in A$ con $p\neq 1$ tal que si 
   $x\inf y\leq p$, entonces $x\leq p$ ó $y\leq p$. 
   Denotamos por $\pt A$ al conjunto de todos los puntos de $A$.
-  \index[Simbolos]{$\pt A$ conjunto de todos los puntos de  $A$}
-\end{definition}
+\end{dfn}
 
 
-\begin{lemma}
+\begin{lem}
   Sea $A\in \Frm$.
   \begin{itemize}
       \item Cada máximo de $A$ es $\inf$-irreducible.
       \item Si A es booleano, entonces todo elemento $\inf-$irreducible de A es máximo.
       \item Si A es una cadena, entonces cada elemento propio de A es $\inf-$irreducible.
   \end{itemize}
-\end{lemma}
+\end{lem}
 \begin{proof}\quad
   \begin{itemize}
       \item Sea $p\in A$ máximo, entonces $p<1$. Si $x\inf y\leq p$ y suponiendo que $x\not\leq p$, entonces $p<x\sup p$ y, por la maximalidad de $p$, tenemos que $p\sup x=1$. Similarmente, $y\not\leq p$ implica $p\sup y=1$. Si $x\not\leq p$ y $y\not\leq p$, se tiene que 
@@ -672,7 +663,7 @@ en el marco $2$. es decir: $x\leq p$ o bien $y\leq p$.
 \end{proof}
 
 Sean $A\in \Frm$ y $a\in A$. Decimos que un punto $p\in \pt A$ está en $U_A(a)\subseteq \pt A$ si, y sólo si $a\not\leq p$.
-\begin{lemma}
+\begin{lem}
   Sean $A\in \Frm$ y $a,b\in A$.
   \begin{itemize}
       \item $U_A(1)=\pt A$.
@@ -680,8 +671,8 @@ Sean $A\in \Frm$ y $a\in A$. Decimos que un punto $p\in \pt A$ está en $U_A(a)\
       \item $U_A(a\inf b)=U_A(a)\cap U_A(b)$.
       \item $U_A(\Sup X)=\bigcup \{U_A(x)|x\in X\}$, $\forall X\subseteq A$.
   \end{itemize}
-\end{lemma}
-\begin{proof}%[Yareli $\checkmark$ ]
+\end{lem}
+\begin{proof}
   Sean $A\in \Frm$ y $a,b\in A$.
 \begin{itemize}
 \item Por definición $U_A(1)\subseteq \pt A$. Sea $p\in \pt A$, entonces $p\neq 1$. Además $1\not\leq p$, por lo que $p\in U_A(1)$. Así, $U_A(1)=\pt A$.
@@ -715,13 +706,11 @@ Se sigue que $U_A(A)=\{U_A(a)\mid a\in A\}$ es una topología en $\pt
 A$. Al espacio topológico $(\pt A,U_A(A))$ lo llamamos
 el \textit{espacio de puntos} de $A$.
 Dado que la topología de $\pt A$ es $\cal O\pt A=U_A(A)$,
-se sigue que $U_A:A\to\cal O\pt A$\index[Simbolos]{$U_A$ reflexión espacial de $A$}
- es un
-morfismo suprayectivo de marcos, al cual llamamos la \textit{reflexión
+se sigue que $U_A:A\to\cal O\pt A$ es un morfismo suprayectivo de marcos, al cual llamamos la \textit{reflexión
 espacial} de $A$. Si $U_A$ es inyectivo (y, por lo tanto, un
 isomorfismo) decimos que el marco $A$ es \textit{espacial}.
 
-\begin{remark}
+\begin{obs}
   \leavevmode
   \begin{enumerate}
     \item (La reflexión espacial como un cociente)
@@ -732,10 +721,10 @@ isomorfismo) decimos que el marco $A$ es \textit{espacial}.
         x\leq S(a) \iff U(x)\subseteq U(a)
       .\]
     \item
-      Además, por el lema \ref{lemma:cerraduras-y-conjuntosfijos}, el
+      Además, por el lema adecuado, el
       núcleo $S$ de $U_A$ admite la descripción
       \[
-        S(a)=\Inf \{p\in \pt A|a\leq p\}\index[Simbolos]{$S$ núcleo de $U_A$}
+        S(a)=\Inf \{p\in \pt A|a\leq p\}
       .\]
     \item
       Dados dos puntos $p,q\in \pt A$, se cumple
@@ -753,7 +742,7 @@ isomorfismo) decimos que el marco $A$ es \textit{espacial}.
       En particular, ya que su preorden de especialización es un orden
       parcial, esto prueba que el espacio de puntos es $T_0$.
   \end{enumerate}
-\end{remark}
+\end{obs}
 
 \subsection{Funtorialidad y naturalidad}
 Queremos ver que la asignación $A\mapsto \pt A$ es un funtor y que
@@ -904,8 +893,7 @@ es una transformación natural
     \Phi_\bullet : \id_\Top\to\pt\cal O
 .\]
 
-\section{La adjunción}
-    \label{ssec:adjuncion}
+\section{La adjunción}\label{ssec:adjuncion}
 
 En la primera parte, vimos que todo morfismo de marcos
 $f:A\to B$ induce una función continua $\pt f:\pt B\to\pt A$ dada
@@ -914,8 +902,7 @@ probamos que esta asignación es un funtor $\pt:\Frm\to\Top$.
 Ahora veremos que $\pt$ y el funtor de abiertos
 $\cal O:\Top\to\Frm$ son las mitades de una adjunción contravariante
 entre $\Top$ y $\Frm$. En particular, construiremos un isomorfismo
-\begin{equation}
-    \label{eqn:adj_frm_top}
+\begin{equation}\label{eqn:adj_frm_top}
     \Frm(A,\cal OS) \simeq \Top(S,\pt A)
 \end{equation}
 natural en $A$ y en $S$.
@@ -1029,10 +1016,9 @@ Ahora, afirmamos que las funciones
     f &\mapsto \bar f = (\pt f)\Phi_S,
     \\
     \Frm(A,\cal OS) &\leftarrow \Top(S,\pt A) \\
-    (\cal O\phi)U_A = \bar\phi &\mapsfrom \phi.
+    (\cal O\phi)U_A = \phi &\mapsto \bar\phi.
 \end{align*}
-conforman una biyección.
-En efecto,
+conforman una biyección. En efecto,
 la naturalidad de $\Phi_\bullet$, $U_\bullet$ y las identidades
 triangulares implican la conmutatividad de los diagramas
 \[
