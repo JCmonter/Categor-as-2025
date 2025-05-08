@@ -1,0 +1,1200 @@
+\documentclass{comunicaciones}
+
+\usepackage[utopia,sfscaled]{mathdesign}
+\usepackage[scaled]{helvet}
+
+\usepackage[utf8]{inputenc} %Por favor guardar los archivos en unicode
+\usepackage[T1]{fontenc}
+
+
+\usepackage{microtype}
+\usepackage[spanish,mexico,es-noindentfirst]{babel}
+
+\usepackage[paperwidth=170mm,paperheight=230 mm,total={125mm,170mm},top=29mm,left=23mm,includeheadfoot]{geometry}
+
+\usepackage{lastpage}
+\newcounter{FirstPage}
+\newcommand{\Primera}[1]{\setcounter{FirstPage}{#1}}
+
+\usepackage{mathtools}
+
+\usepackage{enumerate}
+\usepackage{float}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\abstractname}{Resumen}
+\renewcommand{\keywordsname}{Palabras Claves}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\refname}{Bibliografía}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{macros.tex} %Cargar en este archivo los paquetes que requiera el autor (graphicx, tikz, ...), 
+% definir comandos (\DeclareMathOperator{command}{definition}, ... ), etc.
+
+\issueinfo{52}{Comunicaciones}{}{2023} 
+\Primera{5} % La página de inicio del artículo 
+
+\pagespan{\theFirstPage}{\pageref{LastPage}}
+\PII{\ } %Tipo de artículo, e.g., Artículo de Investigación; Exposición; etc.
+
+\begin{document}
+
+\author[Vázquez A., Monter J. C., Medina M., Zaldívar L. A.]{Alejandro Vázquez Aceves, Juan Carlos Monter Cortés, Muaricio Medina Barcena y Luis Ángel Zaldívar Corichi}
+
+\address{Centro Universitario de Ciencias Exactas e Ingenieria,
+Universidad de Guadalajara,
+Blvd Gral. Marcelino García Barragán 1421, Olimpica, 44430 Guadalajara, Jalisco}
+\email{\lowercase{\texttt{luis.zaldivar@academicos.udg.mx}}}
+
+\address{Centro Universitario de Ciencias Exactas e Ingenieria,
+Universidad de Guadalajara,
+Blvd Gral. Marcelino García Barragán 1421, Olimpica, 44430 Guadalajara, Jalisco}
+\email{\lowercase{\texttt{juan.monter2902@alumnos.udg.mx}}}
+
+% Tantas direcciones como autores.
+
+\title[Teoría de categorías]{Una introducción a la teoría de categorías}
+
+\begin{abstract} 
+PENDIENTE
+\vskip .3cm
+
+\noindent {\sc Abstract.}  PENDIENTE
+\end{abstract}
+
+\subjclass[2000]{82B44}
+
+\keywords{Cristales de spin. Medida de Gibbs.}
+
+\maketitle
+
+\section*{Introducción}\label{Introduccion}
+
+\noindent 
+PENDIENTE
+\tableofcontents
+
+
+\section{Conceptos básicos}\label{Conceptos basicos}
+
+\begin{dfn}[Categoría]\label{Definicion categoria}
+    Una \emph{categoría} $\mathcal{C}$ consiste de los siguientes datos:
+    \begin{enumerate}
+        \item Una colección de \emph{objetos}, que denotaremos por $\Obj(\mathcal{C})$.
+        \item Una colección de \emph{flechas} ó \emph{morfismos} entre objetos. Cada flecha $f$ tiene un objeto
+        de salida $\Dom(f)\in\Obj(\C)$\footnote{Aunque la colección de objetos 
+        no forme un conjunto, usamos la notación conjuntista de elemento, para decir
+        que el dominio de $f$ es uno de los objetos determinados en el punto 1},
+        que llamamos \emph{dominio de} $f$, y un objeto de llegada 
+        $\Cod(f)\in\Obj(\C)$, que llamamos \emph{codominio de} $f$. Toda la información
+        que carga una flecha se condensa en la notación $f:\Dom(f)\to\Cod(f)$\footnote{
+        Aunque la notación sugiere que $f$ es una función, en general no lo es. Además podemos
+        usar la notación de diagrama $A\xrightarrow{f}B$}. 
+        
+        A la colección de flechas de la categoría la denotaremos por $\Fle(\C)$. Y a la colección 
+        de flechas con dominio $A$ y codominio $B$ la denotaremos por $\C(A,B)$.
+        \item Una regla de composicion de flechas. Lo que significa que a cada par de flechas $f,g\in\Fle(\C)$, tales que $\Cod(f)=\Dom(g)$, 
+        le asigna una flecha $g\circ f:\Dom(f)\to \Cod(g)$, llamada composición de $g$ con $f$, y es tal que: 
+        
+        \begin{itemize}
+            \item Para cuales quiera objetos $A,B,C,D\in\Obj(\C)$, y flechas $f:A\to B,g:B\to C$ y $h:C\to D$, se tiene que:
+            $$h\circ(g\circ f) = (h\circ g)\circ f.$$
+            
+            \item Para todo objeto $A\in\Obj(\C)$, existe $\id_A\in\Hom_\C( A,A)$ tal que cualquier objeto $B\in\Obj(\C)$ y flechas $g\in\Hom_\C(A,B)$, $h\in\Hom_\C(B,A)$ satisfacen:
+            $$g\circ \id_A=g\text{ y }\id_A\circ h=h.$$
+        \end{itemize}
+    \end{enumerate}
+\end{dfn}
+
+Para simplificar la notación, cuando nos refiramos a un objeto o flecha de una categoría $\C$, escribiremos $A\in\C$ o $f\in\C$; 
+y en caso de que sea ambigua usaremos la notación $A\in\Obj(\C)$ o $f\in\Fle(\C)$. También al hablar de una flecha en una categoría, podríamos usar
+una notación de diagrama como sigue $$A\xrightarrow{f}B\in\C$$
+lo que significa que la flecha $f$ está en la categoría $\C$ y tiene dominio $A$ y codominio $B$. De forma similar, podemos denotar que todas
+las flechas de un diagrama estén en una categoría $\C$, y al mismo tiempo decir sus dominios y codominios como sea conveniente. Como por ejemplo
+$$\begin{tikzcd}
+    A\arrow{r}{f} & B\arrow{r}{g} & C
+\end{tikzcd}\in\C, 
+\begin{tikzcd}
+    A \arrow[d, "f"'] \arrow[r, "g"] & B \\
+    C                                &  
+\end{tikzcd}\in\C, 
+\begin{tikzcd}
+    A \arrow[r, "g"', shift right] \arrow[r, "f", shift left] & B
+\end{tikzcd}\in\C$$
+
+Hay que decir que las flechas en $\C(A,A)$ reciben el nombre
+de \emph{endomorfismos}, por lo que denotaremos a tal colección como $\End(A)$, y de haber alguna duda de la categoría en discusión, usaremos la 
+notación $\End_\C(A)$.
+
+Por último hay que mencionar que en un diagrama como el siguiente
+\[\begin{tikzcd}
+    A \arrow[d, "f"'] \arrow[r, "g"] & B \arrow[ld, "h"] \\
+    C                                &                  
+    \end{tikzcd}\]
+donde es posible componer la flecha $h$ con $g$ y tener una flecha con mismo dominio y codominio que $f$, es equivalente decir
+que $h\circ g=f$ a que el \emph{diagrama conmuta}. En general decir que un diagrama conmuta es equivalente a decir que cuales quiera dos
+\textquotedblleft caminos\textquotedblright que tengan mismos dominios y codominios, respectivamente, son iguales. De esta manera a través de un diagrama
+conmutativo, podemos expresar varias ecuaciones de composiciones de flechas. Por ejemplo, que el siguiente diagrama conmute
+\[\begin{tikzcd}
+    A \arrow[rd, "h"'] \arrow[r, "f"] & C \arrow[r, "g"]                  & D \\
+                                      & B \arrow[u, "d"] \arrow[ru, "e"'] &  
+\end{tikzcd}\]
+condensa varias ecuaciones, como $f=d\circ h$, $e=g\circ d$, $e\circ h=g\circ f$, y algunas otras redundantes.
+
+\begin{dfn}[Isomorfismo]
+    Sea $\C$ una categoría y una flecha $A\xrightarrow{f}B\in\C$. Decimos que $f$ es un \emph{isomorfismo} si existe una flecha 
+    $B\xrightarrow{g}A\in\C$ tal que $$g\circ f=\id_A \text{  y  } f\circ g=\id_B$$
+    
+    En este caso, decimos que $A$ y $B$ son objetos \emph{isomorfos} en $\C$ y denotamos $A\cong_\C B$.
+\end{dfn}
+
+En general si no hay ambigüedad de la categoría en la que dos objetos son isomorfos, entonces podemos omitir especificarla, y en la notación
+simplemente escribir $A\cong B$.
+Como curiosidad acerca de diagramas conmutativos, sería bueno hacer notar que una flecha $A\xrightarrow{f}B\in\C$ es un isomorfismo si y solo si
+existe una flecha $B\xrightarrow{g}A\in\C$ tal que el siguiente diagrama
+\[\begin{tikzcd}
+    A \arrow[rd, "f"'] \arrow[r, "\id_A"] & A \arrow[r, "f"]                      & B \\
+                                          & B \arrow[u, "g"] \arrow[ru, "\id_B"'] &  
+\end{tikzcd}\]
+conmuta.
+
+\begin{prop}
+    Sea $\C$ una categoría y $A\xrightarrow{f}B\in\C$ un isomorfismo, entonces existe una única flecha $B\xrightarrow{g}A\in\C$ tal que
+    $g\circ f=\id_A$ y $f\circ g=\id_B$.
+\end{prop}
+\begin{proof}
+    Supongamos que existen dos flechas $B \overset{g_1}{\underset{g_2}{\rightrightarrows}}A\in\C$ tales que los diagramas
+    $$\begin{tikzcd}
+        A \arrow[rd, "f"'] \arrow[r, "\id_A"] & A \arrow[r, "f"]                      & B \\
+                                              & B \arrow[u, "g_1"] \arrow[ru, "\id_B"'] &  
+    \end{tikzcd} \text{ y } \begin{tikzcd}
+        A \arrow[rd, "f"'] \arrow[r, "\id_A"] & A \arrow[r, "f"]                      & B \\
+                                              & B \arrow[u, "g_2"] \arrow[ru, "\id_B"'] &  
+    \end{tikzcd} $$
+    conmutan. Entonces
+    $$g_1=g_1\circ\id_B=g_1\circ(f\circ g_2)=(g_1\circ f)\circ g_2=\id_A\circ g_2=g_2.$$
+\end{proof}
+
+De lo anterior queda claro que el inverso de un isomorfismo $f$ es único, por lo que lo de notaremos como $f^{-1}$. 
+\begin{lem}\label{propiedades de isos}
+    \begin{enumerate} \text{\\}
+        \item Para todo objeto $A\in\C$, $\id_A$ es un isomorfismo.
+        \item Si $f\in\C$ es un isomorfismo, entonces $f^{-1}$ es un isomorfismo.
+        \item Si $A\xrightarrow{f}B\xrightarrow{g}C\in\C$ son isomorfismos, entonces $g\circ f$ es un isomorfismo.
+    \end{enumerate}
+\end{lem}
+\begin{proof}\text{\\}
+    \begin{enumerate}
+        \item Es consecuencia directa de que $\id_A\circ\id_A=\id_A$.
+        \item Por definición de isomorfismo, existe $B\xrightarrow{f^{-1}}A$ tal que $f\circ f^{-1}=\id_B$ y $f^{-1}\circ f=\id_A$.
+        \item Por definición de isomorfismo, existen $B\xrightarrow{f^{-1}}A$ y $C\xrightarrow{g^{-1}}B$ tales que $f\circ f^{-1}=\id_B$, $f^{-1}\circ f=\id_A$, $g\circ g^{-1}=\id_C$ y $g^{-1}\circ g=\id_B$. Entonces
+        $$(g\circ f)\circ(f^{-1}\circ g^{-1})=g\circ(f\circ f^{-1})\circ g^{-1}=g\circ\id_B\circ g^{-1}=g\circ g^{-1}=\id_C$$
+        y
+        $$(f^{-1}\circ g^{-1})\circ(g\circ f)=f^{-1}\circ(g^{-1}\circ g)\circ f=f^{-1}\circ\id_B\circ f=f^{-1}\circ f=\id_A.$$
+    \end{enumerate}
+\end{proof}
+
+Consideremos un objeto $A$ en una categoría arbitraria $\C$. Si la colección $\End(A)$ forma un conjunto, entonces tenemos un monoide equipando a este conjunto
+con la composición de flechas de $\C$. Cuando un endomorfismo es un isomorfismo, lo llamamos \emph{automorfismo} y por lo tanto podemos definir la subcolección
+$$\Aut(A):=\{f\in\End(A) \ |\ f \text{ es un isomorfismo}\}$$
+
+\begin{thm}
+    Sea $\C$ una categoría y $A\in\C$. Entonces $\Aut(A)$ es un grupo con la composición de flechas de $\C$.
+\end{thm}
+\begin{proof}
+    Es consecuencia directa del lema \ref{propiedades de isos}
+\end{proof}
+
+\begin{dfn}[Monomorfismos y epimorfismos]
+    Sea $\C$ una categoría y $A\xrightarrow{f}B\in\C$ una flecha. 
+    \begin{enumerate}
+        \item Decimos que $f$ es un \emph{monomorfismo} si para cualquier objeto $X$ y flechas $X\overset{\alpha}{\underset{\beta}{\rightrightarrows}}A$
+              tales que $f\circ\alpha=f\circ\beta$, entonces $\alpha=\beta$. 
+        \item Decimos que $f$ es un \emph{epimorfismo} si para cualquier objeto $Y$ y flechas $B\overset{\alpha}{\underset{\beta}{\rightrightarrows}}Y$
+              tales que $\alpha\circ f=\beta\circ f$, entonces $\alpha=\beta$.
+    \end{enumerate}
+\end{dfn}
+Hay que hacer énfasis en que básicamente una flecha es monomorfismo (epimorfismo) si es cancelable por la izquierda (derecha). Sin embargo esto no implica
+que exista una flecha tal que la composición (en alguna dirección) sea igual a la identidad, pero puede existir, y por eso introducimos la siguiente definición
+\begin{dfn}[Secciones y retractos]
+    Sea $\C$ una categoría y $A\xrightarrow{f}B\in\C$ una flecha. 
+    \begin{enumerate}
+        \item Decimos que $f$ es una \emph{sección} si existe $B\xrightarrow{g}A\in\C$ tal que $g\circ f=\id_A$. 
+        \item Decimos que $f$ es un \emph{retracto} si existe $B\xrightarrow{g}A\in\C$ tal que $f\circ g=\id_B$.
+    \end{enumerate}
+\end{dfn}
+
+Observemos que toda sección (retracto) es un monomorfismo (epimorfismo). Y notemos que, para un flecha en una categoría, aunque no es suficiente ser monomorfismo
+y epimorfismo para ser isomorfismo, si es suficiente que sea sección y retracto (Demostración como ejercicio para el lector).
+
+Ejemplos de categorías, en cada ejemplo decir que son Isos, monos, epis, secciones y retractos...
+
+Ahora queremos abordar dos conceptos importantes, el de \textquotedblleft propiedad universal\textquotedblright y el de \textquotedblleft dualidad\textquotedblright .
+Empezaremos por el concepto de \textquotedblleft dualidad\textquotedblright , ya que de cierta forma lo hemos mencionado anteriormente. Resulta que los conceptos de
+monomorfismo y epimorfismo son conceptos duales; así como el de sección y retracto. Para ver esto hay que notar que esencialmente la diferencia 
+entre los dos conceptos (monomorfismos y epimorfismos, ó, secciones y retractos, respectivamente) solo está en la dirección de las flechas. 
+Definamos lo que es la categorías dual de una categoría. 
+
+\begin{dfn}[Categoría opuesta o dual]
+    Sea $\C$ una categoría. Denotaremos como $\C^\op$ (o $\C^\ast$) a la categoría \emph{opuesta o dual} de $\C$, la cual está determinada de la siguiente manera:
+    \begin{itemize}
+        \item Los objetos de $\C^\op$ son los mismos que los de $\C$. $\Obj(\C^\op)=\Obj(\C)$.
+        \item Los morfismos de $\C^\op$ son \textquotedblleft casi\textquotedblright  los mismos que $\C$, en el sentido de que para cualesquiera
+        objetos $A,B\in\C^\op$ definimos $\C^\op(A,B):=\C(B,A)$. Se puede decir simplemente que cada flecha en $\C$ toma la \textquoteleft dirección opuesta\textquotedblright .
+        \item La regla de composición la definimos en base a la regla de composición de $\C$ de tal manera que dadas dos flechas $A\xrightarrow{f}B\xrightarrow{g}C\in\C^\op$ entonces:
+        $$g\circ_\op f:=f\circ g$$
+    \end{itemize}
+\end{dfn}
+
+Un buen ejercicio para el lector sería comprobar que la categoría dual definida anteriormente siempre satisface los axiomas de una categoría. Solo restaría
+comprobar que la regla de composición definida es asociativa y que cada objeto tiene su flecha identidad. 
+
+En general diremos que una propiedad $P$ es \emph{dual} a una propiedad $Q$ si es equivalente que se satisfaga $P$ en una categoría $\C$ a que se satisfaga $Q$
+en la respectiva categoría dual $\C^\op$. Por esta razón muchas definiciones vienen en pares, porque para cada propiedad está la propiedad dual, por ejemplo
+los monomorfismos y las secciones son duales a los epimorfismos y los retractos, respectivamente. Mostraremos la afirmación de que
+los monomorfismos son duales a los epimorfismos, y recomendamos probar de ejercicio la dualidad entre sección y retracto.
+
+\begin{prop}
+    Sea $\C$ una categoría. Una flecha $A\xrightarrow{f}B\in\C$ es un monomorfismo (epimorfismo) si y solo si $B\xrightarrow{f}A\in\C^\op$ es un epimorfismo (monomorfismo).
+\end{prop}
+\begin{proof}
+    Pendiente
+\end{proof}
+
+Una propiedad universal es...
+
+\begin{dfn}[Objeto inicial y final]
+    Sea $\C$ una categoría y $A\in\C$.
+    \begin{enumerate}
+        \item Decimos que $A$ es un \emph{objeto inicial} si para cualquier objeto $X$ existe exactamente una flecha $A\xrightarrow{!_X}X\in\C$. 
+        \item Decimos que $A$ es un \emph{objeto final} si para cualquier objeto $X$ existe exactamente una flecha $X\xrightarrow{!^X}A\in\C$.
+    \end{enumerate}
+\end{dfn}
+
+Ejemplos... En el ejemplo de grupos mencionar la definición de \emph{objeto cero}
+
+\begin{dfn}[Producto]
+    Sea $\C$ una categoría y sean $A,B\in\C$ dos objetos. El \emph{producto} de $A$ con $B$ es un diagrama \begin{tikzcd}
+        & P \arrow[ld, "\pi_A"'] \arrow[rd, "\pi_B"] &   \\
+      A &                                            & B
+      \end{tikzcd}$\in\C$ tal que para cualquier otro diagrama \begin{tikzcd}
+        & X \arrow[ld, "\alpha"'] \arrow[rd, "\beta"] &   \\
+        A &                                            & B
+        \end{tikzcd}$\in\C$ existe una única flecha $X\xrightarrow{(\alpha,\beta)}P\in\C$ tal que el siguiente diagrama conmuta:
+        \[\begin{tikzcd}
+            & P \arrow[ld, "\pi_A"'] \arrow[rd, "\pi_B"]                                         &   \\
+          A &                                                                                    & B \\
+            & X \arrow[lu, "\alpha"] \arrow[ru, "\beta"'] \arrow[uu, "{(\alpha,\beta)}", dashed] &  
+          \end{tikzcd}\]
+\end{dfn}
+
+\begin{dfn}
+    [Coproducto]
+    Sea $\C$ una categoría y sean $A,B\in\C$ dos objetos. El \emph{coproducto} de $A$ con $B$ es un diagrama \begin{tikzcd}
+                & C &                          \\
+        A \arrow[ru, "\iota_A"] &   & B \arrow[lu, "\iota_B"']
+        \end{tikzcd}$\in\C$ tal que para cualquier otro diagrama \begin{tikzcd}
+                & X  &   \\
+        A\arrow[ru, "\alpha"'] &    & B\arrow[lu, "\beta"]
+        \end{tikzcd}$\in\C$ existe una única flecha $C\xrightarrow{<\alpha,\beta>}X\in\C$ tal que el siguiente diagrama conmuta:
+        \[\begin{tikzcd}
+                    & C \arrow[dd, "{<\alpha,\beta>}", dashed] &                                              \\
+        A \arrow[rd, "\alpha"', no head] \arrow[ru, "\iota_A"] &                                          & B \arrow[ld, "\beta"] \arrow[lu, "\iota_B"'] \\
+                    & X                                        &                                             
+        \end{tikzcd}\]
+\end{dfn}
+
+Ejemplos... En ejemplo de espacios vectoriales hacer notar que un mismo objeto puede ser producto o coproducto dependiendo de los morfismos a los que esté asociado
+
+\begin{dfn}[(Co)Igualador]
+    Sea $\C$ una categoría y sean dos flechas $A\overset{f}{\underset{g}{\rightrightarrows}}B\in\C$.
+    \begin{enumerate}
+        \item El \emph{igualador} de $f$ y $g$ es un diagrama  \begin{tikzcd}
+            I \arrow[r, "{e_{f,g}}"] & A \arrow[r, "f", shift left] \arrow[r, "g"', shift right] & B
+            \end{tikzcd}$\in\C$ tal que $f\circ e_{f,g}=g\circ e_{f,g}$ y para cualquier otro diagrama \begin{tikzcd}
+                X \arrow[r, "h"] & A \arrow[r, "f", shift left] \arrow[r, "g"', shift right] & B
+                \end{tikzcd}$\in\C$ tal que $f\circ h=g\circ h$, existe una única flecha $X\xrightarrow{h_{f,g}}I\in\C$ tal que el siguiente diagrama conmuta:
+                \[\begin{tikzcd}
+                    X \arrow[d, "{h_{f,g}}"', dashed] \arrow[rd, "h"] &   \\
+                    I \arrow[r, "{e_{f,g}}"']                         & A
+                    \end{tikzcd}\]
+        \item El \emph{coigualador} de $f$ y $g$ es un diagrama \begin{tikzcd}
+            A \arrow[r, "f", shift left] \arrow[r, "g"', shift right] & B \arrow[r, "{c_{f,g}}"] & CoI
+            \end{tikzcd}$\in\C$ tal que $c_{f,g}\circ f=c_{f,g}\circ g$ y para cualquier otro diagrama \begin{tikzcd}
+                A \arrow[r, "f", shift left] \arrow[r, "g"', shift right] & B \arrow[r, "h"] & X
+                \end{tikzcd}$\in\C$ tal que $h\circ f=h\circ g$, existe una única flecha $CoI\xrightarrow{h^{f,g}}X\in\C$ tal que el siguiente diagrama conmuta:
+                \[\begin{tikzcd}
+                                    & X                                   \\
+                B \arrow[r, "{c_{f,g}}"'] \arrow[ru, "h"] & CoI \arrow[u, "{h^{f,g}}"', dashed]
+                \end{tikzcd}\]
+    \end{enumerate}
+\end{dfn}
+
+\begin{dfn}[(Co)Producto fibrado]
+    Sea $\C$ una categoría.
+    \begin{enumerate}
+        \item Sean dos flechas \begin{tikzcd}
+                    & A \arrow[d, "f"] \\
+        B \arrow[r, "g"'] & Z               
+        \end{tikzcd}$\in\C$. El \emph{producto fibrado} de $f$ y $g$ es un diagrama conmutativo \begin{tikzcd}
+            {P_{f,g}} \arrow[r, "\pi_f"] \arrow[d, "\pi_g"'] & A \arrow[d, "f"] \\
+            B \arrow[r, "g"']                                & Z               
+        \end{tikzcd}$\in\C$ tal que para cualquier otro diagrama conmutativo \begin{tikzcd}
+                X \arrow[r, "\alpha"] \arrow[d, "\beta"'] & A \arrow[d, "f"] \\
+                B \arrow[r, "g"']                         & Z               
+        \end{tikzcd}$\in\C$, existe una única flecha $X\xrightarrow{(\alpha,\beta)_Z}P_{f,g}\in\C$ tal que el siguiente diagrama conmuta:
+        \[\begin{tikzcd}
+            X \arrow[rrd, "\alpha", bend left] \arrow[rdd, "\beta"', bend right] \arrow[rd, "{(\alpha,\beta)_Z}", dashed] &                                                  &                  \\
+                                                                                                                            & {P_{f,g}} \arrow[r, "\pi_f"] \arrow[d, "\pi_g"'] & A \arrow[d, "f"] \\
+                                                                                                                            & B \arrow[r, "g"']                                & Z               
+        \end{tikzcd}\]
+        \item Sean dos flechas \begin{tikzcd}
+            & A                                \\
+          B & Z \arrow[u, "f"'] \arrow[l, "g"]
+          \end{tikzcd}$\in\C$. El \emph{coproducto fibrado} de $f$ y $g$ es un diagrama conmutativo \begin{tikzcd}
+            {C_{f,g}}              & A \arrow[l, "\iota_f"']          \\
+            B \arrow[u, "\iota_g"] & Z \arrow[u, "f"'] \arrow[l, "g"]
+            \end{tikzcd}$\in\C$ tal que para cualquier otro diagrama conmutativo  \begin{tikzcd}
+                X                    & A \arrow[l, "\alpha"']           \\
+                B \arrow[u, "\beta"] & Z \arrow[u, "f"'] \arrow[l, "g"]
+                \end{tikzcd}$\in\C$, existe una única flecha $C_{f,g}\xrightarrow{<\alpha,\beta>_Z}X\in\C$ tal que el siguiente diagrama conmuta:
+            \[\begin{tikzcd}
+                X &                                                        &                                                            \\
+                  & {C_{f,g}} \arrow[lu, "{<\alpha,\beta>_Z}"', dashed]    & A \arrow[l, "\iota_f"'] \arrow[llu, "\alpha"', bend right] \\
+                  & B \arrow[u, "\iota_g"] \arrow[luu, "\beta", bend left] & Z \arrow[u, "f"'] \arrow[l, "g"]                          
+            \end{tikzcd}\]
+                  
+    \end{enumerate}
+\end{dfn}
+
+Ejemplos de productos, igualadores y productos fibrados, dejar como ejercicio buscar la construcción dual de cada ejemplo dado.
+
+\begin{thm}
+    Sea $\C$ una categoría con productos e igualadores. Entonces $\C$ tiene productos fibrados. 
+\end{thm}
+\begin{proof}
+    PENDIENTE
+\end{proof}
+
+Ejercicio enunciar y demostrar el teorema dual.
+\section{Funtores}
+
+Ahora que entendemos que es una categoría. Usemos el mismo espíritu de la teoría de categorías para estudiar objetos, y pensar en las categorías como objetos matemáticos.
+Lo que queremos decir es que para estudiar categorías con ese mismo espíritu, sería necesario definir alguna noción de flechas entre categorías. 
+Eso es justamente un funtor.
+
+\begin{dfn}
+    Sean $\A$ y $\B$ dos categorías. Definimos un \emph{funtor} $F:\A\to\B$ como una regla de asignación entre $\A$ y $\B$, de tal forma que:
+    \begin{enumerate}
+        \item A cada objeto $X\in\A$ le corresponde un solo objeto $F(X)\in\B$.
+        \item A cada flecha $X\xrightarrow{f}Y\in\A$ le corresponde una sola flecha $F(X)\xrightarrow{F(f)}F(Y)\in\B$ tal que:
+        \begin{itemize}
+            \item $F(\id_X)=\id_{F(X)}$ para todo objeto $X\in\A$.
+            \item $F(g\circ f)=F(g)\circ F(f)$ para toda flecha $Y\xrightarrow{g}Z\in\A$.
+        \end{itemize}
+    \end{enumerate}
+\end{dfn}
+
+Consideremos dos categorías $\A$ y $\B$ y un funtor $F:\A^\op\to\B$. Notemos que la regla de asignación de $F$ también es una regla de asignación entre $\A$ y $\B$,
+pues a cada objeto $A\in\Obj(\A)=\Obj(\A^\op)$ le corresponde el objeto $F(A)\in\B$, y cada flecha $A\xrightarrow{f}B\in\A$ es una flecha $B\xrightarrow{f}A\in\A^\op$ que le corresponde
+la flecha $F(B)\xrightarrow{F(f)}F(A)\in\B$. De esta manera $F$ casi es un funtor de $A$ a $B$, con la única diferencia de que cambia la dirección de las flechas.
+En este sentido podemos decir que es otro tipo de funtor:
+
+\begin{dfn}[Funtor contravariante]
+    Sean $\A$ y $\B$ dos categorías. Definimos un \emph{funtor contravariante} $F:\A\to\B$ como una regla de asignación entre $\A$ y $\B$, de tal forma que:
+    \begin{enumerate}
+        \item A cada objeto $X\in\A$ le corresponde un solo objeto $F(X)\in\B$.
+        \item A cada flecha $X\xrightarrow{f}Y\in\A$ le corresponde una sola flecha $F(Y)\xrightarrow{F(f)}F(X)\in\B$ tal que:
+        \begin{itemize}
+            \item $F(\id_X)=\id_{F(X)}$ para todo objeto $X\in\A$.
+            \item $F(g\circ f)=F(f)\circ F(g)$ para toda flecha $Y\xrightarrow{g}Z\in\A$.
+        \end{itemize}
+    \end{enumerate}
+\end{dfn}
+
+Por lo comentado previo a la definición anterior, queda claro que es equivalente tener un funtor $F:\A^\op\to\B$ a tener un funtor contravariante $F:\A\to\B$.
+Dejamos como ejercicio al lector hacer la prueba de que también es equivalente tener un funtor $F:\A\to\B^\op$ a tener un funtor contravariante $F:\A\to\B$.
+
+Ejemplos de funtores... entre ellos la identidad. Funtores de olvido Dar definición de funotr fiel y pleno. Funtores "libres", Funtores Homs, Funtor de abiertos, Morfismos de copos, morfismos de grupos. 
+Y quiero dar un contra ejemplo que la conclusión es que sacar el centro de un grupo y verlo como un funtor de $\Grp$ a $\Ab$
+
+\begin{prop}
+    Sean dos funtores $\A\xrightarrow{F}\B\xrightarrow{G}\C$, entonces la regla de asignación $G\circ F:\A\to\C$ definida como 
+    $G\circ F(X\xrightarrow{f}Y)=G(F(X))\xrightarrow{G(F(f))}G(F(Y))$ para toda flecha $X\xrightarrow{f}Y\in\A$, es un funtor.
+\end{prop}
+\begin{proof}
+    PENDIENTE
+\end{proof}
+
+La proposición anterior nos dice como está definida la composición de funtores. Dejamos para el lector el ejercico de probar que para cualquier funtor $\A\xrightarrow{F}\B$, se tiene que $F\circ\id_\A=\id_\B\circ F$.
+Veamos ahora que la composición es asociativa.
+
+\begin{prop}
+    Sean tres funtores $\A\xrightarrow{F}\B\xrightarrow{G}\C\xrightarrow{H}\D$. Entonces $$H\circ(G\circ F)=(H\circ G)\circ F.$$
+\end{prop}
+\begin{proof}
+    PENDIENTE
+\end{proof}
+
+Hemos probado que los funtores y su regla de composición satisfacen de cierta forma lo que pedimos para las flechas de una categoría, por lo que es natural preguntarse
+¿Es posible hablar de la categoría de categorías?. No como tal, hay algunos detalles técnicos fundacionales por los que no es tán simple hablar de algo tan inmenso. Una manera de
+tratar con este problema está en el libro Abstract and Concrete Categories The Joy of Cats escrito por Jiˇr´ıAd´amek, Horst Herrlich y George E. Strecker, donde se define la 
+\emph{quasicategoría} $\CAT$ cuyos objetos son todas las categorías y las flechas son los funtores. No es nuestra intensión abordar este tema a fondo, 
+solo dar una fuente para que el lector pueda investigar un poco más a fondo el tema. Sin embargo queremos hacer notar que de igual forma podemos
+hablar de categorías que satisfacen propiedades universales (incial, final, productos, coproductos, etc...) e isomorfismos de categorías.
+
+\section{Transformaciones naturales}
+
+Al haber introducido este nuevo objeto de funtor, de nuevo es natural pensar si podemos tener flechas entre funtores. Y esto es posible siempre que los funtores
+compartan dominio y codominio.
+
+\begin{dfn}
+    Sean $\A,\B$ dos categorías y $\A\overset{F}{\underset{G}{\rightrightarrows}}\B$ dos funtores. Una \emph{transformación natural} de $F$ a $G$
+    es una colección de flechas $\alpha=\{F(A)\xrightarrow{\alpha_A}G(A) \ |\ A\in\Obj(\A)\}\subseteq\B$ tal que para cada flecha $A\xrightarrow{f}B\in\A$ el siguiente diagrama conmuta
+    \[\begin{tikzcd}
+        {F(A)} & {G(A)} \\
+        {F(B)} & {G(B)}
+        \arrow["{\alpha_A}", from=1-1, to=1-2]
+        \arrow["{F(f)}"', from=1-1, to=2-1]
+        \arrow["{G(f)}", from=1-2, to=2-2]
+        \arrow["{\alpha_B}"', from=2-1, to=2-2]
+    \end{tikzcd}\]
+
+    Cada flecha $\alpha_A$ se llama componente en $A$ de $\alpha$.
+\end{dfn}
+
+En general usaremos la notación $\alpha:F\Rightarrow G$ para referirnos a una transformación natural $\alpha$ de $F$ a $G$. Para la notación de diagrama tenemos, además
+de la natural $F\xRightarrow{\alpha}G$, una notación que deja ver también las categorías involucradas entre los funtores:
+\[\begin{tikzcd}
+	\A && \B
+	\arrow[""{name=0, anchor=center, inner sep=0}, "F", shift left=2, curve={height=-6pt}, from=1-1, to=1-3]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "G"', shift right=2, curve={height=6pt}, from=1-1, to=1-3]
+	\arrow["\alpha"', shorten <=3pt, shorten >=3pt, Rightarrow, from=0, to=1]
+\end{tikzcd}\]
+
+Ejemplos... 
+
+Veamos ahora que como es la composición de transformaciones naturales.
+
+\begin{prop}
+    Sean \begin{tikzcd}
+        \A && \B
+        \arrow[""{name=0, anchor=center, inner sep=0}, "F", shift left=2, curve={height=-12pt}, from=1-1, to=1-3]
+        \arrow[""{name=1, anchor=center, inner sep=0}, "H"', shift right=2, curve={height=12pt}, from=1-1, to=1-3]
+        \arrow[""{name=2, anchor=center, inner sep=0}, "G"{description}, from=1-1, to=1-3]
+        \arrow["\alpha"', shorten <=2pt, shorten >=2pt, Rightarrow, from=0, to=2]
+        \arrow["\beta"', shorten <=2pt, shorten >=2pt, Rightarrow, from=2, to=1]
+    \end{tikzcd} funtores y transformaciones naturales. Entonces la familia de morfismos $\beta\circ\alpha:=\{F(A)\xrightarrow{\beta_A\circ\alpha_A}H(A) \ |\ A\in\Obj(\A)\}\subseteq\B$
+    es una transformación natural de $F$ a $H$
+\end{prop}
+\begin{proof}
+    PENDIENTE
+\end{proof}
+
+Notemos que las componentes de una composción son exactamente la composición de las componentes. Dejamos al lector verificar que la composición
+es además asociativa ya que basta verificar que componente a componente lo es, y como cada componente es una flecha en una categoría, debe ser asociativa.
+Todo esto lo mencionamos para definir la categoría de funtores entre dos categorías $[\A,\B]$, donde los objetos son funtores de $\A$ a $\B$ y las flechas
+son transformaciones naturales. Más adelante, en la sección del lema de Yoneda, veremos detalles sobre la categoría de funtores $[\A,\Con]$ donde $\A$ es localmente pequeña.
+
+\section{Límites y colímites}
+
+\begin{dfn}[Diagrama]
+    Sean $\C,I$ dos categorías, con $I$ una categoría pequeña. Un \emph{diagrama en} $\C$ \emph{de forma} $I$ es simplemente un funtor $D:I\to\C$.   
+\end{dfn}
+
+\begin{dfn}
+    Sea $D:I\to\C$ un diagrama en $\C$. Un \emph{cono} de $D$ consta de un objeto $X\in\C$, al que llamamos \emph{vértice del cono}, junto a una familia
+    de flechas $\{X\xrightarrow{f_i}D(i) \ |\ i\in\Obj(I)\}\subseteq\C$ tales que para cada flecha $i\xrightarrow{u}j\in I$ el siguiente diagrama conmuta
+    \[\begin{tikzcd}
+        & X \\
+        {D(i)} && {D(j)}
+        \arrow["{f_i}"', from=1-2, to=2-1]
+        \arrow["{f_j}", from=1-2, to=2-3]
+        \arrow["{D(u)}"', from=2-1, to=2-3]
+    \end{tikzcd}\]
+\end{dfn}
+
+\begin{dfn}
+    Sea $D:I\to\C$ un diagrama en $\C$. Un \emph{límite} de $D$ es un cono $(L\xrightarrow{l_i}D(i))_{i\in I}$ tal que para cualquier otro cono $(X\xrightarrow{f_i}D(i))_{i\in I}$
+    existe una única flecha $X\xrightarrow{h}L\in\C$ tal que el siguiente diagrama conmuta
+    \[\begin{tikzcd}
+        X && L \\
+        & {D(i)}
+        \arrow["h", from=1-1, to=1-3]
+        \arrow["{f_i}"', from=1-1, to=2-2]
+        \arrow["{l_i}", from=1-3, to=2-2]
+    \end{tikzcd}\] para todo $i\in I$
+\end{dfn}
+
+Si el límite de un diagrama $D$ existe, normalmente denotamos al vértice de su cono límite con $\lm(D)$.
+
+Conceptos duales...
+
+Obervaciones entre las propiedades universales mencionadas antes y (co)límites...
+
+\begin{dfn}
+    Decimos que una categoría $\C$ es \emph{completa}, si para cada categoría pequeña $I$, todo diagrama $D:I\to\C$ tiene límite en $\C$
+\end{dfn}
+
+
+\begin{thm}
+    Sean $\A$ y $\C$ dos categorías. Si $\C$ es completa, entonces $[\A,\C]$ es completa
+\end{thm}
+\begin{proof}
+    PENDIENTE
+\end{proof}
+
+\section{Lema de Yoneda}
+
+Intrudcción sobre el lema de yoneda y enunción y demostración...
+
+\section{Adjunciones}
+
+
+\section{La adjunción entre $\Frm$ y $\Top$}
+
+Uno de los primeros ejemplos de marcos, y de hecho, la
+motivación para la definición, fue que los abiertos de un espacio
+topológico $S$ forman un marco $\cal OS$.
+En este capítulo desarrollaremos más a fondo la relación entre marcos
+y espacios topológicos. Sabemos que la asignación $S\mapsto\cal OS$ es
+un funtor contravariante $\cal O\colon\Top\to\Frm$.
+Ahora construiremos un funtor de regreso $\pt:\Frm\to\Top$
+y probaremos que ambos funtores forman una adjunción.
+\[
+  \begin{tikzcd}
+    \Top \ar[d,shift right=2,"\cal O"'{name=L}]
+    \\
+    \Frm^\op \ar[u,shift right=2,"\pt"'{name=R}]
+    \adj{L}{R}
+  \end{tikzcd}
+\]
+
+Antes de continuar, vale la pena mencionar que todos nuestros espacios
+(de carne y hueso) serán al menos $T_{0}$. Recordemos que un espacio
+$T_0$ es un espacio donde cada par de puntos se pueden separar por al
+menos un abierto. Más aún:
+\begin{thm}\label{tcero}
+    La categoría $\Top_0$ de espacios topológicos
+    $T_0$  es \emph{reflexiva} en $\Top$.
+    Es decir, el funtor de inclusión $\Top_0\to\Top$
+    tiene un adjunto izquierdo.
+\end{thm}
+\begin{proof}
+Es un ejercicio sencillo.
+\end{proof}
+La razón de esta decisión es que, en un espacio que no es $T_0$, hay
+pares de puntos que tienen exactamente las mismas vecindades de
+abiertos, así que no tienen mucha esperanza de ser caracterizados por
+sus marcos de abiertos.
+Otro ejercicio sencillo que ayuda a familiarizarse con los espacios
+$T_0$ es el siguiente. En cualquier espacio topológico, los puntos
+tienen un preorden (es decir, una relación reflexiva y transitiva)
+dado por
+  \[q\sqsubseteq p\iff \overline{q}\subseteq \overline{p}\]
+  Este se llama preorden de especialización.
+
+\section{El espacio de puntos}
+Dado un espacio con un punto $\{*\}$, el conjunto de
+puntos de $S$ está en biyección con las funciones continuas
+$\{*\}\to S$:
+\[
+  S \simeq \Top(\{*\},S)
+\]
+donde cada punto $s\in S$ está asociado a la función $*\mapsto
+s$.
+Así, si $2$ es el marco de dos elementos $2=\{0<1\}$,
+cada de estas funciones $s:\{*\}\to S$ induce un morfismo de
+marcos $\chi_s:\cal OS\to\cal O\{*\}\simeq 2$ dado como
+\[
+  \chi_s(u) =
+  \begin{cases}
+    1 & s\in u \\
+    0 & s\not\in u
+  \end{cases}
+.\]
+Así, para cada marco $A$, tiene sentido definir los puntos de $A$
+como morfismos $\Frm(A,2)$.
+En efecto, más adelante consideraremos esta construcción.
+Sin embargo, primero consideraremos otra construcción equivalente:
+representaremos cada morfismo $\chi:A\to 2$ con un elemento de
+$A$ de manera canónica: el elemento
+\[
+    p = \Sup\{x\in A\mid \chi(x)=0\}
+\]
+es el único elemento de $A$ que cumple
+\[
+    x\leq p \ssi \chi(x) = 0
+.\]
+En particular, dado que $\chi(1)=1$, tenemos $p\neq 1$.
+Por otro lado, para cualesquiera $x,y\in A$ con
+$x\inf y\leq p$, tenemos
+\[
+    \chi(x)\inf\chi(y)=\chi(x\inf y)=0
+,\]
+así que $\chi(x)=0$ o bien $\chi(x)=0$, pues $\chi$ toma valores
+en el marco $2$. es decir: $x\leq p$ o bien $y\leq p$.
+
+\begin{dfn}
+  Sea $A\in \Frm$. Un punto o elemento $\inf$-irreducible 
+  de A es un elemento $p\in A$ con $p\neq 1$ tal que si 
+  $x\inf y\leq p$, entonces $x\leq p$ ó $y\leq p$. 
+  Denotamos por $\pt A$ al conjunto de todos los puntos de $A$.
+\end{dfn}
+
+
+\begin{lem}
+  Sea $A\in \Frm$.
+  \begin{itemize}
+      \item Cada máximo de $A$ es $\inf$-irreducible.
+      \item Si A es booleano, entonces todo elemento $\inf-$irreducible de A es máximo.
+      \item Si A es una cadena, entonces cada elemento propio de A es $\inf-$irreducible.
+  \end{itemize}
+\end{lem}
+\begin{proof}\quad
+  \begin{itemize}
+      \item Sea $p\in A$ máximo, entonces $p<1$. Si $x\inf y\leq p$ y suponiendo que $x\not\leq p$, entonces $p<x\sup p$ y, por la maximalidad de $p$, tenemos que $p\sup x=1$. Similarmente, $y\not\leq p$ implica $p\sup y=1$. Si $x\not\leq p$ y $y\not\leq p$, se tiene que 
+      \[p=p\sup (x\inf y)=(p\sup x)\inf(p\sup y)=1.\]
+      Esto es una contradicción ya que $p<1$.
+      \item Supongamos que $A$ es booleano. Sean $p\in\pt A$ y $x,y\in A$ con $p<x$ y $y=\neg x$. Tenemos que $x\inf y=0\leq p$, entonces $x\leq p$ ó $y\leq p$ ya que p es $\inf-$irreducible. Además $y\leq p<x$ puesto que $p<x$. En consecuencia, $x\sup y=1=x$, así, $p$ es máximo.
+      \item Supongamos que $A$ es una cadena. Para cualesquiera $x,y\in A$, tenemos que $x\leq y$ ó $y\leq x$, es decir, $x\inf y\leq x$ ó $x\inf y\leq y$. Sea $p\in A$ con $p<1$. Si $x\inf y\leq p$, entonces $x\leq p$ ó $y\leq p$.
+  \end{itemize}
+\end{proof}
+
+Sean $A\in \Frm$ y $a\in A$. Decimos que un punto $p\in \pt A$ está en $U_A(a)\subseteq \pt A$ si, y sólo si $a\not\leq p$.
+\begin{lem}
+  Sean $A\in \Frm$ y $a,b\in A$.
+  \begin{itemize}
+      \item $U_A(1)=\pt A$.
+      \item $U_A(0)=\emptyset$.
+      \item $U_A(a\inf b)=U_A(a)\cap U_A(b)$.
+      \item $U_A(\Sup X)=\bigcup \{U_A(x)|x\in X\}$, $\forall X\subseteq A$.
+  \end{itemize}
+\end{lem}
+\begin{proof}
+  Sean $A\in \Frm$ y $a,b\in A$.
+\begin{itemize}
+\item Por definición $U_A(1)\subseteq \pt A$. Sea $p\in \pt A$, entonces $p\neq 1$. Además $1\not\leq p$, por lo que $p\in U_A(1)$. Así, $U_A(1)=\pt A$.
+\item Supongamos que $U_A(0)\neq \emptyset$. Sea $p\in U_A(0)$. Por definición, $0\not\leq p$ pero $0\leq a, \forall a\in A$. Por lo tanto, $U_A(0)=\emptyset$.
+\item Sea $p\in \pt A$. Tenemos que
+\begin{align*}
+p\in U_A(a\wedge b)&\iff a\wedge b\not\leq p\\
+&\iff a\not\leq p\quad y\quad b\not\leq p\\
+&\iff p\in U_A(a)\quad y\quad p\in U_A(b)\\
+&\iff p\in U_A(a)\cap U_A(b).
+\end{align*}
+Por lo que $U_A(a\wedge b)=U_A(a)\cap U_A(b)$.
+\item Sea $X\subseteq A$ y notemos que si $X=\emptyset$, entonces ocurre el segundo punto. En caso contrario,
+\begin{align*}
+p\in U_A(\bigvee X)&\Rightarrow \bigvee X\not\leq p\\
+&\Rightarrow \textit{existe }x\in X\textit{ tal que }x\not\leq p\\
+&\Rightarrow p\in U_A(x)\\
+&\Rightarrow p\in \bigcup \{U_A(x)\mid x\in X\}.
+\end{align*}
+Además,
+\begin{align*}
+p\in \bigcup\{U_A(x)\mid x\in X\}&\Rightarrow p\in U_A(x)\textit{ para algún }x\in X\\
+&\Rightarrow x\not \leq p\\
+&\Rightarrow \bigvee X\not\leq p\\
+&\Rightarrow p\in U_A(\bigvee X).
+\end{align*}
+Por lo tanto, $U_A(\Sup x)=\bigcup \{U_A(x)|x\in X\}$, $\forall X\subseteq A$.
+\end{itemize}
+\end{proof}
+Se sigue que $U_A(A)=\{U_A(a)\mid a\in A\}$ es una topología en $\pt
+A$. Al espacio topológico $(\pt A,U_A(A))$ lo llamamos
+el \textit{espacio de puntos} de $A$.
+Dado que la topología de $\pt A$ es $\cal O\pt A=U_A(A)$,
+se sigue que $U_A:A\to\cal O\pt A$ es un morfismo suprayectivo de marcos, al cual llamamos la \textit{reflexión
+espacial} de $A$. Si $U_A$ es inyectivo (y, por lo tanto, un
+isomorfismo) decimos que el marco $A$ es \textit{espacial}.
+
+\begin{obs}
+  \leavevmode
+  \begin{enumerate}
+    \item (La reflexión espacial como un cociente)
+      Como $U_A:A\to\cal O\pt$ es suprayectivo, el marco $\cal O\pt A$ 
+      es el cociente de $A$ bajo el núcleo de $U_A$: el núcleo
+      $S\in NA$ dado como
+      \[
+        x\leq S(a) \iff U(x)\subseteq U(a)
+      .\]
+    \item
+      Además, por el lema adecuado, el
+      núcleo $S$ de $U_A$ admite la descripción
+      \[
+        S(a)=\Inf \{p\in \pt A|a\leq p\}
+      .\]
+    \item
+      Dados dos puntos $p,q\in \pt A$, se cumple
+      \begin{align*}
+        q\sqsubseteq p&\iff \overline{q}\subseteq \overline{p}\\
+        &\iff (\forall x\in A)[q\in U(x)\Rightarrow p\in U(x)]\\
+        &\iff (\forall x\in A)[x\leq p\Rightarrow x\leq q]\\
+        &\iff p\leq q.
+      \end{align*}
+      Es decir, el preorden de especialización del espacio de puntos es
+      el orden opuesto al orden heredado del marco:
+      \[
+        (\pt A,\sqsubseteq) = (\pt A,\leq)^\op.
+      \]
+      En particular, ya que su preorden de especialización es un orden
+      parcial, esto prueba que el espacio de puntos es $T_0$.
+  \end{enumerate}
+\end{obs}
+
+\subsection{Funtorialidad y naturalidad}
+Queremos ver que la asignación $A\mapsto \pt A$ es un funtor y que
+la reflexión espacial $U_A:A\to\cal O\pt A$
+es una transformación natural
+\[U_\bullet:\id_{\Frm}\to\cal O\pt(\_).\]
+
+Lo primero es verificar que, dado un morfismo de marcos $f:A\to B$,
+obtenemos una función continua $\pt f:\pt B\to\pt A$ entre los
+espacios de puntos. De hecho, $\pt f$ será la restricción del adjunto
+derecho $f_*:B\to A$ a los puntos de $B$, pero hay que verificar que
+$f_*$ manda puntos a puntos.
+
+Si $p$ es un punto de $\pt B$, veamos que $f_*p$ es un punto de $A$.
+Primero, $f_*p$ no puede ser $1$, ya que en ese caso $1\leq f_\ast(p)$
+implicaría $f(1)\leq p$ por la adjunción, pero esto es imposible ya
+que $p\neq 1$.
+Ahora veamos que $f_*p$ es $\inf$-irreducible. Si $x,y\in A$ son tales
+que $x\inf y\leq f_\ast(p)$, por adjunción tenemos $f(x)\inf f(y)\leq p$.
+En consecuencia, $f(x)\leq p$ ó $f(y)\leq p$, i.e., $x\leq f_\ast (p)$
+ó $y\leq f_\ast (p)$. Por lo tanto, $f_\ast (p)\in \pt A$.
+
+En resumen, dado un morfismo de marcos $f\colon A\to B$, obtenemos una
+función $\pt f \colon \pt B\to \pt A$ dada por la restricción de
+$f_*:B\to A$.
+
+Observemos que, para todo $p\in \cal \pt B$, tenemos
+\begin{align*}
+    p\in (\pt f)^{-1} \left(U_A(a)\right)&\iff f_\ast (p)\in U_A(a)\\
+    &\iff a\not\leq f_\ast (p)\\
+    &\iff f(a)\not\leq p\\
+    &\iff p\in U_B\left(f(a)\right).
+\end{align*}
+Por lo tanto $\pt f\colon \pt B\to \pt A$ es continua.
+Es fácil ver que, dados morfismos $k:C\to B$ y $h:B\to A$,
+se satisface $(hk)_*=k_*h_*$.
+Además, el adjunto derecho de $\id:A\to A$ también es la identidad
+de $A$.
+De estas observaciones se sigue que la asignación $\pt$
+es un funtor (contravariante) $\pt:\Frm\to\Top$.
+
+Además, en el párrafo anterior probamos que
+\[
+    \cal O(\pt f)(U_A(a)) = U_B(f(a))
+\]
+para todo $a\in A$.
+Es decir: el diagrama
+\[
+    \begin{tikzcd}
+        A \ar[r,"f"] \ar[d,"U_A"'] & B \ar[d,"U_B"] \\
+        \cal O\pt A \ar[r,"\cal O\pt f"'] & \cal O\pt B
+    \end{tikzcd}
+\]
+es conmutativo, así que $U_\bullet=(U_A\mid A\in\Frm)$
+es una transformación
+natural $U_\bullet:\id_\Frm\to\cal O\pt$.
+
+\subsection{El espacio de puntos del marco de abiertos}
+
+¿Qué tanta información acerca de un espacio topológico se
+puede recuperar a través de su marco de abiertos?
+Comenzaremos preguntándonos
+¿cómo se relacionan los puntos de un espacio $S$ con los puntos de
+$\pt\cal OS$?
+Como dijimos al principio, un punto $s\in S$ se puede ver como una
+función continua $\{s\}\to S$, la cual induce un morfismo
+$\chi_s:\cal O S \to 2$ como
+\begin{equation}
+  \chi_s(u) =
+  \begin{cases}
+    1 & s\in u  \\
+    0 & s\not\in u.
+  \end{cases}
+\end{equation}
+Por lo tanto, el $\inf$-irreducible que le corresponde a $s$ es
+\begin{equation}
+  \Phi_S(s) = \Sup\{u\in\cal OS\mid \chi_s(u)=0\} \in \pt\cal O S
+  .\end{equation}
+Esto nos da una función $\Phi_S:S\to\pt\cal OS$. \index[Simbolos]{$\Phi_S$}
+Esta descripción
+se puede simplificar. Notemos que, dados $s\in S$ y $u\in\cal OS$, tenemos
+\[
+  \chi_s(u) = 0
+  \iff
+  s\not\in u
+  \iff
+  s\in u'
+  \iff
+  \ol s \subseteq u'
+  \iff
+  u \subseteq {\ol s}'.
+\]
+Luego,
+\begin{equation}
+  \Phi_S(s)
+  =
+  \Sup\{u\in\cal OS\mid u\subseteq {\ol s}'\}
+  =
+  {\ol s}'
+  \in
+  \pt\cal OS
+.\end{equation}
+Ahora, recordemos que un abierto de $\pt\cal OS$ es de la forma
+\begin{align*}
+  U_{\cal OS}(u)
+  &= \{p\in\pt\cal OS \mid u\not\subseteq p\}
+.\end{align*}
+Tenemos
+\begin{align*}
+    s\in (\Phi_S)^{-1}(U_{\cal OS}(u))
+    &\iff \Phi_S(s) \in U_{\cal OS}(u) \\
+    &\iff {\ol s}' \in U_{\cal OS}(u) \\
+    &\iff u \nsubseteq {\ol s}' \\
+    &\iff s\in u.
+\end{align*}
+Es decir,
+\[
+  (\Phi_S)^{-1}(U_{\cal OS}(u)) = u
+.\]
+En particular, $(\Phi_S)^{-1}$ manda abiertos de $\pt\cal OS$ en
+abiertos de $S$, así que la función $\Phi_S:S\to\pt\cal OS$ es continua.
+Por último, observemos que, dada una función continua $\psi:S\to T$,
+las funciones $\Phi_S:S\to\pt\cal OS$ hacen conmutar el diagrama
+\[
+    \begin{tikzcd}
+        S \ar[r,"\psi"] \ar[d,"\Phi_S"'] & T \ar[d,"\Phi_T"] \\
+        \pt\cal OS \ar[r,"\pt\cal O\psi"'] & \pt\cal OT
+    \end{tikzcd}
+\]
+En efecto, para todo $v\in\cal OT$, tenemos
+\begin{align*}
+    v\subseteq (\pt\cal O\psi)(\Phi_S(s))
+    &\iff v\subseteq (\cal O\psi)_*(\Phi_S(s)) \\
+    &\iff (\cal O\psi)(v) \subseteq \Phi_S(s) \\
+    &\iff \psi^{-1}(v) \subseteq \ol{s}' \\
+    &\iff s\nin \psi^{-1}(v) \\
+    &\iff \psi(s)\nin v \\
+    &\iff v\subseteq \ol{\psi(s)}' \\
+    &\iff v\subseteq \Phi_T(\psi(s)),
+\end{align*}
+por lo cual $(\pt\cal O\psi)(\Phi_S(s))=\Phi_T(\psi(s))$.
+Luego, la familia de funciones continuas
+\[
+    \Phi_\bullet=(\Phi_S:S\to\pt\cal OS\mid S\in \Top)
+\]
+es una transformación natural
+\[
+    \Phi_\bullet : \id_\Top\to\pt\cal O
+.\]
+
+\section{La adjunción}\label{ssec:adjuncion}
+
+En la primera parte, vimos que todo morfismo de marcos
+$f:A\to B$ induce una función continua $\pt f:\pt B\to\pt A$ dada
+como la restricción del adjunto derecho $f_*:B\to A$ de $f$ y
+probamos que esta asignación es un funtor $\pt:\Frm\to\Top$.
+Ahora veremos que $\pt$ y el funtor de abiertos
+$\cal O:\Top\to\Frm$ son las mitades de una adjunción contravariante
+entre $\Top$ y $\Frm$. En particular, construiremos un isomorfismo
+\begin{equation}\label{eqn:adj_frm_top}
+    \Frm(A,\cal OS) \simeq \Top(S,\pt A)
+\end{equation}
+natural en $A$ y en $S$.
+
+\iffalse
+\subsubsection{Usando morfismos iniciales}
+
+Veremos que, para cada espacio topológico $S$, la función continua
+$\Phi_S:S\to\pt\cal OS$ es el morfismo inicial de $S$ hacia marcos $A$
+a través de $\pt$. En efecto, tomemos cualquier función continua
+$\phi:S\to \pt A$. Tomando $f$ como la composición
+\[
+  A\xto{U_A}\cal O\pt A\xto{\cal O\phi}\pt S,
+\]
+tenemos la siguiente situación:
+\[
+  \begin{tikzcd}
+    S \ar[r,"\Phi_S"] \ar[dr,"\phi"'] & \pt\cal OS \ar[d,"\pt f"] & \cal OS \\
+                      & \pt A & A \ar[u,"f"'].
+  \end{tikzcd}
+\]
+Veremos que el triángulo de la izquierda conmuta y que
+$f:A\to\cal OS$ es el único morfismo de marcos que, bajo
+$\pt$, lo hace conmutar. Primero notemos que
+\[
+  (\pt f)(\Phi_S(s))
+  = \pt f({\ol s}')
+  = f_*({\ol s}')
+,\]
+así que, para todo $u\in A$,
+\begin{align*}
+  u\leq (\pt f)(\Phi_S(s))
+  &\iff u\leq f_*({\ol s}') \\
+  &\iff fu \subseteq {\ol s}' \\
+  &\iff \cal O\phi(U_A(u)) \subseteq  {\ol s}' \\
+  &\iff \phi^{-1}(U_A(u)) \subseteq  {\ol s}' \\
+  &\iff \ol s \subseteq \phi^{-1}(U_A(u)') \\
+  &\iff s\in \phi^{-1}(U_A(u)') \\
+  &\iff \phi(s)\in U_A(u)' \\
+  &\iff \phi(s)\in \{p\in\pt A\mid u\leq p\} \\
+  &\iff u\leq \phi(s).
+\end{align*}
+Es decir, $(\pt f^{\sharp})\circ\Phi_S=\phi$.
+Ahora, si $f':A\to\cal OS$ es cualquier morfismo que, al aplicarle
+$\pt$, hace conmutar el triángulo (es decir, $(\pt
+f')\circ\Phi_S=\phi$), tenemos $(\pt f')\circ\Phi_S = (\pt
+f')\circ\Phi_S$.
+
+\subsubsection{Otra manera}
+\fi
+
+Cuando aprendimos sobre adjunciones,
+vimos el caso covariante, en el cual el isomorfismo de
+adjunción es equivalente a la existencia de dos transformaciones
+naturales que satisfacen las identidades triangulares.
+
+Ahora veremos que, en el caso contravariante,
+tenemos el resultado análogo:
+las identidades triangulares adecuadas
+implican el isomorfismo natural (\ref{eqn:adj_frm_top}).
+
+Recordemos que las transformaciones naturales
+$U_\bullet:\id_\Frm\to\cal O\pt$ y
+$\Phi_\bullet:\id_\Top\to\pt\cal O$
+tienen componentes dadas como
+\begin{align*}
+    U_A:A&\to \cal O\pt A \\
+    a &\mapsto U_A(a) = \{p\in \pt A \mid a\nleq p\}, \\
+    \Phi_S:S&\to \pt\cal O S \\
+    s &\mapsto \Phi_S(s)=\ol{s}'.
+\end{align*}
+Primero veremos que se cumplen las identidades triangulares
+\[
+    \begin{tikzcd}[row sep=15mm]
+        & \cal OS \ar[d,"U_{\cal OS}"] \ar[dl,"\id_{\cal OS}"']
+        \\
+        \cal OS
+        & \cal O\pt\cal OS \ar[l,"\cal O\Phi_S"]
+    \end{tikzcd}
+    \hspace{10mm}
+    \begin{tikzcd}[row sep=15mm]
+        & \pt A \ar[d,"\Phi_{\pt A}"] \ar[dl,"\id_{\pt A}"']
+        \\
+        \pt A
+        & \pt \cal O\pt A \ar[l,"\pt U_A"]
+    \end{tikzcd}
+\]
+En efecto, usando las equivalencias
+\begin{align*}
+    u\subseteq \Phi_S(s) &\ssi s\nin u, \\
+    x\in U_A(a) &\ssi a\nleq x,
+\end{align*}
+tenemos
+\begin{align*}
+    x\in (\cal O\Phi_S)(U_{\cal OS}(u))
+    &\iff \Phi_S(x) \in U_{\cal OS}(u) \\
+    &\iff u\nleq \Phi_S(x) \\
+    &\iff x\in u,
+    \\
+    a\leq (\pt U_A)(\Phi_{\pt A}(x))
+    &\iff U_A(a) \leq \Phi_{\pt A}(x) \\
+    &\iff x\nin U_A(a) \\
+    &\iff a\leq x.
+\end{align*}
+Es decir, $(\cal O\Phi_S)(U_{\cal OS}(u))=u$
+y $(\pt U_A)(\Phi_{\pt A}(x))=x$, como se quería.
+
+Ahora, afirmamos que las funciones
+\begin{align*}
+    \Frm(A,\cal OS) &\to \Top(S,\pt A) \\
+    f &\mapsto \bar f = (\pt f)\Phi_S,
+    \\
+    \Frm(A,\cal OS) &\leftarrow \Top(S,\pt A) \\
+    (\cal O\phi)U_A = \phi &\mapsto \bar\phi.
+\end{align*}
+conforman una biyección. En efecto,
+la naturalidad de $\Phi_\bullet$, $U_\bullet$ y las identidades
+triangulares implican la conmutatividad de los diagramas
+\[
+    \begin{tikzcd}[row sep=15mm]
+        & \cal OS \ar[d,"U_{\cal OS}"] \ar[dl,"\id_{\cal OS}"']
+        & A \ar[l,"f"'] \ar[d,"U_A"]
+        \\
+        \cal OS
+        & \cal O\pt\cal OS \ar[l,"\cal O\Phi_S"]
+        & \cal O\pt A \ar[l,"\cal O\pt f"]
+    \end{tikzcd}
+    \hspace{10mm}
+    \begin{tikzcd}[row sep=15mm]
+        & \pt A \ar[d,"\Phi_{\pt A}"] \ar[dl,"\id_{\pt A}"']
+        & S \ar[l,"\phi"'] \ar[d,"\Phi_S"]
+        \\
+        \pt A
+        & \pt \cal O\pt A \ar[l,"\pt U_A"]
+        & \pt \cal OS \ar[l,"\pt\cal O\phi"]
+    \end{tikzcd}
+\]
+por lo cual tenemos
+\[
+    \begin{aligned}
+        \bar{\bar f}
+        &= \ol{(\pt f)\Phi_S} \\
+        &= \cal O((\pt f)\Phi_S)U_A \\
+        &= (\cal O\Phi_S)(\cal O\pt f)U_A \\
+        &= f,
+    \end{aligned}
+    \hspace{20mm}
+    \begin{aligned}
+        \bar{\bar\phi}
+        &= \ol{(\cal O\phi)U_A} \\
+        &= \pt((\cal O\phi)U_A)\Phi_S \\
+        &= (\pt U_A)(\pt\cal O\phi)\Phi_S \\
+        &= \phi.
+    \end{aligned}
+\]
+Esto nos da la biyección (\ref{eqn:adj_frm_top}).
+De manera explícita, la biyección está dada como
+$\Frm(A,\cal OS)\ni f\leftrightarrow \phi\in \Top(S,\pt A)$, donde
+\[
+    s\in f(a) \ssi a\nleq \phi(s)
+\]
+para cualesquiera $s\in S$, $a\in A$, puesto que
+\begin{align*}
+    s\in f(a)
+    &\iff f(a)\nleq \Phi_S(s) \\
+    &\iff a \nleq (\pt f)(\Phi_S(s))=\bar f(s),
+    \\
+    a\nleq \phi(s)
+    &\iff \phi(s) \in U_A(a) \\
+    &\iff s \in (\cal O\phi)(U_A(a)) = \bar\phi(a).
+\end{align*}
+Finalmente, veamos que la biyección (\ref{eqn:adj_frm_top})
+es natural en $A$ y en $S$.
+Dado un morfismo de marcos $g:A\to B$, el diagrama
+\[
+    \begin{tikzcd}
+        \Frm(B,\cal OS) \ar[d,"{-}\circ g"'] \ar[r,"f\mapsto\bar f"']
+        & \Top(S,\pt B)
+        \ar[d,"\pt g\circ{-}"]
+        \\
+        \Frm(A,\cal OS) \ar[r,"h\mapsto\bar h"']
+        & \Top(S,\pt A)
+    \end{tikzcd}
+\]
+es conmutativo:
+\begin{align*}
+    \ol{fg}
+    &= \pt(fg)\Phi_S \\
+    &= (\pt g)(\pt f)\Phi_S \\
+    &= (\pt g)\bar f.
+\end{align*}
+Similarmente, dada una función continua $\psi:S\to T$,
+el diagrama
+\[
+    \begin{tikzcd}
+        \Frm(A,\cal OT)
+        \ar[d,"\cal O\psi\circ{-}"']
+        & \Top(T,\pt A) \ar[l,"\bar \phi\mapsfrom \phi"']
+        \ar[d,"{-}\circ \psi"]
+        \\
+        \Frm(A,\cal OS)
+        & \Top(S,\pt A) \ar[l,"\bar \xi\mapsfrom \xi"']
+    \end{tikzcd}
+\]
+es conmutativo:
+\begin{align*}
+    \ol{\phi\psi}
+    &= \cal O(\phi\psi)U_A \\
+    &= (\cal O\psi)(\cal O\phi)U_A \\
+    &= (\cal O\psi)\bar\phi.
+\end{align*}
+
+\section{La propiedad universal de las reflexiones}
+
+
+Por última sección veremos que las biyecciones dadas por la adjunción revelan las propiedades universales del espacio de puntos y el marco de abiertos, mas delante en el siguiente capítulo se observara que son objetos universales en las respectivas categorías de espacios sobrios y marcos espaciales.
+La biyección
+\begin{align*}
+    \Frm(A,\cal OS) &\simeq \Top(S,\pt A) \\
+    f &\mapsto \bar f = (\pt f)\Phi_S \\
+    (\cal O\phi)U_A = \bar\phi &\mapsfrom \phi.
+\end{align*}
+se puede leer como sigue:
+dado un morfismo $f:A\to\cal OS$, existe una única función continua
+$\phi:S\to\pt A$ tal que el diagrama
+\[
+    \begin{tikzcd}
+        A \ar[r,"f"] \ar[d,"U_A"'] & \cal OS \\
+        \cal O\pt A \ar[ur,"\cal O\phi"']
+    \end{tikzcd}
+\]
+conmuta.
+Similarmente, dada una función continua $\phi:S\to\pt A$, existe
+un único morfismo $f:A\to\cal OS$ tal que el diagrama
+\[
+    \begin{tikzcd}
+        S \ar[r,"\phi"] \ar[d,"\Phi_S"'] & \pt A \\
+        \pt\cal OS \ar[ur,"\pt f"']
+    \end{tikzcd}
+\]
+conmuta.
+
+
+\noindent 
+\begin{thebibliography}{99}
+  \bibitem{D.P.} C. H. Dowker; D. Strauss, \textit{Separation axioms for frames}, Topics in Topology, pp. 223–240. Proc. Colloq., Keszthely, 1972. Colloq. Math. Soc. Janos Bolyai, vol. 8, North-Holland, Amsterdam, 1974.
+
+  \bibitem{Ib.} J. R. Isbell, \textit{Atomless parts of spaces}, Math. Scand. 31 (1972) 5–32.
+
+  \bibitem{P.T.} P. T. Johnstone, \textit{Stone spaces}, Cambridge Studies in Advanced Mathematics, vol. 3, Cambridge University Press, Cambridge, 1982. MR 698074
+
+  \bibitem{J.S.} P. T. Johnstone; S.-H. Sun, \textit{Weak products and Hausdorff locales}, Categorical Algebra and its Applications, pp. 173–193. Lecture Notes in Mathematics, vol. 1348. Springer-Verlag, Berlin, 1988.
+
+  \bibitem{J.M.} J. Monter; A. Zaldívar, \textit{El enfoque locálico de las reflexiones booleanas: un análisis en la categoría de marcos} [tesis de maestría], 2022. Universidad de Guadalajara.
+
+  \bibitem{P.S.}J. Paseka; B. Šmarda, \textit{T2-frames and almost compact frames}, Czechoslovak Math. J. 42 (1992) 297–313.
+  
+  \bibitem{J.P.} J. Picado and A. Pultr, \textit{Frames and locales: Topology without points}, Frontiers in Mathematics, Springer Basel, 2012.
+  
+  \bibitem{J.P.2} J. Picado and A. Pultr, \textit{Separation in point-free topology}, Springer, 2021.
+  
+  \bibitem{Ro.S.} J. Rosický; B. Šmarda, \textit{T1-locales}, Math. Proc. Cambridge Philos. Soc. 98 (1985) 81–86.
+  
+  \bibitem{R.S.} RA. Sexton, \textit{A point free and point-sensitive analysis of the patch assembly}, The University of Manchester (United Kingdom), 2003.
+
+  \bibitem{R.S.3} RA. Sexton and H. Simmons, \textit{Point-sensitive and point-free patch constructions}, Journal of Pure and Applied Algebra \textbf{207} (2006), no. 2, 433-468.
+    
+  \bibitem{H.S.3} H. Simmons, \textit{The assembly of a frame}, University of Manchester (2006).
+
+  \bibitem{H.W.} H. Wallman, \textit{Lattices and topological spaces}, Ann. Math. 39 (1938) 112–126.
+  
+  \bibitem{A.Z.} A. Zaldívar, \textit{Introducción a la teoría de marcos} [notas curso], 2024. Universidad de Guadalajara.
+\end{thebibliography}
+
+\end{document}
+
+
+
+\end{document}
+
+\documentclass[10pt]{amsart}
+\setlength{\textwidth}{12cm}
+\setlength{\textheight}{17.5cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[latin1]{inputenc}
+\usepackage{latexsym}
+\usepackage{amsfonts}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+
+%  COMPILE EL TRABAJO DOS VECES PARA QUITAR ALGUNOS WARNINGS 
