@@ -98,7 +98,7 @@ PENDIENTE
         le asigna una flecha $g\circ f:\Dom(f)\to \Cod(g)$, llamada composición de $g$ con $f$, y es tal que: 
         
         \begin{itemize}
-            \item Para cuales quiera objetos $A,B,C,D\in\Obj(\C)$, y flechas $f:A\to B,g:B\to C$ y $h:C\to D$, se tiene que:
+            \item Para cualesquiera objetos $A,B,C,D\in\Obj(\C)$, y flechas $f:A\to B,g:B\to C$ y $h:C\to D$, se tiene que:
             $$h\circ(g\circ f) = (h\circ g)\circ f.$$
             
             \item Para todo objeto $A\in\Obj(\C)$, existe $\id_A\in\Hom_\C( A,A)$ tal que cualquier objeto $B\in\Obj(\C)$ y flechas $g\in\Hom_\C(A,B)$, $h\in\Hom_\C(B,A)$ satisfacen:
@@ -133,7 +133,7 @@ Por último hay que mencionar que en un diagrama como el siguiente
     C                                &                  
     \end{tikzcd}\]
 donde es posible componer la flecha $h$ con $g$ y tener una flecha con mismo dominio y codominio que $f$, es equivalente decir
-que $h\circ g=f$ a que el \emph{diagrama conmuta}. En general decir que un diagrama conmuta es equivalente a decir que cuales quiera dos
+que $h\circ g=f$ a que el \emph{diagrama conmuta}. En general decir que un diagrama conmuta es equivalente a decir que cualesquiera dos
 \textquotedblleft caminos\textquotedblright que tengan mismos dominios y codominios, respectivamente, son iguales. De esta manera a través de un diagrama
 conmutativo, podemos expresar varias ecuaciones de composiciones de flechas. Por ejemplo, que el siguiente diagrama conmute
 \[\begin{tikzcd}
@@ -195,12 +195,12 @@ De lo anterior queda claro que el inverso de un isomorfismo $f$ es único, por l
     \end{enumerate}
 \end{proof}
 
-Consideremos un objeto $A$ en una categoría arbitraria $\C$. Si la colección $\End(A)$ forma un conjunto, entonces tenemos un monoide equipando a este conjunto
+Consideremos un objeto $A$ en una categoría arbitraria $\C$. Si la colección $\End(A)$ forma un conjunto, entonces este conjunto forma un monoide
 con la composición de flechas de $\C$. Cuando un endomorfismo es un isomorfismo, lo llamamos \emph{automorfismo} y por lo tanto podemos definir la subcolección
 $$\Aut(A):=\{f\in\End(A) \ |\ f \text{ es un isomorfismo}\}$$
 
 \begin{thm}
-    Sea $\C$ una categoría y $A\in\C$. Entonces $\Aut(A)$ es un grupo con la composición de flechas de $\C$.
+    Sea $\C$ una categoría y $A\in\C$ un objeto tal que $\Aut(A)$ es un conjunto. Entonces $\Aut(A)$ es un grupo con la composición de flechas de $\C$.
 \end{thm}
 \begin{proof}
     Es consecuencia directa del lema \ref{propiedades de isos}
