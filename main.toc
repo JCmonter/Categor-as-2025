@@ -16,6 +16,6 @@
 \contentsline {subsection}{\tocsubsection {}{12.1}{Funtorialidad y naturalidad}}{34}{subsection.12.1}%
 \contentsline {subsection}{\tocsubsection {}{12.2}{El espacio de puntos del marco de abiertos}}{35}{subsection.12.2}%
 \contentsline {section}{\tocsection {}{13}{La adjunción}}{37}{section.13}%
-\contentsline {section}{\tocsection {}{14}{La propiedad universal de las reflexiones}}{39}{section.14}%
-\contentsline {section}{\tocsection {}{15}{Álgebras para la adjunción $spec\dashv \mathcal {O}$}}{40}{section.15}%
+\contentsline {section}{\tocsection {}{14}{La propiedad universal de las reflexiones}}{40}{section.14}%
+\contentsline {section}{\tocsection {}{15}{Álgebras para la adjunción $spec\dashv \mathcal {O}$}}{41}{section.15}%
 \contentsline {section}{\tocsection {}{}{Referencias}}{41}{section*.3}%

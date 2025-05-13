@@ -704,7 +704,7 @@ Una \emph{monada} $(T, \eta, \mu)$ en una categoría $\C$ consiste de los siguie
 Todas las observaciones anteriores dan lugar a la siguiente:
 
 \begin{prop}\label{adjmon}
-Si $(F,G,\eta,\epsilon)$ son datos de una adjunción con $F\colon \C\rightarrow\D$ entonces la terna $(GF, \eta,G\epsilon F)$ define una monada en $\C$.
+Si $(F,G,\eta,\epsilon)$ son datos de una adjunción con $F\colon \C\rightarrow\D$ entonces la terna $(GF, \eta,G\epsilon F)$ define una monada en $\EuScript{C}$.
 \end{prop}   
 
 Resulta (o deberia de ser) que esta definición es suficiente para tener la factorización dada, para realemnte justificar esto necesitamos un poco mas de trabajo.
@@ -907,13 +907,35 @@ propiedades deseadas, por último cabe notar que aunque no se pidio, es claro qu
 
 Es un ejercicio que el lector calcule la categoría de Kleisli de los ejemplos que hemos dejado al principio de esta sección.
 
-Vale la pena en este punto (supongo) poner un poco de contexto aún mas abstracti sin-sentido, denotemos por $\mathrm{Ad}\EuScript{C}$ a la categoría de adjunciones para nuestra categoría favorita $\EuScript{C}$
-Hemos así probado que :
+Vale la pena en este punto (supongo) poner un poco de contexto aún mas abstracto sin-sentido, sea $(T,\eta,\mu)$ una monada en una categoría $\EuScript{C}$.
+denotemos por $\mathrm{Ad}\EuScript{C}$ a la categoría de todas las adjunciones $(F,G,\eta,\epsilon)\colon\EuScript{C}\rightharpoonup \EuScript{A}$
+tales que definen a $(T,\eta,\mu)$ y las felchas de $\mathrm{Ad}\EuScript{C}$ estan dadas como sigue, si \[(F,G,\eta,\epsilon)\colon\EuScript{C}\rightarpoonup \EuScript{A}\]
+ y \[(F',G',\eta',\epsilon')\colon\EuScript{C}\rightarpoonup \EuScript{A}'\] son adjunciones sobre $\EuScript{C}$, un morfismo entre estas \[(F,G,\eta,\epsilon)\rightarrow(F',G',\eta',\epsilon')\] 
+ es un par de funtores $K\colon\EuScript{A}\rightarrow\EuScript{A}'$ y $L\colon\EuScript{C}\rightaarow\EuScript{C}$ tal que
+los siguientes diagramas conmutan:
+\[
+\begin{tikzcd}[column sep=large, row sep=large]
+A \arrow[r, "G"] \arrow[d, "K"'] & X \arrow[d, "L"] \\
+A' \arrow[r, "G'"'] & X'
+\end{tikzcd}
+\]
+\[
+\begin{tikzcd}[column sep=large, row sep=large]
+A \arrow[r, "F"] \arrow[d, "K"'] & X \arrow[d, "L"] \\
+A' \arrow[r, "F'"'] & X'
+\end{tikzcd}\]
+Hemos así probado dos hechos destacables:
 
-\begin{prop}\label{kleisli es final}
-Dada una categoría $\EuScript{C}$ para una monada de Kleisli $(T,\eta,(\_)^{*})$ ( o terna de Kleisli) se tiene que la categoría de Kleisli de una monada de Kleisli $(T,\eta,(\_)^{*})$ ( o terna de Kleisli) se tiene que la categoría de Kleisli de $\EuScript{C}_{T}$
-es un objeto final en la categoría $\mathrm{Ad}\EuScript{C}$, es decir, dada cualquier monada esta da lugar a una adjunción del dominio del adjunto izquierdo, y si tal factorización existe entonces la categoría de Kleisli es el objeto inicial del codominio de tal adjunción.
-\end{prop}
+
+\begin{thm}(Comparasión de Kleisli)\label{kleisli es final}
+Dada una adjunción $(F,G,\eta,\epsilon)$ en una categoría $\EuScript{C}$, y sea $T=(GF, \eta,G\epsilon F)$ la monada que esta define,
+entonces existe un único funtor $L\colon\EuScript{C}_{T}\rightarrow\EuScript{A}$ con $GL=G_{T}$ y $LF_{T}=F$.
+\end{thm}
+
+
+\begin{thm}\label{kleisli es final}
+Dada una monada $(T,\eta,\mu)$ en una categoría $\EuScript{C}$, 
+\end{thm}
 
 
 En la práctica ya que estamos hablando de objetos en la categoría de adjunciones de una categoría agradable, podriamos preguntarnos si tal categoría tiene objeto final.
