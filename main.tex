@@ -485,7 +485,10 @@ Veamos ahora que como es la composición de transformaciones naturales.
         \arrow[""{name=2, anchor=center, inner sep=0}, "G"{description}, from=1-1, to=1-3]
         \arrow["\alpha"', shorten <=2pt, shorten >=2pt, Rightarrow, from=0, to=2]
         \arrow["\beta"', shorten <=2pt, shorten >=2pt, Rightarrow, from=2, to=1]
-    \end{tikzcd} funtores y transformaciones naturales. Entonces la familia de morfismos $\beta\circ\alpha:=\{F(A)\xrightarrow{\beta_A\circ\alpha_A}H(A) \ |\ A\in\Obj(\A)\}\subseteq\B$
+    \end{tikzcd} 
+    
+    funtores y transformaciones naturales. Entonces la familia de morfismos 
+    $\beta\circ\alpha:=\{F(A)\xrightarrow{\beta_A\circ\alpha_A}H(A) \ |\ A\in\Obj(\A)\}\subseteq\B$
     es una transformación natural de $F$ a $H$
 \end{prop}
 \begin{proof}
@@ -547,12 +550,385 @@ Obervaciones entre las propiedades universales mencionadas antes y (co)límites.
 
 \section{Lema de Yoneda}
 
-Intrudcción sobre el lema de yoneda y enunción y demostración...
+Intrudcción sobre el lema de yoneda y enunción y demostración... o solo un sckecth suficiemente convincente de que funciona la prueba
 
 \section{Adjunciones}
 
+NO HAY NADA DE Adjunciones
+
+\subsection[Monadas una pequeña introducción]{Monadas una pequeña introducción}\label{SECMON}
+
+
+Esta mini sección tiene el objetivop de introducir otra faceta de las adjunciones, empecemos con una situación de abstracta sin sentido.
+
+
+Dado un funtor $T\colon \EuScript{C}\rightarrow\EuScript{C}$ qusieramos (por que no) factorizarlo es decir, queremos encontrar una categoría $\D$ y funtores $F\colon \C\rightarrow\D$,
+y $G\colon \D\rightarrow \C$ tal que: \[T=GF\;\;\;\; F\dashv G.\]
+
+Esta factorización nos da una \emph{presentación universal de } $T$ donde universal querra decir \emph{libre}
+para hallar tal descomposición universal necesitamos desarrollar un poco mas de teoría, primero algunos ejemplos de posibles funtores a factorizar:
+
+\begin{itemize}
+\item[(1)]
+Sea $M\colon \Con\rightarrow\Con$ el funtor que asigna a cada conjunto $A$ su conjunto de todas las posibles palabras que se pueden formar con $A$, es decir que tiene como alfabeto
+a $A$, $M$ es flechas esta dado en \emph{generadores} es decir, dad cualquier función $f\colon A\rightarrow B$ sea $Mf\colon MA\rightarrow MB$ dada por \[Mf(a_{1}\ldots a_{n})=f(a_{1})\ldots f(a_{n}).\]
+
+Casos interesantes para este $M$ es cuando $M$ es un tipo de monoide.
+
+
+\item[(2)]
+Sea $\Pos$ la categoría de conjuntos parcialmente ordenados, denotemos por 
+$\mathcal{P}_{fin}(A,\leq)=\{\text{ subconjuntos finitos de } A\}$ entonces para cualesquiera $C,D\in\mathcal{P}_{fin}(A,\leq)$
+
+denotemos:
+
+\begin{enumerate}
+\item[(i)] $C\preceq D$ si y solo si $\downarrow C\subseteq\downarrow D$.
+\item[(ii)] $C\preceq D$ si y solo si $\uparrow C\supseteq\uparrow D$.
+\item[(iii)]  $C\preceq D$ si y solo si $\downarrow C\subseteq\downarrow D$ y $\uparrow C\supseteq\uparrow D$.
+\end{enumerate}
+Esto da lugar a tres funtores $\mathcal{P}_{fin}(\_)\colon\Pos\rightarrow\Pos$ con cada una de las decoraciones anteriores, es decir con cada uno de los ordenes parciales.
+
+\item[(3)]
+Denotemos por $\D\C\Pos$ la categoría de \emph{conjuntos parcialmente ordenados completamente dirigidos}, es decir, $A\in  \D\Pos$ si:
+
+\begin{enumerate}
+    \item[(i)] $A$ es un conjunto parcialmente ordenado.
+    \item[(ii)] Cada subconjunto $D\subseteq A$ \emph{dirigido} tiene supremo en $A$. 
+\end{enumerate}
+Fabricamos el siguiente funtor, $(\_)_{\perp}\colon\D\C\Pos\rightarrow \D\C\Pos $ donde el "elemento" $\perp$ esta fijo, entonces este funtor manda  a ncada copo directamente completo digamos,
+
+$D$ a este mismo solo que se adjunta $\perp$ como elemento menor, la acción en flechas es la obvia, $f\colom A\rightarrow B$ entonces \[\begin{cases} f_{\perp}(a)
+    a & a\in D\hookrightarrow D_{perp} \\
+    \perp & a=\perp
+  \end{cases}\]
+  \item[(4)]
+  \begin{enumerate}
+ \item[(a)] Consideremos una de nuestras categorías favoritas, $Top$ la categoría de espacios topologicos junto con funciones continuas,
+fijemos nuestra atención en la subcategoría reflexiva de espacios topologicos $T_{0}$, denotemos por $Top_{0}$ a esta subcategoría plena, 
+ Para cada $S\in Top_{0}$ sea $\mathcal{C}S$ los cerrados de $S$ y consideramos los siguientes conjuntos \[\lozenge U=\{X\in\mathcal{C}S\mid X\cap U\neq\emptyset\}\]
+sea \[\Omega S^{\lozenge }=\langle\lozenge U\mid U\in\Omega S \rangle \] la topología generada por estos conjuntos, entonces tenemos el funtor $(\_)^{\lozenge}\colon Top_{0}\rightarrow Top_{0}$
+que manda a cada espacio a $(\mathcal{C}S, \Omega S^{\lozenge })$ y en cada función continua, digamos $f\colon S\rightarrow T$ sea 
+\[f^{\lozenge}\colon(\mathcal{C}S, \Omega S^{\lozenge })\rightarrow (\mathcal{C}T, \Omega T^{\lozenge })\] la función continua dada por \[f^{\lozenge}(X)=\bar{f[X]}\] Este ejemplos tiene algo que ver
+con el hiperespacio de Vietoris y la monada diamante potencia.
+\item[(b)]
+En esta misma digamos, vertiente denotemos por $\EuScript{S}Top$ la categoría de espacios sobrios localmente compactos junto con funciones continuas como nuestars flechas,
+sea $\mathcal{K}S=\{\text{ compactos de } S\}$ topologizamos este conjunto con: 
+\[\square  U=\{X\in\mathcal{C}S\mid X\subseteq U\}\] y tomamos la topología generada por estos; 
+\[\Omega S^{\square }=\langle\square U\mid U\in\Omega S\rangle \]
+de manera analoga a la anterior tenemos un funtor $(\_)^{\square}\colon \EuScript{S}Top\rightarrow \EuScript{S}Top$ solo que en flechas se calcula como \[f^{\square}(X)=f[X]\]
+  \end{enumerate}
+\end{itemize}
+  \section[Mon]{Monadas} 
+De acuerdo con nuestro probelams sin sentido, es decir, la factorización que queremos construir para $T\colon\C\rightarrow\C$, necesitamos que exista una adjunción $\D$ y funtores $F\colon \C\rightarrow\D$,
+y $G\colon \D\rightarrow \C$ tal que: \[T=GF\;\;\;\; F\dashv G.\], entonces tenemos que asegurar que existan
+  flechas \[\eta\colon id\_{\C}\rightarrow GF\text{ y }\;\; \epsilon\colon FG\rightarrow id_{\D}\] de tal manera que para todo $A\in\C$ y para todo $D\in\D$ los triangulos:
+  \[
+    \begin{tikzcd}[column sep=large, row sep=large]
+      F \arrow[r, "F\eta"] \arrow[dr, "1_F"'] & FGF \arrow[d, "\varepsilon F"] \\
+      & F
+    \end{tikzcd}
+    \qquad \text{y} \qquad
+    \begin{tikzcd}[column sep=large, row sep=large]
+      G \arrow[r, "\eta G"] \arrow[dr, "1_G"'] & GFG \arrow[d, "G\varepsilon"] \\
+      & G
+    \end{tikzcd}
+    \]
+    conmutan.
+
+    En nuestro supuesto si tenemos que $T=GF$ entonces podemos asumir que tenemos una transformación natural $\eta\colon id_{\C}\rightarrow T$ ahora no podemos hablar de la transformación natural
+    $\epsilon$ ya que no tenemos forma de hablar de $FG$ si solo tenemos la información $T=GF$, pero podemos hacer lo siguiente:
+
+    \[G\epsilon F\colon GFGF=TT\rightarrow GF=T\] que se puede derivar directamente del triangulo  
+    
+    \begin{tikzcd}[column sep=large, row sep=large]
+        FA \arrow[r, "F\eta_{A}"] \arrow[dr, "1_FA"'] & FGFA \arrow[d, "\varepsilon F_{A}"] \\
+        & FA 
+      \end{tikzcd}
+y así podemos exigir la existenbcia de una transformación natural \[\mu\colon T^{2}\rightarrow T\]
+
+Entonces para tener una definicion adecuada de lo que es la factorización necesitamos tener una terna $(T,\eta,\mu)$. Es instructivo para el lector (neurotico) calcular $\eta$ y $\mu$ de nuestrso ejemplos clave.
+
+Sin embargo necesitamos aun mas información para tener una definicion adecuada de lo que sera nuestra monada.
+
+Usando la supuesta adjunción de nuestro endofuntor $T\colon\C\rightarrow\C$ aplicando $G$ al triangulo con cateto   
+\begin{tikzcd}[column sep=large, row sep=large]
+    FA \arrow[r, "F\eta_{A}"] & FGFA  \\ 
+\end{tikzcd}
+obtenemos
+    
+
+\[\begin{tikzcd}[column sep=large, row sep=large]
+   TA= GFA \arrow[r, "T\eta_{A}=GF\eta_{A}"] \arrow[dr, "1_GFA"'] & T^{2}A=GFGFA \arrow[d, "\mu_{A}=G\varepsilon F_{A}"] \\
+    & GFA=TA 
+  \end{tikzcd}
+\]
+  Y si en elk triangulo para $G$ tomamos la componente con $D=FA$ uno obtiene:
+
+\[\begin{tikzcd}[column sep=large, row sep=large]
+   TA=GFA \arrow[r, "\eta_{TA}=\eta GFA"] \arrow[dr, "1_GFA"'] & T^{2}A=GFGFA \arrow[d, "\mu_{A}=G\varepsilon_{FA}"] \\
+    & TA=GFA
+  \end{tikzcd}\]
+es decir, \[id_{TA}=\mu_{A}T\eta_{A}\text{ y } id_{TA}=\mu_{A}\eta_{TA}.\] es decir tenemos un tipon de \emph{conmutatividad} entre $T\eta_{A}$ y $\eta_{TA}$ y estas identidades
+son las mas cercanas a nuestro caso original (recuerden que empezamos con una factorizacion chida).
+
+Pero aun no tenemos todo lo que necesitamos, algo nos esta faltando, tenemos dos maneras naturales de ir desde $T^{3}A$ a $TA$, como el siguiente cuadro indica:
+
+\[
+\begin{tikzcd}[column sep=large, row sep=large]
+  T^3A=GFGFGFA \arrow[r, "T\mu_{A}=GFG\epsilon_{FA}"] \arrow[d, "\mu TA=G\epsilon_FGFA"'] & T^2A \arrow[d, "\mu_{A}=G\epsilon_{FA}"] \\
+  T^2A=GFGFA \arrow[r, "\mu_{A}=G\epsilon_{FA}"'] & TA=GFA
+\end{tikzcd}
+\]
+este debemos demandar que conmute para cada $A$.
+
+Todas las consideraciones anteriores siempre y cuando exista tal factorización codifican la siguiente definición:
+
+\begin{dfn}\label{mona}
+Una \emph{monada} $(T, \eta, \mu)$ en una categoría $\C$ consiste de los siguientes datos:\begin{itemize}
+\item[(i)] Un funtor $T\colon \C\rightarrow\C$.
+\item[(ii)] transformaciones naturales \[\eta\colon id_{\C}\rightarrow T\text{ y } \mu\colon T^{2}\rightarrow T.\] tales que:\[\mu_{A} T\eta_{A}=id_{TA}=\mu_{A}\eta_{TA}\text{ y } \mu_{A}T\mu_{A}=\mu_{A}\mu_{TA}.\]  
+\end{itemize}
+
+
+\end{dfn}
+\begin{itemize}
+
+
+\item[(i)]   Un ejemplo de lo anterior es considerar un conjunto parcialmente ordenado $A$ pensado como categoría tenemos que una monada sobre $A$ es un operador cerradura.
+\item[(ii)] Algo mas elaborado es considerar para una categoría $\C$ digamos esencialmente pequeña, su categoría de endofuntores $[\C,\C]$, esta categoría es estrictamente monoidal cerrada ya que tiene un tensor, este
+ dado por la composición de funtores, una monada para $\C$ no es nada mas que un monoide respecto a este tensor.  
+
+\end{itemize}
+
+Todas las observaciones anteriores dan lugar a la siguiente:
+
+\begin{prop}\label{adjmon}
+Si $(F,G,\eta,\epsilon)$ son datos de una adjunción con $F\colon \C\rightarrow\D$ entonces la terna $(GF, \eta,G\epsilon F)$ define una monada en $\C$.
+\end{prop}   
+
+Resulta (o deberia de ser) que esta definición es suficiente para tener la factorización dada, para realemnte justificar esto necesitamos un poco mas de trabajo.
+
+\section{Ternas de Kleisli}\label{KLEI}
+
+La definición de monada que dimos \ref{mona} se derivo de la defnición de adjunción dada por las identidad triangulares, pero como sabemos existen tres formas clásicas de definir adjunción veamos que sucede con la dada por flechas universales.
+requiere la existencia de un funtor $G\colon\D\rightarrow \C$ y una asiganción (no se requiere funtorialidad) $F$ que solo actue en objetos de $\C$ a objetos de $\D$, pero esto esta subyugado al hecho de que para cada objeto $A\in\C$ y cada flecha
+$\eta_{A}\colon A\rightarrow GFA$ tal que para todp \[f\colon A\rightarrow GD\] con $D$ cualquier obejto de $\D$ exista una única flecha \[f^{+}\colon FA\rightarrow D\] de tal manera que \[f=Gf^{+}\eta_{A}.\], es decir tenemos
+una función \[(\_)^{+}\colon\C(A,GD)\rightarrow\D(FA,D).\] en un dibujo:
+
+\[\begin{tikzcd}[column sep=large, row sep=large]
+    A \arrow[r, "\eta_{A}"] \arrow[dr, "\forall f"'] & GFA \arrow[d, dashed, "Gf^{+}"] \\
+    & GD
+  \end{tikzcd}\]
+Esto en $\C$
+
+  \[\begin{tikzcd}[column sep=large, row sep=large]
+    FA \arrow[d, dashed, "\exists !f^{+}"] \\
+    & D
+  \end{tikzcd}\]
+Esto otro en $\D$.
+
+Como antes queremos dado $T$ encontrar $F$ y $G$ de tal manera que hagan la gracia de arriba y factoricen a $T$, la ventaja de esta defnición es que no siendo $F$ un funtor a priori, podemos entonces empezar $T$ mandando objetos en objetos.
+
+, y así se debe de pedir, que para cada objeto $A$ en $\C$ exista una flecha $\eta_{A}\colon A\rightarrow TA$. En este caso el operador de flechas $(\_)^{+}$ esta descrito como sigue: Si \[f\colon A\rightarrow GFB\] entonces
+ \[Gf^{+}\colon GFA\rightarrow GFB\] y aquí se demanda que para toda \[f\colon A\rightarrow TB,\] exista una flecha \[f^{*}\colon TA\rightarrow TB\], En otras palabras el operador esta definido :
+ \[\C(A,TB)\rightarrow\C(TA,TB)\] ahora desglocemos las ecuaciones que ligan la receta de $(T,\eta,(\_)^{*})$.
+ Imitando un poco la universalidad de la flecha que nos da la defnición de adjunción tenemos que pedir:
+ \[f^{*}\eta_{A}=f.\] 
+ Y entonces si $\eta_{A}\colon A\rightarrow GFA$ y por la propiuedad universal debemos tener :\[Gid_{FA}\circ\eta_{A}=\eta_{A}=G\eta^{+}_{A}\circ\eta_{A}\]
+  y por unicidad entonces obtenemos \[\eta^{+}_{A}=id_{FA}\] con esto debemos exigir a nuestra terna que \[\eta^{*}_{A}=id_{FA}.\]
+  Y por último que sucede con la propiedad universal en este caso, veamos, sea \[f\colon A\rightarrow GFB\text{ y } g\colon B\rightarrow GFC\] entonces 
+  \[\begin{tikzcd}[column sep=large, row sep=large]
+    A \arrow[r, "f^+"] \arrow[d, "\eta_A"'] & GFB \arrow[d, "Gg^+"] \\
+    GFA \arrow[r, "Gf^+"'] & GFC
+    \end{tikzcd}\]
+
+
+Que por unicidad debemos de tener \[(Gg^{+}\circ f)^{+}=g^{+}\circ f^{+}\] y así \[G(Gg^{+}\circ f)^{+}=Gg^{+}\circ Gf^{+}.\] Entonces requieremos para nuestro operador $(\_)^{*}$ lo analogo, es decir, \[(g^{*}\circ f)^{*}=g^{*}\circ f^{*}\]
+con esto cocinado tenemos nuestra definición:
+
+\begin{dfn}\label{Kleislitriple}
+Una \emph{monada de Kleisli} en una categoría $\C$ consiste de los siguientes datos:\begin{itemize}
+\item[(i)] Un operador $T$ de objetos de $\C$ en objetos de $\C$.
+\item[(ii)] Para cada $A$ una flecha distinguida $\eta_{A}$.
+\item[(iii)] Para todo $A,B\in\C$ una función $(\_)^{*}\colon\C(A,TB)\rightarrow\C(TA,TB)$ sujeto a las siguientes ecuaciones \[f^{*}\circ\eta_{A}=f\;\;\; \eta_{A}^{*}=id_{TA}\;\;\;\; (g^{*}\circ f)^{*}=g^{*}\circ f^{*}\]  
+
+\end{itemize}
+Y así hablaremos de la monada de Kleisli como la terna $(T,\eta,(\_)^{*})$.
+\end{dfn}
+Y claro tenemos la proposición correspondiente con la definición de adjuncion mediante flechas universales.
+\begin{prop}\label{Kleisiarrow}
+Si $(F,G,\eta,(\_)^{+})$ describe una adjunción en $\C$ con $F$ una asignación de objetos de $\C$ en objetos de $\D$ entonces $(GF,\eta,G(\_)^{+})$ define una monada de Kleisli en $\C$. 
+\end{prop}    
+El lector perspicaz notara que debe de haber una relación entre la defnición \ref{mona} y la defnición \ref{Kleislitriple}, pues lo esperado sucede:
+
+\begin{prop}\label{expected}
+Las nociones de monada y monada de Kleisli son equivalentes.
+\end{prop}    
+
+\begin{proof}
+Empecemos con una monada de Kleisli digamos $(T,\eta,(\_)^{*})$ en $\EuScript{C}$, entonces veamos como hacer que $T$ sea un funtor de carne y hueso, tomemos $f\colon A\rightarrow B$ en $\EuScript{C}$
+y sea su correspondiente $Tf\colon Ta\rightarrow TB$ dado: \[Tf=(\eta_{B}\circ f)^{*}\] esto lo hace funtorial ya que poara todo $A\in\EuScript{C}$ se tiene: 
+\[Tid_{A}=(\eta_{A}\circ id_{A})^{*}=\eta_{A}^{*}=id_{TA}.\]
+
+y para felchas \[\begin{tikzcd}[column sep=large, row sep=large]
+    A \arrow[r, "f"]  & B \arrow[r, "g"] & C
+    \end{tikzcd}\]
+
+tenemos que: 
+
+\[
+    \begin{aligned}
+        Tg\circ Tf
+        &= (\eta_{C}\circ g)^{*}\circ (\eta_{B}\circ f)^{*} \\
+        &= ((\eta_{C}\circ g)^{*}\circ\eta_{B}\circ f)^{*}\\
+        &= (\eta_{C}\circ g\circ f)^{*} \\
+        &=T(g\circ f),
+    \end{aligned}\]
+Ahora en efecto $\eta$ es una transformación natural, es decir para cualquier flecha $f\colon A\rightarrow B$ en $\EuScript{C}$ tenemos:
+
+\[\eta_{B}\circ f=Tf\circ\eta_{A}.\]
+
+Calculamos: \[Tf\circ\eta_{A}=(\eta_{B}\circ f)^{*}\circ\eta_{A}=\eta_{B}\circ f.\]
+es decir es natural.
+
+Ahora nos falta calcular el otro dato de monada, la multiplicación, $\mu\colon T^{2}\rightarrow T$ esta la damos como: \[\mu_{A}= id_{TA}^{*}\colon T^{2}A\rightarrow TA.\]
+Y esto en efecto es natural, es decir para cualquier $f\colon A\rightarrow B$ tenemos que: 
+
+
+\[
+    \begin{aligned}
+        \mu_{B}\circ T^{2}f
+        &= id_{TB}^{*}\circ (\eta_{TB}\circ Tf)^{*} \\
+        &= (id_{TB}^{*}\circ\eta_{TB}\circ Tf)^{*}\\
+        &= (id_{TB}\circ Tf)^{*} \\
+        &=(Tf)^{*}\\
+        &=(\eta_{B}\circ f)^{**}\\
+        &=((\eta_{B}\circ f)^{*}\circ id_{TA})^{*}\\
+        &=(\eta_{B}\circ f)^{*}\circ id_{TA}^{*}\\
+        &= Tf\circ\mu_{A},
+    \end{aligned}\]
+Solo resta calcular las tres ecuaciones, entonces calculamos: \[\mu_{A}\circ\eta_{TA}=id^{*}_{TA}=id_{TA}.\] y 
+\[\mu_{A}\circ T\eta_{A}=id^{*}_{TA}\circ(\eta_{TA}\circ\eta_{A})^{*}=(id^{*}_{TA}\circ\eta_{TA}\circ\eta_{A})^{*}=(id_{TA}\circ\eta_{A})^{*}=\eta_{A}^{*}=id_{TA}.\]
+Finalmente el cuadrado adecuado conmuta:
+\[
+    \begin{aligned}
+        \mu_{A}\circ T\mu_{A}
+        &= id^{*}_{TA}\circ(\eta_{TA}\circ id^{*}_{TA})^{*} \\
+        &= (id^{*}_{TA}\circ\eta_{TA}\circ id^{*}_{TA})^{*}\\
+        &= (id_{TA}\circ id_{TA}^{*})^{*} \\
+        &=id_{TA}^{**}\\
+        &=(id^{*}_{TA}\circ id^{*}_{T^{2}A})^{*}\\
+        &=id^{*}_{TA}\circ id_{T^{2}A}^{*}\\
+        &=\mu_{A}\circ\mu_{TA},
+        \end{aligned}\]
+
+Y así $(T,\eta,\mu)$ define uan monada en $\EuScript{C}$.
+
+Recíprocamente, si comentzamos con los datos de una monada $(T,\eta,\mu)$ en $\EuScript{C}$., claro casi tautologicamente tenemos que $T$ y $\eta$ satisfacen las condiciones de la definición
+\ref{Kleislitriple}, resta ver que el operador de conjuntos de funciones $(\_)^{*}$ cumple lo requerido, sea entonces $f\colon A\rightarrow TB$ en $\EuScript{C}$ pongamos $f^{*}$ que sea la flecha
+
+\[\begin{tikzcd}[column sep=large, row sep=large]
+    TA \arrow[r, "Tf"]  & T^{2}B \arrow[r, "\mu_{B}"] & TB
+    \end{tikzcd}\]
+ resta ver que se cumplen las ecuaciones de Kleisli, para esto tomemos cualquier $f\colon A\rightarrow TB$, entonces \[f^{*}\circ\eta_{A}=\mu_{B}\circ Tf\circ\eta_{A}=\mu_{B}\circ\eta_{TB} f=id_{TB}\circ f=f.\]
+
+ de aquí \[\eta_{A}^{*}=\mu_{A}\circ T\eta_{A}=id_{TA}.\]
+como se pedia.
+Ahora para $f$ como antes tenemois con $g\in\EuScript{C}(A,TB)$, entonces calculamos usando la funtorialidad de $T$: 
+
+
+\[
+    \begin{aligned}
+        g^{*}\circ f^{*}
+        &= \mu_{C}\circ Tg\circ\mu_{B}\circ Tf \\
+        &= \mu_{C}\circ\mu_{TC}\circ T^{2}g\circ Tf\\
+        &= \mu_{C}\circ T\mu_{C}\circ T^{*}g\circ Tf \\
+        &=\mu_{C}\circ T(\mu_{C}\circ Tg\circ f)\\
+        &=(g^{*}\circ f)^{*},
+        \end{aligned}\]
+y así los datos $(T,\eta,(\_)^{*})$ define una monada de Kleisli.
+
+Ahora en efecto si denotamos por $\mathcal{M}(\EuScript{C})=\{\text{ monadas en }\EuScript{C}\}$ y por $\mathcal{K}\mathcal{M}(\EuScript{C})=\{\text{ monadas de Kleisli en }\EuScript{C}\}$
+Tenemos entonces dos asignaciones \[\mathcal{M}(\EuScript{C})\rightarrow \mathcal{K}\mathcal{M}(\EuScript{C})\] y \[\mathcal{K}\mathcal{M}(\EuScript{C})\rightarrow \mathcal{M}(\EuScript{C})\] dadas por 
+$(T,\eta,(\_)^{*})\leadsto (T,\eta,\mu)$ y vicersa forman una biyección, en efecto si empezamos con una de Kleisli $(T,\eta,(\_)^{*})\leadsto (T,\eta,\mu)$ y su monada construida como antes,  entonces para cualquier flecha $f\colon A\rightarrow TB$ y entonces \[\mu_{B}\circ Tf=id^{*}_{TA}\circ(\eta_{B}\circ f)^{*}=(id^{*}_{TA}\circ\eta_{B}\circ f)^{*}=(id_{TA}\circ f)^{*}=f^{*}.\]
+y así obtenemos la monada de Kleisli original. 
+Y vicersa si empezamos con una monada usual $(T,\eta,\mu)$ con su Kleisli y de alli obtenemos la monada dada por esta entonces con los calculos que tenemos hechos \[id^{*}_{TA}=\mu_{TA}\circ Tid_{TA}=\mu_{TA}\circ id_{T^{2}A}=\mu_{TA}.\]
+y así recuperamos la monada con la que empezamos.
+
+\end{proof}   
+
+
+Esto esta bien, ya tener dos opciones para cocinar la factorización que estamos busncando, pero aún así necesitamos una solución \emph{universal}.
+
+
+
+\section{Solución de Kleisli}\label{SOLKLEI}
+
+
+La solución que describeremos aquí es debida a Kleisli en su celebra artículo Every standard construction is induced by a pair of adjoint functors (hayu que ponerlo enla biblio)
+Esta construcción empieza con una adjunción $F\dash G$ donde ya esta tenemos a la categoría $\EuScript{D}$ que soluciona el problema de factorizaicón, es decir tenemos:
+
+\[\EuScript{D}(FA,FB)\cong\EuScript{C}(A,GFB)\cong\EuScript{C}(A,TB).\]
+ \begin{dfn}\label{cate de Kleisli}
+La \emph{categoría de Kleisli} $\EuScript{C}_{T}$ de una monada de Kleisli $(T,\eta,(\_)^{*})$ en una categoría $\EuScript{C}$ consiste de los siguientes datos:
+\begin{itemize}
+\item[(i)] Los objetos son los mismos que los de $\EuScript{C}$.
+\item[(ii)] Las flechas $A\rightarrow B$ estan dadas por $A\rightarrow TB$;
+\item[(iii)] Las identidades para cada $A$ estan dadas por $\eta_{A}$.
+\item[(iv)] La composición esta dada, $f\colon A\rightarrow B$  y $g\colon B\rightarrow C$ en $\EuScript{C}_{T}$ : \[\begin{tikzcd}[column sep=large, row sep=large]
+    A \arrow[r, "f"]  & TB \arrow[r, "g^{*}"] & TC
+    \end{tikzcd}\]
+\end{itemize}
+Formalmente deberiamos dintinguir entre las composicion en $\EuScript{C}$ y la de $\EuScript{C}_{T}$ para esto digamos que el simbolo $g\bullet f$ representa la composición en $\EuScript{C}_{T}$.
+
+También nos falta verificar que en efecto los datos de \ref{SOLKLEI} constituyen uan categoría, para esto si $f\colon A\rightarrow B$ en $\EuScript{C}_{T}$ tenemos que la composición con la identidad esta dada como \[f^{*}\circ\eta_{A}=f.\]
+
+Y pos-componiendo (si es que dicha palabra existe) con la identidad $B$ tenemos: \[\eta^{*}_{B}\circ f=id_{B}\circ f=f.\]
+Por otro lado sea $f$ como antes y tomemos dos flechas que se pueden componer en $\EuScript{C}_{T}$ digamos $g\colon B\rightarrow C$ y $h\colon C\rightarrow D$, entonces \[h\bullet (g\bullet f)=h^{*}\circ(g^{*}\circ f)=(h^{*}\circ g^{*})\circ f=(h^{*}\circ g)^{*}\circ f=(h\bullet g)\bullet f.\]
+\end{dfn}
+
+Y por lo tanto:
+
+\begin{prop}\label{catkleisliesunacat}
+Con la notación de la defnición \ref{SOLKLEI} se tiene que $\EuScript{C}_{T}$ es una categoría.
+\end{prop}
+
+Existe una comparasión directa entre objetos de $\EuScript{C}$ y $\EuScript{C}_{T}$, $F_{T}\colon Obj\EuScript{C}\rightarrow Obj\EuScript{C}_{T}$ esta asignación no hace nada perse, también podemos comparar con un funtor
+$G_{T}\colon\EuScript{C}_{T}\rightarrow\EuScript{C}$ como sigue, en cada objeto $C\in\EuScript{C}_{T}$ entonces $G_{T}(C)=TC $ y en cada morfismo $f\colon A\rightarrow B$ en $\EuScript{C}_{T}$
+lo mandamos a $f^{*}\colon TA\rightarrow TB$ en $\EuScript{C}$, esto en efecto define un funtor ya que en identidades tenemos que $\eta_{A}$ lo manda a $\eta_{A}^{*}=id_{TA}$, si $f\colon A\rightarrow B$ y $g\colon b\rightarrow C$ en $\EuScript{C}_{T}$.
+entonces: \[G_{Tg}\circ G_{Tf}=g^{*}\circ f^{*}=(g^{*}\circ f)^{*}=G_{T}(g\bullet f).\] y así $G_{T}$ preserva las composiciones y por lo tanto es un funtor.
+Ahora claramente tenemos: \[T=G_{T}F_{T}\] en objetos, queremos estatar una propiedad universal para esta construcción.
+Para este fin, tomemos un $f\colon A\rightarrow G_{T}B$ con $A\in\EuScript{C}$ y $B\in\EuScript{C}_{T}$. necesitamos construir una flecha única $f^{+}\colon F_{T}A\rightarrow B$ en $\EuScript{C}_{T}$ tal que:
+\[G_{T}f^{+}\circ\eta_{A}=f.\] esto es justamente lo que hace nuestra construcción hace que $f\colon A\rightarrow G_{T}B=TB$ es un morfismo en la categoría $\EuScript{D}$, y así,
+$G_{T}f^{+}=f^{*}$ y calculando \[G_{T}f^{+}\circ\eta_{A}=f^{*}\circ\eta_{A}=f\] como se requeria. Ahora para la unicidad, si $g\colon F_{T}A\rightarrow B$ en $\EuScript{C}_{T}$
+dado por una flecha $g\colon A\rightarrow TB$ en $\EuScript{C}$ entonces \[G_{Tg}\circ\eta_{A}=g^{*}\circ\eta_{A}=g,\] entonces tenemos que $g=f$, por lo tanto hemos encontrado una adjunción con las
+propiedades deseadas, por último cabe notar que aunque no se pidio, es claro que $F_{T}$ es un funtor, el problema con el es que no es muy interesante a diferencia de $G_{T}$.
+
+Es un ejercicio que el lector calcule la categoría de Kleisli de los ejemplos que hemos dejado al principio de esta sección.
+
+Vale la pena en este punto (supongo) poner un poco de contexto aún mas abstracti sin-sentido, denotemos por $\mathrm{Ad}\EuScript{C}$ a la categoría de adjunciones para nuestra categoría favorita $\EuScript{C}$
+Hemos así probado que :
+
+\begin{prop}\label{kleisli es final}
+Dada una categoría $\EuScript{C}$ para una monada de Kleisli $(T,\eta,(\_)^{*})$ ( o terna de Kleisli) se tiene que la categoría de Kleisli de una monada de Kleisli $(T,\eta,(\_)^{*})$ ( o terna de Kleisli) se tiene que la categoría de Kleisli de $\EuScript{C}_{T}$
+es un objeto final en la categoría $\mathrm{Ad}\EuScript{C}$, es decir, dada cualquier monada esta da lugar a una adjunción del dominio del adjunto izquierdo, y si tal factorización existe entonces la categoría de Kleisli es el objeto inicial del codominio de tal adjunción.
+\end{prop}
+
+
+En la práctica ya que estamos hablando de objetos en la categoría de adjunciones de una categoría agradable, podriamos preguntarnos si tal categoría tiene objeto final.
+
+\section{La solución de Eilenberg y Moore}\label{EMSOL}
+
+En efecto construyamos el objeto final en la categoría de posibles adjunciones que factoricen una monada dada.
+
+
 
 \section{La adjunción entre $\Frm$ y $\Top$}
+
+Este capítulo esta dedica a desglosar varias cosas que hemos visto en un ejemplo que es de sumo interes.
+
+
 
 Uno de los primeros ejemplos de marcos, y de hecho, la
 motivación para la definición, fue que los abiertos de un espacio
@@ -560,7 +936,7 @@ topológico $S$ forman un marco $\cal OS$.
 En este capítulo desarrollaremos más a fondo la relación entre marcos
 y espacios topológicos. Sabemos que la asignación $S\mapsto\cal OS$ es
 un funtor contravariante $\cal O\colon\Top\to\Frm$.
-Ahora construiremos un funtor de regreso $\pt:\Frm\to\Top$
+Ahora construiremos un funtor de regreso $\pt\colon\Frm\to\Top$
 y probaremos que ambos funtores forman una adjunción.
 \[
   \begin{tikzcd}
@@ -748,12 +1124,12 @@ isomorfismo) decimos que el marco $A$ es \textit{espacial}.
 Queremos ver que la asignación $A\mapsto \pt A$ es un funtor y que
 la reflexión espacial $U_A:A\to\cal O\pt A$
 es una transformación natural
-\[U_\bullet:\id_{\Frm}\to\cal O\pt(\_).\]
+\[U_\bullet\colon\id_{\Frm}\to\cal O\pt(\_).\]
 
-Lo primero es verificar que, dado un morfismo de marcos $f:A\to B$,
+Lo primero es verificar que, dado un morfismo de marcos $f\colon A\to B$,
 obtenemos una función continua $\pt f:\pt B\to\pt A$ entre los
 espacios de puntos. De hecho, $\pt f$ será la restricción del adjunto
-derecho $f_*:B\to A$ a los puntos de $B$, pero hay que verificar que
+derecho $f_*\colon B\to A$ a los puntos de $B$, pero hay que verificar que
 $f_*$ manda puntos a puntos.
 
 Si $p$ es un punto de $\pt B$, veamos que $f_*p$ es un punto de $A$.
@@ -782,7 +1158,7 @@ se satisface $(hk)_*=k_*h_*$.
 Además, el adjunto derecho de $\id:A\to A$ también es la identidad
 de $A$.
 De estas observaciones se sigue que la asignación $\pt$
-es un funtor (contravariante) $\pt:\Frm\to\Top$.
+es un funtor (contravariante) $\pt\colon \Frm\to\Top$.
 
 Además, en el párrafo anterior probamos que
 \[
@@ -1145,7 +1521,26 @@ un único morfismo $f:A\to\cal OS$ tal que el diagrama
 \]
 conmuta.
 
+\section[Álgebras para la adjunción]{Álgebras para la adjunción $\spec\dashv \mathcal{O}$}
 
+En esta sección usaremos lo aprendido en las sección \ref{SECMON} y la sección anterior, 
+
+Primero trabajaremos con una extensión de la adjunción entre $\Frm$ y $\Top$, para esto consideremos la categoría de retículas distributivas 
+\[\EuScript{D}Lt\] esta categoría tiene como subcategoría ala categoría de marcos, lo interesante es que podemos definir un funtor 
+\[spec\colon\EuScript{D}Lt\rightarrow\Top \] que a cada retícula distributiva le asocia su espacio espectral, es decir, su espectro (ideales primos), teniendo esto en mente, veremos que
+tenemos una adjunción:
+
+
+\[
+  \begin{tikzcd}
+    \Top \ar[d,shift right=2,"\cal O"'{name=L}]
+    \\
+    \EuScript{D}Lt^\op \ar[u,shift right=2,"spec"'{name=R}]
+    \adj{L}{R}
+  \end{tikzcd}
+\]
+
+que como se espera esta se restringe a una equivalencia, que se le conoce como la equivalencia de Stone entre retículas distributivas y espacios coherentes (espectrales).
 \noindent 
 \begin{thebibliography}{99}
   \bibitem{D.P.} C. H. Dowker; D. Strauss, \textit{Separation axioms for frames}, Topics in Topology, pp. 223–240. Proc. Colloq., Keszthely, 1972. Colloq. Math. Soc. Janos Bolyai, vol. 8, North-Holland, Amsterdam, 1974.
