@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1747031553.77899 "d:/desktop/git/cat/Categor-as-2025/main.tex" "main.pdf" "main" 1747031558.45571 2
+["pdflatex"] 1747117740.02176 "d:/desktop/git/cat/Categor-as-2025/main.tex" "main.pdf" "main" 1747117744.8726 2
   "C:/Program Files/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
   "C:/Program Files/MiKTeX/fonts/enc/dvips/ly1/texnansi.enc" 1654972639 6938 5135be6a8802f13a7faf296d1959a1ab ""
   "C:/Program Files/MiKTeX/fonts/tfm/adobe/courier/pcrr8r.tfm" 1136765053 1292 bd42be2f344128bff6d35d98474adfe3 ""
@@ -295,12 +295,12 @@
   "C:/Users/angel/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs7.tfm" 1684706713 692 1b6510779f0f05e9cbf03e0f6c8361e6 ""
   "C:/Users/angel/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1706151760 24215160 14d20017a50056f2c7ac1a0a63ad2d25 ""
   "comunicaciones.cls" 1737346116 62266 f7db17b6b7e71dfd8f5d62104e23d6bd ""
-  "d:/desktop/git/cat/Categor-as-2025/main.tex" 1747031547 71668 849c19361229c209f370ec85acb0da1c ""
-  "macros.tex" 1746666952 7547 8eefc565beae28e77601aa2c6bad3f27 ""
-  "main.aux" 1747031557 3900 6a0436b55416c4f95fe9a825c65978b6 "pdflatex"
-  "main.out" 1747031557 3207 9f5c89f34240d9e7e18135334ade0dab "pdflatex"
-  "main.tex" 1747031547 71668 849c19361229c209f370ec85acb0da1c ""
-  "main.toc" 1747031557 1607 8a30aa556b6d1f8d6ca5f31b6494cae1 "pdflatex"
+  "d:/desktop/git/cat/Categor-as-2025/main.tex" 1747117733 82045 4b11af9a2f3bdb49d33084e9a0e59858 ""
+  "macros.tex" 1747098133 7571 b5be8a7d7ae9c66f544efa06e51bd337 ""
+  "main.aux" 1747117744 4459 19ebd3fe7f56b1623f7ea2cc0adef853 "pdflatex"
+  "main.out" 1747117744 3625 6927291f839ec3d503580164c045d188 "pdflatex"
+  "main.tex" 1747117733 82045 4b11af9a2f3bdb49d33084e9a0e59858 ""
+  "main.toc" 1747117744 1786 3bdc6777ac27c0ef092c54d411ba178f "pdflatex"
   (generated)
   "main.aux"
   "main.log"

@@ -770,9 +770,165 @@ Las nociones de monada y monada de Kleisli son equivalentes.
 Empecemos con una monada de Kleisli digamos $(T,\eta,(\_)^{*})$ en $\EuScript{C}$, entonces veamos como hacer que $T$ sea un funtor de carne y hueso, tomemos $f\colon A\rightarrow B$ en $\EuScript{C}$
 y sea su correspondiente $Tf\colon Ta\rightarrow TB$ dado: \[Tf=(\eta_{B}\circ f)^{*}\] esto lo hace funtorial ya que poara todo $A\in\EuScript{C}$ se tiene: 
 \[Tid_{A}=(\eta_{A}\circ id_{A})^{*}=\eta_{A}^{*}=id_{TA}.\]
+
+y para felchas \[\begin{tikzcd}[column sep=large, row sep=large]
+    A \arrow[r, "f"]  & B \arrow[r, "g"] & C
+    \end{tikzcd}\]
+
+tenemos que: 
+
+\[
+    \begin{aligned}
+        Tg\circ Tf
+        &= (\eta_{C}\circ g)^{*}\circ (\eta_{B}\circ f)^{*} \\
+        &= ((\eta_{C}\circ g)^{*}\circ\eta_{B}\circ f)^{*}\\
+        &= (\eta_{C}\circ g\circ f)^{*} \\
+        &=T(g\circ f),
+    \end{aligned}\]
+Ahora en efecto $\eta$ es una transformación natural, es decir para cualquier flecha $f\colon A\rightarrow B$ en $\EuScript{C}$ tenemos:
+
+\[\eta_{B}\circ f=Tf\circ\eta_{A}.\]
+
+Calculamos: \[Tf\circ\eta_{A}=(\eta_{B}\circ f)^{*}\circ\eta_{A}=\eta_{B}\circ f.\]
+es decir es natural.
+
+Ahora nos falta calcular el otro dato de monada, la multiplicación, $\mu\colon T^{2}\rightarrow T$ esta la damos como: \[\mu_{A}= id_{TA}^{*}\colon T^{2}A\rightarrow TA.\]
+Y esto en efecto es natural, es decir para cualquier $f\colon A\rightarrow B$ tenemos que: 
+
+
+\[
+    \begin{aligned}
+        \mu_{B}\circ T^{2}f
+        &= id_{TB}^{*}\circ (\eta_{TB}\circ Tf)^{*} \\
+        &= (id_{TB}^{*}\circ\eta_{TB}\circ Tf)^{*}\\
+        &= (id_{TB}\circ Tf)^{*} \\
+        &=(Tf)^{*}\\
+        &=(\eta_{B}\circ f)^{**}\\
+        &=((\eta_{B}\circ f)^{*}\circ id_{TA})^{*}\\
+        &=(\eta_{B}\circ f)^{*}\circ id_{TA}^{*}\\
+        &= Tf\circ\mu_{A},
+    \end{aligned}\]
+Solo resta calcular las tres ecuaciones, entonces calculamos: \[\mu_{A}\circ\eta_{TA}=id^{*}_{TA}=id_{TA}.\] y 
+\[\mu_{A}\circ T\eta_{A}=id^{*}_{TA}\circ(\eta_{TA}\circ\eta_{A})^{*}=(id^{*}_{TA}\circ\eta_{TA}\circ\eta_{A})^{*}=(id_{TA}\circ\eta_{A})^{*}=\eta_{A}^{*}=id_{TA}.\]
+Finalmente el cuadrado adecuado conmuta:
+\[
+    \begin{aligned}
+        \mu_{A}\circ T\mu_{A}
+        &= id^{*}_{TA}\circ(\eta_{TA}\circ id^{*}_{TA})^{*} \\
+        &= (id^{*}_{TA}\circ\eta_{TA}\circ id^{*}_{TA})^{*}\\
+        &= (id_{TA}\circ id_{TA}^{*})^{*} \\
+        &=id_{TA}^{**}\\
+        &=(id^{*}_{TA}\circ id^{*}_{T^{2}A})^{*}\\
+        &=id^{*}_{TA}\circ id_{T^{2}A}^{*}\\
+        &=\mu_{A}\circ\mu_{TA},
+        \end{aligned}\]
+
+Y así $(T,\eta,\mu)$ define uan monada en $\EuScript{C}$.
+
+Recíprocamente, si comentzamos con los datos de una monada $(T,\eta,\mu)$ en $\EuScript{C}$., claro casi tautologicamente tenemos que $T$ y $\eta$ satisfacen las condiciones de la definición
+\ref{Kleislitriple}, resta ver que el operador de conjuntos de funciones $(\_)^{*}$ cumple lo requerido, sea entonces $f\colon A\rightarrow TB$ en $\EuScript{C}$ pongamos $f^{*}$ que sea la flecha
+
+\[\begin{tikzcd}[column sep=large, row sep=large]
+    TA \arrow[r, "Tf"]  & T^{2}B \arrow[r, "\mu_{B}"] & TB
+    \end{tikzcd}\]
+ resta ver que se cumplen las ecuaciones de Kleisli, para esto tomemos cualquier $f\colon A\rightarrow TB$, entonces \[f^{*}\circ\eta_{A}=\mu_{B}\circ Tf\circ\eta_{A}=\mu_{B}\circ\eta_{TB} f=id_{TB}\circ f=f.\]
+
+ de aquí \[\eta_{A}^{*}=\mu_{A}\circ T\eta_{A}=id_{TA}.\]
+como se pedia.
+Ahora para $f$ como antes tenemois con $g\in\EuScript{C}(A,TB)$, entonces calculamos usando la funtorialidad de $T$: 
+
+
+\[
+    \begin{aligned}
+        g^{*}\circ f^{*}
+        &= \mu_{C}\circ Tg\circ\mu_{B}\circ Tf \\
+        &= \mu_{C}\circ\mu_{TC}\circ T^{2}g\circ Tf\\
+        &= \mu_{C}\circ T\mu_{C}\circ T^{*}g\circ Tf \\
+        &=\mu_{C}\circ T(\mu_{C}\circ Tg\circ f)\\
+        &=(g^{*}\circ f)^{*},
+        \end{aligned}\]
+y así los datos $(T,\eta,(\_)^{*})$ define una monada de Kleisli.
+
+Ahora en efecto si denotamos por $\mathcal{M}(\EuScript{C})=\{\text{ monadas en }\EuScript{C}\}$ y por $\mathcal{K}\mathcal{M}(\EuScript{C})=\{\text{ monadas de Kleisli en }\EuScript{C}\}$
+Tenemos entonces dos asignaciones \[\mathcal{M}(\EuScript{C})\rightarrow \mathcal{K}\mathcal{M}(\EuScript{C})\] y \[\mathcal{K}\mathcal{M}(\EuScript{C})\rightarrow \mathcal{M}(\EuScript{C})\] dadas por 
+$(T,\eta,(\_)^{*})\leadsto (T,\eta,\mu)$ y vicersa forman una biyección, en efecto si empezamos con una de Kleisli $(T,\eta,(\_)^{*})\leadsto (T,\eta,\mu)$ y su monada construida como antes,  entonces para cualquier flecha $f\colon A\rightarrow TB$ y entonces \[\mu_{B}\circ Tf=id^{*}_{TA}\circ(\eta_{B}\circ f)^{*}=(id^{*}_{TA}\circ\eta_{B}\circ f)^{*}=(id_{TA}\circ f)^{*}=f^{*}.\]
+y así obtenemos la monada de Kleisli original. 
+Y vicersa si empezamos con una monada usual $(T,\eta,\mu)$ con su Kleisli y de alli obtenemos la monada dada por esta entonces con los calculos que tenemos hechos \[id^{*}_{TA}=\mu_{TA}\circ Tid_{TA}=\mu_{TA}\circ id_{T^{2}A}=\mu_{TA}.\]
+y así recuperamos la monada con la que empezamos.
+
 \end{proof}   
 
+
+Esto esta bien, ya tener dos opciones para cocinar la factorización que estamos busncando, pero aún así necesitamos una solución \emph{universal}.
+
+
+
+\section{Solución de Kleisli}\label{SOLKLEI}
+
+
+La solución que describeremos aquí es debida a Kleisli en su celebra artículo Every standard construction is induced by a pair of adjoint functors (hayu que ponerlo enla biblio)
+Esta construcción empieza con una adjunción $F\dash G$ donde ya esta tenemos a la categoría $\EuScript{D}$ que soluciona el problema de factorizaicón, es decir tenemos:
+
+\[\EuScript{D}(FA,FB)\cong\EuScript{C}(A,GFB)\cong\EuScript{C}(A,TB).\]
+ \begin{dfn}\label{cate de Kleisli}
+La \emph{categoría de Kleisli} $\EuScript{C}_{T}$ de una monada de Kleisli $(T,\eta,(\_)^{*})$ en una categoría $\EuScript{C}$ consiste de los siguientes datos:
+\begin{itemize}
+\item[(i)] Los objetos son los mismos que los de $\EuScript{C}$.
+\item[(ii)] Las flechas $A\rightarrow B$ estan dadas por $A\rightarrow TB$;
+\item[(iii)] Las identidades para cada $A$ estan dadas por $\eta_{A}$.
+\item[(iv)] La composición esta dada, $f\colon A\rightarrow B$  y $g\colon B\rightarrow C$ en $\EuScript{C}_{T}$ : \[\begin{tikzcd}[column sep=large, row sep=large]
+    A \arrow[r, "f"]  & TB \arrow[r, "g^{*}"] & TC
+    \end{tikzcd}\]
+\end{itemize}
+Formalmente deberiamos dintinguir entre las composicion en $\EuScript{C}$ y la de $\EuScript{C}_{T}$ para esto digamos que el simbolo $g\bullet f$ representa la composición en $\EuScript{C}_{T}$.
+
+También nos falta verificar que en efecto los datos de \ref{SOLKLEI} constituyen uan categoría, para esto si $f\colon A\rightarrow B$ en $\EuScript{C}_{T}$ tenemos que la composición con la identidad esta dada como \[f^{*}\circ\eta_{A}=f.\]
+
+Y pos-componiendo (si es que dicha palabra existe) con la identidad $B$ tenemos: \[\eta^{*}_{B}\circ f=id_{B}\circ f=f.\]
+Por otro lado sea $f$ como antes y tomemos dos flechas que se pueden componer en $\EuScript{C}_{T}$ digamos $g\colon B\rightarrow C$ y $h\colon C\rightarrow D$, entonces \[h\bullet (g\bullet f)=h^{*}\circ(g^{*}\circ f)=(h^{*}\circ g^{*})\circ f=(h^{*}\circ g)^{*}\circ f=(h\bullet g)\bullet f.\]
+\end{dfn}
+
+Y por lo tanto:
+
+\begin{prop}\label{catkleisliesunacat}
+Con la notación de la defnición \ref{SOLKLEI} se tiene que $\EuScript{C}_{T}$ es una categoría.
+\end{prop}
+
+Existe una comparasión directa entre objetos de $\EuScript{C}$ y $\EuScript{C}_{T}$, $F_{T}\colon Obj\EuScript{C}\rightarrow Obj\EuScript{C}_{T}$ esta asignación no hace nada perse, también podemos comparar con un funtor
+$G_{T}\colon\EuScript{C}_{T}\rightarrow\EuScript{C}$ como sigue, en cada objeto $C\in\EuScript{C}_{T}$ entonces $G_{T}(C)=TC $ y en cada morfismo $f\colon A\rightarrow B$ en $\EuScript{C}_{T}$
+lo mandamos a $f^{*}\colon TA\rightarrow TB$ en $\EuScript{C}$, esto en efecto define un funtor ya que en identidades tenemos que $\eta_{A}$ lo manda a $\eta_{A}^{*}=id_{TA}$, si $f\colon A\rightarrow B$ y $g\colon b\rightarrow C$ en $\EuScript{C}_{T}$.
+entonces: \[G_{Tg}\circ G_{Tf}=g^{*}\circ f^{*}=(g^{*}\circ f)^{*}=G_{T}(g\bullet f).\] y así $G_{T}$ preserva las composiciones y por lo tanto es un funtor.
+Ahora claramente tenemos: \[T=G_{T}F_{T}\] en objetos, queremos estatar una propiedad universal para esta construcción.
+Para este fin, tomemos un $f\colon A\rightarrow G_{T}B$ con $A\in\EuScript{C}$ y $B\in\EuScript{C}_{T}$. necesitamos construir una flecha única $f^{+}\colon F_{T}A\rightarrow B$ en $\EuScript{C}_{T}$ tal que:
+\[G_{T}f^{+}\circ\eta_{A}=f.\] esto es justamente lo que hace nuestra construcción hace que $f\colon A\rightarrow G_{T}B=TB$ es un morfismo en la categoría $\EuScript{D}$, y así,
+$G_{T}f^{+}=f^{*}$ y calculando \[G_{T}f^{+}\circ\eta_{A}=f^{*}\circ\eta_{A}=f\] como se requeria. Ahora para la unicidad, si $g\colon F_{T}A\rightarrow B$ en $\EuScript{C}_{T}$
+dado por una flecha $g\colon A\rightarrow TB$ en $\EuScript{C}$ entonces \[G_{Tg}\circ\eta_{A}=g^{*}\circ\eta_{A}=g,\] entonces tenemos que $g=f$, por lo tanto hemos encontrado una adjunción con las
+propiedades deseadas, por último cabe notar que aunque no se pidio, es claro que $F_{T}$ es un funtor, el problema con el es que no es muy interesante a diferencia de $G_{T}$.
+
+Es un ejercicio que el lector calcule la categoría de Kleisli de los ejemplos que hemos dejado al principio de esta sección.
+
+Vale la pena en este punto (supongo) poner un poco de contexto aún mas abstracti sin-sentido, denotemos por $\mathrm{Ad}\EuScript{C}$ a la categoría de adjunciones para nuestra categoría favorita $\EuScript{C}$
+Hemos así probado que :
+
+\begin{prop}\label{kleisli es final}
+Dada una categoría $\EuScript{C}$ para una monada de Kleisli $(T,\eta,(\_)^{*})$ ( o terna de Kleisli) se tiene que la categoría de Kleisli de una monada de Kleisli $(T,\eta,(\_)^{*})$ ( o terna de Kleisli) se tiene que la categoría de Kleisli de $\EuScript{C}_{T}$
+es un objeto final en la categoría $\mathrm{Ad}\EuScript{C}$, es decir, dada cualquier monada esta da lugar a una adjunción del dominio del adjunto izquierdo, y si tal factorización existe entonces la categoría de Kleisli es el objeto inicial del codominio de tal adjunción.
+\end{prop}
+
+
+En la práctica ya que estamos hablando de objetos en la categoría de adjunciones de una categoría agradable, podriamos preguntarnos si tal categoría tiene objeto final.
+
+\section{La solución de Eilenberg y Moore}\label{EMSOL}
+
+En efecto construyamos el objeto final en la categoría de posibles adjunciones que factoricen una monada dada.
+
+
+
 \section{La adjunción entre $\Frm$ y $\Top$}
+
+Este capítulo esta dedica a desglosar varias cosas que hemos visto en un ejemplo que es de sumo interes.
+
+
 
 Uno de los primeros ejemplos de marcos, y de hecho, la
 motivación para la definición, fue que los abiertos de un espacio
@@ -1365,7 +1521,7 @@ un único morfismo $f:A\to\cal OS$ tal que el diagrama
 \]
 conmuta.
 
-\section[Álgebras para la adjunción]{Álgebras para la adjunción $spec\dashv \mathcal{O}$}
+\section[Álgebras para la adjunción]{Álgebras para la adjunción $\spec\dashv \mathcal{O}$}
 
 En esta sección usaremos lo aprendido en las sección \ref{SECMON} y la sección anterior, 
 

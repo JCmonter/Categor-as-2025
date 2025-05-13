@@ -9,11 +9,13 @@
 \contentsline {subsection}{\tocsubsection {}{6.1}{Monadas una pequeña introducción}}{18}{subsection.6.1}%
 \contentsline {section}{\tocsection {}{7}{Monadas}}{20}{section.7}%
 \contentsline {section}{\tocsection {}{8}{Ternas de Kleisli}}{22}{section.8}%
-\contentsline {section}{\tocsection {}{9}{La adjunción entre $\mathbf {Frm}$ y $\mathbf {Top}$}}{25}{section.9}%
-\contentsline {section}{\tocsection {}{10}{El espacio de puntos}}{26}{section.10}%
-\contentsline {subsection}{\tocsubsection {}{10.1}{Funtorialidad y naturalidad}}{29}{subsection.10.1}%
-\contentsline {subsection}{\tocsubsection {}{10.2}{El espacio de puntos del marco de abiertos}}{30}{subsection.10.2}%
-\contentsline {section}{\tocsection {}{11}{La adjunción}}{32}{section.11}%
-\contentsline {section}{\tocsection {}{12}{La propiedad universal de las reflexiones}}{35}{section.12}%
-\contentsline {section}{\tocsection {}{13}{Álgebras para la adjunción $spec\dashv \mathcal {O}$}}{35}{section.13}%
-\contentsline {section}{\tocsection {}{}{Referencias}}{36}{section*.3}%
+\contentsline {section}{\tocsection {}{9}{Solución de Kleisli}}{28}{section.9}%
+\contentsline {section}{\tocsection {}{10}{La solución de Eilenberg y Moore}}{30}{section.10}%
+\contentsline {section}{\tocsection {}{11}{La adjunción entre $\mathbf {Frm}$ y $\mathbf {Top}$}}{30}{section.11}%
+\contentsline {section}{\tocsection {}{12}{El espacio de puntos}}{31}{section.12}%
+\contentsline {subsection}{\tocsubsection {}{12.1}{Funtorialidad y naturalidad}}{34}{subsection.12.1}%
+\contentsline {subsection}{\tocsubsection {}{12.2}{El espacio de puntos del marco de abiertos}}{35}{subsection.12.2}%
+\contentsline {section}{\tocsection {}{13}{La adjunción}}{37}{section.13}%
+\contentsline {section}{\tocsection {}{14}{La propiedad universal de las reflexiones}}{39}{section.14}%
+\contentsline {section}{\tocsection {}{15}{Álgebras para la adjunción $spec\dashv \mathcal {O}$}}{40}{section.15}%
+\contentsline {section}{\tocsection {}{}{Referencias}}{41}{section*.3}%
