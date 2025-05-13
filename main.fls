@@ -559,8 +559,19 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\tcrm1000.tfm
 INPUT C:\Program Files\MiKTeX\fonts\vf\mathdesign\mdput\mdputb7t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\mathdesign\mdput\md-utb7t.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\mathdesign\mdput\md-utb8y.tfm
+INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\ueus.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\ueus.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\ueus.fd
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\euler\eusm10.tfm
+INPUT C:\Program Files\MiKTeX\tex\latex\microtype\mt-eus.cfg
+INPUT C:\Program Files\MiKTeX\tex\latex\microtype\mt-eus.cfg
+INPUT C:\Program Files\MiKTeX\tex\latex\microtype\mt-eus.cfg
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\euler\eusm7.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\euler\eusm5.tfm
 INPUT C:\Program Files\MiKTeX\fonts\vf\mathdesign\mdput\mdputr7v.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\mathdesign\mdput\md-utr7v.tfm
+INPUT C:\Program Files\MiKTeX\fonts\vf\mathdesign\mdput\mdputrma.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\mathdesign\mdput\md-utrma.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmri8t.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmri8t.tfm
 INPUT C:\Program Files\MiKTeX\fonts\vf\mathdesign\mdput\mdputb7t.vf
@@ -578,6 +589,8 @@ INPUT .\main.out
 INPUT .\main.out
 INPUT C:\Users\angel\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1000.pk
 INPUT C:\Users\angel\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1000.pk
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\euler\eusm10.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\euler\eusm10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\mathdesign\mdput\md-utr7m.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\mathdesign\mdput\md-utr7m.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\mathdesign\mdput\md-utr7t.pfb
