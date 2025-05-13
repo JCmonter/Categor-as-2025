@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1747154659.00109 "c:/Users/angel/Git/Categor-as-2025/main.tex" "main.pdf" "main" 1747154665.77625 2
+["pdflatex"] 1747154666.72285 "c:/Users/angel/Git/Categor-as-2025/main.tex" "main.pdf" "main" 1747154673.50389 2
   "C:/Users/angel/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1746642018 260534 e8262032b392960939febba788ece1ab ""
   "C:/Users/angel/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1664475292 11548 3aac71094cfd3f15295f39ec59b22b1b ""
   "C:/Users/angel/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1616549171 688 37338d6ab346c2f1466b29e195316aa4 ""
@@ -296,10 +296,10 @@
   "c:/Users/angel/Git/Categor-as-2025/main.tex" 1747154656 82045 4b11af9a2f3bdb49d33084e9a0e59858 ""
   "comunicaciones.cls" 1747070830 62266 f7db17b6b7e71dfd8f5d62104e23d6bd ""
   "macros.tex" 1747154656 7571 b5be8a7d7ae9c66f544efa06e51bd337 ""
-  "main.aux" 1747154664 4494 7ea8cc7e510566873ca7b666c5962998 "pdflatex"
-  "main.out" 1747154664 3625 6927291f839ec3d503580164c045d188 "pdflatex"
+  "main.aux" 1747154672 4494 c3501bc0a7d39184c11be6573bbc2f9e "pdflatex"
+  "main.out" 1747154672 3625 6927291f839ec3d503580164c045d188 "pdflatex"
   "main.tex" 1747154656 82045 4b11af9a2f3bdb49d33084e9a0e59858 ""
-  "main.toc" 1747154664 1786 dec127c64ba0b826220a0f4b8a941496 "pdflatex"
+  "main.toc" 1747154672 1786 3bdc6777ac27c0ef092c54d411ba178f "pdflatex"
   (generated)
   "main.aux"
   "main.log"
