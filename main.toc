@@ -1,21 +1,21 @@
 \babel@toc {spanish}{}\relax 
 \contentsline {section}{\tocsection {}{}{Introducción}}{5}{section*.1}%
-\contentsline {section}{\tocsection {}{1}{Conceptos básicos}}{5}{section.1}%
+\contentsline {section}{\tocsection {}{1}{Conceptos básicos}}{6}{section.1}%
 \contentsline {section}{\tocsection {}{2}{Funtores}}{14}{section.2}%
-\contentsline {section}{\tocsection {}{3}{Transformaciones naturales}}{15}{section.3}%
+\contentsline {section}{\tocsection {}{3}{Transformaciones naturales}}{16}{section.3}%
 \contentsline {section}{\tocsection {}{4}{Límites y colímites}}{17}{section.4}%
-\contentsline {section}{\tocsection {}{5}{Lema de Yoneda}}{17}{section.5}%
+\contentsline {section}{\tocsection {}{5}{Lema de Yoneda}}{18}{section.5}%
 \contentsline {section}{\tocsection {}{6}{Adjunciones}}{18}{section.6}%
 \contentsline {subsection}{\tocsubsection {}{6.1}{Monadas una pequeña introducción}}{18}{subsection.6.1}%
 \contentsline {section}{\tocsection {}{7}{Monadas}}{20}{section.7}%
-\contentsline {section}{\tocsection {}{8}{Ternas de Kleisli}}{22}{section.8}%
+\contentsline {section}{\tocsection {}{8}{Ternas de Kleisli}}{23}{section.8}%
 \contentsline {section}{\tocsection {}{9}{Solución de Kleisli}}{28}{section.9}%
-\contentsline {section}{\tocsection {}{10}{La solución de Eilenberg y Moore}}{30}{section.10}%
-\contentsline {section}{\tocsection {}{11}{La adjunción entre $\mathbf {Frm}$ y $\mathbf {Top}$}}{30}{section.11}%
-\contentsline {section}{\tocsection {}{12}{El espacio de puntos}}{31}{section.12}%
-\contentsline {subsection}{\tocsubsection {}{12.1}{Funtorialidad y naturalidad}}{34}{subsection.12.1}%
-\contentsline {subsection}{\tocsubsection {}{12.2}{El espacio de puntos del marco de abiertos}}{35}{subsection.12.2}%
-\contentsline {section}{\tocsection {}{13}{La adjunción}}{37}{section.13}%
-\contentsline {section}{\tocsection {}{14}{La propiedad universal de las reflexiones}}{40}{section.14}%
+\contentsline {section}{\tocsection {}{10}{La solución de Eilenberg y Moore}}{31}{section.10}%
+\contentsline {section}{\tocsection {}{11}{La adjunción entre $\mathbf {Frm}$ y $\mathbf {Top}$}}{31}{section.11}%
+\contentsline {section}{\tocsection {}{12}{El espacio de puntos}}{32}{section.12}%
+\contentsline {subsection}{\tocsubsection {}{12.1}{Funtorialidad y naturalidad}}{35}{subsection.12.1}%
+\contentsline {subsection}{\tocsubsection {}{12.2}{El espacio de puntos del marco de abiertos}}{36}{subsection.12.2}%
+\contentsline {section}{\tocsection {}{13}{La adjunción}}{38}{section.13}%
+\contentsline {section}{\tocsection {}{14}{La propiedad universal de las reflexiones}}{41}{section.14}%
 \contentsline {section}{\tocsection {}{15}{Álgebras para la adjunción $spec\dashv \mathcal {O}$}}{41}{section.15}%
-\contentsline {section}{\tocsection {}{}{Referencias}}{41}{section*.2}%
+\contentsline {section}{\tocsection {}{}{Referencias}}{42}{section*.3}%
