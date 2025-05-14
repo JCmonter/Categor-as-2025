@@ -3,7 +3,7 @@
 \usepackage[utopia,sfscaled]{mathdesign}
 \usepackage[scaled]{helvet}
 
-\usepackage[utf8]{inputenc} %Por favor guardar los archivos en unicode
+\usepackage[utf8]{inputenc} %Por favor guardar los archivos en Unicode
 \usepackage[T1]{fontenc}
 
 
@@ -29,7 +29,7 @@
 \renewcommand{\refname}{Bibliografía}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\input{macros.tex} %Cargar en este archivo los paquetes que requiera el autor (graphicx, tikz, ...), 
+\input{macros.tex} %Cargar en este archivo los paquetes que requiera el autor, 
 % definir comandos (\DeclareMathOperator{command}{definition}, ... ), etc.
 
 \issueinfo{52}{Comunicaciones}{}{2023} 
@@ -40,7 +40,7 @@
 
 \begin{document}
 
-\author[Vázquez A., Monter J. C., Medina M., Zaldívar L. A.]{Alejandro Vázquez Aceves, Juan Carlos Monter Cortés, Muaricio Medina Barcena y Luis Ángel Zaldívar Corichi}
+\author[Vázquez A., Monter J. C., Medina M., Zaldívar L. A.]{Alejandro Vázquez Aceves, Juan Carlos Monter Cortés, Mauricio Medina Barcena y Luis Ángel Zaldívar Corichi}
 
 \address{Centro Universitario de Ciencias Exactas e Ingenieria,
 Universidad de Guadalajara,
@@ -416,7 +416,7 @@ En este sentido podemos decir que es otro tipo de funtor:
 Por lo comentado previo a la definición anterior, queda claro que es equivalente tener un funtor $F:\A^\op\to\B$ a tener un funtor contravariante $F:\A\to\B$.
 Dejamos como ejercicio al lector hacer la prueba de que también es equivalente tener un funtor $F:\A\to\B^\op$ a tener un funtor contravariante $F:\A\to\B$.
 
-Ejemplos de funtores... entre ellos la identidad. Funtores de olvido Dar definición de funotr fiel y pleno. Funtores "libres", Funtores Homs, Funtor de abiertos, Morfismos de copos, morfismos de grupos. 
+Ejemplos de funtores... entre ellos la identidad. Funtores de olvido Dar definición de funtor fiel y pleno. Funtores "libres", Funtores Homs, Funtor de abiertos, Morfismos de copos, morfismos de grupos. 
 Y quiero dar un contra ejemplo que la conclusión es que sacar el centro de un grupo y verlo como un funtor de $\Grp$ a $\Ab$
 
 \begin{prop}
@@ -427,7 +427,7 @@ Y quiero dar un contra ejemplo que la conclusión es que sacar el centro de un g
     PENDIENTE
 \end{proof}
 
-La proposición anterior nos dice como está definida la composición de funtores. Dejamos para el lector el ejercico de probar que para cualquier funtor $\A\xrightarrow{F}\B$, se tiene que $F\circ\id_\A=\id_\B\circ F$.
+La proposición anterior nos dice como está definida la composición de funtores. Dejamos para el lector el ejercicio de probar que para cualquier funtor $\A\xrightarrow{F}\B$, se tiene que $F\circ\id_\A=\id_\B\circ F$.
 Veamos ahora que la composición es asociativa.
 
 \begin{prop}
@@ -438,11 +438,11 @@ Veamos ahora que la composición es asociativa.
 \end{proof}
 
 Hemos probado que los funtores y su regla de composición satisfacen de cierta forma lo que pedimos para las flechas de una categoría, por lo que es natural preguntarse
-¿Es posible hablar de la categoría de categorías?. No como tal, hay algunos detalles técnicos fundacionales por los que no es tán simple hablar de algo tan inmenso. Una manera de
+¿Es posible hablar de la categoría de categorías?. No como tal, hay algunos detalles técnicos fundacionales por los que no es tan simple hablar de algo tan inmenso. Una manera de
 tratar con este problema está en el libro Abstract and Concrete Categories The Joy of Cats escrito por Jiˇr´ıAd´amek, Horst Herrlich y George E. Strecker, donde se define la 
 \emph{quasicategoría} $\CAT$ cuyos objetos son todas las categorías y las flechas son los funtores. No es nuestra intensión abordar este tema a fondo, 
 solo dar una fuente para que el lector pueda investigar un poco más a fondo el tema. Sin embargo queremos hacer notar que de igual forma podemos
-hablar de categorías que satisfacen propiedades universales (incial, final, productos, coproductos, etc...) e isomorfismos de categorías.
+hablar de categorías que satisfacen propiedades universales (inicial, final, productos, coproductos, etc...) e isomorfismos de categorías.
 
 \section{Transformaciones naturales}
 
@@ -495,7 +495,7 @@ Veamos ahora que como es la composición de transformaciones naturales.
     PENDIENTE
 \end{proof}
 
-Notemos que las componentes de una composción son exactamente la composición de las componentes. Dejamos al lector verificar que la composición
+Notemos que las componentes de una composición son exactamente la composición de las componentes. Dejamos al lector verificar que la composición
 es además asociativa ya que basta verificar que componente a componente lo es, y como cada componente es una flecha en una categoría, debe ser asociativa.
 Todo esto lo mencionamos para definir la categoría de funtores entre dos categorías $[\A,\B]$, donde los objetos son funtores de $\A$ a $\B$ y las flechas
 son transformaciones naturales. Más adelante, en la sección del lema de Yoneda, veremos detalles sobre la categoría de funtores $[\A,\Con]$ donde $\A$ es localmente pequeña.
@@ -534,7 +534,7 @@ Si el límite de un diagrama $D$ existe, normalmente denotamos al vértice de su
 
 Conceptos duales...
 
-Obervaciones entre las propiedades universales mencionadas antes y (co)límites...
+Observaciones entre las propiedades universales mencionadas antes, límites colímites...
 
 \begin{dfn}
     Decimos que una categoría $\C$ es \emph{completa}, si para cada categoría pequeña $I$, todo diagrama $D:I\to\C$ tiene límite en $\C$
@@ -550,7 +550,7 @@ Obervaciones entre las propiedades universales mencionadas antes y (co)límites.
 
 \section{Lema de Yoneda}
 
-Intrudcción sobre el lema de yoneda y enunción y demostración... o solo un sckecth suficiemente convincente de que funciona la prueba
+Introducción sobre el lema de Yoneda, mención y demostración... o solo un sketch suficientemente convincente de que funciona la prueba
 
 \section{Adjunciones}
 
@@ -561,13 +561,13 @@ Intrudcción sobre el lema de yoneda y enunción y demostración... o solo un sc
 \subsection[Monadas una pequeña introducción]{Monadas una pequeña introducción}\label{SECMON}
 
 
-Esta mini sección tiene el objetivop de introducir otra faceta de las adjunciones, empecemos con una situación de abstracta sin sentido.
+Esta mini sección tiene el objetivo de introducir otra faceta de las adjunciones, empecemos con una situación de abstracta sin sentido.
 
 
-Dado un funtor $T\colon \EuScript{C}\rightarrow\EuScript{C}$ qusieramos (por que no) factorizarlo es decir, queremos encontrar una categoría $\D$ y funtores $F\colon \C\rightarrow\D$,
+Dado un funtor $T\colon \EuScript{C}\rightarrow\EuScript{C}$ quisiéramos (por que no) factorizarlo es decir, queremos encontrar una categoría $\D$ y funtores $F\colon \C\rightarrow\D$,
 y $G\colon \D\rightarrow \C$ tal que: \[T=GF\;\;\;\; F\dashv G.\]
 
-Esta factorización nos da una \emph{presentación universal de } $T$ donde universal querra decir \emph{libre}
+Esta factorización nos da una \emph{presentación universal de } $T$ donde universal quiere decir \emph{libre}
 para hallar tal descomposición universal necesitamos desarrollar un poco mas de teoría, primero algunos ejemplos de posibles funtores a factorizar:
 
 \begin{itemize}
@@ -598,33 +598,33 @@ Denotemos por $\D\C\Pos$ la categoría de \emph{conjuntos parcialmente ordenados
     \item[(i)] $A$ es un conjunto parcialmente ordenado.
     \item[(ii)] Cada subconjunto $D\subseteq A$ \emph{dirigido} tiene supremo en $A$. 
 \end{enumerate}
-Fabricamos el siguiente funtor, $(\_)_{\perp}\colon\D\C\Pos\rightarrow \D\C\Pos $ donde el "elemento" $\perp$ esta fijo, entonces este funtor manda  a ncada copo directamente completo digamos,
+Fabricamos el siguiente funtor, $(\_)_{\perp}\colon\D\C\Pos\rightarrow \D\C\Pos $ donde el "elemento" $\perp$ esta fijo, entonces este funtor manda a cada copo directamente completo digamos,
 
-$D$ a este mismo solo que se adjunta $\perp$ como elemento menor, la acción en flechas es la obvia, $f\colom A\rightarrow B$ entonces \[\begin{cases} f_{\perp}(a)
-    a & a\in D\hookrightarrow D_{perp} \\
+$D$ a este mismo solo que se adjunta $\perp$ como elemento menor, la acción en flechas es la obvia, $f\colon A\rightarrow B$ entonces \[\begin{cases} f_{\perp}(a)
+    a & a\in D\hookrightarrow D_{\perp} \\
     \perp & a=\perp
   \end{cases}\]
   \item[(4)]
   \begin{enumerate}
- \item[(a)] Consideremos una de nuestras categorías favoritas, $Top$ la categoría de espacios topologicos junto con funciones continuas,
-fijemos nuestra atención en la subcategoría reflexiva de espacios topologicos $T_{0}$, denotemos por $Top_{0}$ a esta subcategoría plena, 
+ \item[(a)] Consideremos una de nuestras categorías favoritas, $Top$ la categoría de espacios topológicos junto con funciones continuas,
+fijemos nuestra atención en la subcategoría reflexiva de espacios topológicos $T_{0}$, denotemos por $Top_{0}$ a esta subcategoría plena, 
  Para cada $S\in Top_{0}$ sea $\mathcal{C}S$ los cerrados de $S$ y consideramos los siguientes conjuntos \[\lozenge U=\{X\in\mathcal{C}S\mid X\cap U\neq\emptyset\}\]
 sea \[\Omega S^{\lozenge }=\langle\lozenge U\mid U\in\Omega S \rangle \] la topología generada por estos conjuntos, entonces tenemos el funtor $(\_)^{\lozenge}\colon Top_{0}\rightarrow Top_{0}$
 que manda a cada espacio a $(\mathcal{C}S, \Omega S^{\lozenge })$ y en cada función continua, digamos $f\colon S\rightarrow T$ sea 
 \[f^{\lozenge}\colon(\mathcal{C}S, \Omega S^{\lozenge })\rightarrow (\mathcal{C}T, \Omega T^{\lozenge })\] la función continua dada por \[f^{\lozenge}(X)=\bar{f[X]}\] Este ejemplos tiene algo que ver
 con el hiperespacio de Vietoris y la monada diamante potencia.
 \item[(b)]
-En esta misma digamos, vertiente denotemos por $\EuScript{S}Top$ la categoría de espacios sobrios localmente compactos junto con funciones continuas como nuestars flechas,
+En esta misma digamos, vertiente denotemos por $\EuScript{S}Top$ la categoría de espacios sobrios localmente compactos junto con funciones continuas como nuestras flechas,
 sea $\mathcal{K}S=\{\text{ compactos de } S\}$ topologizamos este conjunto con: 
 \[\square  U=\{X\in\mathcal{C}S\mid X\subseteq U\}\] y tomamos la topología generada por estos; 
 \[\Omega S^{\square }=\langle\square U\mid U\in\Omega S\rangle \]
-de manera analoga a la anterior tenemos un funtor $(\_)^{\square}\colon \EuScript{S}Top\rightarrow \EuScript{S}Top$ solo que en flechas se calcula como \[f^{\square}(X)=f[X]\]
+de manera análoga a la anterior tenemos un funtor $(\_)^{\square}\colon \EuScript{S}Top\rightarrow \EuScript{S}Top$ solo que en flechas se calcula como \[f^{\square}(X)=f[X]\]
   \end{enumerate}
 \end{itemize}
   \section[Mon]{Monadas} 
-De acuerdo con nuestro probelams sin sentido, es decir, la factorización que queremos construir para $T\colon\C\rightarrow\C$, necesitamos que exista una adjunción $\D$ y funtores $F\colon \C\rightarrow\D$,
+De acuerdo con nuestros problemas sin sentido, es decir, la factorización que queremos construir para $T\colon\C\rightarrow\C$, necesitamos que exista una adjunción $\D$ y funtores $F\colon \C\rightarrow\D$,
 y $G\colon \D\rightarrow \C$ tal que: \[T=GF\;\;\;\; F\dashv G.\], entonces tenemos que asegurar que existan
-  flechas \[\eta\colon id\_{\C}\rightarrow GF\text{ y }\;\; \epsilon\colon FG\rightarrow id_{\D}\] de tal manera que para todo $A\in\C$ y para todo $D\in\D$ los triangulos:
+  flechas \[\eta\colon id\_{\C}\rightarrow GF\text{ y }\;\; \epsilon\colon FG\rightarrow id_{\D}\] de tal manera que para todo $A\in\C$ y para todo $D\in\D$ los triángulos:
   \[
     \begin{tikzcd}[column sep=large, row sep=large]
       F \arrow[r, "F\eta"] \arrow[dr, "1_F"'] & FGF \arrow[d, "\varepsilon F"] \\
@@ -647,11 +647,11 @@ y $G\colon \D\rightarrow \C$ tal que: \[T=GF\;\;\;\; F\dashv G.\], entonces tene
         FA \arrow[r, "F\eta_{A}"] \arrow[dr, "1_FA"'] & FGFA \arrow[d, "\varepsilon F_{A}"] \\
         & FA 
       \end{tikzcd}
-y así podemos exigir la existenbcia de una transformación natural \[\mu\colon T^{2}\rightarrow T\]
+y así podemos exigir la existencia de una transformación natural \[\mu\colon T^{2}\rightarrow T\]
 
-Entonces para tener una definicion adecuada de lo que es la factorización necesitamos tener una terna $(T,\eta,\mu)$. Es instructivo para el lector (neurotico) calcular $\eta$ y $\mu$ de nuestrso ejemplos clave.
+Entonces para tener una definición adecuada de lo que es la factorización necesitamos tener una terna $(T,\eta,\mu)$. Es instructivo para el lector (neurótico) calcular $\eta$ y $\mu$ de nuestros ejemplos clave.
 
-Sin embargo necesitamos aun mas información para tener una definicion adecuada de lo que sera nuestra monada.
+Sin embargo necesitamos aun mas información para tener una definición adecuada de lo que será nuestra monada.
 
 Usando la supuesta adjunción de nuestro endofuntor $T\colon\C\rightarrow\C$ aplicando $G$ al triangulo con cateto   
 \begin{tikzcd}[column sep=large, row sep=large]
@@ -665,14 +665,14 @@ obtenemos
     & GFA=TA 
   \end{tikzcd}
 \]
-  Y si en elk triangulo para $G$ tomamos la componente con $D=FA$ uno obtiene:
+  Y si en el triangulo para $G$ tomamos la componente con $D=FA$ uno obtiene:
 
 \[\begin{tikzcd}[column sep=large, row sep=large]
    TA=GFA \arrow[r, "\eta_{TA}=\eta GFA"] \arrow[dr, "1_GFA"'] & T^{2}A=GFGFA \arrow[d, "\mu_{A}=G\varepsilon_{FA}"] \\
     & TA=GFA
   \end{tikzcd}\]
-es decir, \[id_{TA}=\mu_{A}T\eta_{A}\text{ y } id_{TA}=\mu_{A}\eta_{TA}.\] es decir tenemos un tipon de \emph{conmutatividad} entre $T\eta_{A}$ y $\eta_{TA}$ y estas identidades
-son las mas cercanas a nuestro caso original (recuerden que empezamos con una factorizacion chida).
+es decir, \[id_{TA}=\mu_{A}T\eta_{A}\text{ y } id_{TA}=\mu_{A}\eta_{TA}.\] es decir tenemos un tipo de \emph{conmutatividad} entre $T\eta_{A}$ y $\eta_{TA}$ y estas identidades
+son las mas cercanas a nuestro caso original (recuerden que empezamos con una factorización chida).
 
 Pero aun no tenemos todo lo que necesitamos, algo nos esta faltando, tenemos dos maneras naturales de ir desde $T^{3}A$ a $TA$, como el siguiente cuadro indica:
 
@@ -709,13 +709,13 @@ Todas las observaciones anteriores dan lugar a la siguiente:
 Si $(F,G,\eta,\epsilon)$ son datos de una adjunción con $F\colon \C\rightarrow\D$ entonces la terna $(GF, \eta,G\epsilon F)$ define una monada en $\EuScript{C}$.
 \end{prop}   
 
-Resulta (o deberia de ser) que esta definición es suficiente para tener la factorización dada, para realemnte justificar esto necesitamos un poco mas de trabajo.
+Resulta (o debería de ser) que esta definición es suficiente para tener la factorización dada, para realmente justificar esto necesitamos un poco mas de trabajo.
 
 \section{Ternas de Kleisli}\label{KLEI}
 
-La definición de monada que dimos \ref{mona} se derivo de la defnición de adjunción dada por las identidad triangulares, pero como sabemos existen tres formas clásicas de definir adjunción veamos que sucede con la dada por flechas universales.
-requiere la existencia de un funtor $G\colon\D\rightarrow \C$ y una asiganción (no se requiere funtorialidad) $F$ que solo actue en objetos de $\C$ a objetos de $\D$, pero esto esta subyugado al hecho de que para cada objeto $A\in\C$ y cada flecha
-$\eta_{A}\colon A\rightarrow GFA$ tal que para todp \[f\colon A\rightarrow GD\] con $D$ cualquier obejto de $\D$ exista una única flecha \[f^{+}\colon FA\rightarrow D\] de tal manera que \[f=Gf^{+}\eta_{A}.\], es decir tenemos
+La definición de monada que dimos \ref{mona} se derivo de la definición de adjunción dada por las identidad triangulares, pero como sabemos existen tres formas clásicas de definir adjunción veamos que sucede con la dada por flechas universales.
+requiere la existencia de un funtor $G\colon\D\rightarrow \C$ y una asignación (no se requiere funtorialidad) $F$ que solo actúe en objetos de $\C$ a objetos de $\D$, pero esto esta subyugado al hecho de que para cada objeto $A\in\C$ y cada flecha
+$\eta_{A}\colon A\rightarrow GFA$ tal que para todo \[f\colon A\rightarrow GD\] con $D$ cualquier objeto de $\D$ exista una única flecha \[f^{+}\colon FA\rightarrow D\] de tal manera que \[f=Gf^{+}\eta_{A}.\], es decir tenemos
 una función \[(\_)^{+}\colon\C(A,GD)\rightarrow\D(FA,D).\] en un dibujo:
 
 \[\begin{tikzcd}[column sep=large, row sep=large]
@@ -730,14 +730,14 @@ Esto en $\C$
   \end{tikzcd}\]
 Esto otro en $\D$.
 
-Como antes queremos dado $T$ encontrar $F$ y $G$ de tal manera que hagan la gracia de arriba y factoricen a $T$, la ventaja de esta defnición es que no siendo $F$ un funtor a priori, podemos entonces empezar $T$ mandando objetos en objetos.
+Como antes queremos dado $T$ encontrar $F$ y $G$ de tal manera que hagan la gracia de arriba y factoricen a $T$, la ventaja de esta definición es que no siendo $F$ un funtor a priori, podemos entonces empezar $T$ mandando objetos en objetos.
 
 , y así se debe de pedir, que para cada objeto $A$ en $\C$ exista una flecha $\eta_{A}\colon A\rightarrow TA$. En este caso el operador de flechas $(\_)^{+}$ esta descrito como sigue: Si \[f\colon A\rightarrow GFB\] entonces
  \[Gf^{+}\colon GFA\rightarrow GFB\] y aquí se demanda que para toda \[f\colon A\rightarrow TB,\] exista una flecha \[f^{*}\colon TA\rightarrow TB\], En otras palabras el operador esta definido :
- \[\C(A,TB)\rightarrow\C(TA,TB)\] ahora desglocemos las ecuaciones que ligan la receta de $(T,\eta,(\_)^{*})$.
- Imitando un poco la universalidad de la flecha que nos da la defnición de adjunción tenemos que pedir:
+ \[\C(A,TB)\rightarrow\C(TA,TB)\] ahora desglosemos las ecuaciones que ligan la receta de $(T,\eta,(\_)^{*})$.
+ Imitando un poco la universalidad de la flecha que nos da la definición de adjunción tenemos que pedir:
  \[f^{*}\eta_{A}=f.\] 
- Y entonces si $\eta_{A}\colon A\rightarrow GFA$ y por la propiuedad universal debemos tener :\[Gid_{FA}\circ\eta_{A}=\eta_{A}=G\eta^{+}_{A}\circ\eta_{A}\]
+ Y entonces si $\eta_{A}\colon A\rightarrow GFA$ y por la propiedad universal debemos tener :\[Gid_{FA}\circ\eta_{A}=\eta_{A}=G\eta^{+}_{A}\circ\eta_{A}\]
   y por unicidad entonces obtenemos \[\eta^{+}_{A}=id_{FA}\] con esto debemos exigir a nuestra terna que \[\eta^{*}_{A}=id_{FA}.\]
   Y por último que sucede con la propiedad universal en este caso, veamos, sea \[f\colon A\rightarrow GFB\text{ y } g\colon B\rightarrow GFC\] entonces 
   \[\begin{tikzcd}[column sep=large, row sep=large]
@@ -746,7 +746,7 @@ Como antes queremos dado $T$ encontrar $F$ y $G$ de tal manera que hagan la grac
     \end{tikzcd}\]
 
 
-Que por unicidad debemos de tener \[(Gg^{+}\circ f)^{+}=g^{+}\circ f^{+}\] y así \[G(Gg^{+}\circ f)^{+}=Gg^{+}\circ Gf^{+}.\] Entonces requieremos para nuestro operador $(\_)^{*}$ lo analogo, es decir, \[(g^{*}\circ f)^{*}=g^{*}\circ f^{*}\]
+Que por unicidad debemos de tener \[(Gg^{+}\circ f)^{+}=g^{+}\circ f^{+}\] y así \[G(Gg^{+}\circ f)^{+}=Gg^{+}\circ Gf^{+}.\] Entonces requerimos para nuestro operador $(\_)^{*}$ lo análogo, es decir, \[(g^{*}\circ f)^{*}=g^{*}\circ f^{*}\]
 con esto cocinado tenemos nuestra definición:
 
 \begin{dfn}\label{Kleislitriple}
@@ -758,11 +758,11 @@ Una \emph{monada de Kleisli} en una categoría $\C$ consiste de los siguientes d
 \end{itemize}
 Y así hablaremos de la monada de Kleisli como la terna $(T,\eta,(\_)^{*})$.
 \end{dfn}
-Y claro tenemos la proposición correspondiente con la definición de adjuncion mediante flechas universales.
+Y claro tenemos la proposición correspondiente con la definición de adjunción mediante flechas universales.
 \begin{prop}\label{Kleisiarrow}
 Si $(F,G,\eta,(\_)^{+})$ describe una adjunción en $\C$ con $F$ una asignación de objetos de $\C$ en objetos de $\D$ entonces $(GF,\eta,G(\_)^{+})$ define una monada de Kleisli en $\C$. 
 \end{prop}    
-El lector perspicaz notara que debe de haber una relación entre la defnición \ref{mona} y la defnición \ref{Kleislitriple}, pues lo esperado sucede:
+El lector perspicaz notara que debe de haber una relación entre la definición \ref{mona} y la definición \ref{Kleislitriple}, pues lo esperado sucede:
 
 \begin{prop}\label{expected}
 Las nociones de monada y monada de Kleisli son equivalentes.
@@ -770,10 +770,10 @@ Las nociones de monada y monada de Kleisli son equivalentes.
 
 \begin{proof}
 Empecemos con una monada de Kleisli digamos $(T,\eta,(\_)^{*})$ en $\EuScript{C}$, entonces veamos como hacer que $T$ sea un funtor de carne y hueso, tomemos $f\colon A\rightarrow B$ en $\EuScript{C}$
-y sea su correspondiente $Tf\colon Ta\rightarrow TB$ dado: \[Tf=(\eta_{B}\circ f)^{*}\] esto lo hace funtorial ya que poara todo $A\in\EuScript{C}$ se tiene: 
+y sea su correspondiente $Tf\colon Ta\rightarrow TB$ dado: \[Tf=(\eta_{B}\circ f)^{*}\] esto lo hace funtorial ya que para todo $A\in\EuScript{C}$ se tiene: 
 \[Tid_{A}=(\eta_{A}\circ id_{A})^{*}=\eta_{A}^{*}=id_{TA}.\]
 
-y para felchas \[\begin{tikzcd}[column sep=large, row sep=large]
+y para flechas \[\begin{tikzcd}[column sep=large, row sep=large]
     A \arrow[r, "f"]  & B \arrow[r, "g"] & C
     \end{tikzcd}\]
 
@@ -825,9 +825,9 @@ Finalmente el cuadrado adecuado conmuta:
         &=\mu_{A}\circ\mu_{TA},
         \end{aligned}\]
 
-Y así $(T,\eta,\mu)$ define uan monada en $\EuScript{C}$.
+Y así $(T,\eta,\mu)$ define una monada en $\EuScript{C}$.
 
-Recíprocamente, si comentzamos con los datos de una monada $(T,\eta,\mu)$ en $\EuScript{C}$., claro casi tautologicamente tenemos que $T$ y $\eta$ satisfacen las condiciones de la definición
+Recíprocamente, si comenzamos con los datos de una monada $(T,\eta,\mu)$ en $\EuScript{C}$., claro casi tautológicamente tenemos que $T$ y $\eta$ satisfacen las condiciones de la definición
 \ref{Kleislitriple}, resta ver que el operador de conjuntos de funciones $(\_)^{*}$ cumple lo requerido, sea entonces $f\colon A\rightarrow TB$ en $\EuScript{C}$ pongamos $f^{*}$ que sea la flecha
 
 \[\begin{tikzcd}[column sep=large, row sep=large]
@@ -836,8 +836,8 @@ Recíprocamente, si comentzamos con los datos de una monada $(T,\eta,\mu)$ en $\
  resta ver que se cumplen las ecuaciones de Kleisli, para esto tomemos cualquier $f\colon A\rightarrow TB$, entonces \[f^{*}\circ\eta_{A}=\mu_{B}\circ Tf\circ\eta_{A}=\mu_{B}\circ\eta_{TB} f=id_{TB}\circ f=f.\]
 
  de aquí \[\eta_{A}^{*}=\mu_{A}\circ T\eta_{A}=id_{TA}.\]
-como se pedia.
-Ahora para $f$ como antes tenemois con $g\in\EuScript{C}(A,TB)$, entonces calculamos usando la funtorialidad de $T$: 
+como se pedía.
+Ahora para $f$ como antes tenemos con $g\in\EuScript{C}(A,TB)$, entonces calculamos usando la funtorialidad de $T$: 
 
 
 \[
@@ -853,38 +853,38 @@ y así los datos $(T,\eta,(\_)^{*})$ define una monada de Kleisli.
 
 Ahora en efecto si denotamos por $\mathcal{M}(\EuScript{C})=\{\text{ monadas en }\EuScript{C}\}$ y por $\mathcal{K}\mathcal{M}(\EuScript{C})=\{\text{ monadas de Kleisli en }\EuScript{C}\}$
 Tenemos entonces dos asignaciones \[\mathcal{M}(\EuScript{C})\rightarrow \mathcal{K}\mathcal{M}(\EuScript{C})\] y \[\mathcal{K}\mathcal{M}(\EuScript{C})\rightarrow \mathcal{M}(\EuScript{C})\] dadas por 
-$(T,\eta,(\_)^{*})\leadsto (T,\eta,\mu)$ y vicersa forman una biyección, en efecto si empezamos con una de Kleisli $(T,\eta,(\_)^{*})\leadsto (T,\eta,\mu)$ y su monada construida como antes,  entonces para cualquier flecha $f\colon A\rightarrow TB$ y entonces \[\mu_{B}\circ Tf=id^{*}_{TA}\circ(\eta_{B}\circ f)^{*}=(id^{*}_{TA}\circ\eta_{B}\circ f)^{*}=(id_{TA}\circ f)^{*}=f^{*}.\]
+$(T,\eta,(\_)^{*})\leadsto (T,\eta,\mu)$ y viceversa forman una biyección, en efecto si empezamos con una de Kleisli $(T,\eta,(\_)^{*})\leadsto (T,\eta,\mu)$ y su monada construida como antes,  entonces para cualquier flecha $f\colon A\rightarrow TB$ y entonces \[\mu_{B}\circ Tf=id^{*}_{TA}\circ(\eta_{B}\circ f)^{*}=(id^{*}_{TA}\circ\eta_{B}\circ f)^{*}=(id_{TA}\circ f)^{*}=f^{*}.\]
 y así obtenemos la monada de Kleisli original. 
-Y vicersa si empezamos con una monada usual $(T,\eta,\mu)$ con su Kleisli y de alli obtenemos la monada dada por esta entonces con los calculos que tenemos hechos \[id^{*}_{TA}=\mu_{TA}\circ Tid_{TA}=\mu_{TA}\circ id_{T^{2}A}=\mu_{TA}.\]
+Y viceversa si empezamos con una monada usual $(T,\eta,\mu)$ con su Kleisli y de allí obtenemos la monada dada por esta entonces con los cálculos que tenemos hechos \[id^{*}_{TA}=\mu_{TA}\circ Tid_{TA}=\mu_{TA}\circ id_{T^{2}A}=\mu_{TA}.\]
 y así recuperamos la monada con la que empezamos.
 
 \end{proof}   
 
 
-Esto esta bien, ya tener dos opciones para cocinar la factorización que estamos busncando, pero aún así necesitamos una solución \emph{universal}.
+Esto esta bien, ya tener dos opciones para cocinar la factorización que estamos buscando, pero aún así necesitamos una solución \emph{universal}.
 
 
 
 \section{Solución de Kleisli}\label{SOLKLEI}
 
 
-La solución que describeremos aquí es debida a Kleisli en su celebra artículo Every standard construction is induced by a pair of adjoint functors (hayu que ponerlo enla biblio)
-Esta construcción empieza con una adjunción $F\dash G$ donde ya esta tenemos a la categoría $\EuScript{D}$ que soluciona el problema de factorizaicón, es decir tenemos:
+La solución que describiremos aquí es debida a Kleisli en su celebra artículo Every standard construction is induced by a pair of adjoint functors (habrá que ponerlo en la biblio)
+Esta construcción empieza con una adjunción $F\dash G$ donde ya esta tenemos a la categoría $\EuScript{D}$ que soluciona el problema de factorización, es decir tenemos:
 
 \[\EuScript{D}(FA,FB)\cong\EuScript{C}(A,GFB)\cong\EuScript{C}(A,TB).\]
  \begin{dfn}\label{cate de Kleisli}
 La \emph{categoría de Kleisli} $\EuScript{C}_{T}$ de una monada de Kleisli $(T,\eta,(\_)^{*})$ en una categoría $\EuScript{C}$ consiste de los siguientes datos:
 \begin{itemize}
 \item[(i)] Los objetos son los mismos que los de $\EuScript{C}$.
-\item[(ii)] Las flechas $A\rightarrow B$ estan dadas por $A\rightarrow TB$;
-\item[(iii)] Las identidades para cada $A$ estan dadas por $\eta_{A}$.
+\item[(ii)] Las flechas $A\rightarrow B$ están dadas por $A\rightarrow TB$;
+\item[(iii)] Las identidades para cada $A$ están dadas por $\eta_{A}$.
 \item[(iv)] La composición esta dada, $f\colon A\rightarrow B$  y $g\colon B\rightarrow C$ en $\EuScript{C}_{T}$ : \[\begin{tikzcd}[column sep=large, row sep=large]
     A \arrow[r, "f"]  & TB \arrow[r, "g^{*}"] & TC
     \end{tikzcd}\]
 \end{itemize}
-Formalmente deberiamos dintinguir entre las composicion en $\EuScript{C}$ y la de $\EuScript{C}_{T}$ para esto digamos que el simbolo $g\bullet f$ representa la composición en $\EuScript{C}_{T}$.
+Formalmente deberíamos distinguir entre las composición en $\EuScript{C}$ y la de $\EuScript{C}_{T}$ para esto digamos que el símbolo $g\bullet f$ representa la composición en $\EuScript{C}_{T}$.
 
-También nos falta verificar que en efecto los datos de \ref{SOLKLEI} constituyen uan categoría, para esto si $f\colon A\rightarrow B$ en $\EuScript{C}_{T}$ tenemos que la composición con la identidad esta dada como \[f^{*}\circ\eta_{A}=f.\]
+También nos falta verificar que en efecto los datos de \ref{SOLKLEI} constituyen una categoría, para esto si $f\colon A\rightarrow B$ en $\EuScript{C}_{T}$ tenemos que la composición con la identidad esta dada como \[f^{*}\circ\eta_{A}=f.\]
 
 Y pos-componiendo (si es que dicha palabra existe) con la identidad $B$ tenemos: \[\eta^{*}_{B}\circ f=id_{B}\circ f=f.\]
 Por otro lado sea $f$ como antes y tomemos dos flechas que se pueden componer en $\EuScript{C}_{T}$ digamos $g\colon B\rightarrow C$ y $h\colon C\rightarrow D$, entonces \[h\bullet (g\bullet f)=h^{*}\circ(g^{*}\circ f)=(h^{*}\circ g^{*})\circ f=(h^{*}\circ g)^{*}\circ f=(h\bullet g)\bullet f.\]
@@ -893,25 +893,25 @@ Por otro lado sea $f$ como antes y tomemos dos flechas que se pueden componer en
 Y por lo tanto:
 
 \begin{prop}\label{catkleisliesunacat}
-Con la notación de la defnición \ref{SOLKLEI} se tiene que $\EuScript{C}_{T}$ es una categoría.
+Con la notación de la definición \ref{SOLKLEI} se tiene que $\EuScript{C}_{T}$ es una categoría.
 \end{prop}
 
-Existe una comparasión directa entre objetos de $\EuScript{C}$ y $\EuScript{C}_{T}$, $F_{T}\colon Obj\EuScript{C}\rightarrow Obj\EuScript{C}_{T}$ esta asignación no hace nada perse, también podemos comparar con un funtor
+Existe una comparación directa entre objetos de $\EuScript{C}$ y $\EuScript{C}_{T}$, $F_{T}\colon Obj\EuScript{C}\rightarrow Obj\EuScript{C}_{T}$ esta asignación no hace nada perse, también podemos comparar con un funtor
 $G_{T}\colon\EuScript{C}_{T}\rightarrow\EuScript{C}$ como sigue, en cada objeto $C\in\EuScript{C}_{T}$ entonces $G_{T}(C)=TC $ y en cada morfismo $f\colon A\rightarrow B$ en $\EuScript{C}_{T}$
 lo mandamos a $f^{*}\colon TA\rightarrow TB$ en $\EuScript{C}$, esto en efecto define un funtor ya que en identidades tenemos que $\eta_{A}$ lo manda a $\eta_{A}^{*}=id_{TA}$, si $f\colon A\rightarrow B$ y $g\colon b\rightarrow C$ en $\EuScript{C}_{T}$.
 entonces: \[G_{Tg}\circ G_{Tf}=g^{*}\circ f^{*}=(g^{*}\circ f)^{*}=G_{T}(g\bullet f).\] y así $G_{T}$ preserva las composiciones y por lo tanto es un funtor.
 Ahora claramente tenemos: \[T=G_{T}F_{T}\] en objetos, queremos estatar una propiedad universal para esta construcción.
 Para este fin, tomemos un $f\colon A\rightarrow G_{T}B$ con $A\in\EuScript{C}$ y $B\in\EuScript{C}_{T}$. necesitamos construir una flecha única $f^{+}\colon F_{T}A\rightarrow B$ en $\EuScript{C}_{T}$ tal que:
 \[G_{T}f^{+}\circ\eta_{A}=f.\] esto es justamente lo que hace nuestra construcción hace que $f\colon A\rightarrow G_{T}B=TB$ es un morfismo en la categoría $\EuScript{D}$, y así,
-$G_{T}f^{+}=f^{*}$ y calculando \[G_{T}f^{+}\circ\eta_{A}=f^{*}\circ\eta_{A}=f\] como se requeria. Ahora para la unicidad, si $g\colon F_{T}A\rightarrow B$ en $\EuScript{C}_{T}$
+$G_{T}f^{+}=f^{*}$ y calculando \[G_{T}f^{+}\circ\eta_{A}=f^{*}\circ\eta_{A}=f\] como se requería. Ahora para la unicidad, si $g\colon F_{T}A\rightarrow B$ en $\EuScript{C}_{T}$
 dado por una flecha $g\colon A\rightarrow TB$ en $\EuScript{C}$ entonces \[G_{Tg}\circ\eta_{A}=g^{*}\circ\eta_{A}=g,\] entonces tenemos que $g=f$, por lo tanto hemos encontrado una adjunción con las
-propiedades deseadas, por último cabe notar que aunque no se pidio, es claro que $F_{T}$ es un funtor, el problema con el es que no es muy interesante a diferencia de $G_{T}$.
+propiedades deseadas, por último cabe notar que aunque no se pidió, es claro que $F_{T}$ es un funtor, el problema con el es que no es muy interesante a diferencia de $G_{T}$.
 
 Es un ejercicio que el lector calcule la categoría de Kleisli de los ejemplos que hemos dejado al principio de esta sección.
 
 Vale la pena en este punto (supongo) poner un poco de contexto aún mas abstracto sin-sentido, sea $(T,\eta,\mu)$ una monada en una categoría $\EuScript{C}$.
 denotemos por $\mathrm{Ad}\EuScript{C}$ a la categoría de todas las adjunciones $(F,G,\eta,\epsilon)\colon\EuScript{C}\rightharpoonup \EuScript{A}$
-tales que definen a $(T,\eta,\mu)$ y las felchas de $\mathrm{Ad}\EuScript{C}$ estan dadas como sigue, si \[(F,G,\eta,\epsilon)\colon\EuScript{C}\rightarpoonup \EuScript{A}\]
+tales que definen a $(T,\eta,\mu)$ y las flechas de $\mathrm{Ad}\EuScript{C}$ están dadas como sigue, si \[(F,G,\eta,\epsilon)\colon\EuScript{C}\rightarpoonup \EuScript{A}\]
  y \[(F',G',\eta',\epsilon')\colon\EuScript{C}\rightarpoonup \EuScript{A}'\] son adjunciones sobre $\EuScript{C}$, un morfismo entre estas \[(F,G,\eta,\epsilon)\rightarrow(F',G',\eta',\epsilon')\] 
  es un par de funtores $K\colon\EuScript{A}\rightarrow\EuScript{A}'$ y $L\colon\EuScript{C}\rightaarow\EuScript{C}$ tal que
 los siguientes diagramas conmutan:
@@ -929,7 +929,7 @@ A' \arrow[r, "F'"'] & X'
 Hemos así probado dos hechos destacables:
 
 
-\begin{thm}(Comparasión de Kleisli)\label{kleisli es final}
+\begin{thm}(Comparación de Kleisli)\label{kleisli es final}
 Dada una adjunción $(F,G,\eta,\epsilon)$ en una categoría $\EuScript{C}$, y sea $T=(GF, \eta,G\epsilon F)$ la monada que esta define,
 entonces existe un único funtor $L\colon\EuScript{C}_{T}\rightarrow\EuScript{A}$ con $GL=G_{T}$ y $LF_{T}=F$.
 \end{thm}
@@ -940,7 +940,7 @@ Dada una monada $(T,\eta,\mu)$ en una categoría $\EuScript{C}$,
 \end{thm}
 
 
-En la práctica ya que estamos hablando de objetos en la categoría de adjunciones de una categoría agradable, podriamos preguntarnos si tal categoría tiene objeto final.
+En la práctica ya que estamos hablando de objetos en la categoría de adjunciones de una categoría agradable, podríamos preguntarnos si tal categoría tiene objeto final.
 
 \section{La solución de Eilenberg y Moore}\label{EMSOL}
 
@@ -950,21 +950,20 @@ En efecto construyamos el objeto final en la categoría de posibles adjunciones 
 
 \section{La adjunción entre $\Frm$ y $\Top$}
 
-Este capítulo esta dedica a desglosar varias cosas que hemos visto en un ejemplo que es de sumo interes.
-
-
+Esta sección está dedica a desglosar varias de las cosas que presentamos en estas notas aterrizándolas en dos categorías especificas ($\Frm$ y $\Top$).
 
 Uno de los primeros ejemplos de marcos, y de hecho, la
 motivación para la definición, fue que los abiertos de un espacio
-topológico $S$ forman un marco $\cal OS$.
-En este capítulo desarrollaremos más a fondo la relación entre marcos
-y espacios topológicos. Sabemos que la asignación $S\mapsto\cal OS$ es
-un funtor contravariante $\cal O\colon\Top\to\Frm$.
-Ahora construiremos un funtor de regreso $\pt\colon\Frm\to\Top$
+topológico $S$ forman un marco $\mathcal{O}S$.
+Aquí desarrollaremos más a fondo la relación entre marcos
+y espacios topológicos. No es complicado verificar que la asignación $S\mapsto\mathcal{O}S$ es
+un funtor contra variante $\mathcal{O}\colon\Top\to\Frm$. La asignación en objetos está dado por la topología del espacio y la asignación en flechas a través de la preimagen de las funciones continuas (estas resultan ser un morfismo de marcos por las propiedades de la preimagen). Para detalles más específicos consultar \cite{P.T.} o \cite{J.P.}.\\
+
+Ahora la tarea es construir un funtor de regreso $\pt\colon\Frm\to\Top$
 y probaremos que ambos funtores forman una adjunción.
 \[
   \begin{tikzcd}
-    \Top \ar[d,shift right=2,"\cal O"'{name=L}]
+    \Top \ar[d,shift right=2,"\Cal O"'{name=L}]
     \\
     \Frm^\op \ar[u,shift right=2,"\pt"'{name=R}]
     \adj{L}{R}
@@ -993,9 +992,9 @@ $T_0$ es el siguiente. En cualquier espacio topológico, los puntos
 tienen un preorden (es decir, una relación reflexiva y transitiva)
 dado por
   \[q\sqsubseteq p\iff \overline{q}\subseteq \overline{p}\]
-  Este se llama preorden de especialización.
+  Este se llama \emph{preorden de especialización}.
 
-\section{El espacio de puntos}
+\subsection{El espacio de puntos}
 Dado un espacio con un punto $\{*\}$, el conjunto de
 puntos de $S$ está en biyección con las funciones continuas
 $\{*\}\to S$:
@@ -1006,12 +1005,12 @@ donde cada punto $s\in S$ está asociado a la función $*\mapsto
 s$.
 Así, si $2$ es el marco de dos elementos $2=\{0<1\}$,
 cada de estas funciones $s:\{*\}\to S$ induce un morfismo de
-marcos $\chi_s:\cal OS\to\cal O\{*\}\simeq 2$ dado como
+marcos $\chi_s:\mathcal{O}S\to\mathcal{O}\{*\}\simeq 2$ dado como
 \[
   \chi_s(u) =
   \begin{cases}
-    1 & s\in u \\
-    0 & s\not\in u
+    1, & s\in u \\
+    0, & s\notin u
   \end{cases}
 .\]
 Así, para cada marco $A$, tiene sentido definir los puntos de $A$
@@ -1021,7 +1020,7 @@ Sin embargo, primero consideraremos otra construcción equivalente:
 representaremos cada morfismo $\chi:A\to 2$ con un elemento de
 $A$ de manera canónica: el elemento
 \[
-    p = \Sup\{x\in A\mid \chi(x)=0\}
+    p = \bigvee\{x\in A\mid \chi(x)=0\}
 \]
 es el único elemento de $A$ que cumple
 \[
@@ -1039,10 +1038,9 @@ en el marco $2$. es decir: $x\leq p$ o bien $y\leq p$.
 \begin{dfn}
   Sea $A\in \Frm$. Un punto o elemento $\inf$-irreducible 
   de A es un elemento $p\in A$ con $p\neq 1$ tal que si 
-  $x\inf y\leq p$, entonces $x\leq p$ ó $y\leq p$. 
+  $x\inf y\leq p$, entonces $x\leq p$ o $y\leq p$. 
   Denotamos por $\pt A$ al conjunto de todos los puntos de $A$.
 \end{dfn}
-
 
 \begin{lem}
   Sea $A\in \Frm$.
@@ -1105,8 +1103,8 @@ Por lo tanto, $U_A(\Sup x)=\bigcup \{U_A(x)|x\in X\}$, $\forall X\subseteq A$.
 Se sigue que $U_A(A)=\{U_A(a)\mid a\in A\}$ es una topología en $\pt
 A$. Al espacio topológico $(\pt A,U_A(A))$ lo llamamos
 el \textit{espacio de puntos} de $A$.
-Dado que la topología de $\pt A$ es $\cal O\pt A=U_A(A)$,
-se sigue que $U_A:A\to\cal O\pt A$ es un morfismo suprayectivo de marcos, al cual llamamos la \textit{reflexión
+Dado que la topología de $\pt A$ es $\Cal O\pt A=U_A(A)$,
+se sigue que $U_A:A\to\Cal O\pt A$ es un morfismo suprayectivo de marcos, al cual llamamos la \textit{reflexión
 espacial} de $A$. Si $U_A$ es inyectivo (y, por lo tanto, un
 isomorfismo) decimos que el marco $A$ es \textit{espacial}.
 
@@ -1114,12 +1112,13 @@ isomorfismo) decimos que el marco $A$ es \textit{espacial}.
   \leavevmode
   \begin{enumerate}
     \item (La reflexión espacial como un cociente)
-      Como $U_A:A\to\cal O\pt$ es suprayectivo, el marco $\cal O\pt A$ 
-      es el cociente de $A$ bajo el núcleo de $U_A$: el núcleo
+      Como $U_A:A\to\Cal O\pt$ es suprayectivo, el marco $\Cal O\pt A$ 
+      es el cociente de $A$ (por definición de cocientes en $\Frm$) bajo el núcleo de $U_A$: el núcleo
       $S\in NA$ dado como
       \[
         x\leq S(a) \iff U(x)\subseteq U(a)
       .\]
+(los núcleos son cierto tipo de funciones definidas en los marcos y estos están en correspondencia biyectiva con los cocientes. Para un marco $A$, $NA$ denota el conjunto de todos sus núcleos).
     \item
       Además, por el lema adecuado, el
       núcleo $S$ de $U_A$ admite la descripción
@@ -1143,12 +1142,11 @@ isomorfismo) decimos que el marco $A$ es \textit{espacial}.
       parcial, esto prueba que el espacio de puntos es $T_0$.
   \end{enumerate}
 \end{obs}
-
 \subsection{Funtorialidad y naturalidad}
 Queremos ver que la asignación $A\mapsto \pt A$ es un funtor y que
-la reflexión espacial $U_A:A\to\cal O\pt A$
+la reflexión espacial $U_A:A\to\Cal O\pt A$
 es una transformación natural
-\[U_\bullet\colon\id_{\Frm}\to\cal O\pt(\_).\]
+\[U_\bullet\colon\id_{\Frm}\to\Cal O\pt(\_).\]
 
 Lo primero es verificar que, dado un morfismo de marcos $f\colon A\to B$,
 obtenemos una función continua $\pt f:\pt B\to\pt A$ entre los
@@ -1163,13 +1161,13 @@ que $p\neq 1$.
 Ahora veamos que $f_*p$ es $\inf$-irreducible. Si $x,y\in A$ son tales
 que $x\inf y\leq f_\ast(p)$, por adjunción tenemos $f(x)\inf f(y)\leq p$.
 En consecuencia, $f(x)\leq p$ ó $f(y)\leq p$, i.e., $x\leq f_\ast (p)$
-ó $y\leq f_\ast (p)$. Por lo tanto, $f_\ast (p)\in \pt A$.
+o $y\leq f_\ast (p)$. Por lo tanto, $f_\ast (p)\in \pt A$.
 
 En resumen, dado un morfismo de marcos $f\colon A\to B$, obtenemos una
 función $\pt f \colon \pt B\to \pt A$ dada por la restricción de
 $f_*:B\to A$.
 
-Observemos que, para todo $p\in \cal \pt B$, tenemos
+Observemos que, para todo $p\in \Cal \pt B$, tenemos
 \begin{align*}
     p\in (\pt f)^{-1} \left(U_A(a)\right)&\iff f_\ast (p)\in U_A(a)\\
     &\iff a\not\leq f_\ast (p)\\
@@ -1178,52 +1176,48 @@ Observemos que, para todo $p\in \cal \pt B$, tenemos
 \end{align*}
 Por lo tanto $\pt f\colon \pt B\to \pt A$ es continua.
 Es fácil ver que, dados morfismos $k:C\to B$ y $h:B\to A$,
-se satisface $(hk)_*=k_*h_*$.
-Además, el adjunto derecho de $\id:A\to A$ también es la identidad
+se satisface $(hk)_*=k_*h_*$. Además, el adjunto derecho de $\id:A\to A$ también es la identidad
 de $A$.
 De estas observaciones se sigue que la asignación $\pt$
 es un funtor (contravariante) $\pt\colon \Frm\to\Top$.
 
 Además, en el párrafo anterior probamos que
 \[
-    \cal O(\pt f)(U_A(a)) = U_B(f(a))
+    \Cal O(\pt f)(U_A(a)) = U_B(f(a))
 \]
 para todo $a\in A$.
 Es decir: el diagrama
 \[
     \begin{tikzcd}
         A \ar[r,"f"] \ar[d,"U_A"'] & B \ar[d,"U_B"] \\
-        \cal O\pt A \ar[r,"\cal O\pt f"'] & \cal O\pt B
+        \Cal O\pt A \ar[r,"\Cal O\pt f"'] & \Cal O\pt B
     \end{tikzcd}
 \]
-es conmutativo, así que $U_\bullet=(U_A\mid A\in\Frm)$
-es una transformación
-natural $U_\bullet:\id_\Frm\to\cal O\pt$.
-
+conmuta, así $U_\bullet=(U_A\mid A\in\Frm)$
+es una transformación natural $U_\bullet:\id_\Frm\to\Cal O\pt$.
 \subsection{El espacio de puntos del marco de abiertos}
 
 ¿Qué tanta información acerca de un espacio topológico se
 puede recuperar a través de su marco de abiertos?
 Comenzaremos preguntándonos
-¿cómo se relacionan los puntos de un espacio $S$ con los puntos de
-$\pt\cal OS$?
+cómo se relacionan los puntos de un espacio $S$ con los puntos de
+$\pt\Cal OS$.
 Como dijimos al principio, un punto $s\in S$ se puede ver como una
 función continua $\{s\}\to S$, la cual induce un morfismo
-$\chi_s:\cal O S \to 2$ como
+$\chi_s:\Cal O S \to 2$ como
 \begin{equation}
   \chi_s(u) =
   \begin{cases}
-    1 & s\in u  \\
-    0 & s\not\in u.
+    1, & s\in u  \\
+    0, & s\not\in u.
   \end{cases}
 \end{equation}
 Por lo tanto, el $\inf$-irreducible que le corresponde a $s$ es
 \begin{equation}
-  \Phi_S(s) = \Sup\{u\in\cal OS\mid \chi_s(u)=0\} \in \pt\cal O S
+  \Phi_S(s) = \Sup\{u\in\Cal OS\mid \chi_s(u)=0\} \in \pt\Cal O S
   .\end{equation}
-Esto nos da una función $\Phi_S:S\to\pt\cal OS$. \index[Simbolos]{$\Phi_S$}
-Esta descripción
-se puede simplificar. Notemos que, dados $s\in S$ y $u\in\cal OS$, tenemos
+Esto nos da una función $\Phi_S:S\to\pt\Cal OS$. Esta descripción
+se puede simplificar. Notemos que, dados $s\in S$ y $u\in\Cal OS$, tenemos
 \[
   \chi_s(u) = 0
   \iff
@@ -1239,120 +1233,73 @@ Luego,
 \begin{equation}
   \Phi_S(s)
   =
-  \Sup\{u\in\cal OS\mid u\subseteq {\ol s}'\}
+  \Sup\{u\in\Cal OS\mid u\subseteq {\ol s}'\}
   =
   {\ol s}'
   \in
-  \pt\cal OS
+  \pt\Cal OS
 .\end{equation}
-Ahora, recordemos que un abierto de $\pt\cal OS$ es de la forma
+Ahora, recordemos que un abierto de $\pt\Cal OS$ es de la forma
 \begin{align*}
-  U_{\cal OS}(u)
-  &= \{p\in\pt\cal OS \mid u\not\subseteq p\}
+  U_{\Cal OS}(u)
+  &= \{p\in\pt\Cal OS \mid u\not\subseteq p\}
 .\end{align*}
 Tenemos
 \begin{align*}
-    s\in (\Phi_S)^{-1}(U_{\cal OS}(u))
-    &\iff \Phi_S(s) \in U_{\cal OS}(u) \\
-    &\iff {\ol s}' \in U_{\cal OS}(u) \\
+    s\in (\Phi_S)^{-1}(U_{\Cal OS}(u))
+    &\iff \Phi_S(s) \in U_{\Cal OS}(u) \\
+    &\iff {\ol s}' \in U_{\Cal OS}(u) \\
     &\iff u \nsubseteq {\ol s}' \\
     &\iff s\in u.
 \end{align*}
 Es decir,
 \[
-  (\Phi_S)^{-1}(U_{\cal OS}(u)) = u
+  (\Phi_S)^{-1}(U_{\Cal OS}(u)) = u
 .\]
-En particular, $(\Phi_S)^{-1}$ manda abiertos de $\pt\cal OS$ en
-abiertos de $S$, así que la función $\Phi_S:S\to\pt\cal OS$ es continua.
+En particular, $(\Phi_S)^{-1}$ manda abiertos de $\pt\Cal OS$ en
+abiertos de $S$, así que la función $\Phi_S:S\to\pt\Cal OS$ es continua.
 Por último, observemos que, dada una función continua $\psi:S\to T$,
-las funciones $\Phi_S:S\to\pt\cal OS$ hacen conmutar el diagrama
+las funciones $\Phi_S:S\to\pt\Cal OS$ hacen conmutar el diagrama
 \[
     \begin{tikzcd}
         S \ar[r,"\psi"] \ar[d,"\Phi_S"'] & T \ar[d,"\Phi_T"] \\
-        \pt\cal OS \ar[r,"\pt\cal O\psi"'] & \pt\cal OT
+        \pt\Cal OS \ar[r,"\pt\Cal O\psi"'] & \pt\Cal OT
     \end{tikzcd}
 \]
-En efecto, para todo $v\in\cal OT$, tenemos
+En efecto, para todo $v\in\Cal OT$, tenemos
 \begin{align*}
-    v\subseteq (\pt\cal O\psi)(\Phi_S(s))
-    &\iff v\subseteq (\cal O\psi)_*(\Phi_S(s)) \\
-    &\iff (\cal O\psi)(v) \subseteq \Phi_S(s) \\
+    v\subseteq (\pt\Cal O\psi)(\Phi_S(s))
+    &\iff v\subseteq (\Cal O\psi)_*(\Phi_S(s)) \\
+    &\iff (\Cal O\psi)(v) \subseteq \Phi_S(s) \\
     &\iff \psi^{-1}(v) \subseteq \ol{s}' \\
     &\iff s\nin \psi^{-1}(v) \\
     &\iff \psi(s)\nin v \\
     &\iff v\subseteq \ol{\psi(s)}' \\
     &\iff v\subseteq \Phi_T(\psi(s)),
 \end{align*}
-por lo cual $(\pt\cal O\psi)(\Phi_S(s))=\Phi_T(\psi(s))$.
+por lo cual $(\pt\Cal O\psi)(\Phi_S(s))=\Phi_T(\psi(s))$.
 Luego, la familia de funciones continuas
 \[
-    \Phi_\bullet=(\Phi_S:S\to\pt\cal OS\mid S\in \Top)
+    \Phi_\bullet=(\Phi_S:S\to\pt\Cal OS\mid S\in \Top)
 \]
 es una transformación natural
 \[
-    \Phi_\bullet : \id_\Top\to\pt\cal O
+    \Phi_\bullet : \id_\Top\to\pt\Cal O
 .\]
 
-\section{La adjunción}\label{ssec:adjuncion}
+\subsection{La adjunción}\label{ssec:adjuncion}
 
 En la primera parte, vimos que todo morfismo de marcos
 $f:A\to B$ induce una función continua $\pt f:\pt B\to\pt A$ dada
 como la restricción del adjunto derecho $f_*:B\to A$ de $f$ y
 probamos que esta asignación es un funtor $\pt:\Frm\to\Top$.
 Ahora veremos que $\pt$ y el funtor de abiertos
-$\cal O:\Top\to\Frm$ son las mitades de una adjunción contravariante
+$\Cal O:\Top\to\Frm$ son las mitades de una adjunción contravariante
 entre $\Top$ y $\Frm$. En particular, construiremos un isomorfismo
 \begin{equation}\label{eqn:adj_frm_top}
-    \Frm(A,\cal OS) \simeq \Top(S,\pt A)
+    \Frm(A,\Cal OS) \simeq \Top(S,\pt A)
 \end{equation}
 natural en $A$ y en $S$.
-
-\iffalse
-\subsubsection{Usando morfismos iniciales}
-
-Veremos que, para cada espacio topológico $S$, la función continua
-$\Phi_S:S\to\pt\cal OS$ es el morfismo inicial de $S$ hacia marcos $A$
-a través de $\pt$. En efecto, tomemos cualquier función continua
-$\phi:S\to \pt A$. Tomando $f$ como la composición
-\[
-  A\xto{U_A}\cal O\pt A\xto{\cal O\phi}\pt S,
-\]
-tenemos la siguiente situación:
-\[
-  \begin{tikzcd}
-    S \ar[r,"\Phi_S"] \ar[dr,"\phi"'] & \pt\cal OS \ar[d,"\pt f"] & \cal OS \\
-                      & \pt A & A \ar[u,"f"'].
-  \end{tikzcd}
-\]
-Veremos que el triángulo de la izquierda conmuta y que
-$f:A\to\cal OS$ es el único morfismo de marcos que, bajo
-$\pt$, lo hace conmutar. Primero notemos que
-\[
-  (\pt f)(\Phi_S(s))
-  = \pt f({\ol s}')
-  = f_*({\ol s}')
-,\]
-así que, para todo $u\in A$,
-\begin{align*}
-  u\leq (\pt f)(\Phi_S(s))
-  &\iff u\leq f_*({\ol s}') \\
-  &\iff fu \subseteq {\ol s}' \\
-  &\iff \cal O\phi(U_A(u)) \subseteq  {\ol s}' \\
-  &\iff \phi^{-1}(U_A(u)) \subseteq  {\ol s}' \\
-  &\iff \ol s \subseteq \phi^{-1}(U_A(u)') \\
-  &\iff s\in \phi^{-1}(U_A(u)') \\
-  &\iff \phi(s)\in U_A(u)' \\
-  &\iff \phi(s)\in \{p\in\pt A\mid u\leq p\} \\
-  &\iff u\leq \phi(s).
-\end{align*}
-Es decir, $(\pt f^{\sharp})\circ\Phi_S=\phi$.
-Ahora, si $f':A\to\cal OS$ es cualquier morfismo que, al aplicarle
-$\pt$, hace conmutar el triángulo (es decir, $(\pt
-f')\circ\Phi_S=\phi$), tenemos $(\pt f')\circ\Phi_S = (\pt
-f')\circ\Phi_S$.
-
-\subsubsection{Otra manera}
-\fi
 
 Cuando aprendimos sobre adjunciones,
 vimos el caso covariante, en el cual el isomorfismo de
@@ -1362,32 +1309,32 @@ naturales que satisfacen las identidades triangulares.
 Ahora veremos que, en el caso contravariante,
 tenemos el resultado análogo:
 las identidades triangulares adecuadas
-implican el isomorfismo natural (\ref{eqn:adj_frm_top}).
+implican el isomorfismo natural.
 
 Recordemos que las transformaciones naturales
-$U_\bullet:\id_\Frm\to\cal O\pt$ y
-$\Phi_\bullet:\id_\Top\to\pt\cal O$
+$U_\bullet:\id_\Frm\to\Cal O\pt$ y
+$\Phi_\bullet:\id_\Top\to\pt\Cal O$
 tienen componentes dadas como
 \begin{align*}
-    U_A:A&\to \cal O\pt A \\
+    U_A:A&\to \Cal O\pt A \\
     a &\mapsto U_A(a) = \{p\in \pt A \mid a\nleq p\}, \\
-    \Phi_S:S&\to \pt\cal O S \\
+    \Phi_S:S&\to \pt\Cal O S \\
     s &\mapsto \Phi_S(s)=\ol{s}'.
 \end{align*}
 Primero veremos que se cumplen las identidades triangulares
 \[
     \begin{tikzcd}[row sep=15mm]
-        & \cal OS \ar[d,"U_{\cal OS}"] \ar[dl,"\id_{\cal OS}"']
+        & \Cal OS \ar[d,"U_{\Cal OS}"] \ar[dl,"\id_{\Cal OS}"']
         \\
-        \cal OS
-        & \cal O\pt\cal OS \ar[l,"\cal O\Phi_S"]
+        \Cal OS
+        & \Cal O\pt\Cal OS \ar[l,"\Cal O\Phi_S"]
     \end{tikzcd}
     \hspace{10mm}
     \begin{tikzcd}[row sep=15mm]
         & \pt A \ar[d,"\Phi_{\pt A}"] \ar[dl,"\id_{\pt A}"']
         \\
         \pt A
-        & \pt \cal O\pt A \ar[l,"\pt U_A"]
+        & \pt \Cal O\pt A \ar[l,"\pt U_A"]
     \end{tikzcd}
 \]
 En efecto, usando las equivalencias
@@ -1397,8 +1344,8 @@ En efecto, usando las equivalencias
 \end{align*}
 tenemos
 \begin{align*}
-    x\in (\cal O\Phi_S)(U_{\cal OS}(u))
-    &\iff \Phi_S(x) \in U_{\cal OS}(u) \\
+    x\in (\Cal O\Phi_S)(U_{\Cal OS}(u))
+    &\iff \Phi_S(x) \in U_{\Cal OS}(u) \\
     &\iff u\nleq \Phi_S(x) \\
     &\iff x\in u,
     \\
@@ -1407,28 +1354,28 @@ tenemos
     &\iff x\nin U_A(a) \\
     &\iff a\leq x.
 \end{align*}
-Es decir, $(\cal O\Phi_S)(U_{\cal OS}(u))=u$
+Es decir, $(\Cal O\Phi_S)(U_{\Cal OS}(u))=u$
 y $(\pt U_A)(\Phi_{\pt A}(x))=x$, como se quería.
 
 Ahora, afirmamos que las funciones
 \begin{align*}
-    \Frm(A,\cal OS) &\to \Top(S,\pt A) \\
+    \Frm(A,\Cal OS) &\to \Top(S,\pt A) \\
     f &\mapsto \bar f = (\pt f)\Phi_S,
     \\
-    \Frm(A,\cal OS) &\leftarrow \Top(S,\pt A) \\
-    (\cal O\phi)U_A = \phi &\mapsto \bar\phi.
+    \Frm(A,\Cal OS) &\leftarrow \Top(S,\pt A) \\
+    (\Cal O\phi)U_A = \phi &\mapsto \bar\phi.
 \end{align*}
 conforman una biyección. En efecto,
 la naturalidad de $\Phi_\bullet$, $U_\bullet$ y las identidades
 triangulares implican la conmutatividad de los diagramas
 \[
     \begin{tikzcd}[row sep=15mm]
-        & \cal OS \ar[d,"U_{\cal OS}"] \ar[dl,"\id_{\cal OS}"']
+        & \Cal OS \ar[d,"U_{\Cal OS}"] \ar[dl,"\id_{\Cal OS}"']
         & A \ar[l,"f"'] \ar[d,"U_A"]
         \\
-        \cal OS
-        & \cal O\pt\cal OS \ar[l,"\cal O\Phi_S"]
-        & \cal O\pt A \ar[l,"\cal O\pt f"]
+        \Cal OS
+        & \Cal O\pt\Cal OS \ar[l,"\Cal O\Phi_S"]
+        & \Cal O\pt A \ar[l,"\Cal O\pt f"]
     \end{tikzcd}
     \hspace{10mm}
     \begin{tikzcd}[row sep=15mm]
@@ -1436,8 +1383,8 @@ triangulares implican la conmutatividad de los diagramas
         & S \ar[l,"\phi"'] \ar[d,"\Phi_S"]
         \\
         \pt A
-        & \pt \cal O\pt A \ar[l,"\pt U_A"]
-        & \pt \cal OS \ar[l,"\pt\cal O\phi"]
+        & \pt \Cal O\pt A \ar[l,"\pt U_A"]
+        & \pt \Cal OS \ar[l,"\pt\Cal O\phi"]
     \end{tikzcd}
 \]
 por lo cual tenemos
@@ -1445,22 +1392,22 @@ por lo cual tenemos
     \begin{aligned}
         \bar{\bar f}
         &= \ol{(\pt f)\Phi_S} \\
-        &= \cal O((\pt f)\Phi_S)U_A \\
-        &= (\cal O\Phi_S)(\cal O\pt f)U_A \\
+        &= \Cal O((\pt f)\Phi_S)U_A \\
+        &= (\Cal O\Phi_S)(\Cal O\pt f)U_A \\
         &= f,
     \end{aligned}
     \hspace{20mm}
     \begin{aligned}
         \bar{\bar\phi}
-        &= \ol{(\cal O\phi)U_A} \\
-        &= \pt((\cal O\phi)U_A)\Phi_S \\
-        &= (\pt U_A)(\pt\cal O\phi)\Phi_S \\
+        &= \ol{(\Cal O\phi)U_A} \\
+        &= \pt((\Cal O\phi)U_A)\Phi_S \\
+        &= (\pt U_A)(\pt\Cal O\phi)\Phi_S \\
         &= \phi.
     \end{aligned}
 \]
-Esto nos da la biyección (\ref{eqn:adj_frm_top}).
+Esto nos da la biyección mencionada al inicio de esta subsección.
 De manera explícita, la biyección está dada como
-$\Frm(A,\cal OS)\ni f\leftrightarrow \phi\in \Top(S,\pt A)$, donde
+$\Frm(A,\Cal OS)\ni f\leftrightarrow \phi\in \Top(S,\pt A)$, donde
 \[
     s\in f(a) \ssi a\nleq \phi(s)
 \]
@@ -1472,25 +1419,24 @@ para cualesquiera $s\in S$, $a\in A$, puesto que
     \\
     a\nleq \phi(s)
     &\iff \phi(s) \in U_A(a) \\
-    &\iff s \in (\cal O\phi)(U_A(a)) = \bar\phi(a).
+    &\iff s \in (\Cal O\phi)(U_A(a)) = \bar\phi(a).
 \end{align*}
-Finalmente, veamos que la biyección (\ref{eqn:adj_frm_top})
-es natural en $A$ y en $S$.
+Finalmente, veamos que la biyección es natural en $A$ y en $S$.
 Dado un morfismo de marcos $g:A\to B$, el diagrama
 \[
     \begin{tikzcd}
-        \Frm(B,\cal OS) \ar[d,"{-}\circ g"'] \ar[r,"f\mapsto\bar f"']
+        \Frm(B,\Cal OS) \ar[d,"{-}\circ g"'] \ar[r,"f\mapsto\bar f"']
         & \Top(S,\pt B)
         \ar[d,"\pt g\circ{-}"]
         \\
-        \Frm(A,\cal OS) \ar[r,"h\mapsto\bar h"']
+        \Frm(A,\Cal OS) \ar[r,"h\mapsto\bar h"']
         & \Top(S,\pt A)
     \end{tikzcd}
 \]
 es conmutativo:
 \begin{align*}
     \ol{fg}
-    &= \pt(fg)\Phi_S \\
+    &= \pt(f g)\Phi_S \\
     &= (\pt g)(\pt f)\Phi_S \\
     &= (\pt g)\bar f.
 \end{align*}
@@ -1498,49 +1444,48 @@ Similarmente, dada una función continua $\psi:S\to T$,
 el diagrama
 \[
     \begin{tikzcd}
-        \Frm(A,\cal OT)
-        \ar[d,"\cal O\psi\circ{-}"']
+        \Frm(A,\Cal OT)
+        \ar[d,"\Cal O\psi\circ{-}"']
         & \Top(T,\pt A) \ar[l,"\bar \phi\mapsfrom \phi"']
         \ar[d,"{-}\circ \psi"]
         \\
-        \Frm(A,\cal OS)
+        \Frm(A,\Cal OS)
         & \Top(S,\pt A) \ar[l,"\bar \xi\mapsfrom \xi"']
     \end{tikzcd}
 \]
 es conmutativo:
 \begin{align*}
     \ol{\phi\psi}
-    &= \cal O(\phi\psi)U_A \\
-    &= (\cal O\psi)(\cal O\phi)U_A \\
-    &= (\cal O\psi)\bar\phi.
+    &= \Cal O(\phi\psi)U_A \\
+    &= (\Cal O\psi)(\Cal O\phi)U_A \\
+    &= (\Cal O\psi)\bar\phi.
 \end{align*}
 
-\section{La propiedad universal de las reflexiones}
+\subsection{La propiedad universal de las reflexiones}
 
-
-Por última sección veremos que las biyecciones dadas por la adjunción revelan las propiedades universales del espacio de puntos y el marco de abiertos, mas delante en el siguiente capítulo se observara que son objetos universales en las respectivas categorías de espacios sobrios y marcos espaciales.
+Para esta subsección veremos que las biyecciones dadas por la adjunción revelan las propiedades universales del espacio de puntos y el marco de abiertos.
 La biyección
 \begin{align*}
-    \Frm(A,\cal OS) &\simeq \Top(S,\pt A) \\
+    \Frm(A,\Cal OS) &\simeq \Top(S,\pt A) \\
     f &\mapsto \bar f = (\pt f)\Phi_S \\
-    (\cal O\phi)U_A = \bar\phi &\mapsfrom \phi.
+    (\Cal O\phi)U_A = \bar\phi &\mapsfrom \phi.
 \end{align*}
 se puede leer como sigue:
-dado un morfismo $f:A\to\cal OS$, existe una única función continua
+dado un morfismo $f:A\to\Cal OS$, existe una única función continua
 $\phi:S\to\pt A$ tal que el diagrama
 \[
     \begin{tikzcd}
-        A \ar[r,"f"] \ar[d,"U_A"'] & \cal OS \\
-        \cal O\pt A \ar[ur,"\cal O\phi"']
+        A \ar[r,"f"] \ar[d,"U_A"'] & \Cal OS \\
+        \Cal O\pt A \ar[ur,"\Cal O\phi"']
     \end{tikzcd}
 \]
 conmuta.
 Similarmente, dada una función continua $\phi:S\to\pt A$, existe
-un único morfismo $f:A\to\cal OS$ tal que el diagrama
+un único morfismo $f:A\to\Cal OS$ tal que el diagrama
 \[
     \begin{tikzcd}
         S \ar[r,"\phi"] \ar[d,"\Phi_S"'] & \pt A \\
-        \pt\cal OS \ar[ur,"\pt f"']
+        \pt\Cal OS \ar[ur,"\pt f"']
     \end{tikzcd}
 \]
 conmuta.
@@ -1557,7 +1502,7 @@ tenemos una adjunción:
 
 \[
   \begin{tikzcd}
-    \Top \ar[d,shift right=2,"\cal O"'{name=L}]
+    \Top \ar[d,shift right=2,"\Cal O"'{name=L}]
     \\
     \EuScript{D}Lt^\op \ar[u,shift right=2,"spec"'{name=R}]
     \adj{L}{R}

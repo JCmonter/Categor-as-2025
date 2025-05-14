@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1747189660.49002 "c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex" "main.pdf" "main" 1747189711.68961 2
+["pdflatex"] 1747213685.30598 "c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex" "main.pdf" "main" 1747213709.43991 2
   "C:/Users/jcmon/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1737948772 618170 5c090dc8f89dc557a10347f49a9d287f ""
   "C:/Users/jcmon/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1746245100 11548 39057ade0865d4592b792f8d7b3115ad ""
   "C:/Users/jcmon/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1721109186 688 37338d6ab346c2f1466b29e195316aa4 ""
@@ -293,13 +293,13 @@
   "C:/Users/jcmon/AppData/Local/Programs/MiKTeX/tex/latex/was/upgreek.sty" 1665850770 5794 9054e31be15d93f1e6bd28cca2b6643f ""
   "C:/Users/jcmon/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "C:/Users/jcmon/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
-  "c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex" 1747168381 82871 b4563b60f1431aa3a60b72e24aa0052b ""
+  "c:/Users/jcmon/Desktop/Apuntes/Categor-as-2025/main.tex" 1747213556 81767 f82df7a3ee1da8dc10d70216796de786 ""
   "comunicaciones.cls" 1737328703 62266 f7db17b6b7e71dfd8f5d62104e23d6bd ""
-  "macros.tex" 1747165246 7571 b5be8a7d7ae9c66f544efa06e51bd337 ""
-  "main.aux" 1747189698 4511 171f21cc64b422700b6b25e870bfa1e9 "pdflatex"
-  "main.out" 1747189698 3625 6927291f839ec3d503580164c045d188 "pdflatex"
-  "main.tex" 1747168381 82871 b4563b60f1431aa3a60b72e24aa0052b ""
-  "main.toc" 1747189698 1786 bf9b00db7eafe925798dc91a5baceec5 "pdflatex"
+  "macros.tex" 1747208578 7580 f4620dd07984f98eea3f0e33590bc47d ""
+  "main.aux" 1747213705 4600 65c03e9367db951c632b2510a9a83961 "pdflatex"
+  "main.out" 1747213705 3700 fe8101073d717d7bc6bf299550b03993 "pdflatex"
+  "main.tex" 1747213556 81767 f82df7a3ee1da8dc10d70216796de786 ""
+  "main.toc" 1747213705 1835 d1e9041cd81d9516686d3e9be29aa892 "pdflatex"
   (generated)
   "main.aux"
   "main.log"
@@ -307,4 +307,3 @@
   "main.pdf"
   "main.toc"
   (rewritten before read)
-  "main.aux"
