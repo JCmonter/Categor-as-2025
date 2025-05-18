@@ -94,7 +94,7 @@ PENDIENTE
         
         A la colección de flechas de la categoría la denotaremos por $\Fle(\C)$. Y a la colección 
         de flechas con dominio $A$ y codominio $B$ la denotaremos por $\C(A,B)$.
-        \item Una regla de composicion de flechas. Lo que significa que a cada par de flechas $f,g\in\Fle(\C)$, tales que $\Cod(f)=\Dom(g)$, 
+        \item Una regla de composición de flechas. Lo que significa que a cada par de flechas $f,g\in\Fle(\C)$, tales que $\Cod(f)=\Dom(g)$, 
         le asigna una flecha $g\circ f:\Dom(f)\to \Cod(g)$, llamada composición de $g$ con $f$, y es tal que: 
         
         \begin{itemize}
@@ -1496,15 +1496,14 @@ En esta sección usaremos lo aprendido en las sección \ref{SECMON} y la secció
 
 Primero trabajaremos con una extensión de la adjunción entre $\Frm$ y $\Top$, para esto consideremos la categoría de retículas distributivas 
 \[\EuScript{D}Lt\] esta categoría tiene como subcategoría ala categoría de marcos, lo interesante es que podemos definir un funtor 
-\[spec\colon\EuScript{D}Lt\rightarrow\Top \] que a cada retícula distributiva le asocia su espacio espectral, es decir, su espectro (ideales primos), teniendo esto en mente, veremos que
+\[\spec\colon\EuScript{D}Lt\rightarrow\Top \] que a cada retícula distributiva le asocia su espacio espectral, es decir, su espectro (ideales primos), teniendo esto en mente, veremos que
 tenemos una adjunción:
-
 
 \[
   \begin{tikzcd}
     \Top \ar[d,shift right=2,"\Cal O"'{name=L}]
     \\
-    \EuScript{D}Lt^\op \ar[u,shift right=2,"spec"'{name=R}]
+    \EuScript{D}Lt^\op \ar[u,shift right=2,"\spec"'{name=R}]
     \adj{L}{R}
   \end{tikzcd}
 \]
