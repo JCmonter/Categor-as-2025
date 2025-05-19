@@ -554,7 +554,7 @@ Introducción sobre el lema de Yoneda, mención y demostración... o solo un ske
 
 \section{Adjunciones}
 
-En general, dadas dos categorías y dos functores entre ellas, es muy díficil saber a priori cuando estos functores forman una equivalencia, por eso se buscó las condiciones mínimas que se pueden exigir para tratar a dichas categorías 'como si fueran equivalentes'. De esta idea surgió el concepto de adjunción.
+En general, dadas dos categorías y dos functores entre ellas, es muy difícil saber a priori cuando estos functores forman una equivalencia, por eso se buscó las condiciones mínimas que se pueden exigir para tratar a dichas categorías 'como si fueran equivalentes'. De esta idea surgió el concepto de adjunción.
 \begin{dfn}
 	Dadas dos categorías $\mathcal{C,D}$ y dos functores $F:\mathcal{C\to D}$, $G:\mathcal{C\to D}$, diremos que $F$ es el adjunto izquierdo de $G$ (o que $G$ es el adjunto derecho de $F$), denotado $F\dashv G$, si existe un isomorfismo natural $\Hom_\mathcal{D}(F(A),B)\simeq \Hom_\mathcal{C}(A,G(B))$ para cualesquiera objetos $A$ en $\mathcal{D}$ y $B$ en $\mathcal{C}$, es decir, para cualesquiera morfismos $f:A'\to A$
 	en $\mathcal C$ y $g:B\to B'$ en $\mathcal D$,
@@ -577,8 +577,8 @@ En general, dadas dos categorías y dos functores entre ellas, es muy díficil s
 La definición anterior quiere decir que hay un iso natural entre los functores.
 
 \begin{obs}\label{adjcomp}
-	Supongamos que tenemos $F\dashv G$ funtores adjuntos entre $\mathcal{C}$ y $\mathcal{D}$, dadas flechas $(FA\xrightarrow p B)\in\mathcal{D}$ y $(A\xrightarrow q GB)\in\mathcal{C}$ les corresponden flechas \'unicas $(A\xrightarrow{\Bar{p}}GB)$	y $(FA\xrightarrow{\Bar{q}}B)$,
-	respectivamente, bajo el isomorfismo de adjunci\'on. Claramente $\Bar{\Bar{p}}=p$ y $\Bar{\Bar{q}}=q$. As\'i:
+	Supongamos que tenemos $F\dashv G$ funtores adjuntos entre $\mathcal{C}$ y $\mathcal{D}$, dadas flechas $(FA\xrightarrow p B)\in\mathcal{D}$ y $(A\xrightarrow q GB)\in\mathcal{C}$ les corresponden flechas únicas $(A\xrightarrow{\Bar{p}}GB)$	y $(FA\xrightarrow{\Bar{q}}B)$,
+	respectivamente, bajo el isomorfismo de adjunción. Claramente $\Bar{\Bar{p}}=p$ y $\Bar{\Bar{q}}=q$. As\'i:
 	\begin{enumerate}
 		\item
 		Tomando $f=\id_A:A\to A$ y cualquier $g:B\to B'$ en $\mathcal{C}$, $(Gg)\bar p=\ol{gp}$.
@@ -597,7 +597,7 @@ Definimos la siguiente transformaci\'on natural $F\xRightarrow{\alpha}F'$ como $
 
 \begin{ej}
 	\begin{itemize}
-		\item En álgebra surge mucho el fen\'omeno de ``generar'' y ``olvidar'', en otras palabras, a partir de un conjunto podemos generar una estructura algebraica y dada una estructura algebraica podemos olvidar alguna operaci\'on. Para ejemplicar consideremos la categoria de espacios vectoriales $\Vect_k$ sobre un campo $k$ y la categoria de conjuntos $\Con$. Definimos los siguientes funtores $F:\Con\to\Vect_k$ y $U:\Vect_k\to\Con$ de la siguiente manera:
+		\item En álgebra surge mucho el fen\'omeno de ``generar'' y ``olvidar'', en otras palabras, a partir de un conjunto podemos generar una estructura algebraica y dada una estructura algebraica podemos olvidar alguna operaci\'on. Para ejemplificar consideremos la categoría de espacios vectoriales $\Vect_k$ sobre un campo $k$ y la categoría de conjuntos $\Con$. Definimos los siguientes funtores $F:\Con\to\Vect_k$ y $U:\Vect_k\to\Con$ de la siguiente manera:
 		Dado un $k$-espacio vectorial $V$, $U(V)$ es solo el conjunto subyacente $V$ y cualquier transfomaci\'on lineal $g:V\to W$, $U(g)$ la considera solo como funci\'on. Por otro lado, el funtor $F$ toma un conjunto $X$ y $F(X)$ es el $k$ espacio vectorial cuya base es $X$, o de otra manera, la suma directa indicada en $X$ de copias de $k$. Dada una funci\'on $f:X\to Y$, $F(f)$ es la transformaci\'on lineal tal que 
 		\[(k_x)_{x\in X}\mapsto (k_y)_{y\in Y}=\begin{cases}
 			k_x \; \text{si }\; y=f(x) \\
@@ -636,7 +636,7 @@ Definimos la siguiente transformaci\'on natural $F\xRightarrow{\alpha}F'$ como $
 		\begin{equation*}
 			({-})^B:\Con\to \Con
 		\end{equation*}
-		llamado exponenciaci\'on, que a cada conjunto $A$, le asocia su conjunto de funciones $C^B:=\Hom_{\Con}(B,C)$. El isomorfismo de adjunci\'on se contruye de la siguiente manera: Tomemos una funci\'on $f\in\Hom_{\Con}(A\times B, C)$. Definimos la siguiente funci\'on $\Bar{f}\in \Hom_{\Con}(A,C^B)$ como: para cada $a\in A$, tenemos una funci\'on $\Bar{f}(a):B\to C$ definida como $\Bar{f}(a)(b)=f(a,b)$. Rec\'iprocamente, si $g\in\Hom_{\Con}(A,C^B)$, definimos $\Bar{g}:A\times B\to C$ como $\Bar{g}(a,b)=g(a)(b)$. Directamente vemos que 
+		llamado exponenciaci\'on, que a cada conjunto $A$, le asocia su conjunto de funciones $C^B:=\Hom_{\Con}(B,C)$. El isomorfismo de adjunci\'on se construye de la siguiente manera: Tomemos una funci\'on $f\in\Hom_{\Con}(A\times B, C)$. Definimos la siguiente funci\'on $\Bar{f}\in \Hom_{\Con}(A,C^B)$ como: para cada $a\in A$, tenemos una funci\'on $\Bar{f}(a):B\to C$ definida como $\Bar{f}(a)(b)=f(a,b)$. Rec\'iprocamente, si $g\in\Hom_{\Con}(A,C^B)$, definimos $\Bar{g}:A\times B\to C$ como $\Bar{g}(a,b)=g(a)(b)$. Directamente vemos que 
 		\[\Bar{\Bar{f}}(a,b)=\Bar{f}(a)(b)=f(a,b)\]
 		y 
 		\[\Bar{\Bar{g}}(a)(b)=\Bar{g}(a,b)=g(a)(b).\]
@@ -699,7 +699,7 @@ que son llamadas la \textbf{unidad} y la \textbf{co-unidad} de la adjunción.
 \begin{proof}
 	La componente de la transformaci\'on natural $\varepsilon F\circ F\eta$ es la composici\'on 
 	\[\varepsilon_{FA}\circ F(\eta_A):F(A)\to FGF(A)\to F(A),\]
-	y hay que demostrar que cada una de estas componentes es la identidad en $A$. Usando el primer diagrama del Lemma \ref{lemmatriangulo} para el morfismo $\eta_A:A\to FG(A)$, se tiene que $\varepsilon_{FA}\circ F(\eta_A)=\overline{\eta_A}=\overline{\overline{\id_A}}=\id_A$.
+	y hay que demostrar que cada una de estas componentes es la identidad en $A$. Usando el primer diagrama del Lema \ref{lemmatriangulo} para el morfismo $\eta_A:A\to FG(A)$, se tiene que $\varepsilon_{FA}\circ F(\eta_A)=\overline{\eta_A}=\overline{\overline{\id_A}}=\id_A$.
 	
 	La conmutatividad del otro diagrama se prueba de manera an\'aloga.
 \end{proof}
