@@ -554,9 +554,155 @@ Introducción sobre el lema de Yoneda, mención y demostración... o solo un ske
 
 \section{Adjunciones}
 
+En general, dadas dos categorías y dos functores entre ellas, es muy díficil saber a priori cuando estos functores forman una equivalencia, por eso se buscó las condiciones mínimas que se pueden exigir para tratar a dichas categorías 'como si fueran equivalentes'. De esta idea surgió el concepto de adjunción.
 \begin{dfn}
-	Sean F y G dos funtores
+	Dadas dos categorías $\mathcal{C,D}$ y dos functores $F:\mathcal{C\to D}$, $G:\mathcal{C\to D}$, diremos que $F$ es el adjunto izquierdo de $G$ (o que $G$ es el adjunto derecho de $F$), denotado $F\dashv G$, si existe un isomorfismo natural $\Hom_\mathcal{D}(F(A),B)\simeq \Hom_\mathcal{C}(A,G(B))$ para cualesquiera objetos $A$ en $\mathcal{D}$ y $B$ en $\mathcal{C}$, es decir, para cualesquiera morfismos $f:A'\to A$
+	en $\mathcal C$ y $g:B\to B'$ en $\mathcal D$,
+	el siguiente diagrama es conmutativo:
+	\[
+	\begin{tikzcd}
+		\Hom_\mathcal{D}(FA,B)
+		\ar[d,"g\circ-\circ Ff"']
+		\ar[r,"\sim",shift left]
+		& \Hom_\mathcal{C}(A,GB) 
+		\ar[d,"Gg\circ-\circ f"]
+		\ar[l,"\sim",shift left] \\
+		\Hom_\mathcal{D}(FA',B')
+		\ar[r,"\sim",shift left]
+		& \Hom_\mathcal{D}(A',GB')
+		\ar[l,"\sim",shift left]
+	\end{tikzcd}
+	\]
 \end{dfn}
+La definición anterior quiere decir que hay un iso natural entre los functores.
+
+\begin{obs}\label{adjcomp}
+	Supongamos que tenemos $F\dashv G$ funtores adjuntos entre $\mathcal{C}$ y $\mathcal{D}$, dadas flechas $(FA\xrightarrow p B)\in\mathcal{D}$ y $(A\xrightarrow q GB)\in\mathcal{C}$ les corresponden flechas \'unicas $(A\xrightarrow{\Bar{p}}GB)$	y $(FA\xrightarrow{\Bar{q}}B)$,
+	respectivamente, bajo el isomorfismo de adjunci\'on. Claramente $\Bar{\Bar{p}}=p$ y $\Bar{\Bar{q}}=q$. As\'i:
+	\begin{enumerate}
+		\item
+		Tomando $f=\id_A:A\to A$ y cualquier $g:B\to B'$ en $\mathcal{C}$, $(Gg)\bar p=\ol{gp}$.
+		\item
+		Tomado $g=\id_B:B\to B$ y cualquier $f:A\to A'$ en $\mathcal{D}$, $\bar q(Ff)=\ol{qf}$.
+	\end{enumerate}
+\end{obs}
+
+Ahora, notemos que si $G: \mathcal{D} \longrightarrow  \mathcal{C}$ es un funtor y suponemos que  $F,F': \mathcal{C} \longrightarrow  \mathcal{D}$ son adjuntos izquierdo de $G$, entonces 
+\begin{center}
+	$\Hom_\mathcal{D}(F(A),B)\cong \Hom_\mathcal{C}(A,G(B)) \cong \Hom_\mathcal{D}(F'(A),B)$.
+\end{center}
+natural en $B \in \mathcal{D}$. Esto implica que hay un isomorfismo 
+\[\Hom_\mathcal{D}(F(A),F'(A))\simeq \Hom_\mathcal{D}(F'(A),F'(A)).\]
+Definimos la siguiente transformaci\'on natural $F\xRightarrow{\alpha}F'$ como $\alpha_A=\overline{\id_{F'(A)}}$ para cada objeto $A$ de $\mathcal{C}$. Se deja al lector checar que $\alpha$ es un isomorfismo. Por lo tanto cualquier adjunto izquierdo es único salvo isomorfismos y dualmente se demuestra que los adjuntos derechos también son único salvo isomorfismos.
+
+\begin{ej}
+	\begin{itemize}
+		\item En álgebra surge mucho el fen\'omeno de ``generar'' y ``olvidar'', en otras palabras, a partir de un conjunto podemos generar una estructura algebraica y dada una estructura algebraica podemos olvidar alguna operaci\'on. Para ejemplicar consideremos la categoria de espacios vectoriales $\Vect_k$ sobre un campo $k$ y la categoria de conjuntos $\Con$. Definimos los siguientes funtores $F:\Con\to\Vect_k$ y $U:\Vect_k\to\Con$ de la siguiente manera:
+		Dado un $k$-espacio vectorial $V$, $U(V)$ es solo el conjunto subyacente $V$ y cualquier transfomaci\'on lineal $g:V\to W$, $U(g)$ la considera solo como funci\'on. Por otro lado, el funtor $F$ toma un conjunto $X$ y $F(X)$ es el $k$ espacio vectorial cuya base es $X$, o de otra manera, la suma directa indicada en $X$ de copias de $k$. Dada una funci\'on $f:X\to Y$, $F(f)$ es la transformaci\'on lineal tal que 
+		\[(k_x)_{x\in X}\mapsto (k_y)_{y\in Y}=\begin{cases}
+			k_x \; \text{si }\; y=f(x) \\
+			0 \;\text{ en otro caso.}
+		\end{cases}\]
+		El lector puede revisar que efect\'ivamente $F$ y $U$ son funtores. M\'as a\'un, $F\dashv U$. Para mostrar esto, tomamos $X\in\Con$, $V\in\Vect_k$, y una flecha $g\in\Hom_{\Vect_k}(F(X),V)$. Definimos la funci\'on $\Bar{g}\in\Hom_{\Con}(X,U(V))$, como $\Bar{g}(x)=g(e_x)$ para cada $x\in X$, donde 
+		\[e_y:=(k_x)_{x\in X}=\begin{cases}
+			1 \;\text{si } x=y \\
+			0 \;\text{ en otro caso.} 
+		\end{cases}\]
+		Ahora sea $f\in\Hom_{\Con}(X,U(V))$ y definimos $\Bar{f}:F(X)\to V$ como 
+		
+		\[\Bar{f}((k_x)_{x\in X})=\sum_{x\in X} k_xf(x).\]
+		
+		Por lo tanto si tomamos doble barra, tenemos que 
+		\[\Bar{\Bar{g}}((k_x)_{x\in X})=\sum_{x\in X} k_x\Bar{g}(x)=\sum_{x\in X} k_xg(e_x)=g\left(\sum_{x\in X}k_xe_x\right)=g((k_x)_{x\in X}).\]
+		
+		Por otro lado,
+		
+		\[\Bar{\Bar{f}}(x)=\Bar{f}(e_x)=f(x).\]
+		Esto nos da el isomorfismo de adjunci\'on entre $F$ y $G$. Se le deja lector verificar que en efecto este isomorfismo es natural.
+		
+		
+		\item Un an\'alisis similar se puede hacer con cualquier otra estructura algebraica como grupos, anillos, campos, etc\'etera.
+		
+		\item
+		Tomando los grupos abelianos $\Z-\mathrm{Mod}$, existe una adjunción con $\Grp$, $F\dashv U$, donde $U$ es el functor inclusión (olvida que es abeliano), y $F$ asigna a cada grupo $G$ su respectiva 'abelianización', dada por $G/[G,G]$,
+		donde $[G,G]=\langle xyx^{-1}y^{-1}\mid x,y\in G\rangle$
+		es el subgrupo conmutador.
+		
+		\item Dado un conjunto $B$, tenemos el funtor producto 
+		\begin{equation*}
+			{-}\times B:\Con\to \Con
+		\end{equation*}
+		es decir, el funtor que a cada conjunto $A$ le asocia el producto cartesiano $A\times B$. Este funtor, tiene un adjunto derecho 
+		\begin{equation*}
+			({-})^B:\Con\to \Con
+		\end{equation*}
+		llamado exponenciaci\'on, que a cada conjunto $A$, le asocia su conjunto de funciones $C^B:=\Hom_{\Con}(B,C)$. El isomorfismo de adjunci\'on se contruye de la siguiente manera: Tomemos una funci\'on $f\in\Hom_{\Con}(A\times B, C)$. Definimos la siguiente funci\'on $\Bar{f}\in \Hom_{\Con}(A,C^B)$ como: para cada $a\in A$, tenemos una funci\'on $\Bar{f}(a):B\to C$ definida como $\Bar{f}(a)(b)=f(a,b)$. Rec\'iprocamente, si $g\in\Hom_{\Con}(A,C^B)$, definimos $\Bar{g}:A\times B\to C$ como $\Bar{g}(a,b)=g(a)(b)$. Directamente vemos que 
+		\[\Bar{\Bar{f}}(a,b)=\Bar{f}(a)(b)=f(a,b)\]
+		y 
+		\[\Bar{\Bar{g}}(a)(b)=\Bar{g}(a,b)=g(a)(b).\]
+	\end{itemize}
+\end{ej}
+
+\bigskip
+
+Sea
+\begin{center}
+	\begin{tikzcd}
+		\mathcal{C} \arrow[dd, "F"', bend right] \\
+		\dashv \\
+		\mathcal{D} \arrow[uu, "G"', bend right]
+	\end{tikzcd}
+\end{center}
+una adjunci\'on con isomorfismo natural $\Hom_\mathcal{D}(FA,B)\simeq\Hom_\mathcal{C}(A,GB)$. Usando este isomorfismo natural, para cada objeto $A$ y para cada $B$ tenemos dos mofismos distinguidos $\eta_A$ y $\varepsilon_B$ definidos como:
+\begin{align*}
+	\overline{\left(F(A)\overset{1_{FA}}{\longrightarrow}F(A)\right)} & = \left(A\underset{\eta_A}{\longrightarrow}GFA\right)\\
+	\left(FGB\underset{\varepsilon_B}{\longrightarrow}B\right) & = \overline{\left(G(B)\overset{1_{GB}}{\longrightarrow}G(B)\right)}
+\end{align*}
+y que son naturales en $A$ y en $B$ respectivamente. Por lo tanto tenemos transformaciones naturales
+\begin{align*}
+	\eta_\bullet: 1_\mathcal{A}\longrightarrow GF \\
+	\varepsilon_\bullet: FG\longrightarrow 1_\mathcal{B}
+\end{align*}
+que son llamadas la \textbf{unidad} y la \textbf{co-unidad} de la adjunción.
+
+\begin{lem}\label{lemmatriangulo}
+	Sea $F\dashv G$ una adjunci\'on entre las categor\'ias $\mathcal{C}$ y $\mathcal{D}$. Dados $f\in\Hom_\mathcal{D}(F(A),B)$ y $g\in \Hom_\mathcal{C}(A,G(B))$ entonces los siguientes diagramas conmutan
+	\[
+	\begin{tikzcd}
+		F(A) \arrow[r, "F(g)"] \arrow[rd, "\Bar{g}"'] & FG(B) \arrow[d, "\varepsilon_B"] & A \arrow[r, "\eta_A"] \arrow[rd, "\Bar{f}"'] & GF(A) \arrow[d, "G(f)"] \\
+		& B & & G(B).                            
+	\end{tikzcd}
+	\]
+\end{lem}
+
+\begin{proof}
+	Para el primer diagrama tenemos que $\varepsilon_{B}=\overline{\id_{GB}}$ por definici\'on. As\'i que por la Observaci\'on \ref{adjcomp}.2. se tiene que
+	\[\varepsilon_{B}\circ F(g)=\overline{\id_{GB}}\circ F(g)=\overline{\id_{GB}\circ g}=\Bar{g}.\]
+	
+	Para el segundo diagrama, $\eta_A=\overline{\id_{FA}}$. Por la Observaci\'on \ref{adjcomp}.1. se tiene que
+	\[G(f)\circ \eta_A=G(f)\circ\overline{\id_{FA}}=\overline{f\circ \id_{F(A)}}=\Bar{f}.\]
+\end{proof}
+
+
+\begin{prop}\label{identidadestraingulares}
+	Dada un adjunci\'on $F\dashv G$, los siguientes diagramas de funtores conmutan
+	
+	
+	\[
+	\begin{tikzcd}
+		F \arrow[r, "F\eta"] \arrow[rd, "1_F"'] & FGF \arrow[d, "\varepsilon F"] & G \arrow[r, "\eta G"] \arrow[rd, "1_G"'] & GFG \arrow[d, "G\varepsilon"] \\
+		& F & & G.                            
+	\end{tikzcd}
+	\]
+\end{prop}
+
+\begin{proof}
+	La componente de la transformaci\'on natural $\varepsilon F\circ F\eta$ es la composici\'on 
+	\[\varepsilon_{FA}\circ F(\eta_A):F(A)\to FGF(A)\to F(A),\]
+	y hay que demostrar que cada una de estas componentes es la identidad en $A$. Usando el primer diagrama del Lemma \ref{lemmatriangulo} para el morfismo $\eta_A:A\to FG(A)$, se tiene que $\varepsilon_{FA}\circ F(\eta_A)=\overline{\eta_A}=\overline{\overline{\id_A}}=\id_A$.
+	
+	La conmutatividad del otro diagrama se prueba de manera an\'aloga.
+\end{proof}
 
 \subsection[Monadas una pequeña introducción]{Monadas una pequeña introducción}\label{SECMON}
 
@@ -913,7 +1059,7 @@ Vale la pena en este punto (supongo) poner un poco de contexto aún mas abstract
 denotemos por $\mathrm{Ad}\EuScript{C}$ a la categoría de todas las adjunciones $(F,G,\eta,\epsilon)\colon\EuScript{C}\rightharpoonup \EuScript{A}$
 tales que definen a $(T,\eta,\mu)$ y las flechas de $\mathrm{Ad}\EuScript{C}$ están dadas como sigue, si \[(F,G,\eta,\epsilon)\colon\EuScript{C}\rightarpoonup \EuScript{A}\]
  y \[(F',G',\eta',\epsilon')\colon\EuScript{C}\rightarpoonup \EuScript{A}'\] son adjunciones sobre $\EuScript{C}$, un morfismo entre estas \[(F,G,\eta,\epsilon)\rightarrow(F',G',\eta',\epsilon')\] 
- es un par de funtores $K\colon\EuScript{A}\rightarrow\EuScript{A}'$ y $L\colon\EuScript{C}\rightaarow\EuScript{C}$ tal que
+ es un par de funtores $K\colon\EuScript{A}\rightarrow\EuScript{A}'$ y $L\colon\EuScript{C}\rightarrow\EuScript{C}$ tal que
 los siguientes diagramas conmutan:
 \[
 \begin{tikzcd}[column sep=large, row sep=large]
