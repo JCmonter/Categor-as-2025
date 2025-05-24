@@ -1,4 +1,4 @@
-*.pdf
+#ignorar archivos auxiliares de LaTeX
 *.synctex.gz
 *.aux
 *.log
@@ -6,3 +6,12 @@
 *.toc
 *.fdb_latexmk
 *.fls
+
+# ignorar pruebas y ejemplos
+ejemplo.*
+main-test.*
+text.*
+
+#Ignorar todos los PDF excepto el final
+*.pdf
+!main.pdf

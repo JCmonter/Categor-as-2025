@@ -1,58 +1,55 @@
+
 \documentclass{comunicaciones}
 
 \usepackage[utopia,sfscaled]{mathdesign}
 \usepackage[scaled]{helvet}
 
-\usepackage[utf8]{inputenc} %Por favor guardar los archivos en Unicode
+\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-
 
 \usepackage{microtype}
 \usepackage[spanish,mexico,es-noindentfirst]{babel}
 
-\usepackage[paperwidth=170mm,paperheight=230 mm,total={125mm,170mm},top=29mm,left=23mm,includeheadfoot]{geometry}
+\usepackage[paperwidth=170mm,paperheight=230mm,total={125mm,170mm},top=29mm,left=23mm,includeheadfoot]{geometry}
 
 \usepackage{lastpage}
 \newcounter{FirstPage}
 \newcommand{\Primera}[1]{\setcounter{FirstPage}{#1}}
 
 \usepackage{mathtools}
-
 \usepackage{enumerate}
 \usepackage{float}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\abstractname}{Resumen}
 \renewcommand{\keywordsname}{Palabras Claves}
 \renewcommand{\figurename}{Figura}
 \renewcommand{\tablename}{Tabla}
 \renewcommand{\refname}{Bibliografía}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\input{macros.tex} %Cargar en este archivo los paquetes que requiera el autor, 
-% definir comandos (\DeclareMathOperator{command}{definition}, ... ), etc.
+\input{macros.tex}
 
-\issueinfo{52}{Comunicaciones}{}{2023} 
-\Primera{5} % La página de inicio del artículo 
-
+\issueinfo{52}{Comunicaciones}{}{2023}
+\Primera{5}
 \pagespan{\theFirstPage}{\pageref{LastPage}}
-\PII{\ } %Tipo de artículo, e.g., Artículo de Investigación; Exposición; etc.
+\PII{\ }
 
 \begin{document}
 
-\author[Vázquez A., Monter J. C., Medina M., Zaldívar L. A.]{Alejandro Vázquez Aceves, Juan Carlos Monter Cortés, Mauricio Medina Barcena y Luis Ángel Zaldívar Corichi}
+\author[Vázquez A., Monter J. C., Medina M., Zaldívar L. A.]{Alejandro Vázquez Aceves, Juan Carlos Monter Cortés, Mauricio Medina Bárcena y Luis Ángel Zaldívar Corichi}
 
-\address{Centro Universitario de Ciencias Exactas e Ingenieria,
-Universidad de Guadalajara,
-Blvd Gral. Marcelino García Barragán 1421, Olimpica, 44430 Guadalajara, Jalisco}
+\address{\parbox{\textwidth}{
+Centro Universitario de Ciencias Exactas e Ingenieria\\
+Universidad de Guadalajara\\
+Blvd Gral. Marcelino García Barragán 1421, Olímpica, 44430 Guadalajara, Jalisco}}
+
 \email{\lowercase{\texttt{luis.zaldivar@academicos.udg.mx}}}
 
-\address{Centro Universitario de Ciencias Exactas e Ingenieria,
-Universidad de Guadalajara,
-Blvd Gral. Marcelino García Barragán 1421, Olimpica, 44430 Guadalajara, Jalisco}
-\email{\lowercase{\texttt{juan.monter2902@alumnos.udg.mx}}}
+\address{\parbox{\textwidth}{
+Centro Universitario de Ciencias Exactas e Ingenieria\\
+Universidad de Guadalajara\\
+Blvd Gral. Marcelino García Barragán 1421, Olímpica, 44430 Guadalajara, Jalisco}}
 
-% Tantas direcciones como autores.
+\email{\lowercase{\texttt{juan.monter2902@alumnos.udg.mx}}}
 
 \title[Teoría de categorías]{Una introducción a la teoría de categorías}
 
@@ -63,11 +60,12 @@ PENDIENTE
 \noindent {\sc Abstract.}  PENDIENTE
 \end{abstract}
 
-\subjclass[2000]{82B44}
+\subjclass[2000]{18-01, 18A05} % Puedes cambiar estas según corresponda
 
-\keywords{Cristales de spin. Medida de Gibbs.}
+\keywords{Categorías, funtores, transformaciones naturales, cristal de spin.}
 
 \maketitle
+
 
 \section*{Introducción}\label{Introduccion}
 
@@ -75,15 +73,14 @@ PENDIENTE
 PENDIENTE
 \tableofcontents
 
-
 \section{Conceptos básicos}\label{Conceptos basicos}
 
 \begin{dfn}[Categoría]\label{Definicion categoria}
-    Una \emph{categoría} $\mathcal{C}$ consiste de los siguientes datos:
-    \begin{enumerate}
+ Una \emph{categoría} $\mathcal{C}$ consiste de los siguientes datos:
+ \begin{enumerate}
         \item Una colección de \emph{objetos}, que denotaremos por $\Obj(\mathcal{C})$.
         \item Una colección de \emph{flechas} ó \emph{morfismos} entre objetos. Cada flecha $f$ tiene un objeto
-        de salida $\Dom(f)\in\Obj(\C)$\footnote{Aunque la colección de objetos 
+        de salida $\Dom(f)\in\Obj(\C)$ \footnote{Aunque la colección de objetos 
         no forme un conjunto, usamos la notación conjuntista de elemento, para decir
         que el dominio de $f$ es uno de los objetos determinados en el punto 1},
         que llamamos \emph{dominio de} $f$, y un objeto de llegada 
@@ -91,12 +88,13 @@ PENDIENTE
         que carga una flecha se condensa en la notación $f:\Dom(f)\to\Cod(f)$\footnote{
         Aunque la notación sugiere que $f$ es una función, en general no lo es. Además podemos
         usar la notación de diagrama $A\xrightarrow{f}B$}. 
-        
+
         A la colección de flechas de la categoría la denotaremos por $\Fle(\C)$. Y a la colección 
         de flechas con dominio $A$ y codominio $B$ la denotaremos por $\C(A,B)$.
         \item Una regla de composición de flechas. Lo que significa que a cada par de flechas $f,g\in\Fle(\C)$, tales que $\Cod(f)=\Dom(g)$, 
         le asigna una flecha $g\circ f:\Dom(f)\to \Cod(g)$, llamada composición de $g$ con $f$, y es tal que: 
-        
+
+                
         \begin{itemize}
             \item Para cualesquiera objetos $A,B,C,D\in\Obj(\C)$, y flechas $f:A\to B,g:B\to C$ y $h:C\to D$, se tiene que:
             $$h\circ(g\circ f) = (h\circ g)\circ f.$$
@@ -104,7 +102,7 @@ PENDIENTE
             \item Para todo objeto $A\in\Obj(\C)$, existe $\id_A\in\Hom_\C( A,A)$ tal que cualquier objeto $B\in\Obj(\C)$ y flechas $g\in\Hom_\C(A,B)$, $h\in\Hom_\C(B,A)$ satisfacen:
             $$g\circ \id_A=g\text{ y }\id_A\circ h=h.$$
         \end{itemize}
-    \end{enumerate}
+ \end{enumerate}
 \end{dfn}
 
 Para simplificar la notación, cuando nos refiramos a un objeto o flecha de una categoría $\C$, escribiremos $A\in\C$ o $f\in\C$; 
@@ -378,6 +376,7 @@ Ejemplos de productos, igualadores y productos fibrados, dejar como ejercicio bu
 \end{proof}
 
 Ejercicio enunciar y demostrar el teorema dual.
+
 \section{Funtores}
 
 Ahora que entendemos que es una categoría. Usemos el mismo espíritu de la teoría de categorías para estudiar objetos, y pensar en las categorías como objetos matemáticos.
@@ -466,26 +465,31 @@ compartan dominio y codominio.
 
 En general usaremos la notación $\alpha:F\Rightarrow G$ para referirnos a una transformación natural $\alpha$ de $F$ a $G$. Para la notación de diagrama tenemos, además
 de la natural $F\xRightarrow{\alpha}G$, una notación que deja ver también las categorías involucradas entre los funtores:
-\[\begin{tikzcd}
+\[
+\begin{tikzcd}
 	\A && \B
-	\arrow[""{name=0, anchor=center, inner sep=0}, "F", shift left=2, curve={height=-6pt}, from=1-1, to=1-3]
-	\arrow[""{name=1, anchor=center, inner sep=0}, "G"', shift right=2, curve={height=6pt}, from=1-1, to=1-3]
+	\arrow[""{name=0, anchor=center, inner sep=0}, "F", shift left=2, out=20, in=160, from=1-1, to=1-3]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "G"', shift right=2, out=340, in=200, from=1-1, to=1-3]
 	\arrow["\alpha"', shorten <=3pt, shorten >=3pt, Rightarrow, from=0, to=1]
-\end{tikzcd}\]
+\end{tikzcd}
+\]
 
 Ejemplos... 
 
 Veamos ahora que como es la composición de transformaciones naturales.
 
 \begin{prop}
-    Sean \begin{tikzcd}
-        \A && \B
-        \arrow[""{name=0, anchor=center, inner sep=0}, "F", shift left=2, curve={height=-12pt}, from=1-1, to=1-3]
-        \arrow[""{name=1, anchor=center, inner sep=0}, "H"', shift right=2, curve={height=12pt}, from=1-1, to=1-3]
-        \arrow[""{name=2, anchor=center, inner sep=0}, "G"{description}, from=1-1, to=1-3]
-        \arrow["\alpha"', shorten <=2pt, shorten >=2pt, Rightarrow, from=0, to=2]
-        \arrow["\beta"', shorten <=2pt, shorten >=2pt, Rightarrow, from=2, to=1]
-    \end{tikzcd} 
+    Sean 
+    \[
+    \begin{tikzcd}
+    \A && \B
+    \arrow[""{name=0, anchor=center, inner sep=0}, "F", shift left=2, out=20, in=160, from=1-1, to=1-3]
+    \arrow[""{name=1, anchor=center, inner sep=0}, "H"', shift right=2, out=340, in=200, from=1-1, to=1-3]
+    \arrow[""{name=2, anchor=center, inner sep=0}, "G"{description}, from=1-1, to=1-3]
+    \arrow["\alpha"', shorten <=2pt, shorten >=2pt, Rightarrow, from=0, to=2]
+    \arrow["\beta"', shorten <=2pt, shorten >=2pt, Rightarrow, from=2, to=1]
+\end{tikzcd}
+    \]
     
     funtores y transformaciones naturales. Entonces la familia de morfismos 
     $\beta\circ\alpha:=\{F(A)\xrightarrow{\beta_A\circ\alpha_A}H(A) \ |\ A\in\Obj(\A)\}\subseteq\B$
@@ -540,13 +544,13 @@ Observaciones entre las propiedades universales mencionadas antes, límites col�
     Decimos que una categoría $\C$ es \emph{completa}, si para cada categoría pequeña $I$, todo diagrama $D:I\to\C$ tiene límite en $\C$
 \end{dfn}
 
-
 \begin{thm}
     Sean $\A$ y $\C$ dos categorías. Si $\C$ es completa, entonces $[\A,\C]$ es completa
 \end{thm}
 \begin{proof}
     PENDIENTE
 \end{proof}
+
 
 \section{Lema de Yoneda}
 
@@ -767,7 +771,8 @@ sea $\mathcal{K}S=\{\text{ compactos de } S\}$ topologizamos este conjunto con:
 de manera análoga a la anterior tenemos un funtor $(\_)^{\square}\colon \EuScript{S}Top\rightarrow \EuScript{S}Top$ solo que en flechas se calcula como \[f^{\square}(X)=f[X]\]
   \end{enumerate}
 \end{itemize}
-  \section[Mon]{Monadas} 
+
+\section[Mon]{Monadas} 
 De acuerdo con nuestros problemas sin sentido, es decir, la factorización que queremos construir para $T\colon\C\rightarrow\C$, necesitamos que exista una adjunción $\D$ y funtores $F\colon \C\rightarrow\D$,
 y $G\colon \D\rightarrow \C$ tal que: \[T=GF\;\;\;\; F\dashv G.\], entonces tenemos que asegurar que existan
   flechas \[\eta\colon id\_{\C}\rightarrow GF\text{ y }\;\; \epsilon\colon FG\rightarrow id_{\D}\] de tal manera que para todo $A\in\C$ y para todo $D\in\D$ los triángulos:
@@ -864,16 +869,19 @@ requiere la existencia de un funtor $G\colon\D\rightarrow \C$ y una asignación 
 $\eta_{A}\colon A\rightarrow GFA$ tal que para todo \[f\colon A\rightarrow GD\] con $D$ cualquier objeto de $\D$ exista una única flecha \[f^{+}\colon FA\rightarrow D\] de tal manera que \[f=Gf^{+}\eta_{A}.\], es decir tenemos
 una función \[(\_)^{+}\colon\C(A,GD)\rightarrow\D(FA,D).\] en un dibujo:
 
-\[\begin{tikzcd}[column sep=large, row sep=large]
-    A \arrow[r, "\eta_{A}"] \arrow[dr, "\forall f"'] & GFA \arrow[d, dashed, "Gf^{+}"] \\
+\[
+\begin{tikzcd}[column sep=large, row sep=large]
+    A \arrow[r, "\eta_{A}", name=eta] \arrow[dr, "\forall f"', name=forallf] & GFA \arrow[d, dashed, "Gf^{+}", name=gfplus] \\
     & GD
-  \end{tikzcd}\]
+\end{tikzcd}
+\]
 Esto en $\C$
 
-  \[\begin{tikzcd}[column sep=large, row sep=large]
-    FA \arrow[d, dashed, "\exists !f^{+}"] \\
-    & D
-  \end{tikzcd}\]
+  \[
+\begin{tikzcd}
+  FA \arrow[r, dashed, "\exists! f^+"] & D
+\end{tikzcd}
+\]
 Esto otro en $\D$.
 
 Como antes queremos dado $T$ encontrar $F$ y $G$ de tal manera que hagan la gracia de arriba y factoricen a $T$, la ventaja de esta definición es que no siendo $F$ un funtor a priori, podemos entonces empezar $T$ mandando objetos en objetos.
@@ -1006,16 +1014,12 @@ y así recuperamos la monada con la que empezamos.
 
 \end{proof}   
 
-
 Esto esta bien, ya tener dos opciones para cocinar la factorización que estamos buscando, pero aún así necesitamos una solución \emph{universal}.
-
-
 
 \section{Solución de Kleisli}\label{SOLKLEI}
 
-
 La solución que describiremos aquí es debida a Kleisli en su celebra artículo Every standard construction is induced by a pair of adjoint functors (habrá que ponerlo en la biblio)
-Esta construcción empieza con una adjunción $F\dash G$ donde ya esta tenemos a la categoría $\EuScript{D}$ que soluciona el problema de factorización, es decir tenemos:
+Esta construcción empieza con una adjunción $F\dashv G$ donde ya esta tenemos a la categoría $\EuScript{D}$ que soluciona el problema de factorización, es decir tenemos:
 
 \[\EuScript{D}(FA,FB)\cong\EuScript{C}(A,GFB)\cong\EuScript{C}(A,TB).\]
  \begin{dfn}\label{cate de Kleisli}
@@ -1049,17 +1053,27 @@ entonces: \[G_{Tg}\circ G_{Tf}=g^{*}\circ f^{*}=(g^{*}\circ f)^{*}=G_{T}(g\bulle
 Ahora claramente tenemos: \[T=G_{T}F_{T}\] en objetos, queremos estatar una propiedad universal para esta construcción.
 Para este fin, tomemos un $f\colon A\rightarrow G_{T}B$ con $A\in\EuScript{C}$ y $B\in\EuScript{C}_{T}$. necesitamos construir una flecha única $f^{+}\colon F_{T}A\rightarrow B$ en $\EuScript{C}_{T}$ tal que:
 \[G_{T}f^{+}\circ\eta_{A}=f.\] esto es justamente lo que hace nuestra construcción hace que $f\colon A\rightarrow G_{T}B=TB$ es un morfismo en la categoría $\EuScript{D}$, y así,
-$G_{T}f^{+}=f^{*}$ y calculando \[G_{T}f^{+}\circ\eta_{A}=f^{*}\circ\eta_{A}=f\] como se requería. Ahora para la unicidad, si $g\colon F_{T}A\rightarrow B$ en $\EuScript{C}_{T}$
-dado por una flecha $g\colon A\rightarrow TB$ en $\EuScript{C}$ entonces \[G_{Tg}\circ\eta_{A}=g^{*}\circ\eta_{A}=g,\] entonces tenemos que $g=f$, por lo tanto hemos encontrado una adjunción con las
-propiedades deseadas, por último cabe notar que aunque no se pidió, es claro que $F_{T}$ es un funtor, el problema con el es que no es muy interesante a diferencia de $G_{T}$.
-
+$G_{T}f^{+}=f^{*}$ y calculando \[G_{T}f^{+}\circ\eta_{A}=f^{*}\circ\eta_{A}=f\] como se requería. Ahora para la unicidad, si $g\colon F_{T}A\rightarrow B$ en $\EuScript{C}_{T}$ 
 Es un ejercicio que el lector calcule la categoría de Kleisli de los ejemplos que hemos dejado al principio de esta sección.
 
-Vale la pena en este punto (supongo) poner un poco de contexto aún mas abstracto sin-sentido, sea $(T,\eta,\mu)$ una monada en una categoría $\EuScript{C}$.
-denotemos por $\mathrm{Ad}\EuScript{C}$ a la categoría de todas las adjunciones $(F,G,\eta,\epsilon)\colon\EuScript{C}\rightharpoonup \EuScript{A}$
-tales que definen a $(T,\eta,\mu)$ y las flechas de $\mathrm{Ad}\EuScript{C}$ están dadas como sigue, si \[(F,G,\eta,\epsilon)\colon\EuScript{C}\rightarpoonup \EuScript{A}\]
- y \[(F',G',\eta',\epsilon')\colon\EuScript{C}\rightarpoonup \EuScript{A}'\] son adjunciones sobre $\EuScript{C}$, un morfismo entre estas \[(F,G,\eta,\epsilon)\rightarrow(F',G',\eta',\epsilon')\] 
- es un par de funtores $K\colon\EuScript{A}\rightarrow\EuScript{A}'$ y $L\colon\EuScript{C}\rightarrow\EuScript{C}$ tal que
+Vale la pena en este punto (supongo) poner un poco de contexto aún mas abstracto sin-sentido, sea $(T,\eta,\mu)$ una monada en una categoría $\mathscr{C}$.
+denotemos por $\mathrm{Ad}\mathscr{C}$ a la categoría de todas las adjunciones
+\[\begin{tikzcd}
+	{(F,G,\eta,\epsilon)\colon\mathscr{C}} & {\mathscr{A}}
+	\arrow[harpoon, from=1-1, to=1-2]
+\end{tikzcd}\]
+tales que definen a $(T,\eta,\mu)$ y las flechas de $\mathrm{Ad}\mathscr{C}$ están dadas como sigue, si 
+\[\begin{tikzcd}
+	{(F,G,\eta,\epsilon)\colon\mathscr{C}} & {\mathscr{A}}
+	\arrow[harpoon, from=1-1, to=1-2]
+\end{tikzcd}\]
+y
+\[\begin{tikzcd}
+	{(F',G',\eta',\epsilon')\colon\mathscr{C}'} & {\mathscr{A}'}
+	\arrow[harpoon, from=1-1, to=1-2]
+\end{tikzcd}\]
+son adjunciones sobre $\mathscr{C}$, un morfismo entre estas \[(F,G,\eta,\epsilon)\rightarrow(F',G',\eta',\epsilon')\] 
+es un par de funtores $K\colon\mathscr{A}\rightarrow\mathscr{A}'$ y $L\colon\mathscr{C}\rightarrow\mathscr{C}$ tal que
 los siguientes diagramas conmutan:
 \[
 \begin{tikzcd}[column sep=large, row sep=large]
@@ -1072,16 +1086,16 @@ A' \arrow[r, "G'"'] & X'
 A \arrow[r, "F"] \arrow[d, "K"'] & X \arrow[d, "L"] \\
 A' \arrow[r, "F'"'] & X'
 \end{tikzcd}\]
-Hemos así probado dos hechos destacables:
 
+Hemos así probado dos hechos destacables:
 
 \begin{thm}(Comparación de Kleisli)\label{kleisli es final}
 Dada una adjunción $(F,G,\eta,\epsilon)$ en una categoría $\EuScript{C}$, y sea $T=(GF, \eta,G\epsilon F)$ la monada que esta define,
-entonces existe un único funtor $L\colon\EuScript{C}_{T}\rightarrow\EuScript{A}$ con $GL=G_{T}$ y $LF_{T}=F$.
+entonces existe un único funtor $L\colon\mathscr{C}_{T}\rightarrow\EuScript{A}$ con $GL=G_{T}$ y $LF_{T}=F$.
 \end{thm}
 
 
-\begin{thm}\label{kleisli es final}
+\begin{thm}\label{kleisli es final2}
 Dada una monada $(T,\eta,\mu)$ en una categoría $\EuScript{C}$, 
 \end{thm}
 
@@ -1091,7 +1105,6 @@ En la práctica ya que estamos hablando de objetos en la categoría de adjuncion
 \section{La solución de Eilenberg y Moore}\label{EMSOL}
 
 En efecto construyamos el objeto final en la categoría de posibles adjunciones que factoricen una monada dada.
-
 
 
 \section{La adjunción entre $\Frm$ y $\Top$}
@@ -1288,6 +1301,7 @@ isomorfismo) decimos que el marco $A$ es \textit{espacial}.
       parcial, esto prueba que el espacio de puntos es $T_0$.
   \end{enumerate}
 \end{obs}
+
 \subsection{Funtorialidad y naturalidad}
 Queremos ver que la asignación $A\mapsto \pt A$ es un funtor y que
 la reflexión espacial $U_A:A\to\Cal O\pt A$
@@ -1341,6 +1355,7 @@ Es decir: el diagrama
 \]
 conmuta, así $U_\bullet=(U_A\mid A\in\Frm)$
 es una transformación natural $U_\bullet:\id_\Frm\to\Cal O\pt$.
+
 \subsection{El espacio de puntos del marco de abiertos}
 
 ¿Qué tanta información acerca de un espacio topológico se
@@ -1655,55 +1670,12 @@ tenemos una adjunción:
 \]
 
 que como se espera esta se restringe a una equivalencia, que se le conoce como la equivalencia de Stone entre retículas distributivas y espacios coherentes (espectrales).
-\noindent 
+
 \begin{thebibliography}{99}
-  \bibitem{D.P.} C. H. Dowker; D. Strauss, \textit{Separation axioms for frames}, Topics in Topology, pp. 223–240. Proc. Colloq., Keszthely, 1972. Colloq. Math. Soc. Janos Bolyai, vol. 8, North-Holland, Amsterdam, 1974.
-
-  \bibitem{Ib.} J. R. Isbell, \textit{Atomless parts of spaces}, Math. Scand. 31 (1972) 5–32.
-
   \bibitem{P.T.} P. T. Johnstone, \textit{Stone spaces}, Cambridge Studies in Advanced Mathematics, vol. 3, Cambridge University Press, Cambridge, 1982. MR 698074
-
-  \bibitem{J.S.} P. T. Johnstone; S.-H. Sun, \textit{Weak products and Hausdorff locales}, Categorical Algebra and its Applications, pp. 173–193. Lecture Notes in Mathematics, vol. 1348. Springer-Verlag, Berlin, 1988.
-
-  \bibitem{J.M.} J. Monter; A. Zaldívar, \textit{El enfoque locálico de las reflexiones booleanas: un análisis en la categoría de marcos} [tesis de maestría], 2022. Universidad de Guadalajara.
-
-  \bibitem{P.S.}J. Paseka; B. Šmarda, \textit{T2-frames and almost compact frames}, Czechoslovak Math. J. 42 (1992) 297–313.
   
   \bibitem{J.P.} J. Picado and A. Pultr, \textit{Frames and locales: Topology without points}, Frontiers in Mathematics, Springer Basel, 2012.
-  
-  \bibitem{J.P.2} J. Picado and A. Pultr, \textit{Separation in point-free topology}, Springer, 2021.
-  
-  \bibitem{Ro.S.} J. Rosický; B. Šmarda, \textit{T1-locales}, Math. Proc. Cambridge Philos. Soc. 98 (1985) 81–86.
-  
-  \bibitem{R.S.} RA. Sexton, \textit{A point free and point-sensitive analysis of the patch assembly}, The University of Manchester (United Kingdom), 2003.
-
-  \bibitem{R.S.3} RA. Sexton and H. Simmons, \textit{Point-sensitive and point-free patch constructions}, Journal of Pure and Applied Algebra \textbf{207} (2006), no. 2, 433-468.
-    
-  \bibitem{H.S.3} H. Simmons, \textit{The assembly of a frame}, University of Manchester (2006).
-
-  \bibitem{H.W.} H. Wallman, \textit{Lattices and topological spaces}, Ann. Math. 39 (1938) 112–126.
-  
-  \bibitem{A.Z.} A. Zaldívar, \textit{Introducción a la teoría de marcos} [notas curso], 2024. Universidad de Guadalajara.
 \end{thebibliography}
 
 \end{document}
-
-
-
-\end{document}
-
-\documentclass[10pt]{amsart}
-\setlength{\textwidth}{12cm}
-\setlength{\textheight}{17.5cm}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\usepackage[latin1]{inputenc}
-\usepackage{latexsym}
-\usepackage{amsfonts}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{graphicx}
-\usepackage{amsmath}
-
-
 %  COMPILE EL TRABAJO DOS VECES PARA QUITAR ALGUNOS WARNINGS 

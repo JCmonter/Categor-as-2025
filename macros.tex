@@ -1,40 +1,67 @@
-\usepackage[mathscr]{eucal}
-\usepackage{enumerate}
-\usepackage{times}
-\usepackage{tikz}
-\usepackage{graphicx}
-\usepackage{tikz-cd}\usetikzlibrary{decorations.pathmorphing}
-%\usepackage{amsmath,amssymb,latexsym,amscd}   
-\usetikzlibrary{babel}
-\usepackage{hyperref}
-\hypersetup{colorlinks=true,linkcolor=blue,citecolor=brown,linktocpage=true,pagebackref=true,hyperindex=true}
-\usepackage{amsthm}
-\usepackage{graphicx}
-\usepackage[all,cmtip]{xy}
-\usepackage{fancyhdr}
-\usepackage{mathalfa}
-\usepackage{mathrsfs}
-\usepackage[sans]{dsfont}
-\usepackage{upgreek}
+% Codificación
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 
+% Tipografía y fuentes matemáticas
+\usepackage[mathscr]{eucal}
+\usepackage{amsmath}
+%\usepackage{amssymb}
+\usepackage{mathalfa} % para \mathscr y otras letras bonitas
+\usepackage{upgreek}
+\usepackage{stmaryrd}
+\usepackage[sans]{dsfont} % para \mathds
+\usepackage{mathdesign}   % Fuente principal (usa mdput)
+\usepackage{mathrsfs}
+% Definición de \EuScript para evitar errores
+\let\EuScript\mathscr
+
+% Gráficos y diagramas
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usetikzlibrary{babel, arrows.meta, decorations.pathmorphing, matrix}
+
+% Diagramas con xy-pic
+\usepackage[all,cmtip]{xy}
+
+% Paquetes generales
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{microtype}
+\usepackage[spanish]{babel}
+
+% Hipervínculos
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=brown,
+  linktocpage=true,
+  pagebackref=true,
+  hyperindex=true
+}
+
+% Cabecera
 \fancyhead[LE,RO]{\bfseries\thepage}
 \fancyhead[LO]{\rightmark}
 \fancyhead[RE]{\bfseries\leftmark}
+
+% Comandos personalizados
 \newcommand\Idl{\text{-}\mathrm{Idl}}
-\newcommand\adj[2]{{
-  \ar[from=#1, to=#2,"\dashv"marking,draw=none]
-}}
+\newcommand\adj[2]{{\ar[from=#1, to=#2,"\dashv"marking,draw=none]}}
 \let\prs\prescript
 \newcommand\Inf{\bigwedge}
 \newcommand\Sup{\bigvee}
-\addto\extrasspanish{ \renewcommand{\inf}{\wedge} }
-\addto\extrasspanish{ \renewcommand{\sup}{\vee} }
 \let\phi\varphi
-\newcommand\ssi{\qquad\text{ si, y solo si }\qquad}
+\newcommand\ssi{\qquad\text{si, y solo si}\qquad}
 \newcommand\ol[1]{\overline{#1}}
 \newcommand\nin{\not\in}
 \newcommand{\Cal}[1]{\mathcal{#1}}
 
+% Categorías y notación habitual
 \newcommand{\Frm}{\mathbf{Frm}}
 \newcommand{\Pos}{\mathbf{Pos}}
 \newcommand{\Dpos}{\mathbf{Dpos}}
@@ -79,6 +106,9 @@
 \newcommand{\Sob}{\mathrm{Sob}}
 \newcommand{\Haus}{\mathrm{Haus}}
 \newcommand{\DLat}{\mathrm{DLat}}
+\newcommand{\spec}{\mathrm{spec}}
+
+% Conjuntos clásicos
 \newcommand{\R}{\mathbb R}
 \newcommand{\Q}{\mathbb Q}
 \newcommand{\Z}{\mathbb Z}
@@ -87,148 +117,32 @@
 \newcommand{\B}{\mathscr B}
 \newcommand{\C}{\mathscr C}
 \newcommand{\D}{\mathscr D}
-\newcommand{\spec}{\mathrm{spec}}
+\newcommand{\E}{\mathbf E}
 
-
+% Estilo de teoremas
 \theoremstyle{plain}
-
 \newtheorem*{thm*}{Teorema}
 \newtheorem{thm}{\protect\theoremname}[section]
-  \theoremstyle{remark}
-  \newtheorem{obs}[thm]{\protect\remarkname}
-  \theoremstyle{remark}
-  \newtheorem{ej}[thm]{\protect\examplename}
-    \theoremstyle{plain}
-  \newtheorem{subej}[thm]{\protect\subexamplename}
-  \theoremstyle{plain}
-  \newtheorem{cor}[thm]{\protect\corollaryname}
-  \theoremstyle{plain}
-  \newtheorem{lem}[thm]{\protect\lemmaname}
-  \theoremstyle{plain}
-  \newtheorem{prop}[thm]{\protect\propositionname}
-    \theoremstyle{remark}
-  \newtheorem*{prop*}{Proposición}
+\newtheorem{cor}[thm]{\protect\corollaryname}
+\newtheorem{lem}[thm]{\protect\lemmaname}
+\newtheorem{prop}[thm]{\protect\propositionname}
+\newtheorem*{prop*}{Proposición}
 \newtheorem{dfn}[thm]{\protect\definitionname}
-\theoremstyle{remark}
-\newtheorem{ex}[thm]{\protect\exercisename}
-\theoremstyle{plain}
 \newtheorem*{dfn*}{Definición}
-% \theoremstyle{definition}
-% \newtheorem{algorithm}[theorem]{Algoritmo}
-% \newtheorem{axiom}[theorem]{Suposición}
-% \newtheorem{case}[theorem]{Caso}
-% \newtheorem{claim}[theorem]{Ayuda}
-% \newtheorem{conclusion}[theorem]{Conclusión}
-% \newtheorem{condition}[theorem]{Condición}
-% \newtheorem{conjecture}[theorem]{Conjetura}
 
-% \newtheorem{criterion}[theorem]{Criterio}
-% \newtheorem{definition}[theorem]{Definición}
-% \newtheorem{example}[theorem]{Ejemplo}
-%\newtheorem{exercise}[theorem]{Ejercicio}
+\theoremstyle{remark}
+\newtheorem{obs}[thm]{\protect\remarkname}
+\newtheorem{ej}[thm]{\protect\examplename}
+\newtheorem{subej}[thm]{\protect\subexamplename}
+\newtheorem{ex}[thm]{\protect\exercisename}
 
-% \newtheorem{notation}[theorem]{Notación}
-% \newtheorem{problem}[theorem]{Problema}
-
-% \newtheorem{remark}[theorem]{Observación}
-% \newtheorem{solution}[theorem]{Solución}
-% \newtheorem{summary}[theorem]{Summary}
-% \numberwithin{equation}{section}
-
-
-
-% \newcommand{\av}{\mbox{{\bf Av}}\,}
-% \newcommand{\be}{\mbox{{\bf E}}}
-% \newcommand{\gik}{g_{i,k}}
-% \newcommand{\gaik}{\gamma_{i,k}}
-% \newcommand{\sik}{\sigma_{i,k}}
-% \newcommand{\hz}{\hat Z}
-% \newcommand{\nut}{\nu_t}
-% \newcommand{\ou}{[0,1]}
-% \newcommand{\rud}{R_{1,2}}
-% \newcommand{\sii}{\sigma_i}
-% \newcommand{\siN}{\sigma_N}
-% \newcommand{\siu}{\sigma_{i_1}}
-% \newcommand{\sip}{\sigma_{i_p}}
-% \newcommand{\var}{\mbox{Var}}
-% \newcommand{\skm}{\sum_{k\le M}}
-% \newcommand{\sln}{\sum_{l\le n}}
-% \newcommand{\sli}{\sum_{i\le n}}
-% \newcommand{\slp}{\sum_{1\le l<l'\le n}}
-% \newcommand{\snn}{\sum_{i\le N}}
-% \newcommand{\ssn}{\Sigma_N}
-% %\newcommand{\1}{{\bf 1}}
-% \newcommand{\la}{\lambda}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %%%%%%%%%%% caligrafía %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \newcommand{\ca}{{\cal A}}
-% \newcommand{\cb}{{\cal B}}
-% \newcommand{\cc}{{\cal C}}
-% \newcommand{\cd}{{\cal D}}
-% \newcommand{\ce}{{\cal E}}
-% \newcommand{\cf}{{\cal F}}
-% \newcommand{\cg}{{\cal G}}
-% \newcommand{\ch}{{\cal H}}
-% \newcommand{\cj}{{\cal J}}
-% \newcommand{\cl}{{\cal L}}
-% \newcommand{\cm}{{\cal M}}
-% \newcommand{\cn}{{\cal N}}
-% \newcommand{\co}{{\cal O}}
-% \newcommand{\cp}{{\cal P}}
-% \newcommand{\ccr}{{\cal R}}
-% \newcommand{\cs}{{\cal S}}
-% \newcommand{\ct}{{\cal T}}
-% \newcommand{\cu}{{\cal U}}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%% griegas %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \newcommand{\al}{\alpha}
-% \newcommand{\ga}{\gamma}
-% \newcommand{\ep}{\varepsilon}
-\newcommand{\si}{\sigma}
-% \newcommand{\vp}{\varphi}
-
-% \newcommand{\laa}{\Lambda}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%% conjuntos %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \newcommand{\D}{{\mathbb D}}
-\newcommand{\E}{{\mathbf E}}
-% \newcommand{\F}{{\mathbb F}}
-% \newcommand{\N}{{\mathbb N}}
-% \newcommand{\Q}{{\mathbb Q}}
-% \newcommand{\R}{{\mathbb R}}
-% \newcommand{\Z}{{\mathbb Z}}
-
-
-% \newcommand{\lla}{\left\langle}
-% \newcommand{\rra}{\right\rangle}
-% \newcommand{\lcl}{\left\{}
-% \newcommand{\rcl}{\right\}}
-% \newcommand{\lp}{\left(}
-% \newcommand{\rp}{\right)}
-% \newcommand{\lc}{\left[}
-% \newcommand{\rc}{\right]}
-% \newcommand{\lln}{\left|}
-% \newcommand{\rrn}{\right|}
-% \newcommand{\rat}{\right\rangle_t}
-% \newcommand{\ram}{\right\rangle_{t,-}}
-% \newcommand{\raz}{\right\rangle^{\circ}}
-
+% Nombres para español
 \providecommand{\corollaryname}{Corolario}
 \providecommand{\examplename}{Ejemplo}
 \providecommand{\lemmaname}{Lema}
 \providecommand{\propositionname}{Proposición}
 \providecommand{\remarkname}{Observación}
 \providecommand{\theoremname}{Teorema}
-\providecommand{\subexamplename}{Subexample}
+\providecommand{\subexamplename}{Subejemplo}
 \providecommand{\definitionname}{Definición}
-
-
-\def\tresp#1_#2^#3{\mathrel {\mathop{\kern 0pt#1}\limits_{#2}^{#3}}}
-
-\DeclareMathOperator{\senh}{senh\,}
+\providecommand{\exercisename}{Ejercicio}
