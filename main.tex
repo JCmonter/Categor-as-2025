@@ -12,7 +12,6 @@
 
 \usepackage[paperwidth=170mm,paperheight=230mm,total={125mm,170mm},top=29mm,left=23mm,includeheadfoot]{geometry}
 
-\usepackage{lastpage}
 \newcounter{FirstPage}
 \newcommand{\Primera}[1]{\setcounter{FirstPage}{#1}}
 
@@ -30,7 +29,6 @@
 
 \issueinfo{52}{Comunicaciones}{}{2023}
 \Primera{5}
-\pagespan{\theFirstPage}{\pageref{LastPage}}
 \PII{\ }
 
 \begin{document}
@@ -43,38 +41,53 @@ Universidad de Guadalajara\\
 Blvd Gral. Marcelino García Barragán 1421, Olímpica, 44430 Guadalajara, Jalisco}}
 
 \email{\lowercase{\texttt{luis.zaldivar@academicos.udg.mx}}}
-
-\address{\parbox{\textwidth}{
-Centro Universitario de Ciencias Exactas e Ingenieria\\
-Universidad de Guadalajara\\
-Blvd Gral. Marcelino García Barragán 1421, Olímpica, 44430 Guadalajara, Jalisco}}
-
+\email{\lowercase{\texttt{mauricio.medina@academicos.udg.mx}}}
 \email{\lowercase{\texttt{juan.monter2902@alumnos.udg.mx}}}
+\email{\lowercase{\texttt{alejandro.vazquez5702@alumnos.udg.mx}}}
 
 \title[Teoría de categorías]{Una introducción a la teoría de categorías}
 
 \begin{abstract} 
-PENDIENTE
+La teoría de categorías es una rama de las matemáticas que estudia la esencia de estructuras matemáticas y relaciones entre ellas. 
+Se basa en la idea de que muchas estructuras matemáticas pueden ser vistas como objetos y las relaciones entre ellas como morfismos (o flechas). 
+Esta perspectiva permite un enfoque más abstracto y generalizado de las matemáticas, facilitando la comparación y el estudio de diferentes áreas de 
+La Matemática.
 \vskip .3cm
 
-\noindent {\sc Abstract.}  PENDIENTE
+\noindent {\sc Abstract.}  Category theory is a branch of mathematics that explores mathematical structures and the relationships between them. It is built on the idea that many of these structures can be seen as objects, 
+with the connections between them represented as morphisms (or arrows). This point of view offers a more abstract and unified approach, allowing for deeper insight into the inner workings of Mathematics as a whole.
 \end{abstract}
 
 \subjclass[2000]{18-01, 18A05} % Puedes cambiar estas según corresponda
 
-\keywords{Categorías, funtores, transformaciones naturales, cristal de spin.}
+\keywords{Categorías, funtores, transformaciones naturales, límites, adjunciones.}
 
 \maketitle
 
-
+\newpage
 \section*{Introducción}\label{Introduccion}
 
 \noindent 
-PENDIENTE
+
+Por más de 2 milenios se ha estudiado indirectamente una relación muy profunda que hay entre el \textquotedblleft contexto\textquotedblright  espacial y el \textquotedblleft contexto\textquotedblright  algebraico. Uno de los avances más importantes en esta relación la hizo René Descartes, ya que gracias a la
+idea del plano cartesioano, se evidenció como las ecuaciones (objetos algebraicos) se relacionan con curvas en el plano (objetos espaciales). Con la maduración de las matemáticas y un cambio de paradigma que vino al rededor del siglo XIX, se empezó a entender muchos objetos matemáticas como objetos con cierta estructura, y que el estudio de las estructuras y sus clasificaciones da mucha información matemática de estos objetos. Estas ideas dieron forma a diversas ramas de las matemáticas, como la topología, la teoría de grupos, anillos, campos, espacios vectoriales, y muchas más, pero la protagonista de esta historia y fruto de varias de las antes mencionadas, es la topología algebraica; esta es una rama que básicamente utiliza estructuras algebráicas para estudiar y clasificar estructuras topológicas. 
+
+A mediados del siglo XX, Samuel Eilenberg y Saunders Mac Lane, en un ejercicio del cálculo de una cohomología; un término técnico de topología algebraica que no es necesario aclarar, básicamente estaban trabajando con funtores que asignan a cada espacio topológico, una estructura algebraica; notaron que había maneras \textquotedblleft naturales de pasar\textquotedblright  de un funtor a otro. Esto llevó a la definición formal de transformación natural. Así, en su artículo de 1945, “General Theory of Natural Equivalences”, introdujeron por primera vez el lenguaje de categorías para poder expresar todo esto de forma precisa y general.
+
+En este lenguaje de categorías, hay un nuevo cambio de paradigma. En general muchas definiciones dependen de un conjunto y de hablar de los elementos de ese conjunto, y darle estructura a ese conjunto, y todo eso, da como resultado un objeto matemático que puede ser estudiado mirando sus elementos; en categorías, no es posible mirar un objeto aisladamente, es necesario entenderlo como parte de un \textquotedblleft contexto\textquotedblright  donde sus propiedas las estudiamos a partir de como se \textquotedblleft relaciona\textquotedblright con los demás objetos (incluido él mismo) de dicho \textquotedblleft contexto\textquotedblright . Esta noción de \textquotedblleft contexto\textquotedblright  viene formalizado por lo que es una categoría, que como veremos más a detalle, básicamente consta de dar una colección de objetos, dar una colección de flechas (las \textquotedblleft relaciones\textquotedblright  entre los objetos) , y definir una regla de composición de flechas (algo así como \textquotedblleft pegar relaciones\textquotedblright ) que satisfaga un axioma de asociatividad y un axioma de identidades (véase la definición \ref{Definicion categoria} para detalles). Con este espíritu de entender los objetos a partir de flechas hacia otros objetos de \textquotedblleft una misma naturaleza\textquotedblright , se busca definir el concepto de funtor, el cúal es básicamente una flecha entre categorías, que respeta la composición de flechas. Recursivamente, pensemos si es posible tener
+flechas entre funtores, y en efecto lo es,  justo estas son las transformaciones naturales.
+
+Las nociones antes mencionadas se detallan en las primeras 3 secciones de estas notas. La sección 4 busca definir lo que es el límite de un diagrama, y profundizar en un concepto categórico llamado \textquotedblleft universalidad\textquotedblright . Este concepto se aborda en la sección 1, pero no es hasta que vemos el concepto de límite que se puede dar a entender que toda propiedad universal es el límite de algún diagrama. Además en esta sección exploramos la noción de categoría completa, la cual es simplemente una categoría donde todo diagrama tiene límite, y probamos que toda categoría de funtores cuya categoría codominio es completa, es una categoría completa.
+
+En la sección 5  hablamos del lema de Yoneda. Este lema nos da información acerca de la cateogoría de funtores que van de una categoría localmente pequeña a la categoría de conjuntos, y tiene una consecuencia importante que se llama encaje de Yoneda, que básicamente nos dice que toda categoría localmente pequeña está encajada en la categoría de funtores que van de dicha categoría a la categoría de conjuntos, y a sabiendas de que la categoría de conjuntos es una categoría completa, esto nos dice básicamente que toda categoría localmente pequeña está encajada en una categoría completa.
+
+La sección 6 introduce el concepto de adjunción, el cúal es uno de las más importantes en la teoría de categorías. Pasa que aunque podemos hablar de isomorfismos de categorías, esto muchas veces es complicado de que se de en las ramas de las matemáticas conocidas, lo que si es común son las adjunciones, y estás se pueden interpretar como una manera de debilitar la noción de isomorfismo, de hecho llamamos equivalencia de categorías cuando una adjunción satisface unas propiedades particulares. Esta idea de adjunción es tan importante que de manera intuitiva, esta relación entre el \textquotedblleft contexto\textquotedblright  espacial y el \textquotedblleft contexto\textquotedblright  algebraico, que mencionamos al inicio, lo podemos ver como una adjunción; que es justo de lo que habla la sección 7 de estas notas, una adjunción entre la categoría de espacios topológicos y la categoría de marcos. 
+
+\newpage
 \tableofcontents
 
+\newpage
 \section{Conceptos básicos}\label{Conceptos basicos}
-
 \begin{dfn}[Categoría]\label{Definicion categoria}
  Una \emph{categoría} $\mathcal{C}$ consiste de los siguientes datos:
  \begin{enumerate}
@@ -86,8 +99,7 @@ PENDIENTE
         que llamamos \emph{dominio de} $f$, y un objeto de llegada 
         $\Cod(f)\in\Obj(\C)$, que llamamos \emph{codominio de} $f$. Toda la información
         que carga una flecha se condensa en la notación $f:\Dom(f)\to\Cod(f)$\footnote{
-        Aunque la notación sugiere que $f$ es una función, en general no lo es. Además podemos
-        usar la notación de diagrama $A\xrightarrow{f}B$}. 
+        Aunque la notación sugiere que $f$ es una función, en general no lo es.}. 
 
         A la colección de flechas de la categoría la denotaremos por $\Fle(\C)$. Y a la colección 
         de flechas con dominio $A$ y codominio $B$ la denotaremos por $\C(A,B)$.
@@ -99,7 +111,7 @@ PENDIENTE
             \item Para cualesquiera objetos $A,B,C,D\in\Obj(\C)$, y flechas $f:A\to B,g:B\to C$ y $h:C\to D$, se tiene que:
             $$h\circ(g\circ f) = (h\circ g)\circ f.$$
             
-            \item Para todo objeto $A\in\Obj(\C)$, existe $\id_A\in\Hom_\C( A,A)$ tal que cualquier objeto $B\in\Obj(\C)$ y flechas $g\in\Hom_\C(A,B)$, $h\in\Hom_\C(B,A)$ satisfacen:
+            \item Para todo objeto $A\in\Obj(\C)$, existe $\id_A\in\C( A,A)$ tal que cualquier objeto $B\in\Obj(\C)$ y flechas $g\in\C(A,B)$, $h\in\C(B,A)$ satisfacen:
             $$g\circ \id_A=g\text{ y }\id_A\circ h=h.$$
         \end{itemize}
  \end{enumerate}
@@ -228,18 +240,82 @@ y epimorfismo para ser isomorfismo, si es suficiente que sea sección y retracto
 
 Ejemplos de categorías, en cada ejemplo decir que son Isos, monos, epis, secciones y retractos...
 
-Ahora queremos abordar dos conceptos importantes, el de \textquotedblleft propiedad universal\textquotedblright y el de \textquotedblleft dualidad\textquotedblright .
-Empezaremos por el concepto de \textquotedblleft dualidad\textquotedblright , ya que de cierta forma lo hemos mencionado anteriormente. Resulta que los conceptos de
-monomorfismo y epimorfismo son conceptos duales; así como el de sección y retracto. Para ver esto hay que notar que esencialmente la diferencia 
-entre los dos conceptos (monomorfismos y epimorfismos, ó, secciones y retractos, respectivamente) solo está en la dirección de las flechas. 
-Definamos lo que es la categorías dual de una categoría. 
+\begin{ej}[Categorías discretas]
+    Consideremos una colección arbitraria $A$, esta colección puede representar una categoría, considerando a cada elemento de $A$ como un objeto, podemos
+    simplemente decir que las únicas flechas son las identidades de cada objeto, y por lo tanto la regla de composición es trivial.
+    Cualquier categoría $\C$ que satisfaga que hay una biyección entre su colección de objetos $\Obj(\C)$ y su colección de flechas $\Fle(\C)$, le llamamos
+    \emph{categoría discreta}. En este tipo de categorías, cada flecha es un isomorfismo, y por lo tanto también es un monomorfismo, epimorfismo, sección y retracto.
+\end{ej}
+
+\begin{ej}[Categorías Concretas]
+    Aún no podemos definir formalmente lo que es una categoría concreta, pero esencialmente son categorías donde sus objetos pueden ser vistos como conjuntos
+    con estructuras adicionales, y sus flechas como funciones entre estos conjuntos que preservan las estructuras.
+    \begin{itemize}
+        \item El ejemplo más sencillo de categoría concreta es la categoría de conjuntos $\Con$, donde los objetos son conjuntos y las flechas son funciones.
+        No es complicado verificar que los isomorfismos son funciones biyectivas. Esta categoría satisface que para una función es equivalente ser monomorfismo a
+        ser sección a ser inyectiva; y es equivalente ser epimorfismo a ser retracto a ser sobreyectiva.
+        \item La categoría de grupos $\Grp$ es otra categoría concreta, donde los objetos son grupos y las flechas son homomorfismos de grupos. en esta categoría
+        los isomorfismos son precisamente los homomorfismos biyectivos. Se cumple que es equivalente ser monomorfismo a ser inyectiva; y es equivalente ser
+        epimorfismo a ser sobreyectiva. Sin embargo, no es equivalente ser sección a ser inyectiva, ni ser retracto a ser sobreyectiva.
+        \item La categoría de espacios topológicos $\Top$ es otra categoría concreta, donde los objetos son espacios topológicos y las flechas son funciones
+        continuas. En esta categoría, los isomorfismos son los homeomorfismos, los monomorfismos son las funciones inyectivas continuas, y los epimorfismos
+        son las funciones sobreyectivas continuas. Sabemos que en los dos ejemplos anteriores, que una flecha sea monomorfismo y epimorfismo es equivalente
+        a que sea un isomorfismo, pero en esta categoría no pasa eso, ya que no es suficiente tener una función biyectiva y continua para que sea un 
+        homeomorfismo. De nuevo en esta categoría monomorfismos y secciones no son equivalentes, ni epimorfismos y retractos. 
+        \item Dado un campo $K$, tenemos la categoría $\Vect_K$ de espacios vectoriales sobre $K$, donde los objetos son espacios vectoriales con escalares
+        en $K$ y las flechas son transformaciones lineales. En esta categoría, los isomorfismos son precisamente las transformaciones lineales biyectivas. 
+        De nuevo es equivalente ser monomorfismo a ser inyectiva, ser epimorfismo a ser sobreyectiva, y ser isomorfismo a ser monomorfismo y epimorfismo, pero
+        no es equivalente ser sección a ser inyectiva, ni ser retracto a ser sobreyectiva.
+        \item La categoría $\Ring$ de anillos con identidad, donde los objetos son anillos con identidad y las flechas son homomorfismos de anillos, funciones
+        que preservan las operaciones del anillo, la identidad y el cero. En esta categoría, los isomorfismos son los homomorfismos biyectivos, de nuevo es
+        equivalente ser monomorfismo a ser inyectiva, pero no todos los epimorfismos son sobreyectivos, y por lo tanto tampoco es equivalente ser isomorfismo
+        a ser monomorfismo y epimorfismo. Sugerimos como ejercicio al lector probar que la inclusión de $\Z$ en $\Q$ es un epimorfismo en $\Ring$. Y con las secciones y
+        retractos tenemos el mismo caso que en los ejemplos anteriores (con excepción de $\Con$).
+        \item La categoría $\Frm$ de marcos, donde los objetos, llamados marcos, son conjuntos parcialmente ordenados que tienen elemento tope, elemento fondo, supremos arbitrarios,
+        ínfimos finitos y estos dos últimos son distributivos entre sí; y las flechas son funciones monótonas que preservan el tope, el fondo, los supremos arbitrarios
+        y los ínfimos finitos. Las caracterizaciones de isomorfismos, monomorfismos y epimorfismos son básicamente las mismas que en $\Con$, pero de nuevo,
+        como en otras categorías, las secciones y retractos no son equivalentes a los monomorfismos y epimorfismos, respectivamente.
+    \end{itemize}
+\end{ej}
+
+\begin{ej}[Monoides]
+    Consideremos un monoide $M$, es decir, un conjunto con una operación binaria asociativa y un elemento neutro. 
+    Podemos verlo como una categoría que tiene un solo objeto, y cada flecha, que es un endomorfismo del único objeto, está representada por un elemento
+    del monoide. La regla de composición es la operación del monoide, lo que da la asociatividad, y el elemento neutro del monoide es la flecha identidad
+    del único objeto. En este tipo de categorías, los isomorfismos son precisamente los elementos invertibles del monoide, las secciones y retractos son los
+    elementos que tienen inverso a la izquierda y derecha respectivamente, y los monomorfismos y epimorfismos son los elementos cancelables por la izquierda
+    y derecha, respectivamente. Veamos algunas categorías de este tipo:
+    \begin{itemize}
+        \item El monoide de los naturales $\N$ con la multiplicación como operación binaria. Esta categoría tiene un isomorfismo, el $1$, y todos
+        los demás elementos son monomorfismos y epimorfismos simultáneamente, pero ninguno es una sección o un retracto. De hecho en este caso particular, como
+        el monoide es conmutativo, tanto las nociones de monomorfismo y epimorfismo son equivalentes, como las nociones de sección y retracto.
+        \item El monoide de los enteros $\Z$ con la suma. Esta categoría solo tiene isomorfismos, y sabemos que es un grupo, entonces en particular 
+        los grupos son categorías con un único objeto donde todos los morfismos son isomorfismos.
+    \end{itemize}
+\end{ej}
+
+\begin{ej}[Categorías delgadas]\label{categoria delgada}
+    Una categoría $\C$ es \emph{delgada} si para cualquier par de objetos $A,B\in\Obj(\C)$, la colección de flechas $\C(A,B)$ tiene a lo más un elemento.
+    Notemos que esto es equivalente a tener una colección arbitraria $A$, y tener un preorden sobre $A$, es decir, una relación binaria $\leq$ sobre $A$ 
+    reflexiva y transitiva. Entonces podemos ver al preorden $(A,\leq)$ como una categoría que tiene como objetos los elementos de $A$ y simplemente decimos que hay
+    una única flecha de $a$ a $b$ si y solo si $a\leq b$; la regla de composición está dada por la transitividad de la relación, que es asociativa trivialmente 
+    (pues a lo mucho hay una única flecha entre dos objetos), y la identidad de cada objeto viene dada por la reflexividad de la relación. En este tipo de categorías
+    todas las flechas son monomorfismos y epimorfismos, pero solo son secciones y retractos si son isomorfismos.
+\end{ej}
+
+Ahora queremos abordar dos conceptos importantes, el de \textquotedblleft universalidad\textquotedblright y el de \textquotedblleft dualidad\textquotedblright . Empezaremos por el segundo.
+
+\subsection{Dualidad}
+Notemos que esencialmente la diferencia entre los conceptos de monomorfismo y epimorfismo, o de sección y retracto, solo está 
+en la dirección de las flechas. En esta última observación está la clave para entender el concepto de dualidad. Antes de dar una definición más formal 
+definamos lo que es la categorías dual de una categoría. 
 
 \begin{dfn}[Categoría opuesta o dual]
     Sea $\C$ una categoría. Denotaremos como $\C^\op$ (o $\C^\ast$) a la categoría \emph{opuesta o dual} de $\C$, la cual está determinada de la siguiente manera:
     \begin{itemize}
         \item Los objetos de $\C^\op$ son los mismos que los de $\C$. $\Obj(\C^\op)=\Obj(\C)$.
         \item Los morfismos de $\C^\op$ son \textquotedblleft casi\textquotedblright  los mismos que $\C$, en el sentido de que para cualesquiera
-        objetos $A,B\in\C^\op$ definimos $\C^\op(A,B):=\C(B,A)$. Se puede decir simplemente que cada flecha en $\C$ toma la \textquoteleft dirección opuesta\textquotedblright .
+        objetos $A,B\in\C^\op$ definimos $\C^\op(A,B):=\C(B,A)$. Se puede decir simplemente que cada flecha en $\C$ toma la \textquotedblleft dirección opuesta\textquotedblright .
         \item La regla de composición la definimos en base a la regla de composición de $\C$ de tal manera que dadas dos flechas $A\xrightarrow{f}B\xrightarrow{g}C\in\C^\op$ entonces:
         $$g\circ_\op f:=f\circ g$$
     \end{itemize}
@@ -254,13 +330,22 @@ los monomorfismos y las secciones son duales a los epimorfismos y los retractos,
 los monomorfismos son duales a los epimorfismos, y recomendamos probar de ejercicio la dualidad entre sección y retracto.
 
 \begin{prop}
-    Sea $\C$ una categoría. Una flecha $A\xrightarrow{f}B\in\C$ es un monomorfismo (epimorfismo) si y solo si $B\xrightarrow{f}A\in\C^\op$ es un epimorfismo (monomorfismo).
+    Sea $\C$ una categoría. Una flecha $A\xrightarrow{f}B\in\C$ es un monomorfismo si y solo si $B\xrightarrow{f}A\in\C^\op$ es un epimorfismo.
 \end{prop}
 \begin{proof}
-    Pendiente
+    Supongamos que $f$ es un monomorfismo en $\C$, y sean dos flechas $A\overset{\alpha}{\underset{\beta}{\rightrightarrows}}X\in\C^\op$ tales que
+    $\alpha\circ^\op f=\beta\circ^\op f$ en $\C^\op$. Entonces, por la definición de la composición de flechas en $\C^\op$, tenemos que
+    $f\circ\alpha=\beta\circ f$ en $\C$. Como $f$ es un monomorfismo, esto implica que $\alpha=\beta$. Por lo tanto, $f$ es un epimorfismo en $\C^\op$.
+
+    Ahora supongamos que $f$ es un epimorfismo en $\C^\op$, y sean dos flechas $X\overset{\alpha}{\underset{\beta}{\rightrightarrows}}A\in\C$ tales que
+    $f\circ\alpha=f\circ\beta$ en $\C$. Entonces, por la definición de la composición de flechas en $\C^\op$, tenemos que
+    $\alpha\circ^\op f=\beta\circ^\op f$ en $\C^\op$. Como $f$ es un epimorfismo en $\C^\op$, esto implica que $\alpha=\beta$. Por lo tanto, $f$ es un monomorfismo en $\C$.
 \end{proof}
 
-Una propiedad universal es...
+\subsection{Universalidad}
+
+Pensemos en una categoría $\C$, y consideremos un objeto $U\in\C$ que satisface unas propiedades con respecto a algunas flechas en la categoría. La universalidad de $U$ se refiere a que esas propiedades que satisfece con respecto a algunas flechas, son \textquotedblleft esenciales\textquotedblright  
+para \textquotedblleft describir\textquotedblright de manera única cualesquiera otras propiedades, sobre las mismas flechas, que pueda llegar a tener otro objeto de la categoría. En tal caso decimos que también $U$ satisface una \emph{propiedad universal}. Veamos algunos ejemplos de propeidades universales.
 
 \begin{dfn}[Objeto inicial y final]
     Sea $\C$ una categoría y $A\in\C$.
@@ -270,7 +355,21 @@ Una propiedad universal es...
     \end{enumerate}
 \end{dfn}
 
-Ejemplos... En el ejemplo de grupos mencionar la definición de \emph{objeto cero}
+\begin{ej}
+    \begin{itemize}
+        \item En la categoría de conjuntos $\Con$, el conjunto vacío es un objeto inicial, y cualquier conjunto unipuntual es un objeto final.
+        \item En la categoría de grupos $\Grp$, el grupo trivial es un objeto incial y final simultáneamente. En general esto puede pasar, y cuando un objeto
+        es inicial y final simultáneamente, lo llamamos \emph{objeto cero}.
+        \item Consideremos la categoría delgada $(\Z,\ |\ )$, de los enteros con el preorden de divisibilidad, como se describe en el 
+        ejemplo \ref{categoria delgada}. En esta categoría $1$ y $-1$ son objetos iniciales; y el $0$ es un objeto final. 
+    \end{itemize}
+\end{ej}
+
+Como vemos estas propiedades universales descritas, no son sobre ninguna flecha, de hecho podemos decir que es sobre un conjunto vacío de flechas. En las sección
+de límites veremos que esto tiene mucho sentido y que de hecho cualquier propiedad universal puede ser vista como un límite o un colímite. Antes de mirar otras
+propiedades universales, queremos recordar que muchas veces para hacer referencia a un objeto junto con algunas flechas, muchas veces usamos la notación
+de diagrama; con esta idea, de cierta forma podemos decir que las propiedades universales son propiedades de los diagramas que tienen un objeto cde cierta forma
+\textquotedblleft central\textquotedblright .
 
 \begin{dfn}[Producto]
     Sea $\C$ una categoría y sean $A,B\in\C$ dos objetos. El \emph{producto} de $A$ con $B$ es un diagrama \begin{tikzcd}
@@ -287,8 +386,7 @@ Ejemplos... En el ejemplo de grupos mencionar la definición de \emph{objeto cer
           \end{tikzcd}\]
 \end{dfn}
 
-\begin{dfn}
-    [Coproducto]
+\begin{dfn}[Coproducto]
     Sea $\C$ una categoría y sean $A,B\in\C$ dos objetos. El \emph{coproducto} de $A$ con $B$ es un diagrama \begin{tikzcd}
                 & C &                          \\
         A \arrow[ru, "\iota_A"] &   & B \arrow[lu, "\iota_B"']
@@ -303,7 +401,21 @@ Ejemplos... En el ejemplo de grupos mencionar la definición de \emph{objeto cer
         \end{tikzcd}\]
 \end{dfn}
 
-Ejemplos... En ejemplo de espacios vectoriales hacer notar que un mismo objeto puede ser producto o coproducto dependiendo de los morfismos a los que esté asociado
+\begin{ej}
+    \begin{itemize}
+        \item En $\Con$, el producto de $A$ y $B$ es el producto cartesiano $A\times B$, junto a las proyecciones 
+        $\pi_1:A\times B\to A$ y $\pi_2:A\times B\to B$, definidas como $\pi_1(a,b)=a$ y $\pi_2(a,b)=b$. Y el coproducto es la unión disjunta 
+        $A\sqcup B=(A\times\{1\})\cup(B\times\{2\})$ junto a las inclusiones $\iota_1:A\to A\sqcup B$ y $\iota_2:B\to A\sqcup B$, definidas como 
+        $\iota_1(a)=(a,1)$ y $\iota_2(b)=(b,2)$. 
+        \item Consideremos un campo $K$ y la categoría $\Vect_K$ de espacios vectoriales sobre $K$. Veamos como las flechas asociadas al objeto que decimos
+        que satisface la propiedad universal, son realmente importantes. En esta categoría, el espacio vectorial $V\times W$ junto a los morfismos
+        $\pi_V:V\times W\to V$ y $\pi_W:V\times W\to W$ (definidos como en el punto anterior) son un producto en la categoría $\Vect_K$; y si consideramos 
+        los morfismos $\iota_V:V\to V\times W$ y $\iota_W:W\to V\times W$, definidos como $\iota_V(v)=(v,0)$ y $\iota_W(w)=(0,w)$, ahora es un coproducto. 
+        \item Consideremos de nuevo la categoría delgada $(\Z,\ |\ )$. En esta categoría el producto de dos objetos $a,b\in\Z$ es el máximo común divisor
+        $mcd(a,b)$, junto a los únicos morfismos que hay entre $mcd(a,b)$ y $a$, o $b$. Y el coproducto de $a$ y $b$ es el mínimo común múltiplo $mcm(a,b)$, 
+        de nuevo junto a los únicos morfismos que hay entre $a$, o $b$, y $mcm(a,b)$.    
+    \end{itemize}
+\end{ej}
 
 \begin{dfn}[(Co)Igualador]
     Sea $\C$ una categoría y sean dos flechas $A\overset{f}{\underset{g}{\rightrightarrows}}B\in\C$.
@@ -366,16 +478,24 @@ Ejemplos... En ejemplo de espacios vectoriales hacer notar que un mismo objeto p
     \end{enumerate}
 \end{dfn}
 
-Ejemplos de productos, igualadores y productos fibrados, dejar como ejercicio buscar la construcción dual de cada ejemplo dado.
 
-\begin{thm}
-    Sea $\C$ una categoría con productos e igualadores. Entonces $\C$ tiene productos fibrados. 
-\end{thm}
-\begin{proof}
-    PENDIENTE
-\end{proof}
+\subsection{Ejercicios sugeridos de esta sección}
+\begin{ex}[Secciones, Retractos e isomorfismos]
+    Sea $\C$ una categoría y $A\xrightarrow{f}B\in\C$ una flecha. $f$ es un isomorfismo si y solo si $f$ es una sección y un retracto.
+\end{ex}
 
-Ejercicio enunciar y demostrar el teorema dual.
+\begin{ex}[Homomorfismo de anillos que es monomorfismo y epimorfismo y no es biyectivo]
+    Demuestra que para cualquier anillo $R\in\Ring$ y culaes quiera homomorfismos de anillos $\Q\overset{\alpha}{\underset{\beta}{\rightrightarrows}}R\in\Ring$. Si $\alpha(z)=\beta(z)$ para todo $z\in\Z\subseteq\Q$, 
+    entonces $\alpha=\beta$.
+\end{ex}
+
+\begin{ex}[Categoría opuesta]
+    Dada una categoría $\C$, demuestra que la regla de composición definida para $\C^\op$ es asociativa y que cada objeto tiene su flecha identidad.
+\end{ex}
+
+\begin{ex}[Dualidad entre sección y retracto]
+    Sea $\C$ una categoría. Demuestra que una flecha $A\xrightarrow{f}B\in\C$ es una sección si y solo si $B\xrightarrow{f}A\in\C^\op$ es un retracto.
+\end{ex}
 
 \section{Funtores}
 
@@ -415,7 +535,7 @@ En este sentido podemos decir que es otro tipo de funtor:
 Por lo comentado previo a la definición anterior, queda claro que es equivalente tener un funtor $F:\A^\op\to\B$ a tener un funtor contravariante $F:\A\to\B$.
 Dejamos como ejercicio al lector hacer la prueba de que también es equivalente tener un funtor $F:\A\to\B^\op$ a tener un funtor contravariante $F:\A\to\B$.
 
-Ejemplos de funtores... entre ellos la identidad. Funtores de olvido Dar definición de funtor fiel y pleno. Funtores "libres", Funtores Homs, Funtor de abiertos, Morfismos de copos, morfismos de grupos. 
+Ejemplos de funtores... entre ellos la identidad. Funtores de olvido Dar definición de funotr fiel y pleno. Funtores "libres", Funtores Homs, Funtor de abiertos, Morfismos de copos, morfismos de grupos. 
 Y quiero dar un contra ejemplo que la conclusión es que sacar el centro de un grupo y verlo como un funtor de $\Grp$ a $\Ab$
 
 \begin{prop}
@@ -426,7 +546,7 @@ Y quiero dar un contra ejemplo que la conclusión es que sacar el centro de un g
     PENDIENTE
 \end{proof}
 
-La proposición anterior nos dice como está definida la composición de funtores. Dejamos para el lector el ejercicio de probar que para cualquier funtor $\A\xrightarrow{F}\B$, se tiene que $F\circ\id_\A=\id_\B\circ F$.
+La proposición anterior nos dice como está definida la composición de funtores. Dejamos para el lector el ejercico de probar que para cualquier funtor $\A\xrightarrow{F}\B$, se tiene que $F\circ\id_\A=\id_\B\circ F$.
 Veamos ahora que la composición es asociativa.
 
 \begin{prop}
@@ -437,72 +557,15 @@ Veamos ahora que la composición es asociativa.
 \end{proof}
 
 Hemos probado que los funtores y su regla de composición satisfacen de cierta forma lo que pedimos para las flechas de una categoría, por lo que es natural preguntarse
-¿Es posible hablar de la categoría de categorías?. No como tal, hay algunos detalles técnicos fundacionales por los que no es tan simple hablar de algo tan inmenso. Una manera de
+¿Es posible hablar de la categoría de categorías?. No como tal, hay algunos detalles técnicos fundacionales por los que no es tán simple hablar de algo tan inmenso. Una manera de
 tratar con este problema está en el libro Abstract and Concrete Categories The Joy of Cats escrito por Jiˇr´ıAd´amek, Horst Herrlich y George E. Strecker, donde se define la 
 \emph{quasicategoría} $\CAT$ cuyos objetos son todas las categorías y las flechas son los funtores. No es nuestra intensión abordar este tema a fondo, 
 solo dar una fuente para que el lector pueda investigar un poco más a fondo el tema. Sin embargo queremos hacer notar que de igual forma podemos
-hablar de categorías que satisfacen propiedades universales (inicial, final, productos, coproductos, etc...) e isomorfismos de categorías.
+hablar de categorías que satisfacen propiedades universales (incial, final, productos, coproductos, etc...) e isomorfismos de categorías.
 
 \section{Transformaciones naturales}
 
-Al haber introducido este nuevo objeto de funtor, de nuevo es natural pensar si podemos tener flechas entre funtores. Y esto es posible siempre que los funtores
-compartan dominio y codominio.
 
-\begin{dfn}
-    Sean $\A,\B$ dos categorías y $\A\overset{F}{\underset{G}{\rightrightarrows}}\B$ dos funtores. Una \emph{transformación natural} de $F$ a $G$
-    es una colección de flechas $\alpha=\{F(A)\xrightarrow{\alpha_A}G(A) \ |\ A\in\Obj(\A)\}\subseteq\B$ tal que para cada flecha $A\xrightarrow{f}B\in\A$ el siguiente diagrama conmuta
-    \[\begin{tikzcd}
-        {F(A)} & {G(A)} \\
-        {F(B)} & {G(B)}
-        \arrow["{\alpha_A}", from=1-1, to=1-2]
-        \arrow["{F(f)}"', from=1-1, to=2-1]
-        \arrow["{G(f)}", from=1-2, to=2-2]
-        \arrow["{\alpha_B}"', from=2-1, to=2-2]
-    \end{tikzcd}\]
-
-    Cada flecha $\alpha_A$ se llama componente en $A$ de $\alpha$.
-\end{dfn}
-
-En general usaremos la notación $\alpha:F\Rightarrow G$ para referirnos a una transformación natural $\alpha$ de $F$ a $G$. Para la notación de diagrama tenemos, además
-de la natural $F\xRightarrow{\alpha}G$, una notación que deja ver también las categorías involucradas entre los funtores:
-\[
-\begin{tikzcd}
-	\A && \B
-	\arrow[""{name=0, anchor=center, inner sep=0}, "F", shift left=2, out=20, in=160, from=1-1, to=1-3]
-	\arrow[""{name=1, anchor=center, inner sep=0}, "G"', shift right=2, out=340, in=200, from=1-1, to=1-3]
-	\arrow["\alpha"', shorten <=3pt, shorten >=3pt, Rightarrow, from=0, to=1]
-\end{tikzcd}
-\]
-
-Ejemplos... 
-
-Veamos ahora que como es la composición de transformaciones naturales.
-
-\begin{prop}
-    Sean 
-    \[
-    \begin{tikzcd}
-    \A && \B
-    \arrow[""{name=0, anchor=center, inner sep=0}, "F", shift left=2, out=20, in=160, from=1-1, to=1-3]
-    \arrow[""{name=1, anchor=center, inner sep=0}, "H"', shift right=2, out=340, in=200, from=1-1, to=1-3]
-    \arrow[""{name=2, anchor=center, inner sep=0}, "G"{description}, from=1-1, to=1-3]
-    \arrow["\alpha"', shorten <=2pt, shorten >=2pt, Rightarrow, from=0, to=2]
-    \arrow["\beta"', shorten <=2pt, shorten >=2pt, Rightarrow, from=2, to=1]
-\end{tikzcd}
-    \]
-    
-    funtores y transformaciones naturales. Entonces la familia de morfismos 
-    $\beta\circ\alpha:=\{F(A)\xrightarrow{\beta_A\circ\alpha_A}H(A) \ |\ A\in\Obj(\A)\}\subseteq\B$
-    es una transformación natural de $F$ a $H$
-\end{prop}
-\begin{proof}
-    PENDIENTE
-\end{proof}
-
-Notemos que las componentes de una composición son exactamente la composición de las componentes. Dejamos al lector verificar que la composición
-es además asociativa ya que basta verificar que componente a componente lo es, y como cada componente es una flecha en una categoría, debe ser asociativa.
-Todo esto lo mencionamos para definir la categoría de funtores entre dos categorías $[\A,\B]$, donde los objetos son funtores de $\A$ a $\B$ y las flechas
-son transformaciones naturales. Más adelante, en la sección del lema de Yoneda, veremos detalles sobre la categoría de funtores $[\A,\Con]$ donde $\A$ es localmente pequeña.
 
 \section{Límites y colímites}
 
@@ -538,11 +601,12 @@ Si el límite de un diagrama $D$ existe, normalmente denotamos al vértice de su
 
 Conceptos duales...
 
-Observaciones entre las propiedades universales mencionadas antes, límites colímites...
+Obervaciones entre las propiedades universales mencionadas antes y (co)límites...
 
 \begin{dfn}
     Decimos que una categoría $\C$ es \emph{completa}, si para cada categoría pequeña $I$, todo diagrama $D:I\to\C$ tiene límite en $\C$
 \end{dfn}
+
 
 \begin{thm}
     Sean $\A$ y $\C$ dos categorías. Si $\C$ es completa, entonces $[\A,\C]$ es completa
@@ -551,10 +615,9 @@ Observaciones entre las propiedades universales mencionadas antes, límites col�
     PENDIENTE
 \end{proof}
 
-
 \section{Lema de Yoneda}
 
-Introducción sobre el lema de Yoneda, mención y demostración... o solo un sketch suficientemente convincente de que funciona la prueba
+Introducción sobre el lema de yoneda, enunción y demostración...
 
 \section{Adjunciones}
 
@@ -772,7 +835,7 @@ de manera análoga a la anterior tenemos un funtor $(\_)^{\square}\colon \EuScri
   \end{enumerate}
 \end{itemize}
 
-\section[Mon]{Monadas} 
+\subsection[Mon]{Monadas} 
 De acuerdo con nuestros problemas sin sentido, es decir, la factorización que queremos construir para $T\colon\C\rightarrow\C$, necesitamos que exista una adjunción $\D$ y funtores $F\colon \C\rightarrow\D$,
 y $G\colon \D\rightarrow \C$ tal que: \[T=GF\;\;\;\; F\dashv G.\], entonces tenemos que asegurar que existan
   flechas \[\eta\colon id\_{\C}\rightarrow GF\text{ y }\;\; \epsilon\colon FG\rightarrow id_{\D}\] de tal manera que para todo $A\in\C$ y para todo $D\in\D$ los triángulos:
@@ -862,7 +925,7 @@ Si $(F,G,\eta,\epsilon)$ son datos de una adjunción con $F\colon \C\rightarrow\
 
 Resulta (o debería de ser) que esta definición es suficiente para tener la factorización dada, para realmente justificar esto necesitamos un poco mas de trabajo.
 
-\section{Ternas de Kleisli}\label{KLEI}
+\subsection{Ternas de Kleisli}\label{KLEI}
 
 La definición de monada que dimos \ref{mona} se derivo de la definición de adjunción dada por las identidad triangulares, pero como sabemos existen tres formas clásicas de definir adjunción veamos que sucede con la dada por flechas universales.
 requiere la existencia de un funtor $G\colon\D\rightarrow \C$ y una asignación (no se requiere funtorialidad) $F$ que solo actúe en objetos de $\C$ a objetos de $\D$, pero esto esta subyugado al hecho de que para cada objeto $A\in\C$ y cada flecha
@@ -1016,7 +1079,7 @@ y así recuperamos la monada con la que empezamos.
 
 Esto esta bien, ya tener dos opciones para cocinar la factorización que estamos buscando, pero aún así necesitamos una solución \emph{universal}.
 
-\section{Solución de Kleisli}\label{SOLKLEI}
+\subsection{Solución de Kleisli}\label{SOLKLEI}
 
 La solución que describiremos aquí es debida a Kleisli en su celebra artículo Every standard construction is induced by a pair of adjoint functors (habrá que ponerlo en la biblio)
 Esta construcción empieza con una adjunción $F\dashv G$ donde ya esta tenemos a la categoría $\EuScript{D}$ que soluciona el problema de factorización, es decir tenemos:
@@ -1102,7 +1165,7 @@ Dada una monada $(T,\eta,\mu)$ en una categoría $\EuScript{C}$,
 
 En la práctica ya que estamos hablando de objetos en la categoría de adjunciones de una categoría agradable, podríamos preguntarnos si tal categoría tiene objeto final.
 
-\section{La solución de Eilenberg y Moore}\label{EMSOL}
+\subsection{La solución de Eilenberg y Moore}\label{EMSOL}
 
 En efecto construyamos el objeto final en la categoría de posibles adjunciones que factoricen una monada dada.
 
@@ -1651,7 +1714,7 @@ un único morfismo $f:A\to\Cal OS$ tal que el diagrama
 \]
 conmuta.
 
-\section[Álgebras para la adjunción]{Álgebras para la adjunción $\spec\dashv \mathcal{O}$}
+\subsection[Álgebras para la adjunción]{Álgebras para la adjunción $\spec\dashv \mathcal{O}$}
 
 En esta sección usaremos lo aprendido en las sección \ref{SECMON} y la sección anterior, 
 
@@ -1671,11 +1734,6 @@ tenemos una adjunción:
 
 que como se espera esta se restringe a una equivalencia, que se le conoce como la equivalencia de Stone entre retículas distributivas y espacios coherentes (espectrales).
 
-\begin{thebibliography}{99}
-  \bibitem{P.T.} P. T. Johnstone, \textit{Stone spaces}, Cambridge Studies in Advanced Mathematics, vol. 3, Cambridge University Press, Cambridge, 1982. MR 698074
-  
-  \bibitem{J.P.} J. Picado and A. Pultr, \textit{Frames and locales: Topology without points}, Frontiers in Mathematics, Springer Basel, 2012.
-\end{thebibliography}
 
 \end{document}
 %  COMPILE EL TRABAJO DOS VECES PARA QUITAR ALGUNOS WARNINGS 
