@@ -617,11 +617,11 @@ Obervaciones entre las propiedades universales mencionadas antes y (co)límites.
 
 \section{Lema de Yoneda}
 
-Introducción sobre el lema de yoneda, enunción y demostración...
+Introducción sobre el lema de Yoneda, enunciación y demostración...
 
 \section{Adjunciones}
 
-En general, dadas dos categorías y dos functores entre ellas, es muy difícil saber a priori cuando estos functores forman una equivalencia, por eso se buscó las condiciones mínimas que se pueden exigir para tratar a dichas categorías 'como si fueran equivalentes'. De esta idea surgió el concepto de adjunción.
+En general, dadas dos categorías y dos funtores entre ellas, es muy difícil saber a priori cuando estos funtores forman una equivalencia, por eso se buscó las condiciones mínimas que se pueden exigir para tratar a dichas categorías 'como si fueran equivalentes'. De esta idea surgió el concepto de adjunción.
 \begin{dfn}
 	Dadas dos categorías $\mathcal{C,D}$ y dos functores $F:\mathcal{C\to D}$, $G:\mathcal{C\to D}$, diremos que $F$ es el adjunto izquierdo de $G$ (o que $G$ es el adjunto derecho de $F$), denotado $F\dashv G$, si existe un isomorfismo natural $\Hom_\mathcal{D}(F(A),B)\simeq \Hom_\mathcal{C}(A,G(B))$ para cualesquiera objetos $A$ en $\mathcal{D}$ y $B$ en $\mathcal{C}$, es decir, para cualesquiera morfismos $f:A'\to A$
 	en $\mathcal C$ y $g:B\to B'$ en $\mathcal D$,
@@ -641,7 +641,7 @@ En general, dadas dos categorías y dos functores entre ellas, es muy difícil s
 	\end{tikzcd}
 	\]
 \end{dfn}
-La definición anterior quiere decir que hay un iso natural entre los functores.
+La definición anterior quiere decir que hay un iso natural entre los funtores.
 
 \begin{obs}\label{adjcomp}
 	Supongamos que tenemos $F\dashv G$ funtores adjuntos entre $\mathcal{C}$ y $\mathcal{D}$, dadas flechas $(FA\xrightarrow p B)\in\mathcal{D}$ y $(A\xrightarrow q GB)\in\mathcal{C}$ les corresponden flechas únicas $(A\xrightarrow{\Bar{p}}GB)$	y $(FA\xrightarrow{\Bar{q}}B)$,
