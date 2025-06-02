@@ -368,7 +368,7 @@ para \textquotedblleft describir\textquotedblright de manera única cualesquiera
 Como vemos estas propiedades universales descritas, no son sobre ninguna flecha, de hecho podemos decir que es sobre un conjunto vacío de flechas. En las sección
 de límites veremos que esto tiene mucho sentido y que de hecho cualquier propiedad universal puede ser vista como un límite o un colímite. Antes de mirar otras
 propiedades universales, queremos recordar que muchas veces para hacer referencia a un objeto junto con algunas flechas, muchas veces usamos la notación
-de diagrama; con esta idea, de cierta forma podemos decir que las propiedades universales son propiedades de los diagramas que tienen un objeto cde cierta forma
+de diagrama; con esta idea, de cierta forma podemos decir que las propiedades universales son propiedades de los diagramas que tienen un objeto
 \textquotedblleft central\textquotedblright .
 
 \begin{dfn}[Producto]
@@ -401,7 +401,7 @@ de diagrama; con esta idea, de cierta forma podemos decir que las propiedades un
         \end{tikzcd}\]
 \end{dfn}
 
-\begin{ej}
+\begin{ej}[(Co)Productos]
     \begin{itemize}
         \item En $\Con$, el producto de $A$ y $B$ es el producto cartesiano $A\times B$, junto a las proyecciones 
         $\pi_1:A\times B\to A$ y $\pi_2:A\times B\to B$, definidas como $\pi_1(a,b)=a$ y $\pi_2(a,b)=b$. Y el coproducto es la unión disjunta 
@@ -416,6 +416,13 @@ de diagrama; con esta idea, de cierta forma podemos decir que las propiedades un
         de nuevo junto a los únicos morfismos que hay entre $a$, o $b$, y $mcm(a,b)$.    
     \end{itemize}
 \end{ej}
+
+En general no queremos detenernos en muchos detalles sobre cada propiedad universal. Como ya notaron antes, es posible que varios objetos con diversos morfismos
+pueden satisfacer una misma propiedad universal, y esto no es problemático, ya que se puede probar que si dos objetos, junto a sus respectivas familias de morfismos,
+satisfacen una misma propiedad universal, estos objetos deben ser isomorfos; esta prueba lo haremos de manera más general en la sección de límites, donde veremos
+que todas las propiedades mencionadas en esta sección son un caso particular de límites de un diagrama. Antes de continuar, queremos mencionar que en general
+denotaremos el producto de dos objetos $A$ y $B$ como $A\times B$ y al coproducto como $A+B$. Además diremos que una categoría tiene (co)productos binarios
+si para cada pareja de objetos existe su (co)producto en la categoría.
 
 \begin{dfn}[(Co)Igualador]
     Sea $\C$ una categoría y sean dos flechas $A\overset{f}{\underset{g}{\rightrightarrows}}B\in\C$.
@@ -477,6 +484,28 @@ de diagrama; con esta idea, de cierta forma podemos decir que las propiedades un
                   
     \end{enumerate}
 \end{dfn}
+
+\begin{ej}[Igualadores y Productos fibrados]
+    \item En $\Con$ el igualador de dos funciones $f,g:A\to B$ es el conjunto $I=\{a\in A \ | \ f(a)=g(a)\}$ junto a la inclusión $\iota:I\to A$.
+    \item En $\Con$ el producto fibrado de dos funciones $f:A\to Z$ y $g:B\to Z$ es el conjunto $P_{f,g}=\{(a,b)\in A\times B \ | \ f(a)=g(b)\}$ junto
+    a las proyecciones del producto $A\times B$ restringidas a $P_{f,g}$.
+    \item En $\Grp$ el kernel de un homomorfismo $f:G\to H$ puede ser visto, tanto como un igualador de $f$ con el homomorfismo trivial; como el coproducto 
+    de $f$ con el único homomorfismo del grupo trivial a $H$
+\end{ej}
+Recomendamos como ejercicio comprobar las afirmaciones sobre el kernel de un homomorfismo, además buscar los coigualadores y coproductos fibrados en la 
+categoría de conjuntos.
+
+Ahora queremos presentar un pequeño teorema que relaciona varias propiedades universales que hemos mencionado, solo antes queremos decir que así como decimos
+que una cateogoría tiene (co)productos binarios, podemos decir que una categoría tiene (co)igualadores si para cada par de flechas de la forma adecuada,
+tienen (co)igualador en la categoría; también decimos que tiene (co)productos fibrados si para cada par de flechas con la forma adecuada, tienen (co)producto
+fibrado en la categoría.
+
+\begin{thm}
+    Sea $\C$ una categoría con productos e igualadores. Entonces $\C$ tiene productos fibrados.
+\end{thm}
+\begin{proof}
+
+\end{proof}
 
 
 \subsection{Ejercicios sugeridos de esta sección}
@@ -623,7 +652,7 @@ Introducción sobre el lema de Yoneda, enunciación y demostración...
 
 En general, dadas dos categorías y dos funtores entre ellas, es muy difícil saber a priori cuando estos funtores forman una equivalencia, por eso se buscó las condiciones mínimas que se pueden exigir para tratar a dichas categorías 'como si fueran equivalentes'. De esta idea surgió el concepto de adjunción.
 \begin{dfn}
-	Dadas dos categorías $\mathcal{C,D}$ y dos functores $F:\mathcal{C\to D}$, $G:\mathcal{C\to D}$, diremos que $F$ es el adjunto izquierdo de $G$ (o que $G$ es el adjunto derecho de $F$), denotado $F\dashv G$, si existe un isomorfismo natural $\Hom_\mathcal{D}(F(A),B)\simeq \Hom_\mathcal{C}(A,G(B))$ para cualesquiera objetos $A$ en $\mathcal{D}$ y $B$ en $\mathcal{C}$, es decir, para cualesquiera morfismos $f:A'\to A$
+	Dadas dos categorías $\mathcal{C,D}$ y dos funtores $F:\mathcal{C\to D}$, $G:\mathcal{C\to D}$, diremos que $F$ es el adjunto izquierdo de $G$ (o que $G$ es el adjunto derecho de $F$), denotado $F\dashv G$, si existe un isomorfismo natural $\Hom_\mathcal{D}(F(A),B)\simeq \Hom_\mathcal{C}(A,G(B))$ para cualesquiera objetos $A$ en $\mathcal{D}$ y $B$ en $\mathcal{C}$, es decir, para cualesquiera morfismos $f:A'\to A$
 	en $\mathcal C$ y $g:B\to B'$ en $\mathcal D$,
 	el siguiente diagrama es conmutativo:
 	\[
