@@ -486,14 +486,19 @@ si para cada pareja de objetos existe su (co)producto en la categoría.
 \end{dfn}
 
 \begin{ej}[Igualadores y Productos fibrados]
+    \begin{itemize}
     \item En $\Con$ el igualador de dos funciones $f,g:A\to B$ es el conjunto $I=\{a\in A \ | \ f(a)=g(a)\}$ junto a la inclusión $\iota:I\to A$.
     \item En $\Con$ el producto fibrado de dos funciones $f:A\to Z$ y $g:B\to Z$ es el conjunto $P_{f,g}=\{(a,b)\in A\times B \ | \ f(a)=g(b)\}$ junto
     a las proyecciones del producto $A\times B$ restringidas a $P_{f,g}$.
-    \item En $\Grp$ el kernel de un homomorfismo $f:G\to H$ puede ser visto, tanto como un igualador de $f$ con el homomorfismo trivial; como el producto fibrado 
+    \item En $\Grp$ el kernel de un homomorfismo $f:G\to H$ puede ser visto, tanto como un igualador de $f$ con el homomorfismo trivial; como el coproducto 
     de $f$ con el único homomorfismo del grupo trivial a $H$.
+    \end{itemize}
 \end{ej}
-Recomendamos como ejercicio comprobar las afirmaciones sobre el kernel de un homomorfismo, además buscar los coigualadores y coproductos fibrados en la 
-categoría de conjuntos.
+
+No haremos ejemplos de coigualadores y coproductos fibrados porque estos son un poco 
+complicados de construir, en el sentido de que se requiere definir una relación de equivalencia para definir el cociente que terminará siendo el \textquotedblleft coobjeto\textquotedblright  
+correspondiente. En términos categóricos, simplemente son conceptos duales, y en general, de ahora en adelante, buscaremos solo dar ejemplos de una dualidad de cada concepto, y dejar algún ejercicio
+para la otra dualidad. Recomendamos como ejercicio comprobar que en la categoría de grupos abelianos $\Ab$, el cokernel de un homomorfismo es un coproducto fibrado.
 
 Ahora queremos presentar un pequeño teorema que relaciona varias propiedades universales que hemos mencionado, solo antes queremos decir que así como decimos
 que una cateogoría tiene (co)productos binarios, podemos decir que una categoría tiene (co)igualadores si para cada par de flechas de la forma adecuada,
@@ -504,9 +509,37 @@ fibrado en la categoría.
     Sea $\C$ una categoría con productos e igualadores. Entonces $\C$ tiene productos fibrados.
 \end{thm}
 \begin{proof}
-
+    Sean dos flechas \begin{tikzcd}
+                    & A \arrow[d, "f"] \\
+        B \arrow[r, "g"'] & Z               
+        \end{tikzcd}$\in\C$. Como $\C$ tiene productos tenemos que existe $A\times B\in\C$ junto a las respectivas proyecciones. Entonces tenemos el par de flechas 
+        $A\times B\overset{f\circ\pi_A}{\underset{g\circ\pi_B}{\rightrightarrows}}Z\in\C$, y como $\C$ tiene igualadores, entonces existe $I\in\C$ junto a una flecha 
+        $e:I\to A\times B$ tal que $f\circ\pi_A\circ e=g\circ\pi_B\circ e$. Comprobemos que el diagrama conmutativo
+        \[\begin{tikzcd}
+            {I} \arrow[r, "\pi_A\circ e"] \arrow[d, "\pi_B\circ e"'] & A \arrow[d, "f"] \\
+            B \arrow[r, "g"']                                & Z               
+        \end{tikzcd}\]
+        es un producto fibrado. Para esto sea $X\in\C$ y sean dos flechas $X\xrightarrow{\alpha}A$ y $X\xrightarrow{\beta}B$ tales que $f\circ\alpha=g\circ\beta$. Por la propiedad universal
+        del producto, existe una única flecha $X\xrightarrow{(\alpha,\beta)}A\times B\in\C$ tal que el siguiente diagrama conmuta:
+        \[\begin{tikzcd}
+            & A\times B \arrow[ld, "\pi_A"'] \arrow[rd, "\pi_B"]                                         &   \\
+          A &                                                                                    & B \\
+            & X \arrow[lu, "\alpha"] \arrow[ru, "\beta"'] \arrow[uu, "{(\alpha,\beta)}", dashed] &  
+          \end{tikzcd}\]
+        Entonces tenemos que $f\circ\pi_A\circ(\alpha,\beta)=g\circ\pi_B\circ(\alpha,\beta)$, es decir, $(\alpha,\beta)$ iguala las flechas $A\times B\overset{f\circ\pi_A}{\underset{g\circ\pi_B}{\rightrightarrows}}Z$
+        , y por la propiedad universal del igualador, existe una única flecha $X\xrightarrow{h}I\in\C$ tal que $e\circ h=(\alpha,\beta)$ y por lo tanto el siguiente diagrama conmuta:
+        \[\begin{tikzcd}
+            X \arrow[rrd, "\alpha", bend left] \arrow[rdd, "\beta"', bend right] \arrow[rd, "{h}", dashed] &                                                  &                  \\
+                                                                                                                            & {I} \arrow[r, "\pi_A\circ e"] \arrow[d, "\pi_B\circ e"'] & A \arrow[d, "f"] \\
+                                                                                                                            & B \arrow[r, "g"']                                & Z               
+        \end{tikzcd}\]
+        Y por la unicidad de $h$, entonces \begin{tikzcd}
+            {I} \arrow[r, "\pi_A\circ e"] \arrow[d, "\pi_B\circ e"'] & A \arrow[d, "f"] \\
+            B \arrow[r, "g"']                                & Z               
+        \end{tikzcd} es un producto fibrado de $f$ y $g$ en $\C$.
 \end{proof}
 
+Dejamos como ejercicio al lector probar la versión dual de este teorema; aconsejamos intentar enunciarlo, pero de igual forma queda enunciado en la parte de ejercicios sugeridos.
 
 \subsection{Ejercicios sugeridos de esta sección}
 \begin{ex}[Secciones, Retractos e isomorfismos]
@@ -524,6 +557,23 @@ fibrado en la categoría.
 
 \begin{ex}[Dualidad entre sección y retracto]
     Sea $\C$ una categoría. Demuestra que una flecha $A\xrightarrow{f}B\in\C$ es una sección si y solo si $B\xrightarrow{f}A\in\C^\op$ es un retracto.
+\end{ex}
+
+\begin{ex}[Cokernel de un homomorfismo]
+    Demuestre que para un homomorfismo de grupos $G\xrightarrow{f}H\in\Ab$ entre grupos abelianos, y considerando el grupo cociente $\Cokr(f):=H/\im(f)$. Entonces para cualquier grupo abeliano $K$ y
+    cualesquiera homomorfismos de grupos $H\xrightarrow{g}K$ y $\{e\}\xrightarrow{0}K$ tal que $g\circ f=0$, entonces existe un único homomorfismo $\Cokr(f)\xrightarrow{\alpha}K$ tal que 
+    el siguiente diagrama conmuta:
+    \[\begin{tikzcd}
+                K &                                                        &                                                            \\
+                  & {\Cokr(f)} \arrow[lu, "{\alpha}"', dashed]    & H \arrow[l, "\pi"'] \arrow[llu, "g"', bend right] \\
+                  & \{e\} \arrow[u, "0"] \arrow[luu, "0", bend left] & G \arrow[u, "f"'] \arrow[l, "0"]                          
+    \end{tikzcd}\]
+    donde $\pi:H\to \Cokr(f)$ es la proyección canónica, que manda cada $h\in H$ a su clase lateral $h\im(f)\in Coker(f)$; $0$ es el homomorfismo trivial que manda todo elemento de su dominio
+    al elemento neutro de su codominio.
+\end{ex}
+
+\begin{ex}[Teorema dual]
+    Demuestre que si $\C$ es una categoría con coproductos y coigualadores, entonces $\C$ tiene coproductos fibrados.
 \end{ex}
 
 \section{Funtores}
