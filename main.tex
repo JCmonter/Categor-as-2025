@@ -613,7 +613,83 @@ En este sentido podemos decir que es otro tipo de funtor:
 
 Por lo comentado previo a la definición anterior, queda claro que es equivalente tener un funtor $F:\A^\op\to\B$ a tener un funtor contravariante $F:\A\to\B$.
 Dejamos como ejercicio al lector hacer la prueba de que también es equivalente tener un funtor $F:\A\to\B^\op$ a tener un funtor contravariante $F:\A\to\B$.
+Solo queremos aclarar que un funtor que no es contravariante, también se le llama \emph{funtor covariante}, En general no usaremos ese término,
+y asumieremos que un funtor es covariante a menos que se especifique lo contrario, es decir, que se diga que es un funtor contravariante; finalmente tenemos
+una manera de mirar equivalentemente funtores contravariantes y covariantes.
 
+Recordando que en el ejemplo \ref{Categorías concretas} mencionamos algunas categorías concretas, pero no definimos formalmente que era una categoría concreta.
+Antes de esa definición, necesitamos definir un tipo de funtor, entonces veamos algunos cuantos.
+
+\begin{dfn}[Tipos de funtores]
+    Sea $F:\A\to\B$ un funtor entre las categorías $\A$ y $\B$. Decimos que:
+    \begin{itemize}
+        \item $F$ es \emph{fiel} si para cuales quiera dos flechas $X\overset{f}{\underset{g}{\rightrightarrows}}Y\in\A$, si $F(f)=F(g)$ entonces $f=g$.
+        \item $F$ es \emph{pleno} si para cualquier par de objetos $X,Y\in\A$, y cualquier flecha $F(X)\xrightarrow{g}F(Y)\in\B$, existe una flecha 
+        $X\xrightarrow{f}Y\in\A$ tal que $F(f)=g$.
+        \item $F$ es esencialmente sobreyectivo si para cualquier objeto $Y\in\B$, existe un objeto $X\in\A$ tal que $F(X)\cong Y$.
+    \end{itemize}
+\end{dfn}
+
+Con esto podemos decir formalmente que una categoría $C$ se dice \emph{concreta} si existe un funtor $U:\C\to\Con$ fiel; a este funtor se le llama 
+\emph{funtor de olvido}. Veamos ya algunos ejemplos de funtores.
+
+\begin{ej}[Funtores que \textquotedblleft no hacen nada\textquotedblright]
+    \begin{itemize}
+        \item El funtor identidad $\id_\C:\C\to\C$ para cualquier categoría $\C$. Por supuesto este funtos asigna a cada flecha $X\xrightarrow{f}Y\in\C$ 
+        la misma flecha $X\xrightarrow{f}Y\in\C$. Es claro que satisface las condiciones de un funtor.
+        \item De las categorías concretas que mencionamos en el ejemplo \ref{Categorías concretas}, cada una tiene su funtor de olvido, que simplemente 
+        asigna a cada objeto (grupo, anillo, espacio topológico, vectorial, etc.) su conjunto subyacente, y cada a morfismo (homomorfismo de grupos, anillos,
+        funciones continuas, etc.) la función que va entre los conjuntos subyacentes. Es claro que estos funtores son fieles, que son justo lo que las hace
+        categorías concretas. En general podemos decir que un funtor que olvida alguna estructura se podría llamar funtor que olvida; algunos funtores
+        que olvidan podrían ser: de $\Grp$ a $\Mon$ (Un grupo es un monoide, y solo se olvida de que es grupo) , de $\Ring$ a $\Ab$ (Olvida el producto del
+        anillo), de $\Ab$ a $\Grp$ (olvida que es un grupo abeliano), de $\Ring$ a $\Mon$ (olvida la operación aditiva del anillo), etc.
+    \end{itemize}
+\end{ej}
+
+\begin{ej}[Funtores que \textquotedblleft dan estructura\textquotedblright]
+    Ahora veamos algunos ejemplos de funtores que asignan un objeto con estructura a un conjunto.
+    \begin{itemize}
+        \item El funtor $F:\Con\to\Grp$ que asigna a cada conjunto $X\in\Con$ el grupo libre generado por $X$. $F(X):=\{\text{Cadenas finitas de elementos de }X\}$,
+        es decir, los elementos de $F(X)$ se ven de la forma $x_1x_2x_3\ldots x_n$ donde $x_i\in X$ y $n\geq 0$, si $n=0$ se forma la cadena vacía. Y a cada
+        función (flecha) $f:X\to Y\in\Con$ le asigna el homomorfismo de grupos $F(f):F(X)\to F(Y)$ que manda cada cadena $x_1x_2\ldots x_n\in F(X)$ a la cadena
+        $f(x_1)f(x_2)\ldots f(x_n)\in F(Y)$.
+        \item Para el caso de dar estructura de espacio topológico, tenemos dos funtores $I,D:\Con\to\Top$, $D$ asigna a cada conjunto $X\in\Con$ el espacio 
+        topológico discreto $(X,\mathcal{P}(X))$, donde $\mathcal{P}(X)$ es el conjunto potencia de $X$; e $I$ asigna a cada conjunto $X\in\Con$ el espacio
+        topológico indiscreto $(X,\{\emptyset,X\})$. Ambos funtores son la identidad en la asignación de flechas, pues cualquier función entre dos espacios 
+        (in)discretos es una función continua.
+        \item Consideremos un campo $K$, el funtor $K^{()}:\Con\to\Vect_K$, que asigna a cada conjunto $X\in\Con$ el espacio vectorial $K^{(X)}$ de
+        funciones $f:X\to K$ tales que $f(x)\not=0$ para un número finito de $x\in X$. Para hacer la asignación de flechas, es necesario mencionar la inyección
+        $X$ en $K^{(X)}$, dada por las funciones de Dirichlet de $\delta_x:X\to K$ que dan la identidad del campo $1$ cuando mapean a $x$ y cero en otro caso.
+        De esta manera a cada función $f:X\to Y\in\Con$ induce una función entre las bases de $K^{(X)}$ y $K^{(Y)}$, y por el teorema de extensión lineal,
+        esta función induce una única transformación lineal que será la asignación de flechas del funtor $K^{()}$.
+    \end{itemize}
+\end{ej}
+
+Si el lector está familiarizado con teoría de grupos y espacios vectoriales, recomendamos comprobar que que los funtores $F:\Con\to\Grp$ y $K^{()}:\Con\to\Vect_K$ 
+satisfacen las condiciones de conservar identidades y abrir composiciones de flechas.
+
+\begin{ej}[Funtores en base a objetos]
+    Consideremos una categoría $\C$ y un objeto $A\in\C$.
+    \begin{itemize}
+        \item Supongamos que $A$ tiene producto con cualquier otro objeto de $\C$, entonces podemos definir un funtor $A\times-:\C\to\C$ que asigna a cada
+        objeto $X\in\C$ el producto $A\times X\in\C$, y a cada flecha $X\xrightarrow{f}Y\in\C$ le asigna la flecha $(\id_A,f):A\times X\to A\times Y\in\C$ dada
+        por la propiedad universal del producto. Similarmente, si $A$ tiene coproducto con cualquier otro objeto de $\C$, tenemos el funtor $A+-:\C\to\C$.
+        Sería un buen ejercicio para el lector comprobar que en efecto la asignación en flechas de estos dos funtores, $A\times-:\C\to\C$ y 
+        $A+-:\C\to\C$, satisfacen las condiciones de un funtor.
+        \item Decimos que una categoría $\C$ es \emph{localmente pequeña} si para cualesquiera dos objetos $A,B\in\C$, la colección $\C(A,B)$, de flechas
+        entre $A$ y $B$, es un conjunto. En este caso, tenemos el funtor $\C^A:\C\to\Con$ que asigna a cada objeto $X\in\C$ el conjunto $\C(A,X)$, y a cada 
+        flecha $X\xrightarrow{f}Y\in\C$ le asigna la función $f^A:\C(A,X)\to\C(A,Y)$ que manda cada flecha $A\xrightarrow{g}X\in\C$ a la flecha 
+        $A\xrightarrow{f\circ g}Y\in\C$. De igual forma, podemos definir el funtor contravariante $\C_A:\C\to\Con$ que asigna a cada objeto $X\in\C$ el conjunto $\C(X,A)$, 
+        y a cada flecha $X\xrightarrow{f}Y\in\C$ le asigna la función $f_A:\C(Y,A)\to\C(X,A)$ que manda cada flecha $Y\xrightarrow{g}A\in\C$ a la flecha
+        $X\xrightarrow{g\circ f}A\in\C$. A estos funtores se les llama \emph{funtores hom}, uno es covariante y otro contravariante.
+        \item Un ejemplo particular en la categoría de conjuntos es el funtor contravariante $\Con_2:\Con\to\Con$, donde $2=\{0,1\}$. Por otro lado, veamos que 
+        $\mathcal{P}:\Con\to\Con$ es un funtor contravariante mandando cada conjunto $X$ a su conjunto potencia $\mathcal{P}(X)$, y cada función 
+        $X\xrightarrow{f}Y\in\C$ a la función $\mathcal{P}(Y)\xrightarrow{f^{-1}}\mathcal{P}(X)$ que asigna a cada subconjunto de $Y$ su preimagen bajo $f$.
+        Es bien sabido que hay una biyección entre $\Con(X,2)$ y $\mathcal{P}(X)$, dada por la función característica de cada subconjunto de $X$; 
+        $X\supseteq A\longleftrightarrow \chi_A\in 2^X$, donde $\chi_A$ mapea $x\in X$ a $1\in 2$ si y solo si $x\in A$.
+        Como ejercicio pruebe que para cualquier función $X\xrightarrow{f}Y\in\Con$ y subconjunto $A\subseteq Y$ se tiene que $\chi_A\circ f=\chi_{f^{-1}(A)}$.
+    \end{itemize}
+\end{ej}
 
 
 Ejemplos de funtores... entre ellos la identidad. Funtores de olvido Dar definición de funotr fiel y pleno. Funtores "libres", Funtores Homs, Funtor de abiertos, Morfismos de copos, morfismos de grupos. 
