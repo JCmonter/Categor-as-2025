@@ -568,7 +568,7 @@ Dejamos como ejercicio al lector probar la versión dual de este teorema; aconse
                   & {\Cokr(f)} \arrow[lu, "{\alpha}"', dashed]    & H \arrow[l, "\pi"'] \arrow[llu, "g"', bend right] \\
                   & \{e\} \arrow[u, "0"] \arrow[luu, "0", bend left] & G \arrow[u, "f"'] \arrow[l, "0"]                          
     \end{tikzcd}\]
-    donde $\pi:H\to \Cokr(f)$ es la proyección canónica, que manda cada $h\in H$ a su clase lateral $h\im(f)\in Coker(f)$; $0$ es el homomorfismo trivial que manda todo elemento de su dominio
+    donde $\pi:H\to \Cokr(f)$ es la proyección canónica, que manda cada $h\in H$ a su clase lateral $h\im(f)\in \Cokr(f)$; $0$ es el homomorfismo trivial que manda todo elemento de su dominio
     al elemento neutro de su codominio.
 \end{ex}
 
@@ -578,7 +578,7 @@ Dejamos como ejercicio al lector probar la versión dual de este teorema; aconse
 
 \section{Funtores}
 
-Ahora que entendemos que es una categoría. Usemos el mismo espíritu de la teoría de categorías para estudiar objetos, y pensar en las categorías como objetos matemáticos.
+Ahora que entendemos que es una categoría. Usemos el mismo espíritu de la teoría de categorías y pensemos en las categorías como objetos matemáticos.
 Lo que queremos decir es que para estudiar categorías con ese mismo espíritu, sería necesario definir alguna noción de flechas entre categorías. 
 Eso es justamente un funtor.
 
@@ -614,6 +614,8 @@ En este sentido podemos decir que es otro tipo de funtor:
 Por lo comentado previo a la definición anterior, queda claro que es equivalente tener un funtor $F:\A^\op\to\B$ a tener un funtor contravariante $F:\A\to\B$.
 Dejamos como ejercicio al lector hacer la prueba de que también es equivalente tener un funtor $F:\A\to\B^\op$ a tener un funtor contravariante $F:\A\to\B$.
 
+
+
 Ejemplos de funtores... entre ellos la identidad. Funtores de olvido Dar definición de funotr fiel y pleno. Funtores "libres", Funtores Homs, Funtor de abiertos, Morfismos de copos, morfismos de grupos. 
 Y quiero dar un contra ejemplo que la conclusión es que sacar el centro de un grupo y verlo como un funtor de $\Grp$ a $\Ab$
 
@@ -641,6 +643,13 @@ tratar con este problema está en el libro Abstract and Concrete Categories The 
 \emph{quasicategoría} $\CAT$ cuyos objetos son todas las categorías y las flechas son los funtores. No es nuestra intensión abordar este tema a fondo, 
 solo dar una fuente para que el lector pueda investigar un poco más a fondo el tema. Sin embargo queremos hacer notar que de igual forma podemos
 hablar de categorías que satisfacen propiedades universales (incial, final, productos, coproductos, etc...) e isomorfismos de categorías.
+
+
+\subsection{Ejercicios sugeridos de esta sección}
+
+\begin{ex}[Variante de funtor contravariante]
+    Demuestre que es equivalente tener un funtor $F:\A\to\B^\op$ a tener un funtor contravariante $F:\A\to\B$.
+\end{ex}
 
 \section{Transformaciones naturales}
 
