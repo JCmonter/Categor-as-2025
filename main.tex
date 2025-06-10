@@ -247,7 +247,7 @@ Ejemplos de categorías, en cada ejemplo decir que son Isos, monos, epis, seccio
     \emph{categoría discreta}. En este tipo de categorías, cada flecha es un isomorfismo, y por lo tanto también es un monomorfismo, epimorfismo, sección y retracto.
 \end{ej}
 
-\begin{ej}[Categorías Concretas]
+\begin{ej}[Categorías Concretas]\label{Categorías concretas}
     Aún no podemos definir formalmente lo que es una categoría concreta, pero esencialmente son categorías donde sus objetos pueden ser vistos como conjuntos
     con estructuras adicionales, y sus flechas como funciones entre estos conjuntos que preservan las estructuras.
     \begin{itemize}
@@ -668,11 +668,11 @@ Con esto podemos decir formalmente que una categoría $C$ se dice \emph{concreta
 Si el lector está familiarizado con teoría de grupos y espacios vectoriales, recomendamos comprobar que que los funtores $F:\Con\to\Grp$ y $K^{()}:\Con\to\Vect_K$ 
 satisfacen las condiciones de conservar identidades y abrir composiciones de flechas.
 
-\begin{ej}[Funtores en base a objetos]
+\begin{ej}[Funtores en base a objetos]\label{funtores en base a objetos}
     Consideremos una categoría $\C$ y un objeto $A\in\C$.
     \begin{itemize}
         \item Supongamos que $A$ tiene producto con cualquier otro objeto de $\C$, entonces podemos definir un funtor $A\times-:\C\to\C$ que asigna a cada
-        objeto $X\in\C$ el producto $A\times X\in\C$, y a cada flecha $X\xrightarrow{f}Y\in\C$ le asigna la flecha $(\id_A,f):A\times X\to A\times Y\in\C$ dada
+        objeto $X\in\C$ el producto $A\times X\in\C$, y a cada flecha $X\xrightarrow{f}Y\in\C$ le asigna la flecha $\widetilde{f}:=(\pi_A,f\circ\pi_X):A\times X\to A\times Y\in\C$ dada
         por la propiedad universal del producto. Similarmente, si $A$ tiene coproducto con cualquier otro objeto de $\C$, tenemos el funtor $A+-:\C\to\C$.
         Sería un buen ejercicio para el lector comprobar que en efecto la asignación en flechas de estos dos funtores, $A\times-:\C\to\C$ y 
         $A+-:\C\to\C$, satisfacen las condiciones de un funtor.
@@ -692,7 +692,15 @@ satisfacen las condiciones de conservar identidades y abrir composiciones de fle
 \end{ej}
 
 
-Ejemplos de funtores... entre ellos la identidad. Funtores de olvido Dar definición de funotr fiel y pleno. Funtores "libres", Funtores Homs, Funtor de abiertos, Morfismos de copos, morfismos de grupos. 
+
+
+
+
+
+
+
+
+Ejemplos de funtores... Funtor de abiertos, Morfismos de copos, morfismos de grupos. 
 Y quiero dar un contra ejemplo que la conclusión es que sacar el centro de un grupo y verlo como un funtor de $\Grp$ a $\Ab$
 
 \begin{prop}
@@ -727,7 +735,22 @@ hablar de categorías que satisfacen propiedades universales (incial, final, pro
     Demuestre que es equivalente tener un funtor $F:\A\to\B^\op$ a tener un funtor contravariante $F:\A\to\B$.
 \end{ex}
 
+\begin{ex}[Funtores libres]
+    Verifique que los funtores $F:\Con\to\Grp$ y $K^{()}:\Con\to\Vect_K$, del ejemplo \ref{funtores libres}, preservan identidades y composición.
+\end{ex}
+
+\begin{ex}
+    Dada una categoría $\C$ con productos y coproductos. Las asignaciones $A\times-:\C\to\C$ y $A+-:\C\to\C$ son funtoriales. 
+\end{ex}
+
+\begin{ex}
+    Sea una función $X\xrightarrow{f}Y\in\Con$ y un subconjunto $A\subseteq Y$, entonces
+    \[\chi_A\circ f=\chi_{f^{-1}(A)}\]
+    donde cada $chi_\cdot$ son las funciones características mencionadas en el ejemplo \ref{funtores en base a objetos}.
+\end{ex}
+
 \section{Transformaciones naturales}
+
 
 
 
