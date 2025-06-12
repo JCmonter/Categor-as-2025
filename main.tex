@@ -278,7 +278,7 @@ Ejemplos de categorías, en cada ejemplo decir que son Isos, monos, epis, seccio
     \end{itemize}
 \end{ej}
 
-\begin{ej}[Monoides]
+\begin{ej}[Monoides]\label{Monoides}
     Consideremos un monoide $M$, es decir, un conjunto con una operación binaria asociativa y un elemento neutro. 
     Podemos verlo como una categoría que tiene un solo objeto, y cada flecha, que es un endomorfismo del único objeto, está representada por un elemento
     del monoide. La regla de composición es la operación del monoide, lo que da la asociatividad, y el elemento neutro del monoide es la flecha identidad
@@ -686,39 +686,99 @@ satisfacen las condiciones de conservar identidades y abrir composiciones de fle
         $\mathcal{P}:\Con\to\Con$ es un funtor contravariante mandando cada conjunto $X$ a su conjunto potencia $\mathcal{P}(X)$, y cada función 
         $X\xrightarrow{f}Y\in\C$ a la función $\mathcal{P}(Y)\xrightarrow{f^{-1}}\mathcal{P}(X)$ que asigna a cada subconjunto de $Y$ su preimagen bajo $f$.
         Es bien sabido que hay una biyección entre $\Con(X,2)$ y $\mathcal{P}(X)$, dada por la función característica de cada subconjunto de $X$; 
-        $X\supseteq A\longleftrightarrow \chi_A\in 2^X$, donde $\chi_A$ mapea $x\in X$ a $1\in 2$ si y solo si $x\in A$.
+        $X\supseteq A\longleftrightarrow \chi_A\in \Con(X,2)$, donde $\chi_A$ mapea $x\in X$ a $1\in 2$ si y solo si $x\in A$.
         Como ejercicio pruebe que para cualquier función $X\xrightarrow{f}Y\in\Con$ y subconjunto $A\subseteq Y$ se tiene que $\chi_A\circ f=\chi_{f^{-1}(A)}$.
     \end{itemize}
 \end{ej}
 
+\begin{ej}[Morfismos que son funtores]
+    \begin{itemize}
+        \item Como mencionamos en el ejemplo \ref{Monoides}, cada monoide se puede ver como una categoría, donde cada elemento del monoide es una flecha de un
+        único objeto. De esta manera los homomorfismos de monoides son esencialmente funtores que en objetos la asignación es trivial, y en flechas es justo la 
+        regla del homomorfismo, que satisface justo lo que pedimos a un funtor.
+        \item Como mencionamos en el ejemplo \ref{categoria delgada}, un conjunto parcialmente ordenado puede ser visto como categoría, entonces una función
+        monótona es un funtor. La asignación en objetos es la regla de la función, y la asignación en flechas básicamente es trivial (pues entre cada objeto a lo
+        mucho hay una flecha) y es coherente gracias a que la función es monótona, pues así garantiza que cuando tomas una flecha en el dominio, si existe una
+        que asignarle en el codominio.
+    \end{itemize}
+\end{ej}
 
+\begin{ej}\label{Funtor de abiertos}
+    \begin{itemize}
+        \item Recordando las categorías $\Top$ y $\Frm$ mencionadas en el ejemplo \ref{Categorías concretas}, tenemos un funtor contravariante $\mathcal O:\Top\to\Frm$ que 
+        le asigna a cada espacio topológico $X$ la familia de sus conjuntos abiertos $\mathcal O(X)$, que en efecto es un marco con el orden de subconjunto, tiene 
+        elemento tope ($X$ es abierto), tiene fondo ($\emptyset$ es abierto), tiene supremos arbitrarios (La unión de abiertos es abierta), tiene ínfimos finitos
+        (la intersección finita de abiertos es abierta), y estos distribuyen. Por otro lado a cada función continua $f:X\to Y\in\Top$ le asigna la preimagen
+        $f^{-1}:\mathcal O(Y)\to\mathcal O(X)$, la cual está bien definida pues una función continua por definición la preimagen de abiertos es abierta, y como la preimagen
+        se comporta bien con las uniones e intersecciones, entonces es un morfismo de marcos. Que preserva identidades y composiciones (contravariantemente) son
+        consecuencia de las propiedades de la preimagen.
+        \item Consideremos un anillo con identidad $R\in\Ring$ y fijemos un número natural $n\in\N$, podemos asignarle el monoide $M_n(R)$ de matrices $n\times n$ 
+        con entradas en $R$, con la operación de multiplicación de matrices. Y a cada homomorfismo de anillos $f:R\to S\in\Ring$ se le asigna el homomorfismo 
+        de monoides $M_n(f):M_n(R)\to M_n(S)$ que manda a cada matriz con entradas en $R$ a la matriz con entradas en $S$ dada por la imagen de $f$ entrada 
+        por entrada.
+    \end{itemize}
+\end{ej}
 
+Con todo lo anterior se puede pensar que si tienes una categoría $\C$ y tienes una regla para asignar a cada objeto en $\C$ un objeto en otra categoría, digamos $\D$,
+es posible encontrar una manera de asignar flechas de tal manera que esta asignación se convierta en un funtor. Pues eso no siempre es posible, pero cuando si lo es,
+decimos que la asignación es funtorial. Veamos un ejemplo de una asignación que no es funtorial.
 
+\begin{ej}[Una asignación no funtorial]
+    Sabemos que a cada grupo $G\in\Grp$ le podemos asignar su centro que es un grupo abeliano $Z(G)\in\Ab$. Supongamos que esta asignación es funtorial, es decir,
+    a cada homomorfismo de grupos $G\xrightarrow{\phi}H\in\Grp$ se le asigna el homomorfismo $Z(G)\xrightarrow{Z(\phi)}Z(H)\in\Ab$ de forma que satisface los axiomas
+    de funtor, manda identidades a identidades, y respeta composiciones. Asumiendo esto, consideremos los grupos $\Z_2$, el grupo cíclico de dos elementos; $S_3$,
+    el grupo de permutaciones de un conjunto de 3 elementos; y $A_3$ el grupo alternante, que es un subgrupo normal de $S_3$. Ahora consideremos los siguientes homomorfismos:
+    \[\Z_2\xrightarrow{f}S_3\xrightarrow{\pi}S_3/A_3\xrightarrow{g}\Z_2\]
+    donde $f$ mapea el $0\in\Z_2$ a la permutación $(1)\in S_3$ y el $1\in\Z_2$ a la permutación $(12)\in S_3$; $\pi$ es la proyección canónica a las 
+    clases laterales; y $g$ mapea la clase $\overline{(1)}\in S_3/A_3$ al $0\in\Z_2$ y la clase $\overline{(12)}\in S_3/A_3$ al $1\in\Z_2$.
+    
+    Denotemos con $h$ a la composición de $g\circ\pi$, entonces tenemos que $\id_{\Z_2}=h\circ f$. Como asumimos que el centro es funtorial, tenemos que
+    $Z(\id_{\Z_2})=Z(h\circ f)=Z(h)\circ Z(f)$. Ahora, considerando que $Z(S_3)=\{(1)\}$, es decir
+    es el grupo trivial, entonces $Z(h)$ y $Z(f)$ no tienen otra opción que ser los homomorfismos triviales, lo que nos da una contradicción, pues significaría
+    por un lado que $Z(id_{\Z_2})=\id_{\Z_2}$ (porque un funtor preserva identidades y $\Z_2$ es igual a su centro, por ser abeliano), y por otro lado $Z(\id_{\Z_2})$
+    debe ser el homomorfismo trivial (al ser la composición de dos homomorfismos triviales); lo que significa que asignar el centro a un grupo no puede ser funtorial.
+\end{ej}
 
+Veamos algunas propiedades de los funtores.
 
-
-
-
-
-Ejemplos de funtores... Funtor de abiertos, Morfismos de copos, morfismos de grupos. 
-Y quiero dar un contra ejemplo que la conclusión es que sacar el centro de un grupo y verlo como un funtor de $\Grp$ a $\Ab$
+\subsection{Propiedades básicas}
+Veamos primero que los funtores se pueden componer
 
 \begin{prop}
     Sean dos funtores $\A\xrightarrow{F}\B\xrightarrow{G}\C$, entonces la regla de asignación $G\circ F:\A\to\C$ definida como 
     $G\circ F(X\xrightarrow{f}Y)=G(F(X))\xrightarrow{G(F(f))}G(F(Y))$ para toda flecha $X\xrightarrow{f}Y\in\A$, es un funtor.
 \end{prop}
 \begin{proof}
-    PENDIENTE
+    Sea una flecha $f:A\to B\in \A$, entonces $F(f):F(A)\to F(B)\in\B$ y $G(F(f)):G(F(A))\to G(F(B))\in\C$.
+    Luego como $F$ y $G$ son funtores
+    \begin{equation*}
+    G\circ F(\id_A) =G(F(\id_A)) =G(\id_{F(A)}) =\id_{G(F(A))}=\id_{G\circ F(A)}.
+    \end{equation*}
+
+    Ahora sea $g:B\to C\in\A$, entonces
+    \begin{eqnarray*}
+    G\circ F(g\circ f) &=&G(F(g\circ f))=G(F(g)\circ F(f))=G(F(g))\circ G(F(f)) \\
+    &=&(G\circ F(g))\circ(G\circ F(f))
+    \end{eqnarray*}
+    lo que prueba que $G\circ F$ es un funtor.
 \end{proof}
 
-La proposición anterior nos dice como está definida la composición de funtores. Dejamos para el lector el ejercico de probar que para cualquier funtor $\A\xrightarrow{F}\B$, se tiene que $F\circ\id_\A=\id_\B\circ F$.
+La proposición anterior nos dice como está definida la composición de funtores. Dejamos para el lector el ejercico de probar que para cualquier funtor $\A\xrightarrow{F}\B$, se tiene que $F\circ\id_\A=\id_\B\circ F=F$.
 Veamos ahora que la composición es asociativa.
 
 \begin{prop}
     Sean tres funtores $\A\xrightarrow{F}\B\xrightarrow{G}\C\xrightarrow{H}\D$. Entonces $$H\circ(G\circ F)=(H\circ G)\circ F.$$
 \end{prop}
 \begin{proof}
-    PENDIENTE
+    Simplemente veamos que dado $\bigstar\in\A$ (objeto o flecha) se tiene
+    que
+    \begin{eqnarray*}
+    (H\circ G) \circ F(\bigstar)  &=&
+    H\circ G(F(\bigstar) ) =H(G(F(\bigstar)))  \\
+    &=&H(G\circ F(\bigstar))  \\
+    &=&H\circ(G\circ F)(\bigstar) 
+    \end{eqnarray*}
+    lo que prueba la igualdad.
 \end{proof}
 
 Hemos probado que los funtores y su regla de composición satisfacen de cierta forma lo que pedimos para las flechas de una categoría, por lo que es natural preguntarse
@@ -747,6 +807,10 @@ hablar de categorías que satisfacen propiedades universales (incial, final, pro
     Sea una función $X\xrightarrow{f}Y\in\Con$ y un subconjunto $A\subseteq Y$, entonces
     \[\chi_A\circ f=\chi_{f^{-1}(A)}\]
     donde cada $chi_\cdot$ son las funciones características mencionadas en el ejemplo \ref{funtores en base a objetos}.
+\end{ex}
+
+\begin{ex}
+    Demuestre que para cualquier funtor $\A\xrightarrow{F}\B$, se tiene que $F\circ\id_\A=\id_\B\circ F=F$.
 \end{ex}
 
 \section{Transformaciones naturales}
