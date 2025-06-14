@@ -240,7 +240,7 @@ y epimorfismo para ser isomorfismo, si es suficiente que sea sección y retracto
 
 Ejemplos de categorías, en cada ejemplo decir que son Isos, monos, epis, secciones y retractos...
 
-\begin{ej}[Categorías discretas]
+\begin{ej}[Categorías discretas]\label{categorías discretas}
     Consideremos una colección arbitraria $A$, esta colección puede representar una categoría, considerando a cada elemento de $A$ como un objeto, podemos
     simplemente decir que las únicas flechas son las identidades de cada objeto, y por lo tanto la regla de composición es trivial.
     Cualquier categoría $\C$ que satisfaga que hay una biyección entre su colección de objetos $\Obj(\C)$ y su colección de flechas $\Fle(\C)$, le llamamos
@@ -786,8 +786,60 @@ Hemos probado que los funtores y su regla de composición satisfacen de cierta f
 tratar con este problema está en el libro Abstract and Concrete Categories The Joy of Cats escrito por Jiˇr´ıAd´amek, Horst Herrlich y George E. Strecker, donde se define la 
 \emph{quasicategoría} $\CAT$ cuyos objetos son todas las categorías y las flechas son los funtores. No es nuestra intensión abordar este tema a fondo, 
 solo dar una fuente para que el lector pueda investigar un poco más a fondo el tema. Sin embargo queremos hacer notar que de igual forma podemos
-hablar de categorías que satisfacen propiedades universales (incial, final, productos, coproductos, etc...) e isomorfismos de categorías.
+hablar de categorías que satisfacen propiedades universales.
 
+\subsection{Propiedades universales}
+
+En el ejemplo \ref{categorías discretas} se menciona que a una colección de objetos la podemos considerar una categoría simplemente dando la identidad a cada objeto.
+Pues hay dos categorías discretas que satisfacen una propiedad universal sobre el resto de categorías. Por un lado, tenemos la categoría vacia $\mathbb{\emptyset}$, que es
+justo la categoría discreta formada por la colección vacía; esta categoría satisface la propiedad universal de objeto inicial. Por otro lado, tenemos la categoría
+unipuntual $\mathbf{1}$, que es justo la categoría discreta formada por una colección de un solo elemento, consta de un objeto y su identidad (De hecho también 
+se puede ver como un monoide trivial); esta categoría satisface la propiedad universal de objeto final.
+
+Ahora tomemos dos categorías arbitrarias $\A$ y $\B$, y definamos la categoría $\A\times\B$. Los objetos de $\A\times\B$ son pares ordenados $(A,B)$ donde $A$
+es un objeto de $\A$ y $B$ es un objeto de $\B$. Las flechas también son pares ordenados $(f,g)$ donde $f$ es una flecha de $\A$ y $g$ es una flecha de $\B$,
+de tal manera que $\Dom(f,g)=(\Dom(f),\Dom(g))$ y $\Cod(f,g)=(\Cod(f),\Cod(g))$. De esta manera la regla de composición se define entreda por entrada, es decir,
+si se tienen las flechas $(A_1,B_1)\xrightarrow{(f_1,g_1)}(A_2,B_2)\xrightarrow{(f_2,g_2)}(A_3,B_3)$ la composición se define como $(f_2,g_2)\circ(f_1,g_1)
+:=(f_2\circ f_1,g_2\circ g_1)$. Es bastante claro que se satisface la asociatividad y que las identidades son básicamente pares ordenados de identidades, pero
+dejamos la prueba formal para el lector, junto a la prueba de que las asignaciones $\pi_\A:\A\times\B\to\A$ y $\pi_\B:\A\times\B\to\B$ definidas para cada objeto
+$(A,B)\in\A\times\B$ como $\pi_\A(A,B)=A$ y $\pi_\B(A,B)=B$, y para cada flecha $(f,g)\in\A\times\B$ como $\pi_\A(f,g)=f$ y $\pi_\B(f,g)=g$, son efectivamente 
+funtoriales. De esta manera podemos probar que $\A\times\B$ es justo la categoría producto de $\A$ y $\B$.
+
+
+\begin{prop}
+    Sean $\A,\B,\C$ tres categorías, y sean dos funtores \begin{tikzcd}
+        & \C \arrow[ld, "F"'] \arrow[rd, "G"] &   \\
+        \A &                                            & \B
+        \end{tikzcd}, entonces existe un único funtor $\C\xrightarrow{H}\A\times\B$ tal que $F=\pi_\A\circ H$ y $G=\pi_\B\circ H$.
+\end{prop}
+\begin{proof}
+    Definamos la asignación $H:\C\to\A\times\B$ de tal manera que a cada objeto $C\in\C$ le corresponda el objeto $H(C):=(F(C),G(C))\in\A\times\B$, y a cada flecha
+    $f\in\C$ le corresponda la flecha $H(f):=(F(f),G(f))\in\A\times\B$. Para ver que es un funtor, observemos que 
+    \[ H(\id_C)=(F(\id_C),G(\id_C))=(\id_{F(C)},\id_{G(C)})=\id_{(F(C),G(C))}=\id_{H(C)} \]
+    y para cualesquiera flechas $A\xrightarrow{f}B\xrightarrow{g}C\in\C$ se tiene que
+    \begin{eqnarray*}
+        H(g\circ f)&=& (F(g\circ f),G(g\circ f))=(F(g)\circ F(f), G(g)\circ G(f))\\
+        &=&(F(g),G(g))\circ(F(f),G(f))=H(g)\circ H(f)
+    \end{eqnarray*}
+    lo que prueba que $H$ es un funtor. Luego, consideremos algún $\bigstar\in\C$ (objeto o flecha), veamos que 
+    \[ \pi_\A\circ H(\bigstar)=\pi_\A(H(\bigstar))=\pi_\A(F(\bigstar),G(\bigstar))=F(\bigstar)\] 
+    \[\text{ y }\]
+    \[\pi_\B\circ H(\bigstar)=\pi_\B(H(\bigstar))=\pi_\B(F(\bigstar),G(\bigstar))=G(\bigstar) \]
+    lo que prueba que $F=\pi_\A\circ H$ y $G=\pi_\B\circ H$. Para ver que este es único, sea $H':\C\to\A\times\B$ otro funtor tal que $F=\pi_\A\circ H'$ y $G=\pi_\B\circ H'$.
+    Entonces sea $\bigstar\in\C$ (objeto o flecha), en cualquier caso, objeto o flecha, la imagen bajo el funtor debe ser un par ordenado, entonces supongamos que 
+    $H'(\bigstar)=(\diamondsuit ,\heartsuit )$ donde $\diamondsuit\in\A$ y $\heartsuit\in\B$. De esta manera tenemos que
+    \[ F(\bigstar)=\pi_\A\circ H'(\bigstar)=\pi_\A(\diamondsuit ,\heartsuit )= \diamondsuit \text{  y  }G(\bigstar)=\pi_\B\circ H'(\bigstar)=\pi_\B
+    (\diamondsuit ,\heartsuit )=\heartsuit \]
+    por lo tanto $H'(\bigstar)=(F(\bigstar),G(\bigstar))=H(\bigstar)$, lo que prueba que $H$ es único.
+\end{proof}
+
+Lo siguiente no es una propiedad universal, pero es también posible decir cuando dos categorías son isomorfas.
+
+\begin{dfn}[Isomorfismo de categorías]
+    Sean dos categorías $\A$ y $\B$, decimos que son \emph{isomorfas} si existe un par de funtores $F:\A\to\B$ y $G:\B\to\A$ tales que
+    \[G\circ F=\id_\A \text{  y  }F\circ G=\id_\B\]
+    y el par de funtores podemos decir que son \emph{isomorfismos}
+\end{dfn}
 
 \subsection{Ejercicios sugeridos de esta sección}
 
@@ -806,17 +858,116 @@ hablar de categorías que satisfacen propiedades universales (incial, final, pro
 \begin{ex}
     Sea una función $X\xrightarrow{f}Y\in\Con$ y un subconjunto $A\subseteq Y$, entonces
     \[\chi_A\circ f=\chi_{f^{-1}(A)}\]
-    donde cada $chi_\cdot$ son las funciones características mencionadas en el ejemplo \ref{funtores en base a objetos}.
+    donde cada $\chi_\bullet$ son las funciones características mencionadas en el ejemplo \ref{funtores en base a objetos}.
 \end{ex}
 
 \begin{ex}
     Demuestre que para cualquier funtor $\A\xrightarrow{F}\B$, se tiene que $F\circ\id_\A=\id_\B\circ F=F$.
 \end{ex}
 
+\begin{ex}
+    Dadas dos categorías $\A$ y $\B$, demuestre que $\A\times\B$ es una categoría y que $\pi_\A:\A\times\B\to\A$ y $\pi_\B:\A\times\B\to\B$ son funtores.
+\end{ex}
+
 \section{Transformaciones naturales}
 
+Al haber introducido este nuevo objeto de funtor, de nuevo es natural pensar si podemos tener flechas entre funtores. Y esto es posible siempre que los funtores
+compartan dominio y codominio.
 
+\begin{dfn}[Transformación natural]
+    Sean $\A,\B$ dos categorías y $\A\overset{F}{\underset{G}{\rightrightarrows}}\B$ dos funtores. Una \emph{transformación natural} de $F$ a $G$
+    es una colección de flechas $\alpha=\{F(A)\xrightarrow{\alpha_A}G(A) \ |\ A\in\Obj(\A)\}\subseteq\B$ tal que para cada flecha $A\xrightarrow{f}B\in\A$ el siguiente diagrama conmuta
+    \[\begin{tikzcd}
+        {F(A)} & {G(A)} \\
+        {F(B)} & {G(B)}
+        \arrow["{\alpha_A}", from=1-1, to=1-2]
+        \arrow["{F(f)}"', from=1-1, to=2-1]
+        \arrow["{G(f)}", from=1-2, to=2-2]
+        \arrow["{\alpha_B}"', from=2-1, to=2-2]
+    \end{tikzcd}\]
 
+    Cada flecha $\alpha_A$ se llama componente en $A$ de $\alpha$.
+\end{dfn}
+
+Para simplificar un poco cuando queramos dar cada componente de una transformación natural $\alpha$, la notaremos así $\alpha=(F(A)\xrightarrow{\alpha_A}G(A))_{A\in\A}$.
+Y en general usaremos la notación $\alpha:F\Rightarrow G$ para referirnos a una transformación natural $\alpha$ de $F$ a $G$. Para la notación de diagrama tenemos, además
+de $F\xRightarrow{\alpha}G$, una notación que deja ver también las categorías involucradas entre los funtores:
+\[
+\begin{tikzcd}
+	\A && \B
+	\arrow[""{name=0, anchor=center, inner sep=0}, "F", shift left=2, out=20, in=160, from=1-1, to=1-3]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "G"', shift right=2, out=340, in=200, from=1-1, to=1-3]
+	\arrow["\alpha"', shorten <=3pt, shorten >=3pt, Rightarrow, from=0, to=1]
+\end{tikzcd}
+\]
+
+\begin{ej}[Algunos ejemplos]
+    \item Para cualquier funtor $\A\xrightarrow{F}\B$, existe la transformación natural identidad, dada como $\id_F=(\id_{F(A)})_{A\in\A}$.
+    \item  
+\end{ej}
+
+Veamos ahora que como es la composición de transformaciones naturales.
+
+\begin{prop}
+    Sean 
+    \[
+    \begin{tikzcd}
+    \A && \B
+    \arrow[""{name=0, anchor=center, inner sep=0}, "F", shift left=2, out=20, in=160, from=1-1, to=1-3]
+    \arrow[""{name=1, anchor=center, inner sep=0}, "H"', shift right=2, out=340, in=200, from=1-1, to=1-3]
+    \arrow[""{name=2, anchor=center, inner sep=0}, "G"{description}, from=1-1, to=1-3]
+    \arrow["\alpha"', shorten <=2pt, shorten >=2pt, Rightarrow, from=0, to=2]
+    \arrow["\beta"', shorten <=2pt, shorten >=2pt, Rightarrow, from=2, to=1]
+\end{tikzcd}
+    \]
+    
+    funtores y transformaciones naturales. Entonces la familia de morfismos 
+    $\beta\circ\alpha:=\{F(A)\xrightarrow{\beta_A\circ\alpha_A}H(A) \ |\ A\in\Obj(\A)\}\subseteq\B$
+    es una transformación natural de $F$ a $H$
+\end{prop}
+\begin{proof}
+    Sea $A\xrightarrow{f}B\in\A$ no es dificíl ver que el cuadrado \begin{tikzcd}
+        {F(A)} & {H(A)} \\
+        {F(B)} & {H(B)}
+        \arrow["{\beta_A\circ\alpha_A}", from=1-1, to=1-2]
+        \arrow["{F(f)}"', from=1-1, to=2-1]
+        \arrow["{G(f)}", from=1-2, to=2-2]
+        \arrow["{\beta_B\circ\alpha_B}"', from=2-1, to=2-2]
+    \end{tikzcd} conmuta, pues por ser $\alpha$ y $\beta$ transformaciones naturales, los cuadrados
+     \[\begin{tikzcd}
+            {F(A)} & {G(A)} & {H(A)} \\
+            {F(B)} & {G(B)} & {H(B)}
+            \arrow["{\alpha_A}", from=1-1, to=1-2]
+            \arrow["{F(f)}"', from=1-1, to=2-1]
+            \arrow["{\beta_A}", from=1-2, to=1-3]
+            \arrow["{G(f)}"', from=1-2, to=2-2]
+            \arrow["{H(f)}"', from=1-3, to=2-3]
+            \arrow["{\alpha_B}"', from=2-1, to=2-2]
+            \arrow["{\beta_B}"', from=2-2, to=2-3]
+        \end{tikzcd}\] conmutan.
+\end{proof}
+
+Notemos que las componentes de una composción son exactamente la composición de las componentes. Dejamos al lector verificar que la composición
+es además asociativa ya que basta verificar que componente a componente lo es.
+Todo esto lo mencionamos para definir la categoría de funtores entre dos categorías.
+\begin{dfn}[Categoría de funtores]
+Sean $\A$ y $\B$ categorías, definimos la \emph{categoría de funtores} entre $\A$ y $\B$ como la categoría $[\A,\B]$ donde los objetos son los
+funtores entre $\A$ y $\B$ y las flechas son las transformaciones naturales entre los funtores.
+\end{dfn}
+
+\begin{dfn}[Isomorfismos naturales]
+Sean $\A$ y $\B$ categorías, y sean $F,G:\A\to\B$ funtores, decimos que $F$ y $G$ son \emph{naturalmente isomorfos} si son objetos isomorfos en la 
+categoría de funtores $[\A,\B]$. Al isomorfismo entre $F$ y $G$ se le llama \emph{isomorfismo natural}.
+\end{dfn}
+
+\begin{dfn}[Categorías equivalentes]
+Sean $\A$ y $\B$ categorías, decimos que son \emph{categorías equivalentes} si existen funtores $F:\A\to \B$ y $G:\B\to\A$ tales que
+\begin{equation*}
+F\circ G\cong \id_\B \text{ y }G\circ F\cong \id_\A
+\end{equation*}
+\end{dfn}
+Más adelante veremos que una equivalencia es un caso particular de una adjunción. Y en la sección del lema de Yoneda, veremos detalles 
+sobre la categoría de funtores $[\A,\Con]$ donde $\A$ es localmente pequeña.
 
 \section{Límites y colímites}
 
