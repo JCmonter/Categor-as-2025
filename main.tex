@@ -920,7 +920,6 @@ Veamos ahora que como es la composición de transformaciones naturales.
     \arrow["\beta"', shorten <=2pt, shorten >=2pt, Rightarrow, from=2, to=1]
 \end{tikzcd}
     \]
-    
     funtores y transformaciones naturales. Entonces la familia de morfismos 
     $\beta\circ\alpha:=\{F(A)\xrightarrow{\beta_A\circ\alpha_A}H(A) \ |\ A\in\Obj(\A)\}\subseteq\B$
     es una transformación natural de $F$ a $H$
@@ -975,7 +974,7 @@ sobre la categoría de funtores $[\A,\Con]$ donde $\A$ es localmente pequeña.
     Sean $\C,I$ dos categorías, con $I$ una categoría pequeña. Un \emph{diagrama en} $\C$ \emph{de forma} $I$ es simplemente un funtor $D:I\to\C$.   
 \end{dfn}
 
-\begin{dfn}
+\begin{dfn}[Cono]
     Sea $D:I\to\C$ un diagrama en $\C$. Un \emph{cono} de $D$ consta de un objeto $X\in\C$, al que llamamos \emph{vértice del cono}, junto a una familia
     de flechas $\{X\xrightarrow{f_i}D(i) \ |\ i\in\Obj(I)\}\subseteq\C$ tales que para cada flecha $i\xrightarrow{u}j\in I$ el siguiente diagrama conmuta
     \[\begin{tikzcd}
@@ -987,7 +986,7 @@ sobre la categoría de funtores $[\A,\Con]$ donde $\A$ es localmente pequeña.
     \end{tikzcd}\]
 \end{dfn}
 
-\begin{dfn}
+\begin{dfn}[Límite]
     Sea $D:I\to\C$ un diagrama en $\C$. Un \emph{límite} de $D$ es un cono $(L\xrightarrow{l_i}D(i))_{i\in I}$ tal que para cualquier otro cono $(X\xrightarrow{f_i}D(i))_{i\in I}$
     existe una única flecha $X\xrightarrow{h}L\in\C$ tal que el siguiente diagrama conmuta
     \[\begin{tikzcd}
@@ -999,22 +998,163 @@ sobre la categoría de funtores $[\A,\Con]$ donde $\A$ es localmente pequeña.
     \end{tikzcd}\] para todo $i\in I$
 \end{dfn}
 
-Si el límite de un diagrama $D$ existe, normalmente denotamos al vértice de su cono límite con $\lm(D)$.
+Si el límite de un diagrama $D$ existe, normalmente denotamos al vértice de su cono límite con $\lm(D)$. Veamos los conceptos duales
 
-Conceptos duales...
+\begin{dfn}[Cocono]
+    Sea $D:I\to\C$ un diagrama en $\C$. Un \emph{cocono} de $D$ consta de un objeto $X\in\C$, al que llamamos \emph{vértice del cocono}, junto a una familia
+    de flechas $\{D(i)\xrightarrow{f_i}X \ |\ i\in\Obj(I)\}\subseteq\C$ tales que para cada flecha $i\xrightarrow{u}j\in I$ el siguiente diagrama conmuta
+    \[\begin{tikzcd}
+        & X \\
+        {D(i)} && {D(j)}
+        \arrow["{f_i}", from=2-1, to=1-2]
+        \arrow["{f_j}"', from=2-3, to=1-2]
+        \arrow["{D(u)}"', from=2-1, to=2-3]
+    \end{tikzcd}\]
+\end{dfn}
 
-Obervaciones entre las propiedades universales mencionadas antes y (co)límites...
+\begin{dfn}[Colímite]
+    Sea $D:I\to\C$ un diagrama en $\C$. Un \emph{colímite} de $D$ es un cocono $(D(i)\xrightarrow{c_i}C)_{i\in I}$ tal que para cualquier otro cocono $(D(i)\xrightarrow{f_i}X)_{i\in I}$
+    existe una única flecha $C\xrightarrow{h}X\in\C$ tal que el siguiente diagrama conmuta
+    \[\begin{tikzcd}
+        X && C \\
+        & {D(i)}
+        \arrow["h"', from=1-3, to=1-1]
+        \arrow["{f_i}", from=2-2, to=1-1]
+        \arrow["{c_i}"', from=2-2, to=1-3]
+    \end{tikzcd}\] para todo $i\in I$
+\end{dfn}
+
+De igual forma, si el colímite de un diagrama $D$ existe, denotamos al vértice de su cocono límite con $\clm(D)$. En esta sección nos ahorraremos mencionar
+más sobre colímites, dejamos como ejercicio al lector ver esos detalles. Ahora si probemos que si un límite existe, este es único salvo isomorfismos.
+
+\begin{lem}
+    Sea un diagrama $D:I\to\C$, tal que $(L\xrightarrow{l_i}D(i))_{i\in I}$ y $(L'\xrightarrow{l'_i}D(i))_{i\in I}$ son conos límite de $D$,
+    entonces $L\cong L'$
+\end{lem}
+\begin{proof}
+    Como $(L\xrightarrow{l_i}D(i))_{i\in I}$ es un cono límite, y en particular $(L'\xrightarrow{l'_i}D(i))_{i\in I}$ es un cono de $D$, 
+    entonces existe una única flecha $L'\xrightarrow{h}L\in\C$ tal que $l'_i=l_i\circ h$. Análogamente, existe una única flecha 
+    $L\xrightarrow{h'}L'\in\C$ tal que $l_i=l'_i\circ h'$. Sustituyendo tenemos que $l_i=l_i\circ h\circ h'$ y que $l'_i=l'_i\circ h'\circ h$,
+    pero por ser conos límites, en ambos casos, por unicidad de las flechas, $h\circ h'=\id_L$ y $h'\circ h=\id_{L'}$, lo que prueba que
+    $L\cong L'$.
+\end{proof}
+
+En la sección 1 mencionamos que el producto, los igualadores y productos fibrados son límites. Observe que el producto de $A$ y $B$ es el límite
+del diagrama $D:\D_2\to\C$, donde $\D_2$ es la categoría discreta de 2 elementos, y el funtor $D$ manda un objeto de $\D_2$ a $A$ y el otro objeto a $B$;
+En general decimos que una categoría $\C$ tiene \emph{productos arbitrarios} si para cualquier categoría $\D$ discreta y pequeña, todo diagrama
+$D:\D\to\C$ tiene límite.
+
+Los igualadores son límites de diagramas que tienen forma $\ast\overset{f}{\underset{g}{\rightrightarrows}}\bullet$; y los productos fibrados son límites
+de diagramas de forma \begin{tikzcd}
+                    & \ast \arrow[d, "f"] \\
+        \bullet \arrow[r, "g"'] & \bigstar               
+        \end{tikzcd}.
+
+Veamos un pequeño lema para comprobar la igualdad de morfismos que pasan a través de un límite.
+
+\begin{lem}\label{morfismos iguales que entran en lim}
+    Sea $D:I\to\C$ un diagrama que tiene límite en $\C$, y sean dos flechas $X\overset{f}{\underset{g}{\rightrightarrows}}\lm(D)$; entonces $f=g$ si y solo si
+    $l_i\circ f=l_i\circ g$ para todo objeto $i\in I$.
+\end{lem}
+\begin{proof}
+    Si $f=g$ es claro que $l_i\circ f=l_i\circ g$ para todo objeto $i\in I$. Por lo que supongamos que $l_i\circ f=l_i\circ g$ para todo objeto $i\in I$, entonces
+    podemos definir $h_i:=l_i\circ f=l_i\circ g$ para cada $i\in I$. Veamos que forma un cono sobre $D$, pues dada una flecha $i\xrightarrow{u}j\in I$, tenemos que
+    \[ D(u)\circ h_i=D(u)\circ l_i\circ f=l_j\circ f=h_j \]
+    lo que significa que existe una única fecha $h:X\to\lm(D)$ tal que $h_i=l_i\circ h$, y por la unicidad de $h$, tenemos que $f=h=g$.
+\end{proof}
 
 \begin{dfn}
     Decimos que una categoría $\C$ es \emph{completa}, si para cada categoría pequeña $I$, todo diagrama $D:I\to\C$ tiene límite en $\C$
 \end{dfn}
 
-
 \begin{thm}
     Sean $\A$ y $\C$ dos categorías. Si $\C$ es completa, entonces $[\A,\C]$ es completa
 \end{thm}
 \begin{proof}
-    PENDIENTE
+    Sea $D:I\to[\A,\C]$ un diagrama. Observemos que para cada $x\in\Obj(\A)$ se tiene el diagrama $D(-)(x):I\to\C$ que asigna a cada flecha 
+    $i\xrightarrow{a}j\in I$ la flecha $D(i)(x)\xrightarrow{D(a)_x}D(j)(x)\in\C$, que es la componente en $x\in\A$ de la transformación natural 
+    $D(i)\xRightarrow{D(a)}D(j)$.
+
+    Como $\C$ es completa, existen los límites de cada funtor inducido por $x\in\A$, denotaremos cada vértice como $\lm D(-)(x):=L(x)\in\C$ que no da el cono
+    límite $(L(x)\xrightarrow{l^x_i}D(i)(x))_{i\in I}$. Ahora sea una flecha $x\xrightarrow{f}y\in\A$, esto nos da el cuadro conmutativo
+    \[\begin{tikzcd}
+        {D(i)(x)} & {D(j)(x)} \\
+        {D(i)(y)} & {D(j)(y)}
+        \arrow["{D(a)_x}", from=1-1, to=1-2]
+        \arrow["{D(i)(f)}"', from=1-1, to=2-1]
+        \arrow["{D(j)(f)}", from=1-2, to=2-2]
+        \arrow["{D(a)_y}"', from=2-1, to=2-2]
+    \end{tikzcd}\]
+    para cada flecha $i\xrightarrow{a}j\in I$. Lo que nos da el diagrama conmutativo
+    \[\begin{tikzcd}
+        & {D(i)(x)} & {D(i)(y)} \\
+        {L(x)} &&& {L(y)} \\
+        & {D(j)(x)} & {D(j)(y)}
+        \arrow["{{D(i)(f)}}", from=1-2, to=1-3]
+        \arrow["{{D(a)_x}}"', from=1-2, to=3-2]
+        \arrow["{{D(a)_y}}", from=1-3, to=3-3]
+        \arrow["{l^x_i}", from=2-1, to=1-2]
+        \arrow["{l^x_j}"', from=2-1, to=3-2]
+        \arrow["{l^y_i}"', from=2-4, to=1-3]
+        \arrow["{l^y_j}", from=2-4, to=3-3]
+        \arrow["{{D(j)(f)}}"', from=3-2, to=3-3]
+    \end{tikzcd}\]
+    Y por ser $(L(y)\xrightarrow{l^y_i}D(i)(y))_{i\in I}$ un cono límite, existe una única flecha $L(f):L(x)\to L(y)$ tal que el diagrama
+    \[\begin{tikzcd}
+        {L(x)} & {D(i)(x)} \\
+        {L(y)} & {D(i)(y)}
+        \arrow["{l^x_i}", from=1-1, to=1-2]
+        \arrow["{L(f)}"', from=1-1, to=2-1]
+        \arrow["{{D(i)(f)}}", from=1-2, to=2-2]
+        \arrow["{l^y_i}"', from=2-1, to=2-2]
+    \end{tikzcd}\]
+    conmuta para todo objeto $i\in I$. Todo esto nos dice que $L\in[\A,\C]$.
+
+    Ahora consideremos las familias de flechas $(L(x)\xrightarrow{l^x_i}D(i)(x))_{x\in \A}$ para cada objeto $i\in I$, que como vimos en la construcción
+    de $L(f)$ para cada flecha $x\xrightarrow{f}y\in\A$, tenemos que cada familia es una transformación natural $l_i:L\Rightarrow D(i)$ que hace conmutar
+    el diagrama 
+    \[\begin{tikzcd}
+        & L \\
+        {D(i)} && {D(j)}
+        \arrow["{l_i}"', Rightarrow, from=1-2, to=2-1]
+        \arrow["{l_j}", Rightarrow, from=1-2, to=2-3]
+        \arrow["{D(a)}"', Rightarrow, from=2-1, to=2-3]
+    \end{tikzcd}\]
+    para cada $i\xrightarrow{a}j\in I$, ya que componente a componente son los conos límites. Por todo esto, tenemos que $(L\xRightarrow{l_i}D(i))_{i\in I}$
+    es un cono para el diagrama $D$, y queremos probar que es justo un cono límite.
+
+    Sea $(M\xRightarrow{m_i}D(i))_{i\in I}$ otro cono de $D$. Entonces componente a componente tenemos el siguiente diagrama conmutativo
+    \[\begin{tikzcd}
+        & {M(x)} \\
+        {D(i)(x)} && {D(j)(x)} \\
+        & {L(x)}
+        \arrow["{m^x_i}"', from=1-2, to=2-1]
+        \arrow["{m^x_j}", from=1-2, to=2-3]
+        \arrow["{D(a)_x}"{description}, from=2-1, to=2-3]
+        \arrow["{l^x_i}", from=3-2, to=2-1]
+        \arrow["{l^x_j}"', from=3-2, to=2-3]
+    \end{tikzcd}\]
+    para cada $i\xrightarrow{a}j\in I$, y como $L(x)$ es el límite, tenemos, para cada $x\in\A$ una única flecha $h_x:M(x)\to L(x)$ tal que 
+    $m^x_i=l^x_i\circ h_x$. Observemos que tomando una flecha $x\xrightarrow{f}y\in\A$, tenemos el siguiente diagrama
+    \[\begin{tikzcd}
+        && {D(i)(x)} \\
+        {M(x)} & {L(x)} \\
+        {M(y)} & {L(y)} \\
+        && {D(i)(y)}
+        \arrow["{D(i)(f)}", from=1-3, to=4-3]
+        \arrow["{m^x_i}", from=2-1, to=1-3]
+        \arrow["{h_x}"', from=2-1, to=2-2]
+        \arrow["{M(f)}"', from=2-1, to=3-1]
+        \arrow["{l^x_i}"', from=2-2, to=1-3]
+        \arrow["{L(f)}", from=2-2, to=3-2]
+        \arrow["{h_y}", from=3-1, to=3-2]
+        \arrow["{m^y_i}"', from=3-1, to=4-3]
+        \arrow["{l^y_i}", from=3-2, to=4-3]
+    \end{tikzcd}\]
+    del cual sabemos que conmutan los dos tríangulos (por la la construcción de $h_\bullet$) y el trapecio de la derecha (por la construcción de $L(f)$),
+    eso nos garantiza que $l^y_i\circ h_y\circ M(f)=l^y_i\circ L(f)\circ h_x$ para cada $i\in I$, y por el lema \ref{morfismos iguales que entran en lim},
+    $h_y\circ M(f)=L(f)\circ h_x$. Lo que significa que $h:=(M(x)\xrightarrow{h_x}L(x))_{x\in\A}$ es una transformación natural, que por un lado satisface
+    $m_i=l_i\circ h$, ya que cada componente lo hace, y es única con esa propiedad, pues cada componente de $h$ es único. Lo que prueba que .
 \end{proof}
 
 \section{Lema de Yoneda}
