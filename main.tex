@@ -72,7 +72,7 @@ with the connections between them represented as morphisms (or arrows). This poi
 Por más de 2 milenios se ha estudiado indirectamente una relación muy profunda que hay entre el \textquotedblleft contexto\textquotedblright  espacial y el \textquotedblleft contexto\textquotedblright  algebraico. Uno de los avances más importantes en esta relación la hizo René Descartes, ya que gracias a la
 idea del plano cartesioano, se evidenció como las ecuaciones (objetos algebraicos) se relacionan con curvas en el plano (objetos espaciales). Con la maduración de las matemáticas y un cambio de paradigma que vino al rededor del siglo XIX, se empezó a entender muchos objetos matemáticas como objetos con cierta estructura, y que el estudio de las estructuras y sus clasificaciones da mucha información matemática de estos objetos. Estas ideas dieron forma a diversas ramas de las matemáticas, como la topología, la teoría de grupos, anillos, campos, espacios vectoriales, y muchas más, pero la protagonista de esta historia y fruto de varias de las antes mencionadas, es la topología algebraica; esta es una rama que básicamente utiliza estructuras algebráicas para estudiar y clasificar estructuras topológicas. 
 
-A mediados del siglo XX, Samuel Eilenberg y Saunders Mac Lane, en un ejercicio del cálculo de una cohomología; un término técnico de topología algebraica que no es necesario aclarar, básicamente estaban trabajando con funtores que asignan a cada espacio topológico, una estructura algebraica; notaron que había maneras \textquotedblleft naturales de pasar\textquotedblright  de un funtor a otro. Esto llevó a la definición formal de transformación natural. Así, en su artículo de 1945, “General Theory of Natural Equivalences”, introdujeron por primera vez el lenguaje de categorías para poder expresar todo esto de forma precisa y general.
+A mediados del siglo XX, Samuel Eilenberg y Saunders Mac Lane, en un ejercicio del cálculo de una cohomología; un término técnico de topología algebraica que no es necesario aclarar, básicamente estaban trabajando con funtores que asignan a cada espacio topológico, una estructura algebraica; notaron que había maneras \textquotedblleft naturales\textquotedblright  de pasar de un funtor a otro. Esto llevó a la definición formal de transformación natural. Así, en su artículo de 1945, “General Theory of Natural Equivalences”, introdujeron por primera vez el lenguaje de categorías para poder expresar todo esto de forma precisa y general.
 
 En este lenguaje de categorías, hay un nuevo cambio de paradigma. En general muchas definiciones dependen de un conjunto y de hablar de los elementos de ese conjunto, y darle estructura a ese conjunto, y todo eso, da como resultado un objeto matemático que puede ser estudiado mirando sus elementos; en categorías, no es posible mirar un objeto aisladamente, es necesario entenderlo como parte de un \textquotedblleft contexto\textquotedblright  donde sus propiedas las estudiamos a partir de como se \textquotedblleft relaciona\textquotedblright con los demás objetos (incluido él mismo) de dicho \textquotedblleft contexto\textquotedblright . Esta noción de \textquotedblleft contexto\textquotedblright  viene formalizado por lo que es una categoría, que como veremos más a detalle, básicamente consta de dar una colección de objetos, dar una colección de flechas (las \textquotedblleft relaciones\textquotedblright  entre los objetos) , y definir una regla de composición de flechas (algo así como \textquotedblleft pegar relaciones\textquotedblright ) que satisfaga un axioma de asociatividad y un axioma de identidades (véase la definición \ref{Definicion categoria} para detalles). Con este espíritu de entender los objetos a partir de flechas hacia otros objetos de \textquotedblleft una misma naturaleza\textquotedblright , se busca definir el concepto de funtor, el cúal es básicamente una flecha entre categorías, que respeta la composición de flechas. Recursivamente, pensemos si es posible tener
 flechas entre funtores, y en efecto lo es,  justo estas son las transformaciones naturales.
@@ -238,14 +238,15 @@ que exista una flecha tal que la composición (en alguna dirección) sea igual a
 Observemos que toda sección (retracto) es un monomorfismo (epimorfismo). Y notemos que, para un flecha en una categoría, aunque no es suficiente ser monomorfismo
 y epimorfismo para ser isomorfismo, si es suficiente que sea sección y retracto (Demostración como ejercicio para el lector).
 
-Ejemplos de categorías, en cada ejemplo decir que son Isos, monos, epis, secciones y retractos...
-
 \begin{ej}[Categorías discretas]\label{categorías discretas}
     Consideremos una colección arbitraria $A$, esta colección puede representar una categoría, considerando a cada elemento de $A$ como un objeto, podemos
     simplemente decir que las únicas flechas son las identidades de cada objeto, y por lo tanto la regla de composición es trivial.
     Cualquier categoría $\C$ que satisfaga que hay una biyección entre su colección de objetos $\Obj(\C)$ y su colección de flechas $\Fle(\C)$, le llamamos
     \emph{categoría discreta}. En este tipo de categorías, cada flecha es un isomorfismo, y por lo tanto también es un monomorfismo, epimorfismo, sección y retracto.
 \end{ej}
+
+En este momento vale la pena decir que una categoría $\C$ se dice \emph{pequeña} si su colección de flechas, es decir $\Fle(\C)$, es un conjunto. Entonces un
+conjunto se puede caracterizar por ser una categoría pequeña discrteta.
 
 \begin{ej}[Categorías Concretas]\label{Categorías concretas}
     Aún no podemos definir formalmente lo que es una categoría concreta, pero esencialmente son categorías donde sus objetos pueden ser vistos como conjuntos
@@ -264,13 +265,13 @@ Ejemplos de categorías, en cada ejemplo decir que son Isos, monos, epis, seccio
         homeomorfismo. De nuevo en esta categoría monomorfismos y secciones no son equivalentes, ni epimorfismos y retractos. 
         \item Dado un campo $K$, tenemos la categoría $\Vect_K$ de espacios vectoriales sobre $K$, donde los objetos son espacios vectoriales con escalares
         en $K$ y las flechas son transformaciones lineales. En esta categoría, los isomorfismos son precisamente las transformaciones lineales biyectivas. 
-        De nuevo es equivalente ser monomorfismo a ser inyectiva, ser epimorfismo a ser sobreyectiva, y ser isomorfismo a ser monomorfismo y epimorfismo, pero
-        no es equivalente ser sección a ser inyectiva, ni ser retracto a ser sobreyectiva.
+        De nuevo es equivalente ser monomorfismo a ser inyectiva, ser epimorfismo a ser sobreyectiva, y ser isomorfismo a ser monomorfismo y epimorfismo, y
+        es equivalente ser sección a ser inyectiva.
         \item La categoría $\Ring$ de anillos con identidad, donde los objetos son anillos con identidad y las flechas son homomorfismos de anillos, funciones
         que preservan las operaciones del anillo, la identidad y el cero. En esta categoría, los isomorfismos son los homomorfismos biyectivos, de nuevo es
         equivalente ser monomorfismo a ser inyectiva, pero no todos los epimorfismos son sobreyectivos, y por lo tanto tampoco es equivalente ser isomorfismo
         a ser monomorfismo y epimorfismo. Sugerimos como ejercicio al lector probar que la inclusión de $\Z$ en $\Q$ es un epimorfismo en $\Ring$. Y con las secciones y
-        retractos tenemos el mismo caso que en los ejemplos anteriores (con excepción de $\Con$).
+        retractos tenemos el mismo caso que en los ejemplos anteriores (con excepción de $\Con$ y $\Vect$).
         \item La categoría $\Frm$ de marcos, donde los objetos, llamados marcos, son conjuntos parcialmente ordenados que tienen elemento tope, elemento fondo, supremos arbitrarios,
         ínfimos finitos y estos dos últimos son distributivos entre sí; y las flechas son funciones monótonas que preservan el tope, el fondo, los supremos arbitrarios
         y los ínfimos finitos. Las caracterizaciones de isomorfismos, monomorfismos y epimorfismos son básicamente las mismas que en $\Con$, pero de nuevo,
@@ -292,6 +293,7 @@ Ejemplos de categorías, en cada ejemplo decir que son Isos, monos, epis, seccio
         \item El monoide de los enteros $\Z$ con la suma. Esta categoría solo tiene isomorfismos, y sabemos que es un grupo, entonces en particular 
         los grupos son categorías con un único objeto donde todos los morfismos son isomorfismos.
     \end{itemize}
+    Este último ejemplo da pie a mencionar que un \emph{grupoide} es una categoría donde todas las flechas son isomorfismos.
 \end{ej}
 
 \begin{ej}[Categorías delgadas]\label{categoria delgada}
@@ -630,12 +632,12 @@ Antes de esa definición, necesitamos definir un tipo de funtor, entonces veamos
     \end{itemize}
 \end{dfn}
 
-Con esto podemos decir formalmente que una categoría $C$ se dice \emph{concreta} si existe un funtor $U:\C\to\Con$ fiel; a este funtor se le llama 
+Con esto podemos decir formalmente que una categoría $\C$ se dice \emph{concreta} si existe un funtor $U:\C\to\Con$ fiel; a este funtor se le llama 
 \emph{funtor de olvido}. Veamos ya algunos ejemplos de funtores.
 
 \begin{ej}[Funtores que \textquotedblleft no hacen nada\textquotedblright]
     \begin{itemize}
-        \item El funtor identidad $\id_\C:\C\to\C$ para cualquier categoría $\C$. Por supuesto este funtos asigna a cada flecha $X\xrightarrow{f}Y\in\C$ 
+        \item El funtor identidad $\id_\C:\C\to\C$ para cualquier categoría $\C$. Por supuesto este funtor asigna a cada flecha $X\xrightarrow{f}Y\in\C$ 
         la misma flecha $X\xrightarrow{f}Y\in\C$. Es claro que satisface las condiciones de un funtor.
         \item De las categorías concretas que mencionamos en el ejemplo \ref{Categorías concretas}, cada una tiene su funtor de olvido, que simplemente 
         asigna a cada objeto (grupo, anillo, espacio topológico, vectorial, etc.) su conjunto subyacente, y cada a morfismo (homomorfismo de grupos, anillos,
@@ -646,7 +648,7 @@ Con esto podemos decir formalmente que una categoría $C$ se dice \emph{concreta
     \end{itemize}
 \end{ej}
 
-\begin{ej}[Funtores que \textquotedblleft dan estructura\textquotedblright]
+\begin{ej}[Funtores que \textquotedblleft dan estructura\textquotedblright]\label{funtores libres}
     Ahora veamos algunos ejemplos de funtores que asignan un objeto con estructura a un conjunto.
     \begin{itemize}
         \item El funtor $F:\Con\to\Grp$ que asigna a cada conjunto $X\in\Con$ el grupo libre generado por $X$. $F(X):=\{\text{Cadenas finitas de elementos de }X\}$,
@@ -665,7 +667,7 @@ Con esto podemos decir formalmente que una categoría $C$ se dice \emph{concreta
     \end{itemize}
 \end{ej}
 
-Si el lector está familiarizado con teoría de grupos y espacios vectoriales, recomendamos comprobar que que los funtores $F:\Con\to\Grp$ y $K^{()}:\Con\to\Vect_K$ 
+Si el lector está familiarizado con teoría de grupos y espacios vectoriales, recomendamos comprobar que los funtores $F:\Con\to\Grp$ y $K^{()}:\Con\to\Vect_K$ 
 satisfacen las condiciones de conservar identidades y abrir composiciones de flechas.
 
 \begin{ej}[Funtores en base a objetos]\label{funtores en base a objetos}
@@ -901,12 +903,39 @@ de $F\xRightarrow{\alpha}G$, una notación que deja ver también las categorías
 \end{tikzcd}
 \]
 
-\begin{ej}[Algunos ejemplos]
+\begin{ej}[Algunos ejemplos]\label{ejTN}
+    \begin{itemize}
     \item Para cualquier funtor $\A\xrightarrow{F}\B$, existe la transformación natural identidad, dada como $\id_F=(\id_{F(A)})_{A\in\A}$.
-    \item  
+    \item Consideremos dos homomorfismos de grupos $G\overset{\phi}{\underset{\psi}{\rightrightarrows}}H\in\Grp$. Sabemos que estos son funtores entre categorías
+    de un objeto, entonces una tranformación natural está dada por un elemento $h\in H$ tal que $h\phi(g)=\psi(g)h$ para todo $g\in G$.
+    \item En el ejemplo \ref{funtores en base a objetos} vimos los funtores contravariantes $\Con_2$ y $\Cal P$, veamos que la colección de funciones 
+    $(\Cal P(A)\xrightarrow{\alpha_A}\Con(A,2))_{A\in\Con}$ donde $\alpha_A$ manda cada subconjunto de $A$ a su función característica. Entonces, dada una 
+    función $X\xrightarrow{f}Y\in\Con$ tenemos que el cuadrado
+    \[\begin{tikzcd}
+        {\Cal P(Y)} & {\Con(Y,2)} \\
+        {\Cal P(X)} & {\Con(X,2)}
+        \arrow["{\alpha_Y}", from=1-1, to=1-2]
+        \arrow["{f^{-1}}"', from=1-1, to=2-1]
+        \arrow["{-\circ f}", from=1-2, to=2-2]
+        \arrow["{\alpha_X}", from=2-1, to=2-2]
+    \end{tikzcd}\]
+    conmuta, ya que $\chi_A\circ f=\chi_{f^{-1}(A)}$ para todo $A\subseteq Y$.
+    \item Consideremos una categoría $\C$ localmente pequeña, y una flecha $A\xrightarrow{f}B\in\C$. Considere los funtores hom $\C^A,\C^B:\C\to\Con$, que se
+    mencionan en el ejemplo \ref{funtores en base a objetos}, notemos que el cuadrado
+    \[\begin{tikzcd}
+        {\C^A(X)} & {\C^B(X)} \\
+        {\C^A(Y)} & {\C^B(Y)}
+        \arrow["{g\circ -}"', from=1-1, to=2-1]
+        \arrow["{-\circ f}"', from=1-2, to=1-1]
+        \arrow["{g\circ -}", from=1-2, to=2-2]
+        \arrow["{-\circ f}", from=2-2, to=2-1]
+    \end{tikzcd}\]
+    conmuta para cualquier flecha $X\xrightarrow{g}Y\in\C$. Lo que significa que $\C^f:=(\C^B(X)\xrightarrow{-\circ f}\C^A(X))_{X\in\C}$ es una transformación
+    natural de $\C^B$ a $\C^A$.
+    \end{itemize}
 \end{ej}
 
-Veamos ahora que como es la composición de transformaciones naturales.
+Veamos ahora como es la composición de transformaciones naturales.
 
 \begin{prop}
     Sean 
@@ -930,7 +959,7 @@ Veamos ahora que como es la composición de transformaciones naturales.
         {F(B)} & {H(B)}
         \arrow["{\beta_A\circ\alpha_A}", from=1-1, to=1-2]
         \arrow["{F(f)}"', from=1-1, to=2-1]
-        \arrow["{G(f)}", from=1-2, to=2-2]
+        \arrow["{H(f)}", from=1-2, to=2-2]
         \arrow["{\beta_B\circ\alpha_B}"', from=2-1, to=2-2]
     \end{tikzcd} conmuta, pues por ser $\alpha$ y $\beta$ transformaciones naturales, los cuadrados
      \[\begin{tikzcd}
@@ -946,7 +975,7 @@ Veamos ahora que como es la composición de transformaciones naturales.
         \end{tikzcd}\] conmutan.
 \end{proof}
 
-Notemos que las componentes de una composción son exactamente la composición de las componentes. Dejamos al lector verificar que la composición
+Notemos que las componentes de una composición son exactamente la composición de las componentes. Dejamos al lector verificar que la composición
 es además asociativa ya que basta verificar que componente a componente lo es.
 Todo esto lo mencionamos para definir la categoría de funtores entre dos categorías.
 \begin{dfn}[Categoría de funtores]
@@ -966,7 +995,7 @@ F\circ G\cong \id_\B \text{ y }G\circ F\cong \id_\A
 \end{equation*}
 \end{dfn}
 Más adelante veremos que una equivalencia es un caso particular de una adjunción. Y en la sección del lema de Yoneda, veremos detalles 
-sobre la categoría de funtores $[\A,\Con]$ donde $\A$ es localmente pequeña.
+sobre la categoría de funtores $[\A^\op,\Con]$ donde $\A$ es localmente pequeña.
 
 \section{Límites y colímites}
 
@@ -1075,7 +1104,7 @@ Veamos un pequeño lema para comprobar la igualdad de morfismos que pasan a trav
     $i\xrightarrow{a}j\in I$ la flecha $D(i)(x)\xrightarrow{D(a)_x}D(j)(x)\in\C$, que es la componente en $x\in\A$ de la transformación natural 
     $D(i)\xRightarrow{D(a)}D(j)$.
 
-    Como $\C$ es completa, existen los límites de cada funtor inducido por $x\in\A$, denotaremos cada vértice como $\lm D(-)(x):=L(x)\in\C$ que no da el cono
+    Como $\C$ es completa, existen los límites de cada funtor inducido por $x\in\A$, denotaremos cada vértice como $\lm (D(-)(x))=:L(x)\in\C$ que nos da el cono
     límite $(L(x)\xrightarrow{l^x_i}D(i)(x))_{i\in I}$. Ahora sea una flecha $x\xrightarrow{f}y\in\A$, esto nos da el cuadro conmutativo
     \[\begin{tikzcd}
         {D(i)(x)} & {D(j)(x)} \\
@@ -1151,16 +1180,19 @@ Veamos un pequeño lema para comprobar la igualdad de morfismos que pasan a trav
         \arrow["{m^y_i}"', from=3-1, to=4-3]
         \arrow["{l^y_i}", from=3-2, to=4-3]
     \end{tikzcd}\]
-    del cual sabemos que conmutan los dos tríangulos (por la la construcción de $h_\bullet$) y el trapecio de la derecha (por la construcción de $L(f)$),
+    del cual sabemos que conmutan los dos tríangulos (por la construcción de $h_\bullet$) y el trapecio de la derecha (por la construcción de $L(f)$),
     eso nos garantiza que $l^y_i\circ h_y\circ M(f)=l^y_i\circ L(f)\circ h_x$ para cada $i\in I$, y por el lema \ref{morfismos iguales que entran en lim},
     $h_y\circ M(f)=L(f)\circ h_x$. Lo que significa que $h:=(M(x)\xrightarrow{h_x}L(x))_{x\in\A}$ es una transformación natural, que por un lado satisface
-    $m_i=l_i\circ h$, ya que cada componente lo hace, y es única con esa propiedad, pues cada componente de $h$ es único. Lo que prueba que .
+    $m_i=l_i\circ h$, ya que cada componente lo hace, y es única con esa propiedad, pues cada componente de $h$ es único.
 \end{proof}
 
 \section{Lema de Yoneda}
 
 Introducción sobre el lema de Yoneda, enunciación y demostración...
 
+
+En esta sección solo consideraremos una categoría $\C$ localmente pequeña. Primeramente indagaremos en propiedades de los funtores homs, mencionados en el ejemplo
+\ref{funtores en base a objetos}. 
 \section{Adjunciones}
 
 En general, dadas dos categorías y dos funtores entre ellas, es muy difícil saber a priori cuando estos funtores forman una equivalencia, por eso se buscó las condiciones mínimas que se pueden exigir para tratar a dichas categorías 'como si fueran equivalentes'. De esta idea surgió el concepto de adjunción.
