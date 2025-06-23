@@ -516,7 +516,7 @@ fibrado en la categoría.
         B \arrow[r, "g"'] & Z               
         \end{tikzcd}$\in\C$. Como $\C$ tiene productos tenemos que existe $A\times B\in\C$ junto a las respectivas proyecciones. Entonces tenemos el par de flechas 
         $A\times B\overset{f\circ\pi_A}{\underset{g\circ\pi_B}{\rightrightarrows}}Z\in\C$, y como $\C$ tiene igualadores, entonces existe $I\in\C$ junto a una flecha 
-        $e:I\to A\times B$ tal que $f\circ\pi_A\circ e=g\circ\pi_B\circ e$. Comprobemos que el diagrama conmutativo
+        $e:I\to A\times B$ tal que $f\circ\pi_A\circ e=g\circ\pi_B\circ e$. Comprobemos que el diagrama es conmutativo
         \[\begin{tikzcd}
             {I} \arrow[r, "\pi_A\circ e"] \arrow[d, "\pi_B\circ e"'] & A \arrow[d, "f"] \\
             B \arrow[r, "g"']                                & Z               
@@ -1188,38 +1188,150 @@ Veamos un pequeño lema para comprobar la igualdad de morfismos que pasan a trav
 
 \section{Lema de Yoneda}
 
-Introducción sobre el lema de Yoneda, enunciación y demostración...
+En esta sección solo consideraremos una categoría $\C$ localmente pequeña. Primeramente indagaremos en propiedades de los funtores homs, mencionados en el 
+ejemplo \ref{funtores en base a objetos}. Como mencionamos después de definir las categorías de funtores, el objetivo de esta sección es estudiar la categoría
+$[\C^\op,\Con]$ de funtores contravariantes de la categoría $\C$ a la categoría de conjuntos, esta categoría es generalmente llamada categoría de \emph{pregavillas}
+sobre $\C$. 
 
+Recordemos como se define un funtor hom contravariante. Cada objeto $A\in\C$ define un funtor contravariante $\C_A:\C\to\Con$ que manda cada objeto $X\in\C$
+al conjunto $\C(X,A)\in\Con$; y cada flecha $X\xrightarrow{f}Y\in\C$ le asigna la función $\C(Y,A)\xrightarrow{-\circ f}\C(X,A)\in\Con$. Esta asignación en efecto
+es funtorial por la asociatividad de la composición en $\C$.
 
-En esta sección solo consideraremos una categoría $\C$ localmente pequeña. Primeramente indagaremos en propiedades de los funtores homs, mencionados en el ejemplo
-\ref{funtores en base a objetos}. 
+Ahora veamos la versión dual de la transformación natural presentada en el ejemplo \ref{ejTN}. Cada flecha $A\xrightarrow{\alpha}B\in\C$ define una transformación
+natural $\C_\alpha:\C_A\Rightarrow\C_B$ entre los funtores homs; cada componente en $X\in\C$ de la transformación natural es la función $\C(X,A)\xrightarrow
+{\alpha\circ -}\C(X,B)$, que en efecto hace conmutar el siguiente diagrama
+\[\begin{tikzcd}
+	{\C(X,A)} & {\C(X,B)} \\
+	{\C(Y,A)} & {\C(Y,B)}
+	\arrow["{\alpha\circ -}", from=1-1, to=1-2]
+	\arrow["{-\circ f}", from=2-1, to=1-1]
+	\arrow["{\alpha\circ -}"', from=2-1, to=2-2]
+	\arrow["{-\circ f}"', from=2-2, to=1-2]
+\end{tikzcd}\]
+para cualquier flecha $X\xrightarrow{f}Y\in\C$.
+
+No es difícil ver que si tenemos dos flechas $A\xrightarrow{\alpha}B\xrightarrow{\beta}C\in\C$ entonces $\C_{\beta\circ\alpha}=\C_\beta\circ\C_\alpha$, pues
+en cada componente es claro que $(\beta\circ\alpha)\circ -=(\beta\circ -)\circ(\alpha\circ -)$, ya que la composición es asociativa. También es fácil ver que
+$\C_{\id_A}=\id_{\C_A}$ pues componente a componente es la función que compone con la identidad de $A$ y eso no modifica las flechas, por lo tanto es la identidad
+en cada conjunto de flechas con codominio $A$. Todo esto nos dice que tenemos un funtor $\C_\bullet:\C\to[\C^\op,\Con]$ este funtor lo llamamos 
+\emph{funtor de Yoneda}.
+
+Veamos ahora el Lema de Yoneda.
+
+\begin{lem}[Yoneda]
+    Sea $\C$ una categoría localemente pequeña, y sea $F:\C\to\Con$ un funtor contravariante (o una pregavilla sobre $\C$). Entonces
+    \[ [\C^\op,\Con](\C_A,F)\cong F(A) \]
+    son naturalmente isomorfos\footnote{Los funtores involucrados se explican dentro de la demostración} para cualquier objeto $A\in\C$.
+\end{lem}
+
+\begin{proof}
+    Empezamos dando explícitamente la biyección. Sea $(\widehat{\phantom{a}}):[\C^\op,\Con](\C_A,F)\to F(A)$ definida como $\widehat{\alpha}:=\alpha_A(\id_A)$ para cada
+    transformación natural $\alpha:\C_A\to F$. Por otro lado definamos la función $(\widetilde{\phantom{a}}):F(A)\to[\C^\op,\Con](\C_A,F)$ que toma $a\in F(A)$ y 
+    le asigna la familia de funciones $\widetilde{a}:=(\C_A(X)\xrightarrow{\widetilde{a}_X}F(x))_{X\in\C}$ definidas como $\widetilde{a}_X(f)=F(f)(a)$ para cada
+    $X\in\C$ y $f\in\C(X,A)$. Para ver que es una transformación natural, consideremos una flecha $X\xrightarrow{g}Y\in\C$ y veamos que el siguiente cuadrado
+    \[\begin{tikzcd}
+        {\C(X,A)} & {F(X)} \\
+        {\C(Y,A)} & {F(Y)}
+        \arrow["{\widetilde{a}_X}", from=1-1, to=1-2]
+        \arrow["{-\circ g}", from=2-1, to=1-1]
+        \arrow["{\widetilde{a}_Y}"', from=2-1, to=2-2]
+        \arrow["{F(g)}"', from=2-2, to=1-2]
+    \end{tikzcd}\]
+    conmuta. Dado $f\in\C(Y,A)$, se tiene que $\widetilde{a}_X\circ(- \circ g)(f)=\widetilde{a}_X(f\circ g)=F(f\circ g)(a)=F(g)\circ F(f)(a)=F(g)(F(f)(a))=
+    F(g)(\widetilde{a}_Y(f))$, la que prueba que conmuita el diagrama en cuestión y por lo tanto $\widetilde{a}:\C_A\Rightarrow F$ es en efecto una transformación
+    natural.
+    
+    Ahora notemos, por un lado dado $a\in F(A)$ tenemos que
+    \[ \widehat{\widetilde{a}}=\widetilde{a}_A(\id_A)=F(\id_A)(a)=\id_{F(A)}(a)=a \]
+    por otro lado, dada $\alpha:\C_A\Rightarrow F$ una transformación natural, tenemos que $\widetilde{\widehat{\alpha}}=\widetilde{\alpha_A(\id_A)}$. Veamos que
+    que dado un objeto $X\in\C$ y una flecha $X\xrightarrow{f}A\in\C$ tenemos $\widetilde{\alpha_A(\id_A)}_X(f)=F(f)(\alpha_A(\id_A))=\alpha_X(f)$, esta última
+    igualdad viene de que el cuadrado
+    \[\begin{tikzcd}
+        {\C(A,A)} & {F(A)} \\
+        {\C(X,A)} & {F(X)}
+        \arrow["{\alpha_A}", from=1-1, to=1-2]
+        \arrow["{-\circ f}"', from=1-1, to=2-1]
+        \arrow["{F(f)}", from=1-2, to=2-2]
+        \arrow["{\alpha_X}"', from=2-1, to=2-2]
+    \end{tikzcd}\]
+    conmuta, pues $\alpha$ es una transformación natural.
+
+    De lo anterior hemos probado que $[\C^\op,\Con](\C_A,F)\cong F(A)$ como conjuntos, solo resta ver la parte de la naturalidad. No queremos entrar en muchos detalles
+    del porque esto da la naturalidad a la biyección, pero básicamente queremos ver, por un lado que $F$ es naturalmente isomorfo al funtor 
+    $[\C^\op,\Con]_F\circ\C_\bullet:\C\to\Con$; y por otro lado, que el funtor $ev_A:[\C^\op,\Con]\to\Con$, que manda cada funtor a su evaluación en $A$, y cada
+    transformación natural a su componente en $A$, es naturalmente isomorfo al funtor hom $[\C^\op,\Con]_{\C_A}$. Y para esto solo es necesario verificar que los siguientes 
+    cuadrados conmutan
+    \[\begin{tikzcd}
+        {[\C^\op,\Con](\C_A,F)} & {F(A)} && {[\C^\op,\Con](\C_A,F)} & {F(A)} \\
+        {[\C^\op,\Con](\C_X,F)} & {F(X)} && {[\C^\op,\Con](\C_A,G)} & {G(A)}
+        \arrow["{(\widehat{\phantom{a}})}", from=1-1, to=1-2]
+        \arrow["{(\widehat{\phantom{a}})}", from=1-4, to=1-5]
+        \arrow["{\alpha\circ -}"', from=1-4, to=2-4]
+        \arrow["{\alpha_A}", from=1-5, to=2-5]
+        \arrow["{-\circ \C_f}", from=2-1, to=1-1]
+        \arrow["{(\widehat{\phantom{a}})}"', from=2-1, to=2-2]
+        \arrow["{F(f)}"', from=2-2, to=1-2]
+        \arrow["{(\widehat{\phantom{a}})}"', from=2-4, to=2-5]
+    \end{tikzcd}\]
+    para cualquier flecha $A\xrightarrow{f}X\in\C$ y cualquier transformación natural $F\xRightarrow{\alpha}G\in [\C^\op,\Con]$.
+
+    Para el cuadrado de la izquierda, consideremos una transformación natural $\theta:\C_X\to F$, entonces el siguiente cuadrado conmuta
+    \[\begin{tikzcd}
+        {\C_X(A)} & {F(A)} \\
+        {\C_X(X)} & {F(X)}
+        \arrow["{\theta_A}", from=1-1, to=1-2]
+        \arrow["{-\circ f}", from=2-1, to=1-1]
+        \arrow["{\theta_X}"', from=2-1, to=2-2]
+        \arrow["{F(f)}"', from=2-2, to=1-2]
+    \end{tikzcd}\]
+    por lo que para $\id_X\in\C(X,X)$ tenemos $F(f)(\theta_X(\id_X))=\theta_A(f)$, y ahora es claro que
+    \[ F(f)(\widehat{\theta})=F(f)(\theta_X(\id_X))=\theta_A(f)=\theta_A(f\circ \id_A)=(\theta\circ\C_f)_A(\id_A)=\widehat{(\theta\circ\C_f)} \]
+    
+    Por otro lado, para el cuadrado derecho, simplemente tomamos una transformación natural $\sigma:\C_A\to F$ y vemos que
+    \[ \widehat{(\alpha\circ\sigma)}=(\alpha\circ\sigma)_A(\id_A)=\alpha_A(\theta_A(\id_A))=\alpha_A(\widehat{\theta}) \]
+\end{proof}
+
+Veamos una pequeña implicación que tiene el lema de Yoneda
+
+\begin{cor}
+    El funtor de Yoneda $\C_\bullet:\C\to[\C^\op,\Con]$ es fiel y pleno.
+\end{cor}
+
+\begin{proof}
+    Tenemos que que ver que para todo par de objetos $A,B\in\C$ la función $\C_\bullet:\C(A,B)\to[\C^\op,\Con](\C_A,\C_B)$, inducida por el funtor de yoneda,
+    es una biyección. Para esto tomemos una flecha $f\in\C(A,B)$ y notemos que
+    \[ \widehat{\C_f}=(\C_f)_A(\id_A)=f\circ\id_A=f \]
+    
+    Como ya sabemos que $(\widehat{\phantom{a}})$ si es una biyección, $\C_\bullet$ debe serlo también.
+\end{proof}
+
 \section{Adjunciones}
 
-En general, dadas dos categorías y dos funtores entre ellas, es muy difícil saber a priori cuando estos funtores forman una equivalencia, por eso se buscó las condiciones mínimas que se pueden exigir para tratar a dichas categorías 'como si fueran equivalentes'. De esta idea surgió el concepto de adjunción.
+	En general, dadas dos categorías y dos functores entre ellas, es muy díficil saber a priori cuando estos functores forman una equivalencia, por eso se buscó las condiciones mínimas que se pueden exigir para tratar a dichas categorías 'como si fueran equivalentes'. De esta idea surgió el concepto de adjunción.
 \begin{dfn}
-	Dadas dos categorías $\mathcal{C,D}$ y dos funtores $F:\mathcal{C\to D}$, $G:\mathcal{C\to D}$, diremos que $F$ es el adjunto izquierdo de $G$ (o que $G$ es el adjunto derecho de $F$), denotado $F\dashv G$, si existe un isomorfismo natural $\Hom_\mathcal{D}(F(A),B)\simeq \Hom_\mathcal{C}(A,G(B))$ para cualesquiera objetos $A$ en $\mathcal{D}$ y $B$ en $\mathcal{C}$, es decir, para cualesquiera morfismos $f:A'\to A$
-	en $\mathcal C$ y $g:B\to B'$ en $\mathcal D$,
+	Dadas dos categorías $\mathcal{C,D}$ y dos functores $F:\mathcal{C\to D}$, $G:\mathcal{D\to C}$, diremos que $F$ es el adjunto izquierdo de $G$ (o que $G$ es el adjunto derecho de $F$), denotado $F\dashv G$\index[Simbolos]{$\dashv $ adjunción  }, si existe un isomorfismo natural $\Hom_\mathcal{D}(F(A),B)\simeq \Hom_\mathcal{C}(A,G(B))$ para cualesquiera objetos $A$ en $\mathcal{D}$ y $B$ en $\mathcal{C}$, es decir, para cualesquiera morfismos $f:A'\to A$
+	en $\mathcal{C}$ y $g:B\to B'$ en $\mathcal{D}$,
 	el siguiente diagrama es conmutativo:
 	\[
 	\begin{tikzcd}
-		\Hom_\mathcal{D}(FA,B)
+		\mathcal{D}(FA,B)
 		\ar[d,"g\circ-\circ Ff"']
 		\ar[r,"\sim",shift left]
-		& \Hom_\mathcal{C}(A,GB) 
+		& \mathcal{C}(A,GB) 
 		\ar[d,"Gg\circ-\circ f"]
 		\ar[l,"\sim",shift left] \\
-		\Hom_\mathcal{D}(FA',B')
+		\mathcal{D}(FA',B')
 		\ar[r,"\sim",shift left]
-		& \Hom_\mathcal{D}(A',GB')
+		& \mathcal{C}(A',GB')
 		\ar[l,"\sim",shift left]
 	\end{tikzcd}
 	\]
 \end{dfn}
-La definición anterior quiere decir que hay un iso natural entre los funtores.
+La definición anterior quiere decir que hay un iso natural entre los functores:
 
 \begin{obs}\label{adjcomp}
-	Supongamos que tenemos $F\dashv G$ funtores adjuntos entre $\mathcal{C}$ y $\mathcal{D}$, dadas flechas $(FA\xrightarrow p B)\in\mathcal{D}$ y $(A\xrightarrow q GB)\in\mathcal{C}$ les corresponden flechas únicas $(A\xrightarrow{\Bar{p}}GB)$	y $(FA\xrightarrow{\Bar{q}}B)$,
-	respectivamente, bajo el isomorfismo de adjunción. Claramente $\Bar{\Bar{p}}=p$ y $\Bar{\Bar{q}}=q$. As\'i:
+	Supongamos que tenemos $F\dashv G$ funtores adjuntos entre $\mathcal{C}$ y $\mathcal{D}$, dadas flechas $(FA\overset{\to}{p} B)\in\mathcal{D}$ y $(A\overset{\to}{q} GB)\in\mathcal{C}$ les corresponden flechas \'unicas $(A\overset{\to}{\Bar{p}}GB)$	y $(FA\overset{\to}{\Bar{q}}B)$,
+	respectivamente, bajo el isomorfismo de adjunci\'on. Claramente $\Bar{\Bar{p}}=p$ y $\Bar{\Bar{q}}=q$. As\'i:
 	\begin{enumerate}
 		\item
 		Tomando $f=\id_A:A\to A$ y cualquier $g:B\to B'$ en $\mathcal{C}$, $(Gg)\bar p=\ol{gp}$.
@@ -1238,7 +1350,7 @@ Definimos la siguiente transformaci\'on natural $F\xRightarrow{\alpha}F'$ como $
 
 \begin{ej}
 	\begin{itemize}
-		\item En álgebra surge mucho el fen\'omeno de ``generar'' y ``olvidar'', en otras palabras, a partir de un conjunto podemos generar una estructura algebraica y dada una estructura algebraica podemos olvidar alguna operaci\'on. Para ejemplificar consideremos la categoría de espacios vectoriales $\Vect_k$ sobre un campo $k$ y la categoría de conjuntos $\Con$. Definimos los siguientes funtores $F:\Con\to\Vect_k$ y $U:\Vect_k\to\Con$ de la siguiente manera:
+		\item En álgebra surge mucho el fen\'omeno de ``generar'' y ``olvidar'', en otras palabras, a partir de un conjunto podemos generar una estructura algebraica y dada una estructura algebraica podemos olvidar alguna operaci\'on. Para ejemplicar consideremos la categoria de espacios vectoriales $\Vect_k$ sobre un campo $k$ y la categoria de conjuntos $\Con$. Definimos los siguientes funtores $F:\Con\to\Vect_k$ y $U:\Vect_k\to\Con$ de la siguiente manera:
 		Dado un $k$-espacio vectorial $V$, $U(V)$ es solo el conjunto subyacente $V$ y cualquier transfomaci\'on lineal $g:V\to W$, $U(g)$ la considera solo como funci\'on. Por otro lado, el funtor $F$ toma un conjunto $X$ y $F(X)$ es el $k$ espacio vectorial cuya base es $X$, o de otra manera, la suma directa indicada en $X$ de copias de $k$. Dada una funci\'on $f:X\to Y$, $F(f)$ es la transformaci\'on lineal tal que 
 		\[(k_x)_{x\in X}\mapsto (k_y)_{y\in Y}=\begin{cases}
 			k_x \; \text{si }\; y=f(x) \\
@@ -1277,7 +1389,7 @@ Definimos la siguiente transformaci\'on natural $F\xRightarrow{\alpha}F'$ como $
 		\begin{equation*}
 			({-})^B:\Con\to \Con
 		\end{equation*}
-		llamado exponenciaci\'on, que a cada conjunto $A$, le asocia su conjunto de funciones $C^B:=\Hom_{\Con}(B,C)$. El isomorfismo de adjunci\'on se construye de la siguiente manera: Tomemos una funci\'on $f\in\Hom_{\Con}(A\times B, C)$. Definimos la siguiente funci\'on $\Bar{f}\in \Hom_{\Con}(A,C^B)$ como: para cada $a\in A$, tenemos una funci\'on $\Bar{f}(a):B\to C$ definida como $\Bar{f}(a)(b)=f(a,b)$. Rec\'iprocamente, si $g\in\Hom_{\Con}(A,C^B)$, definimos $\Bar{g}:A\times B\to C$ como $\Bar{g}(a,b)=g(a)(b)$. Directamente vemos que 
+		llamado exponenciaci\'on, que a cada conjunto $A$, le asocia su conjunto de funciones $C^B:=\Hom_{\Con}(B,C)$. El isomorfismo de adjunci\'on se contruye de la siguiente manera: Tomemos una funci\'on $f\in\Hom_{\Con}(A\times B, C)$. Definimos la siguiente funci\'on $\Bar{f}\in \Hom_{\Con}(A,C^B)$ como: para cada $a\in A$, tenemos una funci\'on $\Bar{f}(a):B\to C$ definida como $\Bar{f}(a)(b)=f(a,b)$. Rec\'iprocamente, si $g\in\Hom_{\Con}(A,C^B)$, definimos $\Bar{g}:A\times B\to C$ como $\Bar{g}(a,b)=g(a)(b)$. Directamente vemos que 
 		\[\Bar{\Bar{f}}(a,b)=\Bar{f}(a)(b)=f(a,b)\]
 		y 
 		\[\Bar{\Bar{g}}(a)(b)=\Bar{g}(a,b)=g(a)(b).\]
@@ -1296,13 +1408,13 @@ Sea
 \end{center}
 una adjunci\'on con isomorfismo natural $\Hom_\mathcal{D}(FA,B)\simeq\Hom_\mathcal{C}(A,GB)$. Usando este isomorfismo natural, para cada objeto $A$ y para cada $B$ tenemos dos mofismos distinguidos $\eta_A$ y $\varepsilon_B$ definidos como:
 \begin{align*}
-	\overline{\left(F(A)\overset{1_{FA}}{\longrightarrow}F(A)\right)} & = \left(A\underset{\eta_A}{\longrightarrow}GFA\right)\\
-	\left(FGB\underset{\varepsilon_B}{\longrightarrow}B\right) & = \overline{\left(G(B)\overset{1_{GB}}{\longrightarrow}G(B)\right)}
+	\overline{{F(A)\overset{1_{FA}}{\longrightarrow}F(A)}} & =  {A\underset{\eta_A}{\longrightarrow}GFA}\\
+	{FGB\underset{\varepsilon_B}{\longrightarrow}B} & = \overline{{G(B)\overset{1_{GB}}{\longrightarrow}G(B)}}
 \end{align*}
 y que son naturales en $A$ y en $B$ respectivamente. Por lo tanto tenemos transformaciones naturales
 \begin{align*}
-	\eta_\bullet: 1_\mathcal{A}\longrightarrow GF \\
-	\varepsilon_\bullet: FG\longrightarrow 1_\mathcal{B}
+	\eta_\bullet: 1_\mathcal{A}\Rightarrow GF \\
+	\varepsilon_\bullet: FG\Rightarrow 1_\mathcal{B}
 \end{align*}
 que son llamadas la \textbf{unidad} y la \textbf{co-unidad} de la adjunción.
 
@@ -1344,6 +1456,125 @@ que son llamadas la \textbf{unidad} y la \textbf{co-unidad} de la adjunción.
 	
 	La conmutatividad del otro diagrama se prueba de manera an\'aloga.
 \end{proof}
+
+\begin{prop}\label{idtriang}
+	Sean $F:\mathcal{C}\to \mathcal{D}$ y $G:\mathcal{D}\to \mathcal{C}$ funtores. Supongamos que existen transformaciones naturales $\eta: 1_\mathcal{C}\Rightarrow GF$ y $\varepsilon: FG\Rightarrow 1_\mathcal{D}$ tales que los siguientes diagraman conmutan 
+	\[
+	\begin{tikzcd}
+		F \arrow[r, "F\eta"] \arrow[rd, "1_F"'] & FGF \arrow[d, "\varepsilon F"] & G \arrow[r, "\eta G"] \arrow[rd, "1_G"'] & GFG \arrow[d, "G\varepsilon"] \\
+		& F & & G.                            
+	\end{tikzcd}
+	\]
+	Entonces $F\dashv G$, es decir, $F$ es adjunto izquierdo de $G$.
+\end{prop}
+
+\begin{proof}
+	Dados objetos $A$ en $\mathcal{C}$ y $B$ en $\mathcal{D}$, tenemos que probar que $\mathcal{C}(F(A),B)\simeq \mathcal{D}(A,G(B))$ y que este isomorfismo es natural. Sea $\varphi:\mathcal{C}(F(A),B)\to \mathcal{D}(A,G(B))$ definida como: sea $f\in \mathcal{C}(F(A),B)$ y consideremos $\eta_A:A\to GF(A)$ y $G(f):GF(A)\to G(B)$, entonces podemos tomar su composici\'on y as\'i  $\varphi(f)=G(f)\circ \eta_A$. Por otro lado, definimos $\psi:\mathcal{D}(A,G(B))\to \mathcal{C}(F(A),B)$ como $\psi(g)=\varepsilon_{B}\circ F(g)$. Notemos que 
+	\[\psi\varphi(f)=\psi(G(f)\circ \eta_A)=\varepsilon_{B}\circ F(G(f)\circ \eta_A)=\varepsilon_{B}\circ FG(f)\circ F\eta_A\]
+	Como $\varepsilon$ es una transformaci\'on natural, el siguiente diagrama conmuta
+	\[
+	\begin{tikzcd}
+		FGF(A) \arrow[r, "FG(f)"] \arrow[d, "\varepsilon_{FA}"'] & FG(B) \arrow[d, "\varepsilon_B"]  \\
+		F(A) \arrow[r, "f"'] & B.                          
+	\end{tikzcd}
+	\]
+	As\'i que 
+	\[\psi\varphi(f)=(\varepsilon_{B}\circ FG(f))\circ F\eta_A=f\circ \varepsilon_{FA}\circ F\eta_A=f\circ \id_{F(A)}=f.\]
+	
+	An\'alogamente,
+	\[\varphi\psi(g)=\varphi(\varepsilon_{B}\circ F(g))=G(\varepsilon_{B}\circ F(g))\circ \eta_A=G\varepsilon_{B}\circ GF(g)\circ \eta_A\]
+	\[=G\varepsilon_{B}\circ\eta_{G(B)}\circ g=\id_{G(B)}\circ g=g.\]
+	
+	Por lo tanto tenemos un isomorfismo $\mathcal{C}(F(A),B)\simeq \mathcal{D}(A,G(B))$. Se deja como ejercicio al lector probar que este isomorfismo es natural.
+\end{proof}
+
+Como se vio arriba un adjunto izquierdo $F$ de un funtor $G$ es \'unico salvo isomorfismo, sin embargo es posible que en la situaci\'on $F\dashv G$, el funtor $G$ sea un adjunto izquiedo o que el funtor $F$ sea un adjunto derecho.
+
+\begin{ej}
+	Sea $\mathcal{C}$ una categor\'ia y consideremos la categor\'ia cuyos obejetos son parejas $\left\langle A, B\right\rangle$ con $A,B$ objetos de $\mathcal{C}$. Un morfimos de $\left\langle A,B\right\rangle\to \left\langle A', B' \right\rangle$ es un par de morfimos $\left\langle f, g \right\rangle$ con $f:A\to A'$ y $g:B\to B'$ en $\mathcal{C}$. La identidad en un objeto $\left\langle A,B\right\rangle $ es el morfismo $\left\langle \id_A, \id_B\right\rangle$ y la composici\'on de morfismos se da entrada a entrada. A esta categor\'i la denotamos $\mathcal{C}\times \mathcal{C}$. 
+	
+	Hay dos funtores obvios $P,Q:\mathcal{C}\times\mathcal{C}\to \mathcal{C}$ definidos en objetos como $P\left\langle A, B\right\rangle=A$ y $Q\left\langle A, B\right\rangle= B$; y en morfismos como $P\left\langle f, g\right\rangle=A$ y $Q\left\langle f, g\right\rangle= g$.
+	
+	La categor\'ia $\mathcal{C}\times\mathcal{C}$ cumple la siguiente propiedad universal: Dados dos funtores $F,G:\mathcal{A}\to \mathcal{C}$, existe un \'unico funtor $H:\mathcal{A}\to \mathcal{C}\times\mathcal{C}$ tal que $PH=F$ y $QH=G$. (Similar a lo que pasa con el producto cartesiano de dos conjuntos)
+	
+	\[
+	\begin{tikzcd}
+		& \mathcal{A} \arrow[dl, "F"'] \arrow[dr, "G"] \arrow[d, dashed, "H"] & \\
+		\mathcal{C} & \mathcal{C}\times\mathcal{C} \arrow[l,"P"] \arrow[r, "Q"'] & \mathcal{C}
+	\end{tikzcd}
+	\]
+	El \textit{Funtor Diagonal} de $\mathcal{C}$ se define como el funtor que existe al tomar $F=1_{\mathcal{C}}=G$, es decir,
+	\[
+	\begin{tikzcd}
+		& \mathcal{C} \arrow[dl, "1"'] \arrow[dr, "1"] \arrow[d, dashed, "\Delta"] & \\
+		\mathcal{C} & \mathcal{C}\times\mathcal{C} \arrow[l,"P"] \arrow[r, "Q"'] & \mathcal{C}
+	\end{tikzcd}
+	\]
+	
+	Supongamos que nuestra categor\'ia $\mathcal{C}$ tiene productos y coproductos finitos, es decir, para cualesquiera objetos $A$ y $B$, existe su producto $A\times B$ y su coproducto $A\sqcup B$. Definimos los funtores $\prod:\mathcal{C}\times\mathcal{C}\to \mathcal{C}$ y $\coprod:\mathcal{C}\times\mathcal{C}\to \mathcal{C}$ como: en objetos $\prod\left\langle A, B\right\rangle=A\times B$ y $\coprod\left\langle A, B\right\rangle=A\sqcup B$; y en morfismos como $\prod\left\langle f, g\right\rangle=f\times g$ y $\coprod\left\langle f, g\right\rangle=f\sqcup g$. 
+	
+	\begin{prop}
+		Sea $\mathcal{C}$ una categor\'ia con productos y coproductos finitos. Entonces $\coprod\dashv \Delta$ y $\Delta\dashv \prod$.
+	\end{prop}
+	
+	\begin{proof}
+		Vamos a definir la unidad y la counidad. Consideremos los funtores $\coprod$ y $\Delta$. Definimos la transformaci\'on natural $\eta:1_{\mathcal{C}\times\mathcal{C}}\Rightarrow \Delta\coprod$. Sea $\left\langle A, B\right\rangle$ un objeto de la categor\'ia $\mathcal{C}\times\mathcal{C}$. Notemos que $\Delta\coprod\left\langle A, B\right\rangle=\Delta(A\sqcup B)=\left\langle A\sqcup B, A\sqcup B\right\rangle $. Como $A\sqcup B$ es un coproducto, existen morfismos canonicos $i:A\to A\sqcup B$ y $j:B\to A\sqcup B$ en $\mathcal{C}$. Definimos $\eta_{\left\langle A,B\right\rangle}\to\Delta\coprod\left\langle A, B\right\rangle$ como la pareja $\left\langle i,j\right\rangle$. Por otro lado, $\coprod\Delta(A)=A\sqcup A$. Para este coproducto existen morfismos can\'onicos $m,n:A\to A\sqcup A$ y por la propiedad universal existe un \'unico morfismo $\varepsilon_{A}:A\sqcup A\to A$ tal que $\varepsilon_{A}m=\id_A=\varepsilon_{A}n$. Para cada objeto de $\mathcal{C}$, estos morfismos definen una tranformaci\'on natural $\varepsilon:\coprod\Delta\Rightarrow 1_\mathcal{C}$. Veamos que se satisfacen las identidades de la Proposici\'on \ref{idtriang}. Sea $\left\langle A,B\right\rangle$ un objeto de $\mathcal{C}\times\mathcal{C}$. Entonces
+		\[\varepsilon_{\coprod\left\langle A,B\right\rangle}\circ \coprod\left( \eta_{\left\langle A,B\right\rangle}\right)=\varepsilon_{A\sqcup B}\circ \coprod\left(\left\langle i,j\right\rangle\right)=\varepsilon_{A\sqcup B}\circ i\sqcup j=\id_{A\sqcup B}\]
+		por el siguiente diagrama conmutativo y la propiedad universal del producto.
+		\[
+		\begin{tikzcd}
+			A \arrow[r,"i"] \arrow[d,"i"'] & A\sqcup B \arrow[d, dashed, "i\sqcup j"] & B \arrow[l, "j"'] \arrow[d, "j"] \\
+			A\sqcup B \arrow[r, "m"] \arrow[dr, "\id"'] & (A\sqcup B)\sqcup(A\sqcup B) \arrow[d, dashed, "\varepsilon_{A\sqcup B}"] & A\sqcup B \arrow[l, "n"'] \arrow[dl, "\id"] \\
+			& A\sqcup B & 
+		\end{tikzcd}
+		\]
+		Ahora tomemos un objeto $A$ en $\mathcal{C}$. Entonces 
+		\[\Delta(\varepsilon_{A})\circ\eta_{\Delta(A)}=\left\langle \varepsilon_{A},\varepsilon_{A}\right\rangle\circ\eta_{\left\langle A,A\right\rangle}=\left\langle \varepsilon_{A},\varepsilon_{A}\right\rangle\circ\left\langle m,n\right\rangle=\left\langle \varepsilon_{A}\circ m,\varepsilon_{A}\circ n\right\rangle=\left\langle \id_{A},\id_{A}\right\rangle\]
+		donde $m,n$ son los morfismos can\'onicos $m,n:A\to A\sqcup A$. Por lo tanto $\coprod\dashv \Delta$.
+		
+		De manera similar se prueba que $\Delta\dashv \prod$ y se deja como un ejercicio.
+	\end{proof}
+	
+	Por lo tanto tenemos el siguiente diagrama de adjunciones
+	\begin{center}
+		\begin{tikzcd}
+			\mathcal{C}\times\mathcal{C} \arrow[dd, "\coprod"', bend right] \arrow[dd, "\prod", bend left]\\
+			\\
+			\mathcal{C}. \arrow[uu, "\Delta"']
+		\end{tikzcd}
+	\end{center}
+\end{ej} 
+
+\textbf{Subcategor\'ias reflexivas}
+
+\begin{lem}\label{lemtn}
+	Sea $\alpha:=-\circ f:\mathcal{C}(A,-)\Rightarrow \mathcal{C}(B,-)$ una transformaci\'on natural inducida por un morfismo $f:B\to A$ en $\mathcal{C}$. Entonces $\alpha$ es un inyectivo si y solo si $f$ es epi; y $\alpha$ es epi si y solo si $f$ es un monomorfismo que escinde.
+\end{lem}
+
+\begin{thm}
+	Sean $F\dashv G$ entre las categor\'ias $\mathcal{C}$ y $\mathcal{D}$ con unidad $\eta$ y counidad $\varepsilon$.
+	\begin{enumerate}
+		\item $G$ es fiel si y solo si $\varepsilon_{B}$ es un epimorfismo para cada objeto $B$ en $\mathcal{D}$.
+		\item $G$ es pleno si y solo si $\varepsilon_{B}$ es un monomorfismo que escinde para cada objeto $B$ en $\mathcal{D}$.
+	\end{enumerate}
+	Por lo tanto $G$ es fiel y pleno si y solo si cada $\varepsilon_{B}$ es un isomorfismo $FG(B)\cong B$ para cada objeto $B$ de $\mathcal{D}$.
+\end{thm}
+
+\begin{proof}
+	Podemos definir una transformaci\'on natural $\nu:\mathcal{D}(B,-)\Rightarrow\mathcal{D}(FG(B),-)$ para cada objeto $B$ de $\mathcal{D}$, tomado $\nu_D(f)=\overline{G(f)}$. Recuerde que tomar barra es el isomorfismo de adjunci\'on, as\'i que $\nu$ es epi (resp. inyectiva) si y solo si $G$ es pleno (resp. fiel).  
+	
+	Ahora, por el Lema de Yoneda, $\nu=-\circ f$ para alg\'un morfismo $f:FG(B)\to B$. Este morfismo se encuentra tomando $\nu_B(\id_B)=\overline{G(B)}=\varepsilon_{B}$. Por lo tanto $\nu=-\circ \varepsilon_{B}$. Por el Lema \ref{lemtn}, $\varepsilon_{B}$ es un epimorfismo si y solo si $\nu$ es inyectiva si y solo si $G$ es fiel. An\'alogamente, $\varepsilon_{B}$ es un monomorfismo que escinde si y solo si $\nu$ es epi si y solo si $G$ es pleno.	
+\end{proof}
+
+\begin{dfn}
+	Una subcategor\'ia $\mathcal{D}$ de $\mathcal{C}$ es \emph{reflexiva} (resp. \emph{coreflexiva}) si el funtor inclusi\'on $K:\mathcal{D}\hookrightarrow \mathcal{C}$ tiene adjunto izquierdo (resp. derecho) $F:\mathcal{C}\to \mathcal{D}$ (resp. $G:\mathcal{C}\to \mathcal{D}$).
+\end{dfn}
+
+Sea $\mathcal{D}$ una subcategor\'ia reflexiva de $\mathcal{C}$, es decir, tenemos una adjunci\'on $F\dashv K$ donde $K$ es el funtor inclusi\'on. Como el funtor inclusi\'on $K$ siempre es fiel, la counidad $\varepsilon_D:FK(B)\to B$ es un epimorfismo para todo objeto $B$ de $\mathcal{D}$. M\'as a\'un, si $\mathcal{D}$ es una subcategor\'ia plena de $\mathcal{C}$, entonces $\varepsilon_B:FK(B)\cong B$.
+
+\begin{ej}
+	La clase de grupos abelianos libres de torsi\'on es una subcategor\'ia plena reflexiva de la categor\'ia de grupos abelianos.
+\end{ej}
 
 \subsection[Monadas una pequeña introducción]{Monadas una pequeña introducción}\label{SECMON}
 
