@@ -1918,14 +1918,32 @@ Existe una comparación directa entre objetos de $\EuScript{C}$ y $\EuScript{C}_
 $G_{T}\colon\EuScript{C}_{T}\rightarrow\EuScript{C}$ como sigue, en cada objeto $C\in\EuScript{C}_{T}$ entonces $G_{T}(C)=TC $ y en cada morfismo $f\colon A\rightarrow B$ en $\EuScript{C}_{T}$
 lo mandamos a $f^{*}\colon TA\rightarrow TB$ en $\EuScript{C}$, esto en efecto define un funtor ya que en identidades tenemos que $\eta_{A}$ lo manda a $\eta_{A}^{*}=id_{TA}$, si $f\colon A\rightarrow B$ y $g\colon b\rightarrow C$ en $\EuScript{C}_{T}$.
 entonces: \[G_{Tg}\circ G_{Tf}=g^{*}\circ f^{*}=(g^{*}\circ f)^{*}=G_{T}(g\bullet f).\] y así $G_{T}$ preserva las composiciones y por lo tanto es un funtor.
-Ahora claramente tenemos: \[T=G_{T}F_{T}\] en objetos, queremos estatar una propiedad universal para esta construcción.
+Ahora claramente tenemos: \[T=G_{T}F_{T}\] en objetos, queremos formular una propiedad universal para esta construcción.
 Para este fin, tomemos un $f\colon A\rightarrow G_{T}B$ con $A\in\EuScript{C}$ y $B\in\EuScript{C}_{T}$. necesitamos construir una flecha única $f^{+}\colon F_{T}A\rightarrow B$ en $\EuScript{C}_{T}$ tal que:
 \[G_{T}f^{+}\circ\eta_{A}=f.\] esto es justamente lo que hace nuestra construcción hace que $f\colon A\rightarrow G_{T}B=TB$ es un morfismo en la categoría $\EuScript{D}$, y así,
-$G_{T}f^{+}=f^{*}$ y calculando \[G_{T}f^{+}\circ\eta_{A}=f^{*}\circ\eta_{A}=f\] como se requería. Ahora para la unicidad, si $g\colon F_{T}A\rightarrow B$ en $\EuScript{C}_{T}$ 
+$G_{T}f^{+}=f^{*}$ y calculando \[G_{T}f^{+}\circ\eta_{A}=f^{*}\circ\eta_{A}=f\] como se requería. Ahora para la unicidad, si $g\colon F_{T}A\rightarrow B$ en $\EuScript{C}_{T}$  dado por $g\colon A\rightarrow TB$
+en $\mathcal{C}$ entonces $G_{T}g=g^{*}$ y así \[G_{T}g\eta_{A}=g^{*}\eta_{A}=g\] y así si $g$ satisface las propiedades de $f^{+}$ entonces $g=f$ y por lo tanto tenemos la adjunción deseada.
+
+
+Dicho de otra manera $F_{T}A=A$ y en flechas.,
+
+\[F_{T}(\begin{tikzcd} A\ar[r,"f"] & B
+    \end{tikzcd})=\begin{tikzcd} A\ar[r,"F_{T}f"] & TB
+    \end{tikzcd}=\begin{tikzcd} A\ar[r,"f"] & B \ar[r,"\eta_{B}"] &TB
+    \end{tikzcd}\]
+
+Y $G_{T}A=TA$ y dado $g\colon A\rightarrow B$ en $\mathcal{C}_{T}$ que es $g\colon A\rightarrow TA$ en $\mathcal{C}$
+sea \[G_{T}g=(\begin{tikzcd} TA\ar[r,"Tg"] & 
+    T^{2}B\ar[r,"\mu_{B}"] & TB
+\end{tikzcd})\]
+La unidad es $\eta_{T}\colon {\rm id}\rightarrow G_{T}F_{T}=T$ es simplemente $\eta$ y la counidad $\epsilon_{T}\colon F_{T}G_{T}\rightarrow {\rm id_{\mathcal{C}_{T}}}$
+se calcula como $\epsilon_{{T}_{A}}\colon F_{T}G_{T}A=TA\rightarrow A$ en $\mathcal{C_{T}}$ y es justamente ${\rm id}_{\mathcal{C}_{T}}\colon TA\rightarrow TA$.
+
+
 Es un ejercicio que el lector calcule la categoría de Kleisli de los ejemplos que hemos dejado al principio de esta sección.
 
 Vale la pena en este punto (supongo) poner un poco de contexto aún mas abstracto sin-sentido, sea $(T,\eta,\mu)$ una monada en una categoría $\mathscr{C}$.
-denotemos por $\mathrm{Ad}\mathscr{C}$ a la categoría de todas las adjunciones
+denotemos por $\mathrm{Ad}\mathcal{C}$ a la categoría de todas las adjunciones
 \[\begin{tikzcd}
 	{(F,G,\eta,\epsilon)\colon\mathscr{C}} & {\mathscr{A}}
 	\arrow[harpoon, from=1-1, to=1-2]
@@ -1954,6 +1972,30 @@ A' \arrow[r, "G'"'] & X'
 A \arrow[r, "F"] \arrow[d, "K"'] & X \arrow[d, "L"] \\
 A' \arrow[r, "F'"'] & X'
 \end{tikzcd}\]
+Un caso particular de la categoría anteriormente defnida es la siguiente: ${\rm Ad}(T)$ los objetos de esta categoría son adjunciones \[\begin{tikzcd}
+	{(F,G,\eta,\varepsilon)\colon\mathcal{C}} & {\mathcal{A}}
+	\arrow[harpoon, from=1-1, to=1-2]
+\end{tikzcd}\]
+
+tales que $GF=T$ y $G\varepsilon F=\mu$ y un morfismo entre estas adjunciones \[\begin{tikzcd}
+	{(F,G,\eta,\varepsilon)\colon\mathcal{C}} & {\mathcal{A}}
+	\arrow[harpoon, from=1-1, to=1-2]
+\end{tikzcd}\]
+
+
+\[\begin{tikzcd}
+	{(F',G',\eta',\varepsilon')\colon\mathcal{C}} & {\mathcal{A}'}
+	\arrow[harpoon, from=1-1, to=1-2]
+\end{tikzcd}\]
+
+
+\[\begin{tikzcd}
+	{(F,G,\eta,\varepsilon)} \ar[r, "L"] &  {(F',G',\eta',\varepsilon')}
+\end{tikzcd}\]
+
+tal que \[G'L=F'\text{ y } LF=F'\]
+
+
 
 Hemos así probado dos hechos destacables:
 
@@ -1963,18 +2005,170 @@ entonces existe un único funtor $L\colon\mathscr{C}_{T}\rightarrow\EuScript{A}$
 \end{thm}
 
 
-\begin{thm}\label{kleisli es final2}
-Dada una monada $(T,\eta,\mu)$ en una categoría $\EuScript{C}$, 
-\end{thm}
-
-
-En la práctica ya que estamos hablando de objetos en la categoría de adjunciones de una categoría agradable, podríamos preguntarnos si tal categoría tiene objeto final.
 
 \subsection{La solución de Eilenberg y Moore}\label{EMSOL}
 
-En efecto construyamos el objeto final en la categoría de posibles adjunciones que factoricen una monada dada.
+En este punto el lector nota la analogía entre monoides y monadas, es natural preguntarnos que es la categoría de simetrias para una monada $T$, en el aso de que $T$ sea un monoide,
+tal categoría consiste conjuntos junto con un acción izquierda (digamos) y flechas funciones $T$-equivariantes, para una monada general tenemos lo esperado:
 
 
+Dada una monada $(T,\eta,\mu)$ en una categoría $\mathcal{C}$ consideremos los siguientes datos $(A,\xi)$ donde $A$ es un objeto en $\mathcal{C}$ y $\xi\colon TA\rightarrow A$ 
+a estas parejas se les llama $T$\emph{-álgebras}  tales que : 
+
+
+\[\begin{tikzcd}
+A\ar[r, "\eta_{A}"]\ar[dr,"{\rm id_{A}}"'] & TA\ar[d,"\xi"] \\
+&  A
+\end{tikzcd}\]
+
+
+
+\[\begin{tikzcd}
+    T^{2}A\ar[r, "\mu_{A}"]\ar[d,"T\xi"'] & TA\ar[d,"\xi"] \\
+    TA\ar[r,"\xi"] &  A
+    \end{tikzcd}\]
+conmutan.
+
+Un morfismo $f\colon (A,\xi)\rightarrow (B,\theta)$ entre $T$-álgebras es una flecha $f\colon A\rightarrow B$ en $\mathcal{C}$ tal que: 
+
+
+
+
+\[\begin{tikzcd}
+    TA\ar[r, "\xi"]\ar[d,"Tf"'] & A\ar[d,"f"] \\
+    TB\ar[r,"\theta"'] &  B
+    \end{tikzcd}\]
+conmuta.
+
+\begin{dfn}\label{E-M}
+Con la misma notación que arriba, denotemos por $\mathcal{C}^{T}$ la categoría de $T$-álgebras (la categoría de Eilenberg-Moore para la monada $T$.)
+\end{dfn}
+
+
+
+
+Como hicimos con la adjunción de Kleisli, tenemos un funtor de $\mathcal{C}$ a $\mathcal{C}^{T}$ dado como sigue aplicando la multiplicación de la monada: \[\mu_{A}\colon T^{2}A\rightarrow TA\]
+obetemos por mera definición una $T$-álgebra, a las cuales llamaremos $T$-álgebras \emph{libres}, de hecho si $f\colon A\rightarrow B$ entonces tenemos el siguiente diagrama conmutativo:
+
+\[\begin{tikzcd}
+    T^{2}A\ar[r, "\mu_{A}"]\ar[d,"T^{2}f"'] & TA\ar[d,"Tf"] \\
+    T^{2}B\ar[r,"\mu_{B}"'] &  TB
+    \end{tikzcd}\]
+
+
+También notamos que para una $T$-álgebra $\xi\colon TA\rightarrow A$ esta flecha es un morfismo de $T$-álgebras entre $(TA,\mu_{A})\rightarrow (A,\xi)$ ya que 
+
+
+\[\begin{tikzcd}
+    T^{2}A\ar[r, "\mu_{A}"]\ar[d,"T\xi"'] & TA\ar[d,"\xi"] \\
+    TA\ar[r,"\xi"] &  A
+    \end{tikzcd}\]
+
+    conmuta.
+
+
+Tenemos entonces un funtor $F^{T}\colon\mathcal{C}\rightarrow\mathcal{C}^{T}$ y claramente hay un funtor de olvido $G^{T}\colon\mathcal{C}^{T}\rightarrow\mathcal{C}$ que en efecto
+\lq\lq olvida \rq\rq la estructura es decir a cada $(A,\xi)\rightarrow (B,\theta)\mapsto A\rightarrow B$. 
+Así estamos en la situación:
+
+
+
+
+
+
+\begin{center}
+	\begin{tikzcd}
+		\mathcal{C} \arrow[d, "F^{T}"', bend right] \\
+		\mathcal{C}^{T} \arrow[u, "G^{T}"', bend right]
+	\end{tikzcd}
+\end{center}
+
+Lo esperado sucede:
+
+
+\begin{prop}\label{AdEilenbergMoore}
+Con la notación anterior se tiene que para la monada $T$, la categoría $\mathcal{C}^{T}$ junto con los funtores $F^{T}\colon\mathcal{C}\rightarrow\mathcal{C}^{T}$ y $G^{T}\colon\mathcal{C}^{T}\rightarrow\mathcal{C}$
+constituyen una adjunción cuyos datos $(F^{T},G^{T},\eta,\epsilon)$ son un objeto en ${\rm Ad}(T)$.
+\end{prop}
+
+
+\begin{proof}
+
+Claramente $T=G^{T}F^{T}$ y así $\eta\colon {\rm id_{\mathcal{C}}}\rightarrow G^{T}F^{T}$, falta definir $\varepsilon\colon F^{T}G^{T}\rightarrow {\rm id_{\mathcal{C}^{T}}}$
+
+y ver que se satisfacen las identidades de la proposición \ref{idtriang}.
+
+
+Consideremos cualquier objeto $\xi\colon TA\rightarrow A$ de $\mathcal{C}^{T}$ pongamos $\varepsilon_{\xi}=\xi$ que es un morfismo de $T$-álgebras de $F^{T}G{T}=\mu_{A}$ a $\xi$
+, ahora la naturalidad de $\varepsilon_{\xi}$ es fácil de verificar, es exactamente la condición de conmutatividad para que una flecha pertenezca a $\mathcal{C}^{T}$.
+Ahora para $A\in\mathcal{C}$, tenemos \[G^{T}\varepsilon_{{F^{T}}_{A}}=G^{T}\varepsilon_{\mu_{A}}=G^{T}\mu_{A}=\mu_{A}.\]
+y así $G^{T}\varepsilon_{{F^{T}}}=\mu.$ como se deseaba.
+\end{proof}
+    
+Entonces en nuestra categoría ${\rm Ad}(T)$ tenemos dos objetos distinguidos., 
+
+
+
+
+\[\begin{tikzcd}[column sep=small]
+	 & \mathcal{C}\ar[dl, rightharpoondown, "{(F_{T},G_{T},\eta,\epsilon)}"']\ar[dr, rightharpoonup, "{(F^{T},G^{T},\eta,\varepsilon)}"] & \\  \mathcal{C}_{T}  & & \mathcal{C}^{T} 
+\end{tikzcd}\]
+
+
+Queremos comparar estas soluciones, más aún por \ref{kleisli es final} tenemos que existe un único funtor $L\colon (F_{T},G_{T},\eta,\epsilon)\rightarrow (F^{T},G^{T},\eta,\varepsilon)$
+
+Similarmente tenemos un encaje $K\colon\mathcal{C}_{T}\rightarrow\mathcal{C}^{T}$ dado como sigue, a cada $A\in\mathcal{C}_{T}$ sea $K(A)=\mu_{A}$
+el álgebra libre sobre $A$, y para cualquier morfismo $f\colon A\rightarrow B$ en $\mathcal{C}_{T}$ sea
+$Kf\colon KA=TA\rightarrow KB=TB$ dado $Kf=f^{*}=\mu_{B}Tf$ y este es un morfismo de $T$-álgebras ya que $\mu_{B}$ y $Tf$ lo son.
+$K$ es claramente un funtor, más aún este funtor es fiel ya que para $f,g\colon A\rightarrow B$ en $\mathcal{C}_{T}$ es decir \[f,g\colon A\rightarrow TB\] en $\mathcal{C}$ se tiene \[\mu_{B}Tf=KF=Kg=mu_{B}Tg\] lo cual implica
+:
+\[
+    \begin{aligned}
+       f
+        &= \mu_{B}\circ\eta_{TB}\circ f \\
+        &= \mu_{B}\circ Tf\circ \eta_{A}\\
+        &= \mu_{B}\circ Tg\circ \eta_{A} \\
+        &=\mu_{B}\circ \eta_{TB}\circ g\\
+        &=g
+        \end{aligned}\]
+
+De hecho ya tenemos identificada esta subcategoría de $\mathcal{C}^{T}$.
+
+
+\begin{dfn}\label{álgebras libres}
+La categoría de $T$\emph{-álgebras libres} es la subcategoría plena de $\mathcal{C}^{T}$ cuyos objetos son $\mu_{A}\colon T^{2}A\rightarrow TA$ , con $A\in\mathcal{C}$.
+\end{dfn}  
+
+Justifiquemos lo anterior 
+
+\begin{prop}\label{Kleisli is free}
+La imagen bajo $K$ es justamente la categoría de $T$-álgebras libres, es decir, el encaje $K$ identifica fiel y plenamente a la categoría de Kleisli con la imagen de este funtor.
+\end{prop}
+
+\begin{proof}
+
+    Dado un morfismo $f\colon \mu_{A}\rightarrow\mu_{B}$ 
+    \[\begin{aligned}
+        f
+         &= f\circ\mu_{A}\circ T\eta_{A}\;\;\;\;\;\;\;\;\;\;\; (\mu_{A}T\eta_{A}={\rm id}_{TA})\\
+         &= \mu_{B}\circ Tf\circ T\eta_{A}\;\;\;\;\;\;\;\;\;\;\; (f\text{ es morfismo de }T-\text{ álgebras })\\
+         &= \mu_{B}\circ T(f\circ \eta_{A}) \\
+         &=K(f\circ\mu_{A})\\
+         \end{aligned}\]
+
+         es decir, $f$ esta en la imagen del funtor $K$.
+\end{proof}    
+
+Todo lo anterior se puede resumir en:
+
+\begin{prop}\label{finaleinicial}
+En la categoría  ${\rm Ad}(T)$ la adjunción de Kleisli es el objeto inicial y la adjunción de Eilenberg-Moore es el objeto final,
+más aún, $K\colon\mathcal{C}_{T}\rightarrow\mathcal{C}^{T}$ es un morfismo en ${\rm Ad}(T)$ es decir,   $G_{T}=G^{T}K$ y $F^{T}=KF_{T}$.
+\end{prop}
+
+
+
+Hasta aquí llega este pequeño tour por las monadas y adjunciones, el lector interesado puede ver en (pedicchio y tholen y mclane) mucho mas de estas construcciones junto con aplicaciones.
 \section{La adjunción entre $\Frm$ y $\Top$}
 
 Esta sección está dedica a desglosar varias de las cosas que presentamos en estas notas aterrizándolas en dos categorías especificas ($\Frm$ y $\Top$).
@@ -2539,6 +2733,7 @@ tenemos una adjunción:
 
 que como se espera esta se restringe a una equivalencia, que se le conoce como la equivalencia de Stone entre retículas distributivas y espacios coherentes (espectrales).
 
+Queremos identificar las álgebras para las respectivas monadas que define esta adjunción.
 
 \end{document}
 %  COMPILE EL TRABAJO DOS VECES PARA QUITAR ALGUNOS WARNINGS 
