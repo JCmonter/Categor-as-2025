@@ -272,10 +272,7 @@ conjunto se puede caracterizar por ser una categoría pequeña discrteta.
         equivalente ser monomorfismo a ser inyectiva, pero no todos los epimorfismos son sobreyectivos, y por lo tanto tampoco es equivalente ser isomorfismo
         a ser monomorfismo y epimorfismo. Sugerimos como ejercicio al lector probar que la inclusión de $\Z$ en $\Q$ es un epimorfismo en $\Ring$. Y con las secciones y
         retractos tenemos el mismo caso que en los ejemplos anteriores (con excepción de $\Con$ y $\Vect$).
-        \item La categoría $\Frm$ de marcos, donde los objetos, llamados marcos, son conjuntos parcialmente ordenados que tienen elemento tope, elemento fondo, supremos arbitrarios,
-        ínfimos finitos y estos dos últimos son distributivos entre sí; y las flechas son funciones monótonas que preservan el tope, el fondo, los supremos arbitrarios
-        y los ínfimos finitos. Las caracterizaciones de isomorfismos, monomorfismos y epimorfismos son básicamente las mismas que en $\Con$, pero de nuevo,
-        como en otras categorías, las secciones y retractos no son equivalentes a los monomorfismos y epimorfismos, respectivamente.
+        \item La categoría $\Pos$ está conformada por... 
     \end{itemize}
 \end{ej}
 
@@ -707,12 +704,9 @@ satisfacen las condiciones de conservar identidades y abrir composiciones de fle
 
 \begin{ej}\label{Funtor de abiertos}
     \begin{itemize}
-        \item Recordando las categorías $\Top$ y $\Frm$ mencionadas en el ejemplo \ref{Categorías concretas}, tenemos un funtor contravariante $\mathcal O:\Top\to\Frm$ que 
-        le asigna a cada espacio topológico $X$ la familia de sus conjuntos abiertos $\mathcal O(X)$, que en efecto es un marco con el orden de subconjunto, tiene 
-        elemento tope ($X$ es abierto), tiene fondo ($\emptyset$ es abierto), tiene supremos arbitrarios (La unión de abiertos es abierta), tiene ínfimos finitos
-        (la intersección finita de abiertos es abierta), y estos distribuyen. Por otro lado a cada función continua $f:X\to Y\in\Top$ le asigna la preimagen
-        $f^{-1}:\mathcal O(Y)\to\mathcal O(X)$, la cual está bien definida pues una función continua por definición la preimagen de abiertos es abierta, y como la preimagen
-        se comporta bien con las uniones e intersecciones, entonces es un morfismo de marcos. Que preserva identidades y composiciones (contravariantemente) son
+        \item Recordando la categoría $\Top$ mencionada en el ejemplo \ref{Categorías concretas}, tenemos un funtor contravariante $\mathcal O:\Top\to\Frm$, donde $\Frm$ es la categoría de marcos (dicha categoría y más detalles sobre la relación entre estas serán abordados en la Sección \ref{FrmyTop}). Este funtor
+        le asigna a cada espacio topológico $X$ la familia de sus conjuntos abiertos $\mathcal O(X)$, el cual resulta tener la estructura de un marco. Por otro lado, a cada función continua $f:X\to Y\in\Top$ le asigna la preimagen
+        $f^{-1}:\mathcal O(Y)\to\mathcal O(X)$, la cual está bien definida pues, en una función continua, la preimagen de abiertos es abierta. Esta es un morfismo de marcos el cual preserva identidades y composiciones (contravariantemente) son
         consecuencia de las propiedades de la preimagen.
         \item Consideremos un anillo con identidad $R\in\Ring$ y fijemos un número natural $n\in\N$, podemos asignarle el monoide $M_n(R)$ de matrices $n\times n$ 
         con entradas en $R$, con la operación de multiplicación de matrices. Y a cada homomorfismo de anillos $f:R\to S\in\Ring$ se le asigna el homomorfismo 
@@ -2166,120 +2160,72 @@ En la categoría  ${\rm Ad}(T)$ la adjunción de Kleisli es el objeto inicial y 
 más aún, $K\colon\mathcal{C}_{T}\rightarrow\mathcal{C}^{T}$ es un morfismo en ${\rm Ad}(T)$ es decir,   $G_{T}=G^{T}K$ y $F^{T}=KF_{T}$.
 \end{prop}
 
-
-
 Hasta aquí llega este pequeño tour por las monadas y adjunciones, el lector interesado puede ver en (pedicchio y tholen y mclane) mucho mas de estas construcciones junto con aplicaciones.
-\section{La adjunción entre $\Frm$ y $\Top$}
 
-Esta sección está dedica a desglosar varias de las cosas que presentamos en estas notas aterrizándolas en dos categorías especificas ($\Frm$ y $\Top$).
+\section{La adjunción entre $\Frm$ y $\Top$}\label{FrmyTop}
 
-Uno de los primeros ejemplos de marcos, y de hecho, la
-motivación para la definición, fue que los abiertos de un espacio
-topológico $S$ forman un marco $\mathcal{O}S$.
-Aquí desarrollaremos más a fondo la relación entre marcos
-y espacios topológicos. No es complicado verificar que la asignación $S\mapsto\mathcal{O}S$ es
-un funtor contra variante $\mathcal{O}\colon\Top\to\Frm$. La asignación en objetos está dado por la topología del espacio y la asignación en flechas a través de la preimagen de las funciones continuas (estas resultan ser un morfismo de marcos por las propiedades de la preimagen). Para detalles más específicos consultar \cite{P.T.} o \cite{J.P.}.\\
+Esta sección está dedicada a aplicar varias de las cosas que presentamos en estas notas aterrizándolas en dos categorías especificas ($\Frm$ y $\Top$).
 
-Ahora la tarea es construir un funtor de regreso $\pt\colon\Frm\to\Top$
-y probaremos que ambos funtores forman una adjunción.
+\subsection{El funtor de abiertos}
+Para comenzar, necesitamos saber quienes son los objetos y los morfismos de la categoría $\Frm$.
+
+\begin{dfn}\label{Marco}
+Consideremos $A\in \Pos$ junto con las operaciones $\wedge$ y $\bigvee$ (ínfimo finito y supremo arbitrario). Decimos que $A$ es un marco si se cumple lo siguiente: 
+\begin{equation}\label{Frm}
+a\wedge\bigvee X=\bigvee\{a\wedge x\mid x\in X\}
+\end{equation}
+donde $a\in A$ y $X\subseteq A$. A (\ref{Frm}) se lo conoce como \emph{Ley Distributiva de Marcos} (LDM).  
+\end{dfn}
+De manera especifica un marco cuenta con la estructura $(A, \leq, \wedge, \bigvee, 1, 0)$ donde $1$ y $0$ son el mayor y menor elemento de $A$. 
+
+\begin{dfn}\label{Morfismodemarcos}
+Sean $A, B$ marcos y $f\colon A\to B$ un morfismo entre ellos. Decimos que $f$ es un morfismo de marcos si:
+\begin{itemize}
+    \item Si $a\leq b$, entonces $f(a)\leq f(b)$.
+    \item $f(0_A)=0_B$ y $f(1_A)=1_B$.
+    \item $f(a\wedge b)=f(a)\wedge f(b)$ y $f[\bigvee X]=\bigvee f[X]$.
+\end{itemize}
+para $a,b\in A$ y $X\subseteq A$.
+\end{dfn}
+
+Notemos que el morfismo $\id$ es un morfismo de marco. Además, estos son cerrados bajo composiciones. Por lo tanto, obtenemos la categoría de marcos y como mencionamos antes, esta es denotada por $\Frm$.\\
+
+En el Ejemplo \ref{Funtor de abiertos} se menciona brevemente la manera de asignarle a cada $S\in \Top$ un elemento en $\Frm$. De igual manera, se menciona como obtener un morfismo de marcos a través de una función continua. Veamos con un poco más de detalle esta información. Si consideramos $S\in \Top$, denotamos por $\mathcal{O}S$ a la familia de todos sus conjuntos abiertos (los elementos de la topología). Por definición de topología, esta familia es cerrada bajo uniones arbitrarias e intersecciones finitas. En este caso, el orden está dado por la contención y las operaciones ínfimo y supremo por las intersecciones y uniones, respectivamente. Con todo ello tenemos 
 \[
-  \begin{tikzcd}
-    \Top \ar[d,shift right=2,"\Cal O"'{name=L}]
-    \\
-    \Frm^\op \ar[u,shift right=2,"\pt"'{name=R}]
-    \adj{L}{R}
-  \end{tikzcd}
+(\mathcal{O}S, \subseteq, \cap, \bigcup, S, \emptyset)
 \]
+y que por la distributividad conjuntista, se cumple que $\mathcal{O}S$ es un marco. En ocasiones a este marco se le conoce como el marco de abiertos.\\
 
-Antes de continuar, vale la pena mencionar que todos nuestros espacios
-(de carne y hueso) serán al menos $T_{0}$. Recordemos que un espacio
-$T_0$ es un espacio donde cada par de puntos se pueden separar por al
-menos un abierto. Más aún:
-\begin{thm}\label{tcero}
-    La categoría $\Top_0$ de espacios topológicos
-    $T_0$  es \emph{reflexiva} en $\Top$.
-    Es decir, el funtor de inclusión $\Top_0\to\Top$
-    tiene un adjunto izquierdo.
-\end{thm}
-\begin{proof}
-Es un ejercicio sencillo.
-\end{proof}
-La razón de esta decisión es que, en un espacio que no es $T_0$, hay
-pares de puntos que tienen exactamente las mismas vecindades de
-abiertos, así que no tienen mucha esperanza de ser caracterizados por
-sus marcos de abiertos.
-Otro ejercicio sencillo que ayuda a familiarizarse con los espacios
-$T_0$ es el siguiente. En cualquier espacio topológico, los puntos
-tienen un preorden (es decir, una relación reflexiva y transitiva)
-dado por
-  \[q\sqsubseteq p\iff \overline{q}\subseteq \overline{p}\]
-  Este se llama \emph{preorden de especialización}.
+Consideremos ahora cualesquiera $S,T\in \Top$ y $\phi\colon S\to T$ una función continua. De esta manera, por la continuidad se cumple que
+\[
+\phi^{-1}\colon \mathcal{O}T\to\mathcal{O}S
+\]
+es una función bien definida. Además, por propiedades de la preimagen
+\[
+\phi^{-1}(T)=S,\quad \phi^{-1}(\emptyset)=\emptyset
+\]
+y
+\[
+\phi^{-1}(U\cap V)=\phi^{-1}(U)\cap \phi^{-1}(V),\quad \phi^{-1}[\bigcup_iU_i]=\bigcup_i\phi^{-1}(U_i).
+\]
+Por lo tanto, $\phi^{-1}$ es un morfismo de marcos.\\
 
-\subsection{El espacio de puntos}
-Dado un espacio con un punto $\{*\}$, el conjunto de
-puntos de $S$ está en biyección con las funciones continuas
-$\{*\}\to S$:
+De esta manera, tenemos una asignación entre objetos y flechas de la categoría $\Top$ a $\Frm$. La asignación esta dada por
 \[
-  S \simeq \Top(\{*\},S)
+\mathcal{O} ( \_ )\colon \Top\to \Frm
 \]
-donde cada punto $s\in S$ está asociado a la función $*\mapsto
-s$.
-Así, si $2$ es el marco de dos elementos $2=\{0<1\}$,
-cada de estas funciones $s:\{*\}\to S$ induce un morfismo de
-marcos $\chi_s:\mathcal{O}S\to\mathcal{O}\{*\}\simeq 2$ dado como
-\[
-  \chi_s(u) =
-  \begin{cases}
-    1, & s\in u \\
-    0, & s\notin u
-  \end{cases}
-.\]
-Así, para cada marco $A$, tiene sentido definir los puntos de $A$
-como morfismos $\Frm(A,2)$.
-En efecto, más adelante consideraremos esta construcción.
-Sin embargo, primero consideraremos otra construcción equivalente:
-representaremos cada morfismo $\chi:A\to 2$ con un elemento de
-$A$ de manera canónica: el elemento
-\[
-    p = \bigvee\{x\in A\mid \chi(x)=0\}
-\]
-es el único elemento de $A$ que cumple
-\[
-    x\leq p \ssi \chi(x) = 0
-.\]
-En particular, dado que $\chi(1)=1$, tenemos $p\neq 1$.
-Por otro lado, para cualesquiera $x,y\in A$ con
-$x\inf y\leq p$, tenemos
-\[
-    \chi(x)\inf\chi(y)=\chi(x\inf y)=0
-,\]
-así que $\chi(x)=0$ o bien $\chi(x)=0$, pues $\chi$ toma valores
-en el marco $2$. es decir: $x\leq p$ o bien $y\leq p$.
+y es un funtor contravariante. A este funtor se le conoce como el \emph{funtor de abiertos}.\\
+
+Buscamos ahora un funtor de regreso. La construcción de este necesita un poco más de detalle. Y para ello necesitamos algunas definiciones más.
+
+\subsection{El funtor de puntos}
 
 \begin{dfn}
-  Sea $A\in \Frm$. Un punto o elemento $\inf$-irreducible 
+  Sea $A\in \Frm$. Un punto o elemento $\wedge$-irreducible 
   de A es un elemento $p\in A$ con $p\neq 1$ tal que si 
   $x\inf y\leq p$, entonces $x\leq p$ o $y\leq p$. 
   Denotamos por $\pt A$ al conjunto de todos los puntos de $A$.
 \end{dfn}
-
-\begin{lem}
-  Sea $A\in \Frm$.
-  \begin{itemize}
-      \item Cada máximo de $A$ es $\inf$-irreducible.
-      \item Si A es booleano, entonces todo elemento $\inf-$irreducible de A es máximo.
-      \item Si A es una cadena, entonces cada elemento propio de A es $\inf-$irreducible.
-  \end{itemize}
-\end{lem}
-\begin{proof}\quad
-  \begin{itemize}
-      \item Sea $p\in A$ máximo, entonces $p<1$. Si $x\inf y\leq p$ y suponiendo que $x\not\leq p$, entonces $p<x\sup p$ y, por la maximalidad de $p$, tenemos que $p\sup x=1$. Similarmente, $y\not\leq p$ implica $p\sup y=1$. Si $x\not\leq p$ y $y\not\leq p$, se tiene que 
-      \[p=p\sup (x\inf y)=(p\sup x)\inf(p\sup y)=1.\]
-      Esto es una contradicción ya que $p<1$.
-      \item Supongamos que $A$ es booleano. Sean $p\in\pt A$ y $x,y\in A$ con $p<x$ y $y=\neg x$. Tenemos que $x\inf y=0\leq p$, entonces $x\leq p$ ó $y\leq p$ ya que p es $\inf-$irreducible. Además $y\leq p<x$ puesto que $p<x$. En consecuencia, $x\sup y=1=x$, así, $p$ es máximo.
-      \item Supongamos que $A$ es una cadena. Para cualesquiera $x,y\in A$, tenemos que $x\leq y$ ó $y\leq x$, es decir, $x\inf y\leq x$ ó $x\inf y\leq y$. Sea $p\in A$ con $p<1$. Si $x\inf y\leq p$, entonces $x\leq p$ ó $y\leq p$.
-  \end{itemize}
-\end{proof}
 
 Sean $A\in \Frm$ y $a\in A$. Decimos que un punto $p\in \pt A$ está en $U_A(a)\subseteq \pt A$ si, y sólo si $a\not\leq p$.
 \begin{lem}
@@ -2327,44 +2273,8 @@ el \textit{espacio de puntos} de $A$.
 Dado que la topología de $\pt A$ es $\Cal O\pt A=U_A(A)$,
 se sigue que $U_A:A\to\Cal O\pt A$ es un morfismo suprayectivo de marcos, al cual llamamos la \textit{reflexión
 espacial} de $A$. Si $U_A$ es inyectivo (y, por lo tanto, un
-isomorfismo) decimos que el marco $A$ es \textit{espacial}.
+isomorfismo) decimos que el marco $A$ es \textit{espacial}.\\
 
-\begin{obs}
-  \leavevmode
-  \begin{enumerate}
-    \item (La reflexión espacial como un cociente)
-      Como $U_A:A\to\Cal O\pt$ es suprayectivo, el marco $\Cal O\pt A$ 
-      es el cociente de $A$ (por definición de cocientes en $\Frm$) bajo el núcleo de $U_A$: el núcleo
-      $S\in NA$ dado como
-      \[
-        x\leq S(a) \iff U(x)\subseteq U(a)
-      .\]
-(los núcleos son cierto tipo de funciones definidas en los marcos y estos están en correspondencia biyectiva con los cocientes. Para un marco $A$, $NA$ denota el conjunto de todos sus núcleos).
-    \item
-      Además, por el lema adecuado, el
-      núcleo $S$ de $U_A$ admite la descripción
-      \[
-        S(a)=\Inf \{p\in \pt A|a\leq p\}
-      .\]
-    \item
-      Dados dos puntos $p,q\in \pt A$, se cumple
-      \begin{align*}
-        q\sqsubseteq p&\iff \overline{q}\subseteq \overline{p}\\
-        &\iff (\forall x\in A)[q\in U(x)\Rightarrow p\in U(x)]\\
-        &\iff (\forall x\in A)[x\leq p\Rightarrow x\leq q]\\
-        &\iff p\leq q.
-      \end{align*}
-      Es decir, el preorden de especialización del espacio de puntos es
-      el orden opuesto al orden heredado del marco:
-      \[
-        (\pt A,\sqsubseteq) = (\pt A,\leq)^\op.
-      \]
-      En particular, ya que su preorden de especialización es un orden
-      parcial, esto prueba que el espacio de puntos es $T_0$.
-  \end{enumerate}
-\end{obs}
-
-\subsection{Funtorialidad y naturalidad}
 Queremos ver que la asignación $A\mapsto \pt A$ es un funtor y que
 la reflexión espacial $U_A:A\to\Cal O\pt A$
 es una transformación natural
