@@ -272,7 +272,7 @@ conjunto se puede caracterizar por ser una categoría pequeña discrteta.
         equivalente ser monomorfismo a ser inyectiva, pero no todos los epimorfismos son sobreyectivos, y por lo tanto tampoco es equivalente ser isomorfismo
         a ser monomorfismo y epimorfismo. Sugerimos como ejercicio al lector probar que la inclusión de $\Z$ en $\Q$ es un epimorfismo en $\Ring$. Y con las secciones y
         retractos tenemos el mismo caso que en los ejemplos anteriores (con excepción de $\Con$ y $\Vect$).
-        \item La categoría $\Pos$ está conformada por... 
+        \item La categoría $\Pos$ de conjuntos parcialmente ordenados está conformada por conjuntos dotados con una relación de orden. Las flechas entre ellos son las funciones monótonas y estas tienen la característica de que preservan la relación entre los elementos del conjunto, es decir, si $a, b\in A$ con $a\leq b$, se cumple que $f(a)\leq f(b)$. 
     \end{itemize}
 \end{ej}
 
@@ -2188,13 +2188,27 @@ Sean $A, B$ marcos y $f\colon A\to B$ un morfismo entre ellos. Decimos que $f$ e
 para $a,b\in A$ y $X\subseteq A$.
 \end{dfn}
 
-Notemos que el morfismo $\id$ es un morfismo de marco. Además, estos son cerrados bajo composiciones. Por lo tanto, obtenemos la categoría de marcos y como mencionamos antes, esta es denotada por $\Frm$.\\
+\begin{dfn}\label{Aiz}
+    Sean $A, B\in \Pos$ y $f\colon A\to B$ un función monótona. $f_*\colon B\to A$ es el adjunto derecho de $f$ si 
+    \[
+    f(a)\leq b\Leftrightarrow a\leq f_*(b)
+    \]
+    para $a\in A$ y $b\in B$.
+\end{dfn}
+
+En marcos, el adjunto derecho cumple algunas propiedades interesantes. En estas notas haremos uso de la siguiente.
+
+\begin{prop}
+  Si $f$ es un morfismo de marcos, entonces $f$ tiene adjunto derecho.  
+\end{prop}
+
+Notemos que el morfismo $\id$ es un morfismo de marcos. Además, estos son cerrados bajo composiciones. Por lo tanto, obtenemos la categoría de marcos y como mencionamos antes, esta es denotada por $\Frm$.
 
 En el Ejemplo \ref{Funtor de abiertos} se menciona brevemente la manera de asignarle a cada $S\in \Top$ un elemento en $\Frm$. De igual manera, se menciona como obtener un morfismo de marcos a través de una función continua. Veamos con un poco más de detalle esta información. Si consideramos $S\in \Top$, denotamos por $\mathcal{O}S$ a la familia de todos sus conjuntos abiertos (los elementos de la topología). Por definición de topología, esta familia es cerrada bajo uniones arbitrarias e intersecciones finitas. En este caso, el orden está dado por la contención y las operaciones ínfimo y supremo por las intersecciones y uniones, respectivamente. Con todo ello tenemos 
 \[
 (\mathcal{O}S, \subseteq, \cap, \bigcup, S, \emptyset)
 \]
-y que por la distributividad conjuntista, se cumple que $\mathcal{O}S$ es un marco. En ocasiones a este marco se le conoce como el marco de abiertos.\\
+y que por la distributividad conjuntista, se cumple que $\mathcal{O}S$ es un marco. En ocasiones a este marco se le conoce como el marco de abiertos.
 
 Consideremos ahora cualesquiera $S,T\in \Top$ y $\phi\colon S\to T$ una función continua. De esta manera, por la continuidad se cumple que
 \[
@@ -2208,13 +2222,13 @@ y
 \[
 \phi^{-1}(U\cap V)=\phi^{-1}(U)\cap \phi^{-1}(V),\quad \phi^{-1}[\bigcup_iU_i]=\bigcup_i\phi^{-1}(U_i).
 \]
-Por lo tanto, $\phi^{-1}$ es un morfismo de marcos.\\
+Por lo tanto, $\phi^{-1}$ es un morfismo de marcos.
 
 De esta manera, tenemos una asignación entre objetos y flechas de la categoría $\Top$ a $\Frm$. La asignación esta dada por
 \[
 \mathcal{O} ( \_ )\colon \Top\to \Frm
 \]
-y es un funtor contravariante. A este funtor se le conoce como el \emph{funtor de abiertos}.\\
+y es un funtor contravariante. A este funtor se le conoce como el \emph{funtor de abiertos}.
 
 Buscamos ahora un funtor de regreso. La construcción de este necesita un poco más de detalle. Y para ello necesitamos algunas definiciones más.
 
@@ -2223,7 +2237,7 @@ Buscamos ahora un funtor de regreso. La construcción de este necesita un poco m
 \begin{dfn}
   Sea $A\in \Frm$. Un punto o elemento $\wedge$-irreducible 
   de A es un elemento $p\in A$ con $p\neq 1$ tal que si 
-  $x\inf y\leq p$, entonces $x\leq p$ o $y\leq p$. 
+  $x\wedge y\leq p$, entonces $x\leq p$ o $y\leq p$. 
   Denotamos por $\pt A$ al conjunto de todos los puntos de $A$.
 \end{dfn}
 
@@ -2233,7 +2247,7 @@ Sean $A\in \Frm$ y $a\in A$. Decimos que un punto $p\in \pt A$ está en $U_A(a)\
   \begin{itemize}
       \item $U_A(1)=\pt A$.
       \item $U_A(0)=\emptyset$.
-      \item $U_A(a\inf b)=U_A(a)\cap U_A(b)$.
+      \item $U_A(a\wedge b)=U_A(a)\cap U_A(b)$.
       \item $U_A(\Sup X)=\bigcup \{U_A(x)|x\in X\}$, $\forall X\subseteq A$.
   \end{itemize}
 \end{lem}
@@ -2290,8 +2304,8 @@ Si $p$ es un punto de $\pt B$, veamos que $f_*p$ es un punto de $A$.
 Primero, $f_*p$ no puede ser $1$, ya que en ese caso $1\leq f_\ast(p)$
 implicaría $f(1)\leq p$ por la adjunción, pero esto es imposible ya
 que $p\neq 1$.
-Ahora veamos que $f_*p$ es $\inf$-irreducible. Si $x,y\in A$ son tales
-que $x\inf y\leq f_\ast(p)$, por adjunción tenemos $f(x)\inf f(y)\leq p$.
+Ahora veamos que $f_*p$ es $\wedge$-irreducible. Si $x,y\in A$ son tales
+que $x\wedge y\leq f_\ast(p)$, por adjunción tenemos $f(x)\wedge f(y)\leq p$.
 En consecuencia, $f(x)\leq p$ ó $f(y)\leq p$, i.e., $x\leq f_\ast (p)$
 o $y\leq f_\ast (p)$. Por lo tanto, $f_\ast (p)\in \pt A$.
 
@@ -2299,7 +2313,7 @@ En resumen, dado un morfismo de marcos $f\colon A\to B$, obtenemos una
 función $\pt f \colon \pt B\to \pt A$ dada por la restricción de
 $f_*:B\to A$.
 
-Observemos que, para todo $p\in \Cal \pt B$, tenemos
+Observemos que, para todo $p\in \Cal O\pt B$, tenemos
 \begin{align*}
     p\in (\pt f)^{-1} \left(U_A(a)\right)&\iff f_\ast (p)\in U_A(a)\\
     &\iff a\not\leq f_\ast (p)\\
@@ -2329,6 +2343,40 @@ conmuta, así $U_\bullet=(U_A\mid A\in\Frm)$
 es una transformación natural $U_\bullet:\id_\Frm\to\Cal O\pt$.
 
 \subsection{El espacio de puntos del marco de abiertos}
+Dado un espacio con un punto $\{*\}$, el conjunto de puntos de $S$ está en biyección con las funciones $\{*\}\to S$:
+\[
+S\simeq \Top(\{*\}), S)
+\]
+donde cada punto $s\in S$ está asociado a la función $s\colon \{*\}\to S$. Así, si $2$ es el marco $2=\{0<1\}$, cada una de estas funciones induce un morfismo de marcos $\chi_s\colon \mathcal{O}S\to \mathcal{O}\{*\}\simeq 2$ dado como
+\[
+  \chi_s(u) =
+  \begin{cases}
+    1 & s\in u \\
+    0 & s\not\in u
+  \end{cases}
+.\]
+Así, para cada marco $A$, tiene sentido definir los puntos de $A$ como morfismos $\Frm(A,2)$.
+En efecto, más adelante consideraremos esta construcción.
+Sin embargo, primero consideraremos otra construcción equivalente:
+representaremos cada morfismo $\chi:A\to 2$ con un elemento de
+$A$ de manera canónica: el elemento
+\[
+    p = \bigvee\{x\in A\mid \chi(x)=0\}
+\]
+es el único elemento de $A$ que cumple
+\[
+    x\leq p \Leftrightarrow \chi(x) = 0
+.\]
+En particular, dado que $\chi(1)=1$, tenemos $p\neq 1$.
+Por otro lado, para cualesquiera $x,y\in A$ con
+$x\wedge y\leq p$, tenemos
+\[
+    \chi(x)\wedge \chi(y)=\chi(x\wedge y)=0
+,\]
+así que $\chi(x)=0$ o bien $\chi(x)=1$, pues $\chi$ toma valores
+en el marco $2$. es decir: $x\leq p$ o bien $y\leq p$.\\
+
+Lo anterior prueba que existe una correspondencia biyectiva entre los elementos $\wedge$-irreducibles y los morfismos $\chi_S$. En general, a estos se les conoce como caracteres.
 
 ¿Qué tanta información acerca de un espacio topológico se
 puede recuperar a través de su marco de abiertos?
@@ -2345,7 +2393,7 @@ $\chi_s:\Cal O S \to 2$ como
     0, & s\not\in u.
   \end{cases}
 \end{equation}
-Por lo tanto, el $\inf$-irreducible que le corresponde a $s$ es
+Por lo tanto, el $\wedge$-irreducible que le corresponde a $s$ es
 \begin{equation}
   \Phi_S(s) = \Sup\{u\in\Cal OS\mid \chi_s(u)=0\} \in \pt\Cal O S
   .\end{equation}
