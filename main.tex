@@ -1292,7 +1292,7 @@ Veamos una pequeña implicación que tiene el lema de Yoneda
 \end{cor}
 
 \begin{proof}
-    Tenemos que que ver que para todo par de objetos $A,B\in\C$ la función $\C_\bullet:\C(A,B)\to[\C^\op,\Con](\C_A,\C_B)$, inducida por el funtor de yoneda,
+    Tenemos que ver que para todo par de objetos $A,B\in\C$ la función $\C_\bullet:\C(A,B)\to[\C^\op,\Con](\C_A,\C_B)$, inducida por el funtor de yoneda,
     es una biyección. Para esto tomemos una flecha $f\in\C(A,B)$ y notemos que
     \[ \widehat{\C_f}=(\C_f)_A(\id_A)=f\circ\id_A=f \]
     
@@ -2642,56 +2642,27 @@ es conmutativo:
     &= (\Cal O\psi)\bar\phi.
 \end{align*}
 
-\subsection{La propiedad universal de las reflexiones}
 
-Para esta subsección veremos que las biyecciones dadas por la adjunción revelan las propiedades universales del espacio de puntos y el marco de abiertos.
-La biyección
-\begin{align*}
-    \Frm(A,\Cal OS) &\simeq \Top(S,\pt A) \\
-    f &\mapsto \bar f = (\pt f)\Phi_S \\
-    (\Cal O\phi)U_A = \bar\phi &\mapsfrom \phi.
-\end{align*}
-se puede leer como sigue:
-dado un morfismo $f:A\to\Cal OS$, existe una única función continua
-$\phi:S\to\pt A$ tal que el diagrama
-\[
-    \begin{tikzcd}
-        A \ar[r,"f"] \ar[d,"U_A"'] & \Cal OS \\
-        \Cal O\pt A \ar[ur,"\Cal O\phi"']
-    \end{tikzcd}
-\]
-conmuta.
-Similarmente, dada una función continua $\phi:S\to\pt A$, existe
-un único morfismo $f:A\to\Cal OS$ tal que el diagrama
-\[
-    \begin{tikzcd}
-        S \ar[r,"\phi"] \ar[d,"\Phi_S"'] & \pt A \\
-        \pt\Cal OS \ar[ur,"\pt f"']
-    \end{tikzcd}
-\]
-conmuta.
 
-\subsection[Álgebras para la adjunción]{Álgebras para la adjunción $\spec\dashv \mathcal{O}$}
+%\begin{thebibliography}{7}
 
-En esta sección usaremos lo aprendido en las sección \ref{SECMON} y la sección anterior, 
+%\bibitem{Handbook} Francis Borceux. \textit{Handbook of Categorical Algebra 1: Basic Category Theory}. Cambridge University Press, Great Britain, 1994.
 
-Primero trabajaremos con una extensión de la adjunción entre $\Frm$ y $\Top$, para esto consideremos la categoría de retículas distributivas 
-\[\EuScript{D}Lt\] esta categoría tiene como subcategoría ala categoría de marcos, lo interesante es que podemos definir un funtor 
-\[\spec\colon\EuScript{D}Lt\rightarrow\Top \] que a cada retícula distributiva le asocia su espacio espectral, es decir, su espectro (ideales primos), teniendo esto en mente, veremos que
-tenemos una adjunción:
+%\bibitem{Wil2002} F.William Lawvere y Stephen H. Schanuel. \textit{Matemáticas conceptuales: una primera introducción a categorías}. Siglo veintiuno editores, México D.F., 2002.
 
-\[
-  \begin{tikzcd}
-    \Top \ar[d,shift right=2,"\Cal O"'{name=L}]
-    \\
-    \EuScript{D}Lt^\op \ar[u,shift right=2,"\spec"'{name=R}]
-    \adj{L}{R}
-  \end{tikzcd}
-\]
+%\bibitem{Sau1970} Saunders Mac Lane. \textit{Categories for the Working Mathematician}. Springer, New York, 1991.
 
-que como se espera esta se restringe a una equivalencia, que se le conoce como la equivalencia de Stone entre retículas distributivas y espacios coherentes (espectrales).
+%\bibitem{Catheory} A. Schalk y H.~Simmons. \textit{An introduction to category theory in four easy movements}. The University of M, Manchester, 2005.
 
-Queremos identificar las álgebras para las respectivas monadas que define esta adjunción.
+%\bibitem{Catfound} Walter Tholen, R.J. Wood, Jorge Picado, Ales Pultr, Anna Tozzi, Maria Manuel Clementino, Eraldo Giuli, Dominique Bourn, Mario Gran, 
+%John McDonald, Manuela Sobral, Maria Cristina Pedicchio, Fabrizio Rovatti, Claudia Centazzo, Enrico M. Vital, y George Janelidze.
+%\textit{Categorical Foundations: Special Topics in Order, Topology, Algebra and Sheaf Theory}. Cambridge University Press, United States of America, 2004.
+
+%\bibitem{P.T.} P. T. Johnstone, \textit{Stone spaces}, Cambridge Studies in Advanced Mathematics, vol. 3, Cambridge University Press, Cambridge, 1982. MR 698074
+  
+%\bibitem{J.P.} J. Picado and A. Pultr, \textit{Frames and locales: Topology without points}, Frontiers in Mathematics, Springer Basel, 2012.
+
+%\end{thebibliography}
 
 \end{document}
 %  COMPILE EL TRABAJO DOS VECES PARA QUITAR ALGUNOS WARNINGS 
